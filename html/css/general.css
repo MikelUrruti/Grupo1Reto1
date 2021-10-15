@@ -4,6 +4,8 @@
     Convertimos header en flex
     Su contenido comenzará al inicio del contenedor (quizá luego ajustemos márgenes)
     Cambiamos el color del fondo
+    Ajustamos el tamaño
+    */
 
     header {
         display:flex;
