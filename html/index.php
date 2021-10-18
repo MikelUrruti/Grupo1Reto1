@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/cssFooter.css">
     <title>Inicio - Fix Point</title>
 </head>
-<body>
+<body class="ordenCajas">
 <?php 
     include ("plantillas/indexFooter.html");
 ?>

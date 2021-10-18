@@ -1,0 +1,9 @@
+body{
+    background-color: brown;
+}
+#logo{
+    width: 20%;
+}
+#listaAdmin{
+    list-style: none;
+}
