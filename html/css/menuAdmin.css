@@ -1,9 +1,36 @@
 body{
     background-color: brown;
 }
-#logo{
-    width: 20%;
+#menuAdmin{
+    position: fixed;
+    width: 40%;
+    height: 100vh;
 }
-#listaAdmin{
+#logo{
+    width: 100%;
+}
+#listaAdmin, #listaAdmin2{
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#listaImgCentro{
+    width: 40%;
+    background-color: white;
+}
+#listaImgFP{
+    width: 40%;
+}
+
+#listaAdmin2 li + li {
+
+}
+
+
+
+#listaAdmin2{
+background-color: violet;
+height: 10em;
 }
