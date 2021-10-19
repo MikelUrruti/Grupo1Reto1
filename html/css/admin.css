@@ -1,0 +1,12 @@
+section{
+margin-left: 27%;
+height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+article{
+    font-size: 2em;
+    width: 50%;
+    text-align: center;
+}

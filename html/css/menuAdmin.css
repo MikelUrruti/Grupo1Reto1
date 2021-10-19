@@ -1,6 +1,3 @@
-body{
-    background-color: brown;
-}
 #menuAdmin{
     position: fixed;
     width:25%;
@@ -25,6 +22,7 @@ body{
     align-items: center;
     position: absolute;
     bottom: 0;
+    margin-bottom: 20%;
 }
 #listaAdmin{
     flex-direction: column;
@@ -42,6 +40,9 @@ body{
 #listaAdmin a:last-child{
     margin-top: 60%;
 }
+#listaAdmin a:first-child{
+    margin-top: 40%;
+}
 
 #listaAdmin a{
     color: white;
@@ -53,5 +54,22 @@ body{
     background-color: white;
     color: black;
     transition-duration: 0.5s;
+    animation-name: peter;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+   
     
+}
+
+@keyframes peter {
+    
+    from {
+        font-size: 1.5em;
+    }
+    to {
+        font-size: 2rem;
+        
+    }
+
 }
