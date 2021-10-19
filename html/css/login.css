@@ -25,6 +25,14 @@ h2{
 [type="button"]{
     float: right;
     margin: 2em 3.5em 2em 100%;
+    background-color: black;
+    color: #EEC51F;
+    border: outset;
+}
+
+[type="button"]:hover{
+    border:inset;
+    cursor: pointer;
 }
 /*Fin boton*/
 
