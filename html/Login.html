@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo usuario - Fix Point</title>
+    <title>Iniciar sesión - Fix Point</title>
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
@@ -17,39 +17,39 @@
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("../plantillas/indexNav.html"); ?>
     -->
-    <article>
-        <h2>
+    <form>
+        <h2 id="titulo_Log">
             Inicio de sesión
         </h2>
-        <div class="usucon">
+
+        <div class="usucon_Log">
             <p>
                 Usuario:
             </p>
-            <input type="text" placeholder="nombre@gmail.com" />
+            <input class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
         </div>
 
-        <div class="usucon">
-            <p>
+        <div class="usucon_Log">
+            <p alt="La contraseña es el de la cuenta de FixPoint">
                 Contraseña:
             </p>
-            <input type="text" placeholder="**********" />
-
+            <input class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
         </div>
 
-        <input type="button" value="Iniciar sesion" />
+        <input id="boton_Log" type="button" value="Iniciar sesión" />
 
-        <div class="enlaces">
-            <a>
+        <div class="enlaces_Log">
+            <a class="enlace_Log">
 ¿Te has olvidado la contraseña?
 Recuperar contraseña
             </a>
 
-            <a>
+            <a class="enlace_Log">
 ¿No tienes cuenta?
 Registrate ahora mismo
             </a>
         </div>
-    </article>
+    </form>
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("../plantillas/indexFooter.html"); ?>
     -->

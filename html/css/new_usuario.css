@@ -10,16 +10,17 @@ form{
     border-radius: 17px;
     margin: auto;
     margin-top: 1em;
-    width: 70%;
+    width: 80%;
+    padding-bottom: 6em;
 }
 /*Fin general*/
 
-#titulo_Log{
+#titulo_NewUsu{
     text-align: center;
 }
 
 /*Estilo de la parte de usuario y contraseña*/
-.usucon_Log{
+.usudat_NewUsu{
     display: grid;
     margin: auto;
     text-align: left;
@@ -28,16 +29,15 @@ form{
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/
-#boton_Log{
+#button_NewUsu{
     float: right;
-    margin: 2em 3.5em 2em 100%;
     background-color: black;
     color: white;
     border: outset;
     padding: 1.5%;
 }
 
-#boton_Log:hover{
+#button_NewUsu:hover{
     color: #EEC51F;
     border:inset;
     cursor: pointer;
@@ -45,68 +45,38 @@ form{
 /*Fin boton*/
 
 /*Estilo de las cajas de texto*/
-.datos_Log{
+.datos_NewUsu{
     background-color: rgb(0, 0, 0);
     color: #EEC51F;
     border: none;
 }
 /*Fin cajas texto*/
 
-/*Estilo de la caja de enlaces*/
-.enlaces_Log{
-    font-size: small;
-    white-space: pre;
-    margin-top: 5em;
-    margin-left: 1%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: small;
-}
-/*Fin caja enlaces*/
-
-/*Estilo de los enlaces*/
-.enlace_Log{
-    color: black;
-    align-content: unset;
-    padding-left: auto;
-}
-
-.enlace_Log:hover{
-    font-weight: bold;
-    cursor: pointer;
-}
-/*Fin enlaces*/
 /*
 
 ESTILO DE TABLET
 
 */
 @media screen and (min-width: 480px) {
+    /*Estilo de la caja general*/
+    form{
+        padding-bottom: 8em;
+    }
+    /*Fin caja*/
+    
     /*Estilo del titulo*/
-    #titulo_Log{
+    #titulo_NewUsu{
         font-size: 2em;
     }
     /*Fin de titulo*/
 
     /*Estilo de la parte de usuario y contraseña*/
-    .usucon_Log{
+    .usudat_NewUsu{
         font-size: 1.2em;
     }
     /*Fin de usuario y contraseña*/
-
-    /*Estilo de la caja de enlaces*/
-    .enlaces_Log{
-        font-size: small;
-        margin-top: 5em;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        justify-content: space-around;
-    }
-    /*Fin caja enlaces*/
 }
+
 /*
 
 ESTILO DE ORDENADOR
@@ -115,37 +85,42 @@ ESTILO DE ORDENADOR
 @media screen and (min-width: 1025px) {
     /*Estilo de la caja madre*/
     form{
-        width: 50%;
+        width: 70%;
     }
     /*Fin madre*/
 
     /*Estilo del titulo*/
-    #titulo_Log{
+    #titulo_NewUsu{
         font-size: 2.5em;
     }
     /*Fin de titulo*/
 
     /*Estilo de la parte de usuario y contraseña*/
-    .usucon_log{
+    .usudat_NewUsu{
         font-size: 1.5em;
     }
     /*Fin de usuario y contraseña*/
 
-    /*Estilo de la caja de enlaces*/
-    .enlaces_Log{
-        font-size: medium;
-        margin-top: 5em;
+    /*Estilo del boton*/
+    #button_NewUsu{
+        font-size: large;
+        margin: 2em 3em 0em 0em;
+    }
+    /*Fin boton*/
+
+    /*Estilo de los grupos de caja horizontales*/
+    .grupodatos_NewUsu{
         display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
+    }
+
+    .grupodatos_NewUsu > .usudat_NewUsu{
         justify-content: space-around;
     }
-    /*Fin caja enlaces*/
+    /*Fin cajas horizontales*/
 
     /*Estilo del boton*/
-    #boton_Log{
-        font-size: large;
+    #button_NewUsu{
+        float: right;
     }
     /*Fin boton*/
 }
