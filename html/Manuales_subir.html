@@ -21,40 +21,53 @@
         <h2 id="titulo_Man">
             Rellene el formulario para enviar su manual a revisión*
         </h2>
-            <a class="infor_Man">
-                El manual será enviado a un administrador para su revisión. Esto no garantiza que se vaya a subir.
-            </a>
-        <p>
 
+        <p id="infor_Man">
+            *El manual será enviado a un administrador para su revisión. Esto no garantiza que se vaya a subir.
         </p>
 
         <div class="usucon_Man">
             <p>
                 Nombre:
             </p>
-            <input class="datos_Man" type="text" placeholder="nombre"/>
+            <input class="datos_Man" type="text" placeholder="nombre" />
         </div>
 
         <div class="usucon_Man">
-            <p alt="La contraseña es el de la cuenta de FixPoint">
-                Contraseña:
+            <p>
+                Apellidos:
             </p>
-            <input class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
+            <input class="datos_Man" type="text" placeholder="apellidos" />
         </div>
 
-        <input id="boton_Log" type="button" value="Iniciar sesión" />
-
-        <div class="enlaces_Log">
-            <a class="enlace_Log">
-*El manual debe ser revisado por una persona 
-para ver si esta listo para subirse
-            </a>
-
-            <a class="enlace_Log">
-¿No tienes cuenta?
-Registrate ahora mismo
-            </a>
+        <div class="usucon_Man">
+            <p>
+                Email:
+            </p>
+            <input class="datos_Man" type="email" placeholder="nombre@gmail.com" />
         </div>
+
+        <div class="usucon_Man">
+            <p>
+                Teléfono de contacto:
+            </p>
+            <input class="datos_Man" type="tel" placeholder="123456789" size="9" maxlength="9" />
+        </div>
+
+        <!--Los dos tipos de botones-->
+        <input class="botones" id="subir_Man" type="button" value="Subir archivo" />
+        <input class="botones" id="enviar_Man" type="button" value="Enviar" />
+
+        <!--Parte con las imagenes y una pequeña esplicacion de que tipo de archivos se pueden subir-->
+        <article id="formatos_Man">
+            <p>
+                Los manuales solo se pueden subir en los siguientes formatos:
+            </p>
+            <section id="imagenes_Man">
+                <img src="img/ImagenPDF.png" alt="Arcivos PDF" title="Archivos PDF" />
+                <img src="img/ImagenWord.png" alt="Archivos Word" title="Archivos Word" />
+            </section>
+        </article>
     </form>
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("../plantillas/indexFooter.html"); ?>
