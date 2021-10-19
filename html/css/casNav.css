@@ -1,0 +1,173 @@
+/* Navegacion */
+
+    /*
+    Convertimos header en flex
+    Cambiamos el color del fondo
+    */
+
+    header {
+        display:flex;
+        background-color:black;
+    }
+   
+    /* 
+    Le quitamos el formato a los textos dentro del nav
+    Les cambiamos el color
+    */
+    nav *{ 
+        text-decoration: none;
+        color:black;
+    }
+    /*
+    Convertimos nav en flex
+    Habrá un espaciado entre elementos
+    Cambiamos color de fondo
+    */
+    nav {
+        display:flex;
+        justify-content: space-around;
+        background-color:#EEC51F;
+    }
+   
+    #nav-btn-mas {display:flex;}
+
+    ul {
+        list-style-type:none;
+        text-decoration: none;
+        margin-top: 1.2%;
+        color:white;
+    }
+
+    ul li a{
+        text-decoration: none;
+        color:white;
+    }
+/* 
+    @media Screen and (max-width:334px) {
+        body * {
+            display:none;
+        }
+        body::after {
+            color:red;
+            font-size: 2em;
+            content: "No se puede mostrar la página en un dispositivo tan pequeño";
+        }
+    } */
+
+/* Media móvil */
+@media Screen and (max-width:480px) {
+    body {min-width: 400px;}
+    header {
+        margin-left: 20%;
+        min-width: 380px;
+        max-width: 380px;
+        flex-direction: column;
+    }
+
+    #nav-btn-mas p {
+        display: none;
+    }
+
+    p,a {color:white;}
+
+    /* header {flex-direction:column;} */
+
+    #nav-btn-mas {flex-direction: column;}
+
+    nav {background-color:black;}
+
+    header img {
+        /* margin-left: 50%; */
+        margin-top: 5%;
+        width: 380px;
+        height: auto;
+    }
+
+    nav {flex-direction: column;
+    margin-bottom: 10%;}
+
+    nav a, #nav-btn-mas a{
+        font-size:2em;
+        text-align:center;
+        margin-top: 1em;
+    }
+
+    ul li {
+        display: inline;
+        font-size: 1.5em;
+    }
+    ul li:last-child {
+        margin-left:10%;
+    }
+}
+
+@media Screen and (min-width:480px) and (max-width:1025px) {
+    
+}
+
+/* Media ordenador */
+@media Screen and (min-width: 1025px) {
+/*
+Su contenido comenzará al inicio del contenedor (quizá luego ajustemos márgenes)
+Ajustamos el tamaño
+*/
+    header {
+        justify-content: flex-start;
+        width: 100%;
+        height: 80px;
+    }
+/*
+Ajustamos la posición del logo
+Ajustamos su tamaño
+*/
+    header img {
+        margin-top:10%;
+        margin-left: 5%;
+        width: 191px;
+        height: 44px;
+    }
+
+/* 
+los alineamos verticalmente
+Cambiamos el cursor al pasar encima de ellos 
+*/
+    nav *{ 
+        margin-top:1%;
+        cursor: pointer;
+    }
+
+/*
+Tendrá un borde curvo
+Lo ajustamos verticalmente
+Ajustamos un margen respecto a la cabecera
+Ajustamos su tamaño
+*/
+    nav {
+        border-radius:1em;
+        margin-top:1.5%;
+        margin-left: 10%;
+        width: 455px;
+        height: 28px;
+    }
+
+     /* 
+    Cajita 
+    */
+    #nav-btn-mas{
+        margin-left: -1em;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    #nav-btn-mas p {
+        margin-bottom: 0;
+    }
+
+    .oculto {
+        /* margin-top: 0; */
+        visibility:hidden;
+        background-color: #EEC51F;
+    }
+    #nav-btn-mas:hover>.oculto {visibility: visible;}
+
+}
