@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión - Fix Point</title>
+    <title>Enviar manual - Fix Point</title>
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/manuales_subir.css" />
 </head>
 
 <body>
@@ -18,35 +18,41 @@
     <?php include("../plantillas/indexNav.html"); ?>
     -->
     <form>
-        <h2 id="titulo_Log">
-            Inicio de sesión
+        <h2 id="titulo_Man">
+            Rellene el formulario para enviar su manual a revisión*
         </h2>
+            <a class="infor_Man">
+                El manual será enviado a un administrador para su revisión. Esto no garantiza que se vaya a subir.
+            </a>
+        <p>
 
-        <div class="usucon_Log">
+        </p>
+
+        <div class="usucon_Man">
             <p>
-                Usuario:
+                Nombre:
             </p>
-            <input class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
+            <input class="datos_Man" type="text" placeholder="nombre"/>
         </div>
 
-        <div class="usucon_Log">
+        <div class="usucon_Man">
             <p alt="La contraseña es el de la cuenta de FixPoint">
                 Contraseña:
             </p>
-            <!--Campo de la contraseña, el title sirve para el texto que sale al estar un rato sobre la contraseña-->
             <input class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
         </div>
 
         <input id="boton_Log" type="button" value="Iniciar sesión" />
 
-        <!--Estilo de los textos de los links-->
         <div class="enlaces_Log">
             <a class="enlace_Log">
-                ¿Te has olvidado la contraseña? Recuperar contraseña
+*El manual debe ser revisado por una persona 
+para ver si esta listo para subirse
             </a>
 
             <a class="enlace_Log">
-                ¿No tienes cuenta? Registrate ahora mismo
+¿No tienes cuenta?
+Registrate ahora mismo
             </a>
         </div>
     </form>

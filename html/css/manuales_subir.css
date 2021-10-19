@@ -14,7 +14,7 @@ form{
 }
 /*Fin general*/
 
-#titulo_Log{
+#titulo_Man{
     text-align: center;
 }
 
@@ -53,12 +53,11 @@ form{
 /*Fin cajas texto*/
 
 /*Estilo de la caja de enlaces*/
-.enlaces_Log{
+.infor_Man{
     font-size: small;
+    overflow: hidden;
     margin-top: 5em;
-    margin-left: 1%;
     display: flex;
-    flex-direction: column;
     text-align: center;
     font-size: small;
 }
@@ -67,9 +66,7 @@ form{
 /*Estilo de los enlaces*/
 .enlace_Log{
     color: black;
-    align-content: unset;
     padding-left: auto;
-    overflow: hidden;
 }
 
 .enlace_Log:hover{
