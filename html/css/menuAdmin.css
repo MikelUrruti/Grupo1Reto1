@@ -3,7 +3,7 @@ body{
 }
 #menuAdmin{
     position: fixed;
-    width: 30%;
+    width:25%;
     height: 100vh;
     background-color: black;
     color: white;
@@ -30,20 +30,28 @@ body{
     flex-direction: column;
 }
 #listaImgCentro{
-    width: 100%;
+    width: 70%;
 }
 #listaImgFP{
-    width: 100%;
+    width: 70%;
 }
-#listaAdmin li{
-    padding-top: 15%;
+#listaAdmin a{
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
-#listaAdmin li:last-child{
-    padding-top: 60%;
+#listaAdmin a:last-child{
+    margin-top: 60%;
 }
-#lsitaAdmin2 li{
-   
+
+#listaAdmin a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
 }
-section{
-    margin-left: 50%;
+#listaAdmin a:hover{
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    transition-duration: 0.5s;
+    
 }
