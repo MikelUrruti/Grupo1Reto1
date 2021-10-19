@@ -1,5 +1,9 @@
 /* Navegacion */
 
+
+.btnMenu,ul img {
+    display:none;
+}
     /*
     Convertimos header en flex
     Cambiamos el color del fondo
@@ -42,21 +46,29 @@
         text-decoration: none;
         color:white;
     }
-/* 
-    @media Screen and (max-width:334px) {
-        body * {
-            display:none;
-        }
-        body::after {
-            color:red;
-            font-size: 2em;
-            content: "No se puede mostrar la página en un dispositivo tan pequeño";
-        }
-    } */
+
 
 /* Media móvil */
 @media Screen and (max-width:480px) {
     body {min-width: 400px;}
+    #chkMenu:checked ~ header {
+        display:flex;
+        animation: menu 1s;
+    }
+
+    #lblMenu{
+        position: fixed;
+        color:white;
+        display:block;
+        font-size: 5em;
+        background-color: black;
+    }
+    
+    header {
+        display:none;
+        position:absolute;
+    }
+
     header {
         margin-left: 20%;
         min-width: 380px;
@@ -103,6 +115,59 @@
 
 @media Screen and (min-width:480px) and (max-width:1025px) {
     
+    header {
+        justify-content: flex-start;
+        width:100%;
+    }
+    
+    header > a {
+        margin-top:10px;
+        margin-left: 10px;
+        margin-bottom:20px;
+        min-width: 100px;
+        width:150px;
+    }
+
+    header img {
+        max-width:100%;
+    }
+
+    nav * {
+        margin-top:1%;
+        font-size: 80%;
+    }
+
+    nav {
+        border-radius: 1em;
+        margin-top:15px;
+        margin-left: 10px;
+        width: 455px;
+        height: 28px;
+    }
+
+    #nav-btn-mas {
+        margin-left: -1em;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav-btn-mas p {
+        margin-bottom: 0;
+    }
+
+    .oculto {
+        visibility: hidden;
+        background-color: #EEC51F;
+    }
+
+    #nav-btn-mas:hover>.oculto {visibility: visible;}
+
+    ul li a {display:none;}
+
+    ul img {
+        display: block;
+        width: 70px;
+    }
 }
 
 /* Media ordenador */
@@ -121,10 +186,10 @@ Ajustamos la posición del logo
 Ajustamos su tamaño
 */
     header img {
-        margin-top:10%;
+        margin-top:1%;
         margin-left: 5%;
-        width: 191px;
-        height: 44px;
+        width: 291px;
+        height: auto;
     }
 
 /* 
@@ -132,6 +197,7 @@ los alineamos verticalmente
 Cambiamos el cursor al pasar encima de ellos 
 */
     nav *{ 
+        font-size: 1.5em;
         margin-top:1%;
         cursor: pointer;
     }
@@ -145,9 +211,9 @@ Ajustamos su tamaño
     nav {
         border-radius:1em;
         margin-top:1.5%;
-        margin-left: 10%;
-        width: 455px;
-        height: 28px;
+        margin-left: 2%;
+        width: 855px;
+        height: 40px;
     }
 
      /* 
@@ -161,13 +227,34 @@ Ajustamos su tamaño
 
     #nav-btn-mas p {
         margin-bottom: 0;
+        font-size: 1em;
+        margin-top: 0.2%;
+    }
+
+    #nav-btn-mas p+a {
+        border-bottom: solid black 0.1em;
     }
 
     .oculto {
-        /* margin-top: 0; */
+        margin-top: 0;
+        font-size: 0.9em;
         visibility:hidden;
         background-color: #EEC51F;
     }
     #nav-btn-mas:hover>.oculto {visibility: visible;}
 
+    ul li a {
+        font-size: 110%;
+    }
+
+}
+
+@keyframes menu {
+    from {
+        margin-right: -100px
+    }
+
+    to {
+        margin-right:0;
+    }
 }
