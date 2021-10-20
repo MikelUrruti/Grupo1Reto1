@@ -33,6 +33,7 @@ form{
     float: right;
     background-color: black;
     color: white;
+    margin: 2em 3.5em 2em 100%;
     border: outset;
     padding: 1.5%;
 }
