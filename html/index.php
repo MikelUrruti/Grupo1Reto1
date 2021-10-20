@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/cssNav.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Inicio - Fix Point</title>
 </head>
 <body class="ordenCajas">

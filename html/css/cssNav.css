@@ -49,31 +49,47 @@
 
 /* Media móvil */
 @media Screen and (max-width:480px) {
-    body {min-width: 400px;}
-
     #chkMenu:checked ~ header {
         display:flex;
-        animation: menu 1s;
+        transform: translateX(0);
+    }
+
+    #chkMenu:checked + #lblMenu {
+        width: 100%;
+    }
+
+    #chkMenu:checked ~#lblMenu span {
+      display:inline;
+        
+    }
+
+    #lblMenu span {
+        display:none;
     }
 
     #lblMenu{
         position: fixed;
+        top:0;
+        float:right;
         color:white;
         display:block;
-        font-size: 5em;
+        width: 55px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 2em;
+        text-align:center;
         background-color: black;
+        transition: width .3s ease-in-out;
+        z-index: 1;
     }
     
     header {
-        display:none;
+        /* margin-top: 5%; */
+        width:480px;
         position:absolute;
-    }
-
-    header {
-        margin-left: 20%;
-        min-width: 380px;
-        max-width: 380px;
         flex-direction: column;
+        transition: transform .3s ease-in-out;
+        transform: translateX(-100%);
     }
 
     #nav-btn-mas p {
@@ -91,6 +107,7 @@
     header img {
         /* margin-left: 50%; */
         margin-top: 5%;
+        margin-left: 6%;
         width: 380px;
         height: auto;
     }
@@ -104,11 +121,15 @@
         margin-top: 1em;
     }
 
-    ul li {
+    header ul {
+        margin-left: 10%;
+    }
+
+    header ul li {
         display: inline;
         font-size: 1.5em;
     }
-    ul li:last-child {
+    header ul li:last-child {
         margin-left:10%;
     }
 }
