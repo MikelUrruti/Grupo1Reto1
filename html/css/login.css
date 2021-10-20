@@ -84,6 +84,10 @@ ESTILO DE TABLET
 
 */
 @media screen and (min-width: 480px) {
+    *{
+        transition: ease all 0.5s;
+    }
+    
     /*Estilo del titulo*/
     #titulo_Log{
         font-size: 2em;
@@ -114,9 +118,13 @@ ESTILO DE ORDENADOR
 
 */
 @media screen and (min-width: 1025px) {
+    *{
+        transition: ease all 0.5s;
+    }
+
     /*Estilo de la caja madre*/
     form{
-        width: 50%;
+        width: 60%;
     }
     /*Fin madre*/
 

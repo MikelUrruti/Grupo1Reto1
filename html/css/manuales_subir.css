@@ -72,7 +72,6 @@ form{
     margin: 2em 0.5em 2em 0.5em;
     display: flex;
     text-align: center;
-    font-size: small;
 }
 /*Fin revisiones*/
 
@@ -124,10 +123,6 @@ ESTILO DE TABLET
 
     /*Estilo de la ecplicacion sobre las revisiones*/
     #infor_Man{
-        overflow: hidden;
-        margin: 2em 0.5em 2em 0.5em;
-        display: flex;
-        text-align: center;
         font-size: medium;
     }
     /*Fin revisiones*/
@@ -155,9 +150,13 @@ ESTILO DE ORDENADOR
 
 */
 @media screen and (min-width: 1025px) {
+    *{
+        transition: ease all 0.5s;
+    }
+
     /*Estilo de la caja madre*/
     form{
-        width: 50%;
+        width: 80%;
     }
     /*Fin madre*/
 
@@ -173,17 +172,12 @@ ESTILO DE ORDENADOR
     }
     /*Fin de usuario y contraseña*/
 
-    /*Estilo de la caja de enlaces*/
-    .enlaces_Man{
-        font-size: medium;
-        margin-top: 5em;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        justify-content: space-around;
+    /*Estilo de la informacion sobre las revisiones*/
+    #infor_Man{
+        font-size: large;
+        display: block;
     }
-    /*Fin caja enlaces*/
+    /*Fin revisiones*/
 
     /*Estilo del boton*/
     #boton_Man{
