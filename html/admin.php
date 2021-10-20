@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
-    <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-    <?php include ("plantillas/menuAdmin.html") ?>
+    <?php include ("plantillas/menuAdmin.html"); ?>
     <section>
         <article>
             <p>Bienvenido al panel de administración de Fix Point</p>
