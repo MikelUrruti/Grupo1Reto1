@@ -1,0 +1,41 @@
+#conocenos{
+    display: grid;
+    grid-template-areas:    "mision"
+                            "vision"
+                            "herramientas";
+    margin: 10%;
+}
+#mision, #vision, #herramientas{
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 5%;
+    padding: 1rem;
+}
+#mision{
+    grid-area: mision;
+}
+#vison{
+    grid-area: vision;
+}
+#herramientas{
+    grid-area: herramientas;
+}
+
+section article p{
+    display: none;
+    white-space: pre-wrap;
+}
+
+.checkbox{
+    display: none;
+}
+#mostrar1:checked ~ #mParrafo {
+    display: block;
+}
+#mostrar2:checked ~ #vParrafo {
+    display: block;
+}
+#mostrar3:checked ~ #hParrafo {
+    display: block;
+}
+

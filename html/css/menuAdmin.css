@@ -1,0 +1,75 @@
+#menuAdmin{
+    position: fixed;
+    width:25%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    margin:0;
+}
+#logo{
+    width: 100%;
+    padding-top: 1em;
+}
+
+#listaAdmin, #listaAdmin2{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    text-align: center;
+}
+#listaAdmin2{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20%;
+}
+#listaAdmin{
+    flex-direction: column;
+}
+#listaImgCentro{
+    width: 70%;
+}
+#listaImgFP{
+    width: 70%;
+}
+#listaAdmin a{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+#listaAdmin a:last-child{
+    margin-top: 60%;
+}
+#listaAdmin a:first-child{
+    margin-top: 40%;
+}
+
+#listaAdmin a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+#listaAdmin a:hover{
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    transition-duration: 0.5s;
+    animation-name: peter;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+   
+    
+}
+
+@keyframes peter {
+    
+    from {
+        font-size: 1.5em;
+    }
+    to {
+        font-size: 2rem;
+        
+    }
+
+}
