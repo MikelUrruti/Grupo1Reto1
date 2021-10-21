@@ -1,0 +1,79 @@
+/*Estilo del titulo*/
+#titManLis{
+    font-size: 2em;
+    text-align: center;
+}
+/*Fin titulo*/
+
+/*Estilo de la caja del buscador*/
+#buscador{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: auto;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    background-color: black;
+}
+/*Fin  caja buscador*/
+
+/*Estilo del buscador*/
+#txtbus{
+    height: 1.5em;
+    border: none;
+    width: 25em;
+    background-color: black;
+    color: #EEC51F;
+}
+
+/*La linea de codigo para quitar el estilo de la caja de texto al seleccionarse*/
+#txtbus:focus{
+    outline: 0;
+}
+/*Fin buscador*/
+
+/*Estilo de la lupa*/
+#lupa{
+    height: 1.8em;
+    background-color: rgb(87, 87, 87);
+    margin-left: 0.5em;
+}
+
+#lupa:hover{
+    cursor: pointer;
+}
+/*Fin lupa*/
+
+/*Estilo de las cajas de los manuales*/
+.manpos{
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    width: auto;
+    margin: 0.5em 0em 1em 0em;
+    padding: 0.5em 0em 0.5em 1em;
+}
+
+.manpos > p{
+    margin-left: 4em;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+/*Fin cajas*/
+
+/*
+
+ESTILO DE TABLET
+
+*/
+@media screen and (min-width: 480px){
+
+}
+
+/*
+
+ESTILO DE ORDENADOR
+
+*/
+@media screen and (min-width: 1025px) {
+
+}
