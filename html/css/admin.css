@@ -1,0 +1,25 @@
+section{
+margin-left: 27%;
+height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+article{
+    width: 50%;
+}
+article img{
+    width: 80%;
+}
+article p{
+    text-align: center;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 480px) {
+    article p{
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 1025px) {}

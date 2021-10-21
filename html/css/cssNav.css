@@ -1,0 +1,281 @@
+/* Navegacion */
+
+.btnMenu,ul img {
+    display:none;
+}
+    /*
+    Convertimos header en flex
+    Cambiamos el color del fondo
+    */
+
+    header {
+        display:flex;
+        background-color:black;
+    }
+   
+    /* 
+    Le quitamos el formato a los textos dentro del nav
+    Les cambiamos el color
+    */
+    nav *{ 
+        text-decoration: none;
+        color:black;
+    }
+    /*
+    Convertimos nav en flex
+    Habrá un espaciado entre elementos
+    Cambiamos color de fondo
+    */
+    nav {
+        display:flex;
+        justify-content: space-around;
+        background-color:#EEC51F;
+    }
+   
+    #nav-btn-mas {display:flex;}
+
+    header ul {
+        list-style-type:none;
+        text-decoration: none;
+        margin-top: 1.2%;
+        color:white;
+    }
+
+    header ul li a{
+        text-decoration: none;
+        color:white;
+    }
+
+
+/* Media móvil */
+@media Screen and (max-width:480px) {
+    #chkMenu:checked ~ header {
+        display:flex;
+        transform: translateX(0);
+    }
+
+    #chkMenu:checked + #lblMenu {
+        width: 100%;
+    }
+
+    #chkMenu:checked ~#lblMenu span {
+      display:inline;
+        
+    }
+
+    #lblMenu span {
+        display:none;
+    }
+
+    #lblMenu{
+        position: fixed;
+        top:0;
+        float:right;
+        color:white;
+        display:block;
+        width: 55px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 2em;
+        text-align:center;
+        background-color: black;
+        transition: width .3s ease-in-out;
+        z-index: 1;
+    }
+    
+    header {
+        /* margin-top: 5%; */
+        width:480px;
+        position:absolute;
+        flex-direction: column;
+        transition: transform .3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    #nav-btn-mas p {
+        display: none;
+    }
+
+    header p,a {color:white;}
+
+    /* header {flex-direction:column;} */
+
+    #nav-btn-mas {flex-direction: column;}
+
+    nav {background-color:black;}
+
+    header img {
+        /* margin-left: 50%; */
+        margin-top: 5%;
+        margin-left: 6%;
+        width: 380px;
+        height: auto;
+    }
+
+    nav {flex-direction: column;
+    margin-bottom: 10%;}
+
+    nav a, #nav-btn-mas a{
+        font-size:2em;
+        text-align:center;
+        margin-top: 1em;
+    }
+
+    header ul {
+        margin-left: 10%;
+    }
+
+    header ul li {
+        display: inline;
+        font-size: 1.5em;
+    }
+    header ul li:last-child {
+        margin-left:10%;
+    }
+}
+
+@media Screen and (min-width:480px) and (max-width:1025px) {
+    
+    header {
+        justify-content: flex-start;
+        width:100%;
+    }
+    
+    header > a {
+        margin-top:10px;
+        margin-left: 10px;
+        margin-bottom:20px;
+        min-width: 100px;
+        width:150px;
+    }
+
+    header img {
+        max-width:100%;
+    }
+
+    nav * {
+        margin-top:1%;
+        font-size: 80%;
+    }
+
+    nav {
+        border-radius: 1em;
+        margin-top:15px;
+        margin-left: 10px;
+        width: 455px;
+        height: 28px;
+    }
+
+    #nav-btn-mas {
+        margin-left: -1em;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav-btn-mas p {
+        margin-bottom: 0;
+    }
+
+    .oculto {
+        visibility: hidden;
+        background-color: #EEC51F;
+    }
+
+    #nav-btn-mas:hover>.oculto {visibility: visible;}
+
+    header ul li a {display:none;}
+
+    header ul img {
+        display: block;
+        width: 70px;
+    }
+}
+
+/* Media ordenador */
+@media Screen and (min-width: 1025px) {
+/*
+Su contenido comenzará al inicio del contenedor (quizá luego ajustemos márgenes)
+Ajustamos el tamaño
+*/
+    header {
+        justify-content: flex-start;
+        width: 100%;
+        height: 80px;
+    }
+/*
+Ajustamos la posición del logo
+Ajustamos su tamaño
+*/
+    header img {
+        margin-top:1%;
+        margin-left: 5%;
+        width: 291px;
+        height: auto;
+    }
+
+/* 
+los alineamos verticalmente
+Cambiamos el cursor al pasar encima de ellos 
+*/
+    nav *{ 
+        font-size: 1.5em;
+        margin-top:1%;
+        cursor: pointer;
+    }
+
+/*
+Tendrá un borde curvo
+Lo ajustamos verticalmente
+Ajustamos un margen respecto a la cabecera
+Ajustamos su tamaño
+*/
+    nav {
+        border-radius:1em;
+        margin-top:1.5%;
+        margin-left: 2%;
+        width: 855px;
+        height: 40px;
+    }
+
+     /* 
+    Cajita 
+    */
+    #nav-btn-mas{
+        margin-left: -1em;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    #nav-btn-mas p {
+        margin-bottom: 0;
+        font-size: 1em;
+        margin-top: 0.2%;
+    }
+
+    #nav-btn-mas p+a {
+        border-bottom: solid black 0.1em;
+    }
+
+    .oculto {
+        margin-top: 0;
+        font-size: 0.9em;
+        visibility:hidden;
+        background-color: #EEC51F;
+    }
+    #nav-btn-mas:hover>.oculto {visibility: visible;}
+
+    header ul li a {
+        font-size: 110%;
+    }
+
+}
+
+@keyframes menu {
+    from {
+        margin-right: -100px
+    }
+
+    to {
+        margin-right:0;
+    }
+}

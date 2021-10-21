@@ -1,0 +1,16 @@
+/*
+font-family: 'Quattrocento Sans', sans-serif;
+font-family: 'Red Hat Display', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Georama', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@200;900&family=Quattrocento+Sans&family=Red+Hat+Display:wght@300&family=Roboto:wght@100&display=swap');
+
+body:not(header) {
+    font-family: 'Quattrocento Sans',sans-serif;
+}
+
+header:not(header ul) {
+    font-family:'Georama',sans-serif;    
+}
