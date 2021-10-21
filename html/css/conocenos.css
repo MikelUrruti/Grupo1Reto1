@@ -1,9 +1,30 @@
+section article p{
+    visibility: hidden;
+    position: absolute; 
+    font-size: 0px;
+    opacity: 0;
+    white-space: pre-wrap;
+}
+
+.verMas {
+
+font-weight: bold;
+text-decoration: underline;
+cursor: pointer;
+
+}
+
+.checkbox{
+    display: none;
+}
+
 #conocenos{
     display: grid;
     grid-template-areas:    "mision"
                             "vision"
                             "herramientas";
     margin: 10%;
+    text-align: center;
 }
 #mision, #vision, #herramientas{
     border: 1px solid black;
@@ -21,21 +42,51 @@
     grid-area: herramientas;
 }
 
-section article p{
-    display: none;
-    white-space: pre-wrap;
-}
-
-.checkbox{
-    display: none;
-}
 #mostrar1:checked ~ #mParrafo {
-    display: block;
+    position: static;
+    visibility: visible; 
+    font-size: 1em;
+    transition: 1.5s;
+    opacity: 1;
 }
 #mostrar2:checked ~ #vParrafo {
-    display: block;
+    position: static;
+    visibility: visible; 
+    font-size: 1em;
+    transition: 1.5s;
+    opacity: 1;
 }
 #mostrar3:checked ~ #hParrafo {
-    display: block;
+    position: static;
+    visibility: visible; 
+    font-size: 1em;
+    transition: 1.5s;
+    opacity: 1;
 }
 
+@media screen and (min-width: 480px) {
+    
+}
+
+@media screen and (min-width: 1025px) {
+    #conocenos{
+        grid-template-areas:    "mision herramientas"
+                                "vision herramientas";
+        grid-gap: 2em;
+    }
+    .verMas{
+        display: none;
+    }
+    section article p{
+        position: static;
+        visibility: visible; 
+        font-size: 1em;
+        opacity: 1;
+    }
+    #vision{
+        margin-top: 0;
+    }
+    #mParrafo, #vParrafo{
+        text-align: left;
+    }
+}

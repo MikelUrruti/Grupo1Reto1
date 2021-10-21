@@ -6,7 +6,20 @@ align-items: center;
 justify-content: center;
 }
 article{
-    font-size: 2em;
     width: 50%;
-    text-align: center;
 }
+article img{
+    width: 80%;
+}
+article p{
+    text-align: center;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 480px) {
+    article p{
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 1025px) {}
