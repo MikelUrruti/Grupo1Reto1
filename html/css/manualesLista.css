@@ -60,6 +60,17 @@
 }
 /*Fin cajas*/
 
+/*Estilo de la caja de las flechas*/
+#movIzq > img{
+    height: 5em;
+}
+
+#movDer > img{
+    transform: rotate(180deg);
+    height: 5em;
+}
+/*Fin caja flechas*/
+
 /*
 
 ESTILO DE TABLET
