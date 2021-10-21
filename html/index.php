@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssFooter.css">
+    <link rel="stylesheet" href="css/cssNav.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Inicio - Fix Point</title>
 </head>
 <body class="ordenCajas">
+<?php
+    include("plantillas/indexNav.html")
+?>
+<h1>Body</h1>
 <?php 
     include ("plantillas/indexFooter.html");
 ?>
