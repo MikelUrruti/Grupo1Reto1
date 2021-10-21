@@ -1,8 +1,8 @@
 section{
 margin-left: 27%;
-height: 80vh;
+/* height: 60vh; */
 display: flex;
-align-items: center;
+/* align-items: center; */
 justify-content: center;
 }
 article{
@@ -18,8 +18,12 @@ article p{
 
 @media screen and (min-width: 480px) {
     article p{
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 }
 
-@media screen and (min-width: 1025px) {}
+@media screen and (min-width: 1025px) {
+    article p{
+        font-size: 3em;
+    }
+}
