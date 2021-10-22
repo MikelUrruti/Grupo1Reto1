@@ -10,7 +10,9 @@
     display: flex;
     align-items: center;
     border: 1px solid black;
-    width: auto;
+    border-radius: 10px;
+    width: max-content;
+    margin: 1em auto 2em auto;
     padding: 0.25em 0.5em 0.25em 0.5em;
     background-color: black;
 }
@@ -60,16 +62,116 @@
 }
 /*Fin cajas*/
 
+/*Estilo de la caja general, con flechas y las bolitas*/
+#cantPag{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+/*Fin caja general*/
+
 /*Estilo de la caja de las flechas*/
 #movIzq > img{
-    height: 5em;
+    height: 2em;
 }
+
+#movIzq > img:hover{
+    cursor: pointer;
+    animation: movIzq 2s ease 0s infinite normal forwards;
+}
+
+@keyframes movIzq {
+    0%,
+    100% {
+    transform: translateY(0) rotate(0);
+    }
+
+    15% {
+    transform: translateY(-15px) rotate(10deg);
+    }
+
+    30% {
+    transform: translateY(7.5px) rotate(-10deg);
+    }
+
+    45% {
+    transform: translateY(-7.5px) rotate(5deg);
+    }
+
+    60% {
+    transform: translateY(4.5px) rotate(-5deg);
+    }
+
+    75% {
+    transform: translateY(-3px) ;
+    }
+}
+
 
 #movDer > img{
     transform: rotate(180deg);
-    height: 5em;
+    height: 2em;
+}
+
+#movDer > img:hover{
+    cursor: pointer;
+    animation: movDer 2s ease 0s infinite normal forwards;
+}
+
+@keyframes movDer {
+    0%,
+    100% {
+    transform: translateY(0) rotate(180deg);
+    }
+
+    15% {
+    transform: translateY(-15px) rotate(170deg);
+    }
+
+    30% {
+    transform: translateY(7.5px) rotate(185deg);
+    }
+
+    45% {
+    transform: translateY(-7.5px) rotate(175deg);
+    }
+
+    60% {
+    transform: translateY(4.5px) rotate(182deg);
+    }
+
+    75% {
+    transform: translateY(-3px) rotate(179deg);
+    }
 }
 /*Fin caja flechas*/
+
+/*Estilo de cajas de posicion*/
+.numPag{
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    text-align: center;
+    opacity: 0.5;
+    background-color: #EEC51F;
+}
+
+#posAct{
+    opacity: 100;
+}
+
+.numPag:hover{
+    opacity: 100;
+    cursor: pointer;
+}
+
+.numPag > p{
+    margin: 0px;
+    padding: 0.4em;
+}
+/*Fin posicion*/
 
 /*
 
@@ -77,7 +179,62 @@ ESTILO DE TABLET
 
 */
 @media screen and (min-width: 480px){
+    /*Estilo del buscador*/
+    #txtbus{
+        height: 2em;
+        width: 25em;
+        background-color: black;
+        margin-left: auto;
+        margin-right: 0;
+    }
 
+    /*Estilo de la lupa*/
+    #lupa{
+        height: 2em;
+        margin-right: auto;
+    }
+    /*Fin lupa*/
+
+    /*Estilo de las cajas de los manuales*/
+    .manpos{
+        width: 80%;
+        margin: 0.5em auto 1em auto;
+    }
+
+    .manpos > p{
+        font-size: 120%;
+    }
+    /*Fin cajas*/
+
+    /*Estilo de la caja general, con flechas y las bolitas*/
+    #cantPag{
+        width: 60%;
+    }
+    /*Fin caja general*/
+
+    /*Estilo de la caja de las flechas*/
+    #movIzq > img{
+        height: 3em;
+    }
+
+    #movDer > img{
+        transform: rotate(180deg);
+        height: 3em;
+    }
+    /*Fin caja flechas*/
+
+    /*Estilo de cajas de posicion*/
+    .numPag{
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+    }
+
+    .numPag > p{
+        margin: 0px;
+        padding: 0.9em;
+    }
+    /*Fin posicion*/
 }
 
 /*
@@ -86,5 +243,56 @@ ESTILO DE ORDENADOR
 
 */
 @media screen and (min-width: 1025px) {
+    /*Estilo del buscador*/
+    #txtbus{
+        height: 2.5em;
+    }
 
+    /*Estilo de la lupa*/
+    #lupa{
+        height: 2em;
+        margin-right: auto;
+    }
+    /*Fin lupa*/
+
+    /*Estilo de las cajas de los manuales*/
+    .manpos{
+        width: 80%;
+        margin: 0.5em auto 1em auto;
+    }
+
+    .manpos > p{
+        font-size: 120%;
+    }
+    /*Fin cajas*/
+
+    /*Estilo de la caja general, con flechas y las bolitas*/
+    #cantPag{
+        width: 60%;
+    }
+    /*Fin caja general*/
+
+    /*Estilo de la caja de las flechas*/
+    #movIzq > img{
+        height: 3em;
+    }
+
+    #movDer > img{
+        transform: rotate(180deg);
+        height: 3em;
+    }
+    /*Fin caja flechas*/
+
+    /*Estilo de cajas de posicion*/
+    .numPag{
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+    }
+
+    .numPag > p{
+        margin: 0px;
+        padding: 0.9em;
+    }
+    /*Fin posicion*/
 }
