@@ -11,7 +11,6 @@ window.onload = function () {
     apellidos.addEventListener("keydown", validar);
     email.addEventListener("keypress", validar);
     telefono.addEventListener("keyup", validar);
-
 }
 
 function validar(source) {
