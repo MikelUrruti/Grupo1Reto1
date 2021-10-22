@@ -5,23 +5,24 @@ window.onload = function () {
     const email = document.getElementById("email");
     const telefono = document.getElementById("telefono");
 
-    nombre.addEventListener("keyup", validar);
-    apellidos.addEventListener("keyup", validarApellidos);
+    nombre.addEventListener("keyup", validar(nombre));
+    apellidos.addEventListener("keyup", validar);
     email.addEventListener("keyup", validar);
     telefono.addEventListener("keyup", validar);
 }
 
-function validar(nombre, apellidos, email, telefono) {
+function validar(a) {
 
     if(!validarNombre()){
-        nombre.style.border = "3px solid red";
-        
+        a.style.border = "3px solid red";        
     }else{
         nombre.style.border = "3px solid green";
     }
-    if(!apellidos()){
-        apellidos.style.border = "3px solid red";
-    }
+    // if(!validarApellidos()){
+    //     apellidos.style.border = "3px solid red";
+    // }else{
+    //     apellidos.style.border = "3px solid green";
+    // }
 }
 
 function validarNombre() {
