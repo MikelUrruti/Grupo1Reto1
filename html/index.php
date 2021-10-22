@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="JS/js.js"></script>
 
     <title>Inicio - Fix Point</title>
 </head>
@@ -15,7 +16,8 @@
 <?php
     include("plantillas/indexNav.html")
 ?>
-<h1>Body</h1>
+<h1 id="txtEscribir">Body</h1>
+<input type="button" id="btnTest" value="s">
 <?php 
     include ("plantillas/indexFooter.html");
 ?>

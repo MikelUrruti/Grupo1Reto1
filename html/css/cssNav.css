@@ -54,6 +54,8 @@
         transform: translateX(0);
     }
 
+
+
     #chkMenu:checked + #lblMenu {
         width: 100%;
     }
@@ -268,14 +270,4 @@ Ajustamos su tamaño
         font-size: 110%;
     }
 
-}
-
-@keyframes menu {
-    from {
-        margin-right: -100px
-    }
-
-    to {
-        margin-right:0;
-    }
 }
