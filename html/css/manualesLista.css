@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: row;
     width: 70%;
-    margin: auto;
+    margin: 3em auto 2em auto;
     justify-content: space-evenly;
 }
 /*Fin caja general*/
@@ -256,9 +256,18 @@ ESTILO DE ORDENADOR
     /*Fin lupa*/
 
     /*Estilo de las cajas de los manuales*/
+    #cajaMan{
+        width: 90%;
+        height: fit-content;
+        background-color: red;
+    }
+
     .manpos{
-        width: 80%;
-        margin: 0.5em auto 1em auto;
+        height: 6em;
+        float: left;
+        width: 100%;
+        display: flex;
+        background-color: red;
     }
 
     .manpos > p{
