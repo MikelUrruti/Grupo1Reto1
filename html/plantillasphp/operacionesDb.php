@@ -34,6 +34,6 @@ function select(string $consulta, string $ejecutar){
 
 }
 
-echo select("select * from ","");
+echo select("select * from categoria","echo".$valor['nombre'].";");
 
 ?>
