@@ -1,0 +1,29 @@
+section{
+margin-left: 27%;
+/* height: 60vh; */
+display: flex;
+/* align-items: center; */
+justify-content: center;
+}
+article{
+    width: 50%;
+}
+article img{
+    width: 80%;
+}
+article p{
+    text-align: center;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 480px) {
+    article p{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    article p{
+        font-size: 3em;
+    }
+}
