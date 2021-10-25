@@ -11,6 +11,8 @@
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/login.css" />
+    <script src="JS/validacion.js"></script>
+    <script src="JS/login.js"></script>
 </head>
 
 <body>
@@ -26,7 +28,7 @@
             <p>
                 Usuario:
             </p>
-            <input class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
+            <input id="usuario" class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
         </div>
 
         <div class="usucon_Log">
@@ -34,7 +36,7 @@
                 Contraseña:
             </p>
             <!--Campo de la contraseña, el title sirve para el texto que sale al estar un rato sobre la contraseña-->
-            <input class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
+            <input id="contrasena" class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
         </div>
 
         <input id="boton_Log" type="button" value="Iniciar sesión" />
