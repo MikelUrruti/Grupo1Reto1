@@ -7,12 +7,14 @@
     display: none;
 }
 
+
 #imgCab{
     width: 40%;
     height: auto;
     display: flex;
     margin: 0 auto;
 }
+
 /*Fin imagenes*/
 
 /*Estilo del header*/
@@ -22,6 +24,8 @@ header{
     width: 100%;
     flex-direction: column;
     padding-top: 40px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-500px);
 }
 
 header a{
@@ -101,6 +105,10 @@ nav{
 
 #chkMenu:checked + #lblMenu > span{
     opacity: 100;
+}
+
+#chkMenu:checked ~ header {
+    transform:translateX(0);
 }
 /*Fin hamburguesa*/
 
