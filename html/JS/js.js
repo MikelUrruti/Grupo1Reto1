@@ -8,6 +8,7 @@ window.onload = function () {
     btnTest.addEventListener("click", escribirTexto);
 }
 
+// Sobreescribir el texto de la caja
 function cambiarTexto(){
 
     var mostrar = document.querySelectorAll("input[class=checkbox]");
