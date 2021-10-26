@@ -12,12 +12,12 @@ window.onload = function () {
 
 }
 
+// Se toman los id de las cajas y se pasan a las funciones para su comprobación
 function validarCampo(source) {
 
     let cajaId = source.target.id;
 
     if (cajaId == nombre.id || cajaId == apellidos.id) {
-        console.log("entra en caja");
         validar(source, validarNombre(source.target, cajaId));
     } else if (cajaId == email.id) {
         validar(source, validarEmail(source.target));
