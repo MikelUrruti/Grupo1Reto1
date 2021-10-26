@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/casNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/conocenos.css">
+    <!--Para el tipo de letra-->
+    <link rel="stylesheet" href="css/style.css">
     <script src="JS/js.js"></script>
 </head>
 <body>
