@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
+</header>
     <?php include ("plantillas/menuAdmin.html"); ?>
-    <section>
+    <section id="textoMedio">
         <article>
             <p>Bienvenido al panel de administración de Fix Point</p>
             <img src="img/herramientasAdmin.png">

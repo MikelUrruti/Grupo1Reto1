@@ -1,5 +1,3 @@
-var contador = 0;
-
 window.onload = function () {
 
     const nombre = document.getElementById("nombre");
@@ -15,11 +13,8 @@ window.onload = function () {
 
 function validar(source) {
     let s = source.target;
-    console.log(s);
-    console.log(contador);
    if (!validarCampo(s)) {
        s.style.border = "3px solid red";
-       contador++;
     }
     else {
         s.style.border = "3px solid green";
@@ -28,17 +23,41 @@ function validar(source) {
 
     function validarCampo(source) {
         if (source == nombre || source == apellidos) {
-            if (source.value.length == 0 || !isNaN(source.value) || source.value == null || /^\s+$/.test(source.value)) {
-                return false;
+            if (source.value.length == 0) {
+                if(!isNaN(source.value)){
+                    if(source.value == null){
+                        if(/^\s+$/.test(source.value)){
+                            salida = 0;
+                            return false;
+                        }else {return true;}
+                    }else {return true;}
+                }else {return true;}                
         }  else {return true;}
     }
         else if (source == email) {
-            if ( source.value.length == 0|| source.value == null ||  !(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(source.value))) {
-                return false; 
+            if ( source.value.length == 0) {
+                if(source.value == null){
+                    if(!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(source.value))){
+                        return false; 
+                    }else {return true;}
+                }else {return true;}  
             } else {return true;}
     } 
     else if (source == telefono) {
-
+        console.log(source.value);
+        if(source.value.length == 0){
+            if(source.value == null){
+                if(source.length != 9){
+                    if(source.value.charAt(0) != 6){
+                        if(source.value.charAt(0) != 7){
+                            if(source.value.charAt(0) != 9){
+                                return false;
+                            }else{return true;}
+                        }else{return true;}
+                    }else{return true;}
+                }else{return true;}
+            }else{return true;}
+        }else{return true;}
     } 
 
 }    
