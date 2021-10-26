@@ -1,79 +1,68 @@
 // let caja = source.id;
 
-function validar(source) {
+// function validar(source) {
+//     let s = source.target;
+//     if (!validarCampo(s)) {
+//         s.style.border = "3px solid red";
+//     }else {
+//         s.style.border = "3px solid green";
+//     }
+// }
+
+// function validarCampo(source) {
+
+//     let cajaId = source.id;
+
+//     if (cajaId == nombre.id || cajaId == apellidos.id) {
+//         return validarNombre(source);
+//     } else if (cajaId == email.id) {
+//         return validarEmail(source);
+//     } else if (cajaId == telefono.id) {
+//         return validarTelefono(source);
+//     } 
+// }
+
+// function  validarLogin(source) {
+
+//     let cajaId = source.id;
+
+//     if(cajaId == usuario.id){
+//         return validarEmail(source);
+//     } else if(cajaId == contrasena.id){
+//         return validarContrasena(source);
+//     }
+// }
+
+function validar(source, correcto) {
     let s = source.target;
-    if (!validarCampo(s)) {
+    if (!correcto) {
         s.style.border = "3px solid red";
-    }
-    else {
+    }else {
         s.style.border = "3px solid green";
     }
 }
-/*
-function validarCampo(source) {
-    let caja = source.id;
-    let regex = /^[a-zA-Z0-9.^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
-    if (caja == nombre.id || caja == apellidos.id) {
-        if (source.value.length > 0) {
-            if (isNaN(source.value)) {
-                if (source.value != null) {
-                    if (!(/^\s+$/.test(source.value))) {
-                        return true;
-                    } else { return false; }
-                } else { return false; }
-            } else { return false; }
-        } else { return false; }
-    }
-    else if (caja == email.id) {
-        if (source.value.length > 0) {
-            if (source.value != null) {
-                if (regex.test(source.value)) {
-                    return true;
-                } else { return false; }
-            } else { return false; }
-        } else { return false; }
-    }
-    else if (caja == telefono.id) {
-        if (source.value.length > 0) {
-            if (source.value != null) {
-                if (source.value.length == 9) {
-                    if (source.value.charAt(0) == 6 || source.value.charAt(0) == 7 || source.value.charAt(0) == 9) {
-                        return true;
-                    } else { return false; }
-                } else { return false; }
-            } else { return false; }
-        } else { return false; }
-    }
-}
-*/
 
-function validarCampo(source) {
+function validarNombre(source, id) {
 
-    let cajaId = source.id;
-
-    if (cajaId == nombre.id || cajaId == apellidos.id) {
-        return validarNombre(source);
-    } else if (cajaId == email.id) {
-        return validarEmail(source);
-    } else if (cajaId == telefono.id) {
-        return validarTelefono(source);
-    } else if(cajaId == usuario.id){
-        
-    }else if(cajaId == contrasena.id){
-
-    }
-
-}
-
-function validarNombre(source) {
-
-    let regex = /^[A-Za-z]+$/;
+    let regexNom = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/;
+    let regexApe = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/;
     
     if (source.value.length > 0) {
+        console.log("primera comprobacion");
         if (source.value != null) {
+            console.log("segunda comprobacion");
             if (!(/^\s+$/.test(source.value))) {
-                if (regex.test(source.value)) {
-                    return true;
+                console.log("tercera comprobacion");
+                if(id == "nombre"){
+                    console.log(id);
+                    if(regexNom.test(source.value)){
+                        return true;
+                    }
+                }else if(id == "apellidos"){
+                    console.log(id);
+                    if(regexApe.test(source.value)){
+                        return true;
+                    }
                 }
             }
         }
@@ -85,7 +74,7 @@ function validarNombre(source) {
 
 function validarEmail(source) {
 
-    let regex = /^[a-zA-Z0-9.^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
+    let regex = /^([a-zA-Z0-9.])+(@{1})+([a-zA-Z0-9]{2,30})+(\.[a-zA-Z0-9]{2,3}){1}$/igm;
 
     if (source.value.length > 0) {
         if (source.value != null) {
