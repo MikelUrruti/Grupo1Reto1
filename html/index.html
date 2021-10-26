@@ -12,14 +12,23 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <link rel="stylesheet" href="css/style.css">
     <script src="JS/js.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/nav.js"></script>
 
     <title>Inicio - Fix Point</title>
 </head>
 <body class="ordenCajas">
+    <noscript>
+        <h1>
+            Su navegador no tiene activado JavaScript.
+                            <br>
+            Es posible que no visualice la página correctamente
+        </h1>
+    </noscript>
 <?php
     include("plantillas/indexNav.html")
 ?>
-<input class="btnMenu" type="checkbox" name="" id="chkMenu">
+<input class="btnMenu" type="checkbox" id="chkMenu">
 <label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
 <header>
     <a href="#"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
@@ -42,7 +51,8 @@
     </ul>
   
 </header>
-<h1 id="txtEscribir">Body</h1>
+
+<h1 id="txtEscribir">Body xd</h1>
 <input type="button" id="btnTest" value="s">
 <?php 
     include ("plantillas/indexFooter.html");

@@ -3,8 +3,6 @@ window.onload = function () {
     checkbox.forEach(element => {
         element.addEventListener("change", cambiarTexto);
     }); 
-   
-   
 }
 
 function cambiarTexto(){
@@ -20,4 +18,5 @@ function cambiarTexto(){
             ver.innerHTML="Ver más";
         }   
     }
+
 }
