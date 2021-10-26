@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <!--<link rel="stylesheet" href="css/cssNav.css">-->
-    <link rel="stylesheet" href="css/cssNav2.css"/>
+    <link rel="stylesheet" href="css/cssNavJon.css"/>
+    <!--Favicon de las paginas-->
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <link rel="stylesheet" href="css/style.css">
     <script src="JS/js.js"></script>
 
@@ -18,9 +20,9 @@
     include("plantillas/indexNav.html")
 ?>
 <input class="btnMenu" type="checkbox" name="" id="chkMenu">
-<label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan"></span></label>
+<label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
 <header>
-    <a href="#"><img src="./img/logo.png" alt="cabecera"></a>
+    <a href="#"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
     <nav>
         <a href="#">Inicio</a>
         <a href="#">Manuales</a>
@@ -34,7 +36,7 @@
     </nav>
 
     <ul>
-        <a href=""><img src="./img/inicio_sesion.png" alt=""></a>
+        <a id="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
         <li><a href="">Iniciar sesión</a></li>
         <li><a href="">Registrarse</a></li>
     </ul>
