@@ -14,3 +14,26 @@ body:not(header) {
 header:not(header ul) {
     font-family:'Georama',sans-serif;    
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #EEC51F; 
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE26C;
+    border: 1px solid black;
+    border-radius: 50px;
+  }
