@@ -14,3 +14,97 @@ body:not(header) {
 header:not(header ul) {
     font-family:'Georama',sans-serif;    
 }
+
+
+
+body {
+    background-image: url("../img/fondoIndex.jpg");
+    background-repeat: no-repeat;
+}
+
+/* Cuando estoy en móvil el menú se quedará en su sitio,
+Si abro el menú, este taara todo */
+@media Screen and (max-width: 480px) {
+    body label, body header {
+        position:absolute;
+    }
+    
+    #index label {
+        z-index: 2;
+    }
+    
+    #index header {
+        z-index: 1;
+    }
+}
+
+
+#index #section1 {
+    margin-top: 5%;
+    /* background-image: url("../img/fondoIndex.jpg"); */
+    /* background-color:red; */
+    height: 10em;
+    width: 100%;
+    text-align:center;
+    color:white;
+}
+
+#index #section1 img {
+    width:10em;
+    height:10em;
+}
+
+#index section a:not(article a){
+    text-decoration: none;
+    color:white;
+    text-transform:uppercase;
+    background-color: #EEC51F;
+    border-radius: 0.3em;
+    font-size: 3em;
+    box-shadow: 10px 20px 30px black;
+    padding: 30px;
+}
+
+#index #txtEscribir {
+    /* width:fit-content; */
+    /* text-align:center; */
+    font-size: 3em;
+}
+
+#index #section2 {
+    display:flex;
+    flex-direction:column;
+}
+
+#index #section2 article {
+    margin-left: 25%;
+    margin-top: 10%;
+    border-radius: 0.3em;
+    width: 50%;
+    background-color:white;
+    box-shadow: inset 0 0 10px 0.1px black;
+}
+
+#index section article a {
+    text-decoration: none;
+    color:white;
+    text-transform:uppercase;
+    background-color: #EEC51F;
+    border-radius: 0.3em;
+    font-size: 2em;
+    box-shadow: 10px 20px 30px black;
+    padding: 5px;
+}
+
+/* Se aplica en JavaScript */
+@Keyframes animacionH1 {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

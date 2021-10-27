@@ -1,7 +1,9 @@
 
 //Este Script se ejecuta al cargar el documento
 
-window.onload = function () {
+
+
+function cerrarMenuMovil() {
     //Defino chkMenu almacenando un elemento del documento
     const chkMenu = document.getElementById("chkMenu");
     //Cada vez que el ancho de la pantalla cambie...
