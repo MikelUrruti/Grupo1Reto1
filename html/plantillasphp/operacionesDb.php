@@ -24,10 +24,32 @@ function manipularDatoBD($consulta) {
            }
 
     } catch (PDOException $th) {
-        
-        echo $th->getMessage();
 
         return $th->errorInfo[1];
+
+    }
+
+}
+
+function consultarDatoBD($consulta) {
+
+    global $datosConexion;
+
+    try {
+        
+        $conexion = new PDO("mysql:host=".$datosConexion['host'].";port=3306;dbname=".$datosConexion['db'], $datosConexion['user'], $datosConexion['password']);
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $consulta=$conexion->prepare($consulta);
+        $consulta->execute();
+
+        $filas=$consulta->fetchAll();
+
+        return $filas;
+
+
+    } catch (PDOException $th) {
+
+        return procesarErroresComunes($th->errorInfo[1]);
 
     }
 
