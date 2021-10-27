@@ -14,15 +14,3 @@ body:not(header) {
 header:not(header ul) {
     font-family:'Georama',sans-serif;    
 }
-
-h1 {
-    width: fit-content;
-    background-color:red;
-    transform: rotate(0);
-    transition: transform 0.3s;
-}
-
-
-h1:hover {
-    transform: rotate(45deg);
-}
