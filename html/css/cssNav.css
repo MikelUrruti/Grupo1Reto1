@@ -1,273 +1,233 @@
-/* Navegacion */
+/*
+    ESTILO MOVIL
+*/
 
-.btnMenu,ul img {
-    display:none;
+/*Estilo de las imagenes*/
+#imgUsuario{
+    display: none;
 }
-    /*
-    Convertimos header en flex
-    Cambiamos el color del fondo
-    */
 
-    header {
-        display:flex;
-        background-color:black;
-    }
-   
-    /* 
-    Le quitamos el formato a los textos dentro del nav
-    Les cambiamos el color
-    */
-    nav *{ 
-        text-decoration: none;
-        color:black;
-    }
-    /*
-    Convertimos nav en flex
-    Habrá un espaciado entre elementos
-    Cambiamos color de fondo
-    */
-    nav {
-        display:flex;
-        justify-content: space-around;
-        background-color:#EEC51F;
-    }
-   
-    #nav-btn-mas {display:flex;}
+#imgCab{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+/*Fin imagenes*/
 
-    header ul {
-        list-style-type:none;
-        text-decoration: none;
-        margin-top: 1.2%;
-        color:white;
-    }
+/*Estilo del nav*/
+nav{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+}
+/*Fin nav*/
 
-    header ul li a{
-        text-decoration: none;
-        color:white;
-    }
+/*Estilo del header*/
+header{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 40px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-500px);
+}
 
+header a{
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+    width: fit-content;
+}
 
-/* Media móvil */
-@media Screen and (max-width:480px) {
-    #chkMenu:checked ~ header {
-        display:flex;
-        transform: translateX(0);
-    }
+header>a{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+header a:hover{
+    background-color: white;
+    color: black;
+    border-radius: 1em;
+    font-size: 1em;
+    padding: 5px;
+}
 
+header>a:hover{
+    background-color: black;
+    border-radius: 0em;
+    font-size: 0em;
+    padding: 0px;
+}
 
-    #chkMenu:checked + #lblMenu {
-        width: 100%;
-    }
+header ul{
+    padding: 0;
+    margin-top: 2%;
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 
-    #chkMenu:checked ~#lblMenu span {
-      display:inline;
-        
-    }
+header ul li{
+    font-size: 1em;
+    width: fit-content;
+}
 
-    #lblMenu span {
-        display:none;
-    }
+#masTit {
+    display: none;
+} 
+/*Fin header*/
 
-    #lblMenu{
-        position: fixed;
-        top:0;
-        float:right;
-        color:white;
-        display:block;
-        width: 55px;
-        height: 50px;
-        line-height: 50px;
-        font-size: 2em;
-        text-align:center;
-        background-color: black;
-        transition: width .3s ease-in-out;
-        z-index: 1;
-    }
-    
-    header {
-        /* margin-top: 5%; */
-        width:480px;
-        position:absolute;
-        flex-direction: column;
-        transition: transform .3s ease-in-out;
-        transform: translateX(-100%);
-    }
+/*Estilo del menu hamburguesa*/
+#lblMenu{
+    position: fixed;
+    top: 0%;
+    color: white;
+    display: block;
+    width: 55px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2em;
+    text-align: center;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+    z-index: 1;
+}
 
-    #nav-btn-mas p {
+#lblMenu > span{
+    opacity: 0;
+}
+
+#chkMenu:checked + #lblMenu{
+    width: 100%;
+}
+
+#chkMenu:checked + #lblMenu > span{
+    opacity: 100;
+}
+
+#chkMenu:checked ~ header {
+    transform:translateX(0);
+}
+/*Fin hamburguesa*/
+
+/*
+    ESTILO TABLET
+*/
+@media screen and (min-width: 480px){
+    /*Estilo del menu hamburguesa*/
+    #lblMenu, #chkMenu{
         display: none;
     }
+    /*Fin hamburguesa*/
 
-    header p,a {color:white;}
-
-    /* header {flex-direction:column;} */
-
-    #nav-btn-mas {flex-direction: column;}
-
-    nav {background-color:black;}
-
-    header img {
-        /* margin-left: 50%; */
-        margin-top: 5%;
-        margin-left: 6%;
-        width: 380px;
-        height: auto;
+    /*Estilo para que la caja salga siempre*/
+    #chkMenu:checked ~ header {
+        transform:translateX(0);
     }
 
-    nav {flex-direction: column;
-    margin-bottom: 10%;}
+    #chkMenu:not(checked) ~ header{
+        transform: translateX(0);
+    } 
+    /*Fin caja salir*/
 
-    nav a, #nav-btn-mas a{
-        font-size:2em;
-        text-align:center;
-        margin-top: 1em;
+    /*Estilo del nav*/
+    nav{
+        flex-direction: row;
+        justify-content: space-around;
     }
+    /*Fin nav*/
 
-    header ul {
-        margin-left: 10%;
+    /*Estilo del header*/
+    header{
+        padding-top: 20px;
     }
-
-    header ul li {
-        display: inline;
-        font-size: 1.5em;
-    }
-    header ul li:last-child {
-        margin-left:10%;
-    }
+    /*Fin header*/
 }
 
-@media Screen and (min-width:480px) and (max-width:1025px) {
-    
-    header {
-        justify-content: flex-start;
-        width:100%;
-    }
-    
-    header > a {
-        margin-top:10px;
-        margin-left: 10px;
-        margin-bottom:20px;
-        min-width: 100px;
-        width:150px;
-    }
-
-    header img {
-        max-width:100%;
-    }
-
-    nav * {
-        margin-top:1%;
-        font-size: 80%;
-    }
-
-    nav {
+@media screen and (min-width: 1025px){        
+    /*Estilo del nav*/
+    nav{
+        flex-direction: row;
+        justify-content: space-around;
+        background-color:#EEC51F;
         border-radius: 1em;
-        margin-top:15px;
-        margin-left: 10px;
-        width: 455px;
-        height: 28px;
+    }
+    /*Fin nav*/
+
+    /*Estilo del header*/
+    header{
+        padding-top: 20px;
     }
 
-    #nav-btn-mas {
-        margin-left: -1em;
-        flex-direction: column;
-        text-align: center;
+    header>a{
+        width: 25%;
+        margin-left: 1%;
+        margin-right: 0%;
     }
 
-    #nav-btn-mas p {
-        margin-bottom: 0;
+    header a{
+        color: black;
+        padding: 0.5em;
     }
 
-    .oculto {
-        visibility: hidden;
-        background-color: #EEC51F;
-    }
-
-    #nav-btn-mas:hover>.oculto {visibility: visible;}
-
-    header ul li a {display:none;}
-
-    header ul img {
-        display: block;
-        width: 70px;
-    }
-}
-
-/* Media ordenador */
-@media Screen and (min-width: 1025px) {
-/*
-Su contenido comenzará al inicio del contenedor (quizá luego ajustemos márgenes)
-Ajustamos el tamaño
-*/
-    header {
-        justify-content: flex-start;
-        width: 100%;
-        height: 80px;
-    }
-/*
-Ajustamos la posición del logo
-Ajustamos su tamaño
-*/
-    header img {
-        margin-top:1%;
-        margin-left: 5%;
-        width: 291px;
-        height: auto;
-    }
-
-/* 
-los alineamos verticalmente
-Cambiamos el cursor al pasar encima de ellos 
-*/
-    nav *{ 
+    header a:hover{
+        padding: 8px;
         font-size: 1.5em;
-        margin-top:1%;
-        cursor: pointer;
+    }
+    /*Fin header*/
+
+    /*Estilo del segundo manu*/
+    #masTit{
+        display: block;
+        cursor: none;
     }
 
-/*
-Tendrá un borde curvo
-Lo ajustamos verticalmente
-Ajustamos un margen respecto a la cabecera
-Ajustamos su tamaño
-*/
-    nav {
-        border-radius:1em;
-        margin-top:1.5%;
-        margin-left: 2%;
-        width: 855px;
-        height: 40px;
+    #masTit:hover{
+        background-color:#EEC51F;
+        border-radius: 0em;
+        font-size: 1.3em;
+        padding: 0px;
     }
 
-     /* 
-    Cajita 
-    */
-    #nav-btn-mas{
-        margin-left: -1em;
-        flex-direction:column;
-        text-align:center;
+    #masTit #flecha{
+        transition: transform 0.3s;
     }
 
-    #nav-btn-mas p {
-        margin-bottom: 0;
-        font-size: 1em;
-        margin-top: 0.2%;
-    }
-
-    #nav-btn-mas p+a {
-        border-bottom: solid black 0.1em;
+    #masTit:hover #flecha{
+        transform: rotate(90deg);
     }
 
     .oculto {
-        margin-top: 0;
-        font-size: 0.9em;
-        visibility:hidden;
-        background-color: #EEC51F;
-    }
-    #nav-btn-mas:hover>.oculto {visibility: visible;}
-
-    header ul li a {
-        font-size: 110%;
+        display:none;
+        right: 15px;
+        position: absolute;
+        width: 8em;
+        height: 2em;
+        border-radius: 1em;
     }
 
+    .oculto:last-child{
+        margin-top: 2em;
+    }
+
+    #masTit:hover > .oculto{
+        display: block;
+        background-color:#EEC51F;
+        border-radius: 0em;
+        font-size: 0.8em;
+        padding: 0px;
+    }
+
+    #masTit:hover > .oculto:hover{
+        background-color: white;
+        color: black;
+    }
+    /*Fin segundo menu*/
 }

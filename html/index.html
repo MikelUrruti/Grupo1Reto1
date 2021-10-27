@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssFooter.css">
-    <!--<link rel="stylesheet" href="css/cssNav.css">-->
-    <link rel="stylesheet" href="css/cssNavJon.css"/>
+    <link rel="stylesheet" href="css/cssNav.css">
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Para el tipo de letra-->
@@ -16,37 +16,49 @@
 
     <title>Inicio - Fix Point</title>
 </head>
+
 <body class="ordenCajas">
-<?php
-    include("plantillas/indexNav.html")
-?>
-<input class="btnMenu" type="checkbox" name="" id="chkMenu">
-<label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
-<header>
-    <a href="#"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Manuales</a>
-        <a href="#">Alquiler</a>
-        <a href="#">Dónanos</a>
-        <div id="nav-btn-mas">
-            <p>Más -></p>
+    <?php
+        include("plantillas/indexNav.html")
+    ?>
+    <input class="btnMenu" type="checkbox" name="" id="chkMenu">
+    <label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
+    <header>
+        <noscript>
+            <h1>
+                Su navegador no tiene activado JavaScript.
+                                <br>
+                Es posible que no visualice la página correctamente
+            </h1>
+        </noscript>
+        <a href="#"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Manuales</a>
+            <a href="#">Alquiler</a>
+            <a href="#">Dónanos</a>
             <a class="oculto" href="#">Sobre nosotros</a>
             <a class="oculto" href="#">Contacto</a>
-        </div>    
-    </nav>
+            <div id="masTit" href="#">
+                Más <div id="flecha">-></div>
+                <a class="oculto" href="#">Sobre nosotros</a>
+                <a class="oculto" href="#">Contacto</a>
+            </div>
 
-    <ul>
-        <a id="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
-        <li><a href="">Iniciar sesión</a></li>
-        <li><a href="">Registrarse</a></li>
-    </ul>
-  
-</header>
-<h1 id="txtEscribir">Body</h1>
-<input type="button" id="btnTest" value="s">
-<?php 
-    include ("plantillas/indexFooter.html");
-?>
+        </nav>
+
+        <ul>
+            <a id="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
+            <li><a href="">Iniciar sesión</a></li>
+            <li><a href="">Registrarse</a></li>
+        </ul>
+
+    </header>
+    <h1 id="txtEscribir">Body</h1>
+    <input type="button" id="btnTest" value="s">
+    <?php 
+        include ("plantillas/indexFooter.html");
+    ?>
 </body>
+
 </html>

@@ -1,5 +1,12 @@
 /* Version Movil  */
 
+body, html {
+
+    min-height: 100vh;
+    min-width: 100vh;
+
+}
+
 footer{
     background-color: black;
     width: 100%;
