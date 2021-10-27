@@ -26,7 +26,6 @@ function validarNombre(source, id) {
                         return true;
                     }
                 }else if(id == "apellidos"){
-                    console.log(regex[regexApe]);
                     if(regex["regexApe"].test(source.value)){
                         return true;
                     }
