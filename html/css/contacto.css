@@ -1,0 +1,55 @@
+p {
+
+    white-space: pre-wrap;
+    margin: 0;
+
+}
+.titulo {
+
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.2rem;
+
+}
+
+#contacto {
+
+    display: grid;
+    grid-template-areas: "localizacion"
+                          "contacto"
+                          "horario";
+    grid-template-rows: 1fr 1.5fr 1fr;
+    row-gap: 5%;
+    margin: 5% auto;
+
+}
+
+#localizacion {
+
+    grid-area: localizacion;
+    background-color: red;
+
+}
+
+#informacionContacto {
+
+    grid-area: contacto;
+    background-color: green;
+
+}
+
+#horario {
+
+    grid-area: horario;
+    background-color: gray;
+
+}
+
+#mapa {
+
+    display: block;
+    width: 100%;
+    border: 0;
+
+}
+
