@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/admin.css">
+    <!--Para el tipo de letra-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 </header>

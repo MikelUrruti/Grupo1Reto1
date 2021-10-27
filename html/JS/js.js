@@ -5,6 +5,7 @@ window.onload = function () {
     }); 
 }
 
+// Sobreescribir el texto de la caja
 function cambiarTexto(){
 
     var mostrar = document.querySelectorAll("input[class=checkbox]");
