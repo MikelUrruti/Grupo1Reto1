@@ -9,25 +9,29 @@ function validar(source, correcto) {
 }
 
 function validarNombre(source, id) {
-    // validar nombre-apellidos permitiendo texto a-z y varios simbolos(tildes, ñ...), espacios en blanco entre texto y se ajusta el limite de caracteres
-    let regexNom = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/;
-    let regexApe = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/;
-    let regexUser = /^[a-zA-Z]{2,30}$/;
+    // validar nombre-apellidos permitiendo texto a-z y varios simbolos(tildes, ñ...), 
+    // espacios en blanco entre texto y se ajusta el limite de caracteres
+    let regex = {
+        "regexNom" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/,
+        "regexApe" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/,
+        "regexUser" : /^[a-zA-Z]{2,30}$/
+    };
     
     if (source.value.length > 0) {
         if (source.value != null) {
             //Comprobación de espacios en blanco como unico texto introducido
             if (!(/^\s+$/.test(source.value))) {
                 if(id == "nombre"){
-                    if(regexNom.test(source.value)){
+                    if(regex["regexNom"].test(source.value)){
                         return true;
                     }
                 }else if(id == "apellidos"){
-                    if(regexApe.test(source.value)){
+                    console.log(regex[regexApe]);
+                    if(regex["regexApe"].test(source.value)){
                         return true;
                     }
                 }else if(id == "usuario"){
-                    if(regexUser.test(source.value)){
+                    if(regex["regexUser"].test(source.value)){
                         return true;
                     }
                 }
