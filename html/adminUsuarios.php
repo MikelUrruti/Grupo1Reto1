@@ -42,7 +42,6 @@
                             <th class="celda tituloColumna">Nombre</th>
                             <th class="celda tituloColumna">Apellidos</th>
                             <th class="celda tituloColumna">Telefono</th>
-                            <th class="celda tituloColumna">Fecha de nacimiento</th>
                             <th class="celda tituloColumna">Tipo de usuario</th>
                             <th class="celda tituloColumna">Contraseña</th>
                             <th class="celda tituloColumna">Estado</th>
@@ -79,7 +78,6 @@
                                                 <td class="celda contenidoTabla"><?php echo $fila["nombre"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["apellidos"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["telefono"];?></td>
-                                                <td class="celda contenidoTabla"><?php echo $fila["fechanacimiento"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["tipo"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["password"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["estado"];?></td>
