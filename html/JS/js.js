@@ -23,7 +23,10 @@ function cambiarTexto() {
 }
 
 function Loading() {
-    var form = document.getElementById("form");
     var load = '<div id="miModal" class="modal"><div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
-    form.insertBefore(load);
+    var div1 = document.createElement("P");
+    div1.id = "sdb";
+    div1
+    // div1.class = "";
+    // div1.innerHTML = '<div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
 }
