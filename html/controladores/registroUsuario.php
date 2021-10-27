@@ -7,7 +7,7 @@
         $correcto = false;
 
         if (validarUsuario($_POST["usuario"])) {
-            
+              
             if (validarNombre($_POST["nombre"])) {
                
                 if (validarApellidos($_POST["apellidos"])) {
@@ -18,6 +18,8 @@
                             
                             if ($_POST["password"] === $_POST["confirmarPassword"]) {
                                 
+                                echo "hola!";
+
                                 $correcto = true;
 
                             }
@@ -32,15 +34,15 @@
 
         }
 
-        if ($correcto) {
+        // if ($correcto) {
             
-            header("Location: ../index.html");
+        //     header("Location: ../index.html");
 
-        } else {
+        // } else {
             
-            header("Location: ../registro.php");
+        //     header("Location: ../registro.php");
 
-        }
+        // }
 
     } else {
 

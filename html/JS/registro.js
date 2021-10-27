@@ -14,11 +14,9 @@ function validarRegistro(source) {
     
     let cajaId = source.target.id;
 
-    if(cajaId == usuario.id){
-        validar(source, validarUsuario(source.target));
-    } else if (cajaId == nombre.id || cajaId == apellidos.id) {
+    if (cajaId == nombre.id || cajaId == apellidos.id || cajaId == usuario.id) {
         validar(source, validarNombre(source.target, cajaId));
     }else if(cajaId == email.id){
-        validar(source, valdarEmail(source.target));
+        validar(source, validarEmail(source.target));
     }
 }

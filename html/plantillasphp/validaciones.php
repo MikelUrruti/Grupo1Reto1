@@ -2,7 +2,7 @@
 
 function validarNombre($nombre) {
     
-    $regex = "(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/)";
+    $regex = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/";
 
     return preg_match($regex,$nombre);
 
@@ -10,7 +10,7 @@ function validarNombre($nombre) {
 
 function validarApellidos($apellidos) {
 
-    $regex = "(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/)";
+    $regex = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/";
     
     return preg_match($regex,$apellidos);
 
@@ -19,7 +19,7 @@ function validarApellidos($apellidos) {
 
 function validarUsuario($usuario) {
 
-    $regex = "(/^[a-zA-Z]{2,30}$/)";
+    $regex = "/^[a-zA-Z]{2,30}$/";
 
     return preg_match($regex,$usuario);
 
@@ -28,7 +28,7 @@ function validarUsuario($usuario) {
 
 function validarEmail($email) {
     
-    $regex = "/^([a-zA-Z0-9.])+(@{1})+([a-zA-Z0-9]{2,30})+(\.[a-zA-Z0-9]{2,3}){1}$/igm";
+    $regex = "/^([a-zA-Z0-9.])+(@{1})+([a-zA-Z0-9]{2,30})+(\.[a-zA-Z0-9]{2,3}){1}$/";
     
     return preg_match($regex,$email);
 
@@ -60,6 +60,7 @@ function validarTelefono($telefono) {
 
 function validarPassword($password) {
 
+    $regex = "/^[a-zA-Z0-9]{8,32}";
 
     return true;
 

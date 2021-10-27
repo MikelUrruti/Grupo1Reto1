@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/registro.css"/>
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="JS/registro.js"></script>
-    <script src="JS/validacion.js"></script>
+    <!-- <script src="JS/registro.js"></script>
+    <script src="JS/validacion.js"></script> -->
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                 <p>
                     Usuario:
                 </p>
-                <input id="usuario" name="usuario" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
+                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="nombre@gmail.com" />
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
