@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="JS/newUser.js"></script>
     <script src="JS/validacion.js"></script>
+    <script src="JS/js.js"></script>
 </head>
 
 <body>
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("../plantillas/indexNav.html"); ?>
     -->
-    <form>
+    <form id="form">
         <h2 id="titulo_NewUsu">
             Crear nuevo usuario
         </h2>
@@ -59,26 +60,38 @@
             </div>
 
             <div class="grupodatos_NewUsu">
-            <div class="usudat_NewUsu">
-                <p>
-                    Contraseña:
-                </p>
-                <input id="password" class="datos_NewUsu" type="password" placeholder="**********" />
-            </div>
+                <div class="usudat_NewUsu">
+                    <p>
+                        Contraseña:
+                    </p>
+                    <input id="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                </div>
 
-            <div class="usudat_NewUsu">
-                <p>
-                    Confirmar contraseña:
-                </p>
-                <input id="confPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                <div class="usudat_NewUsu">
+                    <p>
+                        Confirmar contraseña:
+                    </p>
+                    <input id="confPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                </div>
             </div>
-        </div>
         </div>
         <input id="button_NewUsu" type="button" value="Crear cuenta" />
     </form>
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("../plantillas/indexFooter.html"); ?>
     -->
+
+    <button onclick="Loading()">load</button>
+    <!-- <a href="#miModal">Abrir Modal</a> -->
+    <!-- <div id="miModal" class="modal">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div> -->
+
+
 </body>
 
 </html>
