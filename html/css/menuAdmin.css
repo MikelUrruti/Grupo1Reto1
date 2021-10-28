@@ -1,3 +1,7 @@
+/*
+    ESTILO MOVIL
+*/
+/*Estilo de la caja general*/
 #menuAdmin{
     position: fixed;
     width:25%;
@@ -8,40 +12,38 @@
     overflow-y: scroll;
     font-size: 0.5em;
 }
+/*Fin caja general*/
+
+/*Estilo del logo*/
 #logo{
     width: 100%;
     padding-top: 1em;
 }
+/*Fin logo*/
 
+/*Estilos comunes de las dos listas*/
 #listaAdmin, #listaAdmin2{
     list-style: none;
     display: flex;
     padding: 0;
     text-align: center;
 }
-#listaAdmin2{
-    align-items: center;
-    /* bottom: 0; */
-    margin-bottom: 30%;
-    margin-top: 60%;
-}
+/*Fin comunes listas*/
+
+/*Estilo de los enlaces*/
 #listaAdmin{
     flex-direction: column;
-    /* margin-top: 50%; */
 }
-#listaImgCentro{
-    width: 70%;
-}
-#listaImgFP{
-    width: 70%;
-}
+
 #listaAdmin a{
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
+
 #listaAdmin a:last-child{
     margin-top: 60%;
 }
+
 #listaAdmin a:first-child{
     margin-top: 50%;
 }
@@ -49,8 +51,10 @@
 #listaAdmin a{
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    height: 40px;
+    font-size: 1.6em;
 }
+
 #listaAdmin a:hover{
     font-weight: bold;
     background-color: white;
@@ -71,10 +75,34 @@
         font-size: 1.7em;        
     }
 }
+/*Fin enlaces*/
 
+/*Esilo imagenes*/
+#listaAdminImg{
+    margin-top: 60%;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+}
+#listaImgCentro{
+    width: 100%;
+    height: auto;
+}
+#listaImgFP{
+    width: 80%;
+    height: auto;
+}
+/*Fin imagenes*/
+
+/*
+    ESTILO TABLET
+*/
 @media screen and (min-width: 480px){
+    /*Estilo de enlaces*/
     #listaAdmin a{
-        font-size: 2em;
+        font-size: 2.3em;
+        padding-top: 40px;
+        padding-bottom: 28px;
     }
     #listaAdmin a:first-child{
         margin-top: 40%;
@@ -92,6 +120,26 @@
             font-size: 2.5em;        
         }
     }
+    /*Fin enlaces*/
+
+    /*Estilo imagenes*/
+    #listaAdminImg{
+        margin-top: 0%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #listaImgCentro{
+        width: 100%;
+        height: auto;
+    }
+
+    #listaImgFP{
+        width: 100%;
+        height: auto;
+    }
+    /*Fin imagenes*/
 } 
 
 @media screen and (min-width: 1025px) {

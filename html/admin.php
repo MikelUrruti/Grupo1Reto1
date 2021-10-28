@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/admin.css">
+    <!--Para el tipo de letra-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php include ("plantillas/menuAdmin.html"); ?>
-    <section>
+    <section id="textoMedio">
         <article>
             <p>Bienvenido al panel de administración de Fix Point</p>
             <img src="img/herramientasAdmin.png">
