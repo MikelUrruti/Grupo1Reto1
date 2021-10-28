@@ -20,6 +20,9 @@ header:not(header ul) {
 body {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Cuando estoy en móvil el menú se quedará en su sitio,
