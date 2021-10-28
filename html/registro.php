@@ -82,17 +82,6 @@
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("plantillas/indexFooter.html"); ?>
     -->
-
- <button onclick="Loading(true)">load</button>
-    <!-- <a href="#miModal">Abrir Modal</a> -->
-    <!-- <div id="miModal" class="modal">
-        <div class="loader">
-            <div class="inner one"></div>
-            <div class="inner two"></div>
-            <div class="inner three"></div>
-        </div>
-    </div> -->
-
 </body>
 
 </html>

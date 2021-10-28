@@ -96,7 +96,7 @@ Si abro el menú, este taara todo */
     padding: 5px;
 }
 
-
+/* Estilos para el Load */
 .modal{
   background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
   position:fixed;
@@ -105,8 +105,6 @@ Si abro el menú, este taara todo */
   bottom:0;
   left:0;
   opacity:0.7;
-  /* pointer-events:none; */
-  /* transition: all 10s; */
 }
 #miModal:target{
   opacity:1;
@@ -152,7 +150,7 @@ Si abro el menú, este taara todo */
   animation: rotate-three 1s linear infinite;
   border-top: 3px solid #EFEFFA;
 }
-
+    /* Animacion para las lineas */
 @keyframes rotate-one {
   0% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
@@ -179,3 +177,5 @@ Si abro el menú, este taara todo */
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
 }
+
+/* Fin estilos Load */

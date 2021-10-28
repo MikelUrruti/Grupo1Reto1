@@ -24,7 +24,7 @@ function cambiarTexto() {
 
 // animacion de carga para las paginas
 function Loading(activar) {
-    var load = '<button onclick="Loading(false)">Abrir Modal</button><div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
+    var load = '<div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
     var div1 = document.createElement("div");
     div1.id = "miModal";
     div1.className = "modal";
