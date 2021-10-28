@@ -31,6 +31,12 @@
                 Usuario:
             </p>
             <input id="usuario" name="correo" class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
+
+            
+
+            <p class="error">
+                
+            </p>
         </div>
 
         <div class="usucon_Log">
