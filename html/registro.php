@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/registro.css"/>
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css"/>
+    <script src="JS/js.js"></script>
     <!-- <script src="JS/registro.js"></script>
     <script src="JS/validacion.js"></script> -->
 </head>
@@ -81,6 +82,17 @@
     <!--Lo que hay que poner para incluir una pagina:
     <?php include("plantillas/indexFooter.html"); ?>
     -->
+
+ <button onclick="Loading()">load</button>
+    <!-- <a href="#miModal">Abrir Modal</a> -->
+    <!-- <div id="miModal" class="modal">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div> -->
+
 </body>
 
 </html>

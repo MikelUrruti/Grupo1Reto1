@@ -14,6 +14,9 @@
     <script src="JS/js.js"></script>
 </head>
 <body>
+    <?php
+        include("plantillas/indexNav.html")
+    ?>
     <section id="conocenos">
         <article id="mision">
             <h1>MISIÓN</h1><input type="checkbox" class="checkbox" name="checkbox" id="mostrar1"/><label class="verMas" id="ver1" for="mostrar1">Ver más</label>
@@ -52,5 +55,8 @@ El Taller dispondrá de herramientas y equipos fijos más grandes, disponibles p
             </p>
         </article>
     </section>
+    <?php 
+        include ("plantillas/indexFooter.html");
+    ?>
 </body>
 </html>

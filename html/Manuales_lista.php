@@ -11,14 +11,18 @@
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/manualesLista.css" />
+    <link rel="stylesheet" href="css/cssNav.css">
+    <link rel="stylesheet" href="css/cssFooter.css">
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexNav.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php
+        include("plantillas/indexNav.html")
+    ?>
+    
     <form>
         <h1 id="titManLis">
             Escoge el manual que quieras visualizar
@@ -114,6 +118,9 @@
             </section>
         </article>
     </form>
+    <?php 
+        include ("plantillas/indexFooter.html");
+    ?>
 </body>
 
 </html>

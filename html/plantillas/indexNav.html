@@ -13,25 +13,43 @@
     <input class="btnMenu" type="checkbox" name="" id="chkMenu">
     <label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
     <header>
-        <a href="#"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
+        <noscript>
+            <h1>
+                Su navegador no tiene activado JavaScript.
+                                <br>
+                Es posible que no visualice la página correctamente
+            </h1>
+        </noscript>
+        
+        <div id="containerNav">
+            <a href="index.php"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
+
+            <ul id="primerUsu">
+                <li><a href="">Iniciar sesión</a></li>
+                <li id="ultimousu"><a href="">Registrarse</a></li>
+                <a class="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
+            </ul>
+        </div>
+
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Manuales</a>
+            <a href="index.php">Inicio</a>
+            <a href="Manuales_lista.php">Manuales</a>
             <a href="#">Alquiler</a>
             <a href="#">Dónanos</a>
-            <div id="nav-btn-mas">
-                <p>Más -></p>
-                <a class="oculto" href="#">Sobre nosotros</a>
-                <a class="oculto" href="#">Contacto</a>
-            </div>    
+            <a class="oculto" href="conocenos.php">Sobre nosotros</a>
+            <a class="oculto" href="contacto.php">Contacto</a>
+            <div id="masTit" href="#">
+                Más <div id="flecha">-></div>
+                <a class="oculto" href="conocenos.php">Sobre nosotros</a>
+                <a class="oculto" href="contacto.php">Contacto</a>
+            </div>
         </nav>
 
-        <ul>
-            <a href=""><img src="./img/inicio_sesion.png" alt=""></a>
+        <ul id="segundoUsu">
+            <a class="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
             <li><a href="">Iniciar sesión</a></li>
             <li><a href="">Registrarse</a></li>
         </ul>
-      
     </header>
-<!-- </body>
+    <!-- </body>
 </html> -->
