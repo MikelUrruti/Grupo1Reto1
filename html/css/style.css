@@ -95,6 +95,9 @@ Si abro el menú, este taara todo */
     box-shadow: 10px 20px 30px black;
     padding: 5px;
 }
+
+
+
 #miModal:target{
     opacity:1;
     pointer-events:auto;
@@ -157,6 +160,9 @@ Si abro el menú, este taara todo */
     }
     100% {
       transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  }
+
 /* Se aplica en JavaScript */
 @Keyframes animacionH1 {
     from {
