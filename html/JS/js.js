@@ -22,15 +22,18 @@ function cambiarTexto() {
 
 }
 
+// animacion de carga para las paginas
 function Loading(activar) {
-    if(activar){
-    var load = '<div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
+    var load = '<button onclick="Loading(false)">Abrir Modal</button><div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
     var div1 = document.createElement("div");
     div1.id = "miModal";
     div1.className = "modal";
+    var getDiv = document.getElementById("miModal");
+
+    if(activar == true){       
     div1.innerHTML = load;
     document.body.appendChild(div1);
-    }else {
-        div1.style.display = "none";
+    }else if(activar == false){
+        document.body.removeChild(getDiv);
     }
 }
