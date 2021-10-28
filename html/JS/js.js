@@ -22,12 +22,18 @@ function cambiarTexto() {
 
 }
 
-function Loading() {
-    var load = '<div id="miModal" class="modal"><div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
-    var div1 = document.createElement("P");
-    div1.id = "sdb";
+// animacion de carga para las paginas
+function Loading(activar) {
+    var load = '<button onclick="Loading(false)">Abrir Modal</button><div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
+    var div1 = document.createElement("div");
+    div1.id = "miModal";
+    div1.className = "modal";
+    var getDiv = document.getElementById("miModal");
+
+    if(activar == true){       
     div1.innerHTML = load;
     document.body.appendChild(div1);
-    // div1.class = "";
-    // div1.innerHTML = '<div class="loader"><div class="inner one"></div><div class="inner two"></div><div class="inner three"></div></div></div>';
+    }else if(activar == false){
+        document.body.removeChild(getDiv);
+    }
 }

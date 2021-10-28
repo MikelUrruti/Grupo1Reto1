@@ -94,7 +94,7 @@
     <?php include("plantillas/indexFooter.html"); ?>
     -->
 
-    <button onclick="Loading()">load</button>
+ <button onclick="Loading(true)">load</button>
     <!-- <a href="#miModal">Abrir Modal</a> -->
     <!-- <div id="miModal" class="modal">
         <div class="loader">
