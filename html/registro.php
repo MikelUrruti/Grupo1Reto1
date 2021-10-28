@@ -9,12 +9,12 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css"/>
-    <link rel="stylesheet" href="css/cssFooter.css"/>
-    <link rel="stylesheet" href="css/cssNav.css"/>
-    <link rel="stylesheet" href="css/registro.css"/>
+    <link rel="stylesheet" href="css/normalizar.css" />
+    <link rel="stylesheet" href="css/cssFooter.css" />
+    <link rel="stylesheet" href="css/cssNav.css" />
+    <link rel="stylesheet" href="css/registro.css" />
     <!--Para el tipo de letra-->
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="JS/js.js"></script>
     <!-- <script src="JS/registro.js"></script>
     <script src="JS/validacion.js"></script> -->
@@ -31,51 +31,62 @@
         <div id="ui">
             <div class="usudat_NewUsu">
                 <p>
-                    Usuario:
+                    Usuario: <span>*</span>
                 </p>
-                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="nombre@gmail.com" />
+                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="Mecanico824" />
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
             <div class="grupodatos_NewUsu">
                 <div class="usudat_NewUsu">
                     <p>
-                        Nombre:
+                        Nombre: <span>*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="nombre" />
+                    <input id="nombre" name="nombre" class="datos_NewUsu" type="text" placeholder="nombre" />
                 </div>
 
                 <div class="usudat_NewUsu">
                     <p>
-                        Apellidos:
+                        Apellidos: <span>*</span>
                     </p>
                     <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="apellidos" />
                 </div>
             </div>
 
-            <!--Estan en un grupo para que se vean mejor en el ordenador-->
             <div class="usudat_NewUsu">
                 <p>
-                    Email:
+                    Email: <span>*</span>
                 </p>
                 <input id="email" name="email" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
             </div>
 
             <div class="grupodatos_NewUsu">
-            <div class="usudat_NewUsu">
-                <p>
-                    Contraseña:
-                </p>
-                <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                <div class="usudat_NewUsu">
+                    <p>
+                        Contraseña: <span>*</span>
+                    </p>
+                    <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                </div>
+
+                <div class="usudat_NewUsu">
+                    <p>
+                        Confirmar contraseña: <span>*</span>
+                    </p>
+                    <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                </div>
             </div>
+
+            <!--Estan en un grupo para que se vean mejor en el ordenador-->
+
 
             <div class="usudat_NewUsu">
                 <p>
-                    Confirmar contraseña:
+                    Numero de telefono:
                 </p>
-                <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="email" name="telefono" class="datos_NewUsu" type="tel" placeholder="674563243" />
             </div>
-        </div>
+
+
         </div>
         <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
@@ -83,7 +94,7 @@
     <?php include("plantillas/indexFooter.html"); ?>
     -->
 
- <button onclick="Loading()">load</button>
+    <button onclick="Loading()">load</button>
     <!-- <a href="#miModal">Abrir Modal</a> -->
     <!-- <div id="miModal" class="modal">
         <div class="loader">
