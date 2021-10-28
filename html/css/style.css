@@ -15,32 +15,19 @@ header:not(header ul) {
     font-family:'Georama',sans-serif;    
 }
 
+#txtEscribir {
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+}
 
-
-body {
+#index {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
 }
-
-/* Cuando estoy en móvil el menú se quedará en su sitio,
-Si abro el menú, este taara todo */
-@media Screen and (max-width: 480px) {
-    body label, body header {
-        position:absolute;
-    }
-    
-    #index label {
-        z-index: 2;
-    }
-    
-    #index header {
-        z-index: 1;
-    }
-}
-
 
 #index #section1 {
     margin-top: 5%;
@@ -57,6 +44,11 @@ Si abro el menú, este taara todo */
     height:10em;
 }
 
+#index section a:not(article a):hover {
+    font-size: 3.5em;
+    transition: font-size 1s;
+}
+
 #index section a:not(article a){
     text-decoration: none;
     color:white;
@@ -66,7 +58,19 @@ Si abro el menú, este taara todo */
     font-size: 3em;
     box-shadow: 10px 20px 30px black;
     padding: 30px;
+    transition: font-size 1s;
 }
+
+#index section a {
+    transition: font-size 1s;
+}
+
+#index section a:hover {
+    font-size: 1.7em;
+    transition: font-size 1s;
+}
+
+
 
 #index #txtEscribir {
     /* width:fit-content; */
@@ -80,10 +84,13 @@ Si abro el menú, este taara todo */
 }
 
 #index #section2 article {
-    margin-left: 25%;
+    margin-left:auto;
+    margin-right: auto;
     margin-top: 10%;
+    text-align: center;
     border-radius: 0.3em;
-    width: 50%;
+    width: 70%;
+    height: 310px;
     background-color:white;
     box-shadow: inset 0 0 10px 0.1px black;
 }
@@ -94,10 +101,12 @@ Si abro el menú, este taara todo */
     text-transform:uppercase;
     background-color: #EEC51F;
     border-radius: 0.3em;
-    font-size: 2em;
+    font-size: 1em;
     box-shadow: 10px 20px 30px black;
     padding: 5px;
 }
+
+/*De eimer*/
 
 /* Estilos para el Load */
 .modal{
@@ -153,6 +162,74 @@ Si abro el menú, este taara todo */
   animation: rotate-three 1s linear infinite;
   border-top: 3px solid #EFEFFA;
 }
+
+
+
+  /* Cuando estoy en móvil el menú se quedará en su sitio,
+Si abro el menú, este tapará todo */
+@media Screen and (max-width: 480px) {
+  body label, body header {
+      position:absolute;
+  }
+  
+  #index label {
+      z-index: 2;
+  }
+  
+  #index header {
+      z-index: 1;
+  }
+}
+/* Tablet */
+@media Screen and (min-width:480px) {
+  
+  #index section article > * {
+      margin-bottom: 30px;
+  }
+
+  #index section article a {
+      padding: 20px;
+  }
+
+  #index section article {
+      font-size: 1.3em;
+  }
+  
+  #index section a:hover {
+      font-size: 1.2em;
+      transition: font-size 1s;
+  }
+}
+/* Ordenador */
+@media Screen and (min-width: 1025px) {
+
+  #index section article {
+      font-size: 2em;
+  }
+
+  #index #section2 {
+      font-size: 0.7em;
+      flex-direction: row;
+  }
+  
+  #index #section2 article {
+      justify-content: space-around;
+      
+  }
+}
+
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+
+
     /* Animacion para las lineas */
 @keyframes rotate-one {
   0% {
@@ -178,6 +255,19 @@ Si abro el menú, este taara todo */
   }
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+/* Se aplica en JavaScript */
+@Keyframes animacionH1 {
+  from {
+      opacity: 0;
+      transform: translateY(-100px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
