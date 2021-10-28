@@ -39,6 +39,8 @@
 
             manipularDatoBD("insert into Usuario values (?, ?, ?, ?, ?, ?, ?, ?)",$parametros);
 
+            
+
             // header("Location: ../index.html");
 
         } else {
