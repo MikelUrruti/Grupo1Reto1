@@ -2,7 +2,7 @@
 
 $datosConexion = require_once("dbconfig.php");
 
-function manipularDatoBD($consulta) {
+function manipularDatoBD(string $consulta, array $parametros) {
 
     global $datosConexion;
 
@@ -11,10 +11,20 @@ function manipularDatoBD($consulta) {
            $conexion = new PDO("mysql:host=".$datosConexion['host'].";port=3306;dbname=".$datosConexion['db'], $datosConexion['user'], $datosConexion['password']);
            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
            $consulta=$conexion->prepare($consulta);
+
+           $contador=1;
+
+           foreach ($parametros as $parametro) {
+
+                $consulta->bindValue($contador,$parametro);
+                $contador++;
+
+           }
+
            $consulta->execute();
            
            if ($consulta->rowCount() > 0) {
-               
+
                 return true;
 
            } else {
@@ -31,7 +41,7 @@ function manipularDatoBD($consulta) {
 
 }
 
-function consultarDatoBD($consulta) {
+function consultarDatoBD(string $consulta, array $parametros) {
 
     global $datosConexion;
 
@@ -40,6 +50,17 @@ function consultarDatoBD($consulta) {
         $conexion = new PDO("mysql:host=".$datosConexion['host'].";port=3306;dbname=".$datosConexion['db'], $datosConexion['user'], $datosConexion['password']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $consulta=$conexion->prepare($consulta);
+
+        
+        $contador=1;
+
+        foreach ($parametros as $parametro) {
+            
+            $consulta->bindValue($contador,$parametro);
+            $contador++;
+
+        }
+
         $consulta->execute();
 
         $filas=$consulta->fetchAll();
