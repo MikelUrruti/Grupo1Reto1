@@ -52,7 +52,7 @@
 
                             if (!isset($filas)) {
 
-                                $resultados = consultarDatoBD("select * from Usuario;");
+                                $resultados = consultarDatoBD("select * from Usuario",array());
 
                                 $filas = array();
         
