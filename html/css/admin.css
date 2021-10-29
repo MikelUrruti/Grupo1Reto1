@@ -1,0 +1,39 @@
+#textoMedio{
+    margin-left: 27%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+}
+
+#textoMedio > article{
+    width: 50%;
+}
+
+#textoMedio > article img{
+    width: 80%;
+}
+
+article p{
+    text-align: center;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 480px) {
+    #textoMedio{
+        padding-top: 10%;
+    }
+
+    article p{
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #textoMedio{
+        padding-top: 5%;
+    }
+
+    article p{
+        font-size: 3em;
+    }
+}
