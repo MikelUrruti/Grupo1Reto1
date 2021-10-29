@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,25 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css"/>
-    <link rel="stylesheet" href="css/cssFooter.css"/>
-    <link rel="stylesheet" href="css/cssNav.css"/>
+    <link rel="stylesheet" href="css/normalizar.css" />
+    <link rel="stylesheet" href="css/cssFooter.css" />
+    <link rel="stylesheet" href="css/cssNav.css" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/alquiler.css"/>
+    <link rel="stylesheet" href="css/donar.css" />
 </head>
-<body>
+
+<body id="index">
     <input class="btnMenu" type="checkbox" name="" id="chkMenu">
     <label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
     <header>
         <noscript>
             <h1>
                 Su navegador no tiene activado JavaScript.
-                                <br>
+                <br>
                 Es posible que no visualice la página correctamente
             </h1>
         </noscript>
-        
+
         <div id="containerNav">
             <a href="index.php"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
 
@@ -57,37 +59,43 @@
         </ul>
     </header>
 
-    <h1>
-        DONAR HERRAMIENTAS
-    </h1>
-
     <form>
-        <h2>
-            Herramienta:
-        </h2>
-        <input type="text"/>
+        <p>
+            DONAR HERRAMIENTAS
+        </p>
 
-        <h2>
-            Imagen:
-        </h2>
-        <!--Para dar estilo al boton de file-->
-        <label for="subirImg">Buscar imagen...</label>
-        <input type="file" id="subirImg"/>
-        
-        <h2>
-            Descripción:
-        </h2>
-        <textarea></textarea>
-        <input type="submit"/>
+        <div id="nombre">
+            <p>
+                Herramienta:
+            </p>
+            <input placeholder="Nombre de herramienta" type="text" />
+        </div>
+
+        <div id="imagen">
+            <p>
+                Imagen:
+            </p>
+            <!--Para dar estilo al boton de file-->
+            <label for="subirImg">Buscar imagen...</label>
+            <input id="subirImg" type="file" />
+        </div>
+
+        <div id="desc">
+            <p>
+                Descripción:
+            </p>
+            <textarea></textarea>
+        </div>
+        <input type="submit" />
     </form>
 
     <footer class="footer">
         <div>
             <img id="fImg1" class="imgFooter" src="./img/Imagen_centro.png" alt="CIFP Pico Frentes">
-    
+
             <img id="fImg2" class="imgFooter" src="./img/Imagen_FP.png" alt="Formacion Profesional">
-    
-    
+
+
             <p>
                 Contacto:
                 CIFP Pico Ferntes - Soria
@@ -96,4 +104,5 @@
         </div>
     </footer>
 </body>
+
 </html>
