@@ -189,7 +189,7 @@ header ul li{
     /*Estilo del segundo manu*/
     #masTit{
         display: block;
-        cursor: url('../img/icoprueba.png'), default;
+        cursor: url('../img/icoprueba.png'), auto;
     }
 
     #masTit:hover{
