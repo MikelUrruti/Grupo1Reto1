@@ -78,9 +78,7 @@
         </div>
         <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("plantillas/indexFooter.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexFooter.html"); ?>    
 </body>
-
 </html>
