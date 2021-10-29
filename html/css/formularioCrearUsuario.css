@@ -19,13 +19,13 @@ form{
     text-align: center;
 }
 
-/* Estilo de la parte de usuario y contraseña
+/*Estilo de la parte de usuario y contraseña*/
 .usudat_NewUsu{
     display: grid;
     margin: auto;
     text-align: left;
     width: 70%;
-} */
+}
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/

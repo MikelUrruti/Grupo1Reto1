@@ -1,32 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
+    require_once("plantillasphp/redirecciones.php");
+
+    session_start();
+
+    comprobarLogin();
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo usuario - Fix Point</title>
-    <!--Favicon de las paginas-->
-    <link rel="shortcut icon" href="img/Logo Header.png" />
-    <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css"/>
-    <link rel="stylesheet" href="css/cssFooter.css"/>
-    <link rel="stylesheet" href="css/cssNav.css"/>
-    <link rel="stylesheet" href="css/registro.css"/>
-    <!--Para el tipo de letra-->
-    <link rel="stylesheet" href="css/style.css"/>
-    <script src="JS/js.js"></script>
-    <!-- <script src="JS/registro.js"></script>
-    <script src="JS/validacion.js"></script> -->
+    <link rel="stylesheet" href="css/normalizar.css">
+    <link rel="stylesheet" href="css/menuAdmin.css">
+    <link rel="stylesheet" href="css/cssFooter.css">
+    <link rel="stylesheet" href="css/adminComun.css">
+    <link rel="stylesheet" href="css/formularioCrearUsuario.css">
+    <title>Crear Usuario</title>
 </head>
-
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("plantillas/indexNav.html"); ?>
-    -->
-    <form action="controladores/registroUsuario.php" method="post">
+
+<?php
+
+    include("plantillas/menuAdmin.html");
+
+?>
+
+<section class="contenido">
+
+    <form action="controladores/crearUsuario.php" method="post">
+    
         <h2 id="titulo_NewUsu">
-            Registrarse
+            Crear nuevo usuario
         </h2>
         <div id="ui">
             <div class="usudat_NewUsu">
@@ -78,10 +86,10 @@
         </div>
         </div>
         <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
-    </form>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("plantillas/indexFooter.html"); ?>
-    -->
-</body>
 
+    </form>
+
+</section>
+
+</body>
 </html>

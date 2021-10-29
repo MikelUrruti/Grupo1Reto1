@@ -1,3 +1,13 @@
+<?php
+
+    require_once("plantillasphp/redirecciones.php");
+
+    session_start();
+
+    comprobarLogin();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +17,9 @@
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
+    <link rel="stylesheet" href="css/adminComun.css">
     <link rel="stylesheet" href="css/adminUsuarios.css">
+    <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
     <title>Usuarios</title>
 </head>
 <body>
@@ -52,7 +64,7 @@
 
                             if (!isset($filas)) {
 
-                                $resultados = consultarDatoBD("select * from Usuario",array());
+                                $resultados = consultarDatoBD("select * from Usuario where estado='activo';",array());
 
                                 $filas = array();
         

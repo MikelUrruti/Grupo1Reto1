@@ -8,7 +8,7 @@
         
         $parametros = array($_POST["correo"], hash("sha512",$_POST["contrasena"]));
 
-        $resultados = consultarDatoBD("select email, usuario from Usuario where email=? and password=?;",$parametros);
+        $resultados = consultarDatoBD("select email, usuario from Usuario where email=? and password=? and estado='activo';",$parametros);
     
         if (is_array($resultados)) {
     
