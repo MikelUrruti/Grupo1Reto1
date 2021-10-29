@@ -21,9 +21,8 @@
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
+    <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.html"); ?>
-    -->
     <form action="controladores/registroUsuario.php" method="post">
         <h2 id="titulo_NewUsu">
             Crear nuevo usuario
