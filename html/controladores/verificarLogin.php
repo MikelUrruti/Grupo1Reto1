@@ -12,12 +12,10 @@
     
         if (is_array($resultados)) {
     
-            echo var_dump($resultados);
-    
             if (count($resultados) == 1) {
                     
-                $_SESSION["email"]=$resultado[0]["correo"];
-                $_SESSION["usuario"]=$resultado[0]["usuario"];
+                $_SESSION["email"]=$resultados[0]["email"];
+                $_SESSION["usuario"]=$resultados[0]["usuario"];
     
                 header("Location: ../index.php");
         
