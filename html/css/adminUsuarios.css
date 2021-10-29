@@ -22,8 +22,14 @@
 
 .acciones {
 
+    display: flex;
+    column-gap: 2%;
     text-align: center;
     margin-bottom: 2%;
+    align-items: center;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0.25em 0.5em 0.25em 0.5em;
 
 }
 
@@ -100,4 +106,39 @@
     background-color: orange;
 
 }
+
+#lupa{
+    height: 1.8em;
+    background-color: rgb(87, 87, 87);
+    margin-left: 0.5em;
+}
+
+#buscador{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 1em auto 2em auto;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    background-color: black;
+}
+
+#txtbus{
+    height: 1.5em;
+    border: none;
+    width: 25em;
+    background-color: black;
+    color: #EEC51F;
+}
+
+#txtbus:focus{
+    outline: 0;
+}
+
+#lupa:hover{
+    cursor: pointer;
+}
+
+
 

@@ -3,7 +3,20 @@
     require_once("../plantillasphp/redirecciones.php");
     require_once("../plantillasphp/operacionesDb.php");
 
-    $accion = $_POST["accionUsuario"];
+    session_start();
+
+    echo $_POST["Crear"];
+    echo $_POST["Buscar"];
+
+    if (isset($_POST["Buscar"])) {
+        $accion = "Buscar";
+    } elseif (isset($_POST["Crear"])) {
+        $accion = "Crear";
+    } elseif (isset($_POST["Modificar"])) {
+        $accion = "Modificar";
+    } elseif (isset($_POST["Eliminar"])) {
+        $accion = "Eliminar";
+    }
 
     if ($accion == "Crear") {
 
@@ -43,8 +56,24 @@
 
         redireccionar("../adminUsuarios.php");
 
+    } elseif ($accion == "Buscar") {
+
+        $parametros = array();
+
+        for ($i=0; $i < 5; $i++) { 
+            
+            array_push($parametros,"%".$_POST["Buscar"]."%");
+
+        }
+
+        $_SESSION["filtrado"] = consultarDatoBD("select * from Usuario where usuario like ? or email like ? or nombre like ? or apellidos like ? or telefono like ?;",$parametros);
+
+        redireccionar("../adminUsuarios.php");
+
     } else {
-        header("Location: ../adminUsuarios.php");
+        
+        redireccionar("../adminUsuarios.php");
+
     }
 
 ?>

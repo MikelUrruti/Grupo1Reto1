@@ -40,9 +40,15 @@
             <form action="controladores/adminControladorUsuario.php" method="post">
 
                 <div class="acciones">
-                    <input type="submit" class="boton botonCrear" value="Crear" name="accionUsuario">
-                    <input type="submit" class="boton botonModificar" value="Modificar" name="accionUsuario">
-                    <input type="submit" class="boton botonEliminar" value="Eliminar" name="accionUsuario">
+                    <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
+                    <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar">
+                    <input type="submit" class="boton botonEliminar" value="Eliminar" name="Eliminar">
+
+                    <div id="buscador">
+                        <input type="text" name="Buscar" id="txtbus"  placeholder="Buscar usuarios..."/>
+                        <img src="img/lupa.png" alt="Lupa" id="lupa"/>
+                    </div>
+
                 </div>
 
                 <table class="tabla">
@@ -55,7 +61,6 @@
                             <th class="celda tituloColumna">Apellidos</th>
                             <th class="celda tituloColumna">Telefono</th>
                             <th class="celda tituloColumna">Tipo de usuario</th>
-                            <th class="celda tituloColumna">Contraseña</th>
                             <th class="celda tituloColumna">Estado</th>
                         </tr>
                     </thead>
@@ -64,7 +69,16 @@
 
                             if (!isset($filas)) {
 
-                                $resultados = consultarDatoBD("select * from Usuario where estado='activo';",array());
+                                if (isset($_SESSION["filtrado"])) {
+
+                                    $resultados = $_SESSION["filtrado"];
+                                    unset($_SESSION["filtrado"]);
+
+                                } else {
+
+                                    $resultados = consultarDatoBD("select * from Usuario where estado='activo';",array());
+                                    
+                                }
 
                                 $filas = array();
         
@@ -91,7 +105,6 @@
                                                 <td class="celda contenidoTabla"><?php echo $fila["apellidos"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["telefono"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["tipo"];?></td>
-                                                <td class="celda contenidoTabla"><?php echo $fila["password"];?></td>
                                                 <td class="celda contenidoTabla"><?php echo $fila["estado"];?></td>
                                             </tr>
                                     <?php
