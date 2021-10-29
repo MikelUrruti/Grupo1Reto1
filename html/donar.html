@@ -9,10 +9,10 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/cssFooter.css" />
     <link rel="stylesheet" href="css/cssNav.css" />
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/donar.css" />
 </head>
 
@@ -60,15 +60,15 @@
     </header>
 
     <form>
-        <p>
+        <h2 class="tituloForm">
             DONAR HERRAMIENTAS
-        </p>
+        </h2>
 
         <div id="nombre">
             <p>
                 Herramienta:
             </p>
-            <input placeholder="Nombre de herramienta" type="text" />
+            <input class="textoForm" placeholder="Nombre de herramienta" type="text" />
         </div>
 
         <div id="imagen">
@@ -84,9 +84,9 @@
             <p>
                 Descripción:
             </p>
-            <textarea></textarea>
+            <textarea placeholder="Descripción de la herramienta..."></textarea>
         </div>
-        <input type="submit" />
+        <input type="submit" value="Donar"/>
     </form>
 
     <footer class="footer">

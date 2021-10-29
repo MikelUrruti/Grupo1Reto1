@@ -9,22 +9,20 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
+    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/normalizar.css"/>
     <link rel="stylesheet" href="css/cssFooter.css"/>
     <link rel="stylesheet" href="css/cssNav.css"/>
     <link rel="stylesheet" href="css/registro.css"/>
     <!--Para el tipo de letra-->
-    <link rel="stylesheet" href="css/style.css"/>
     <script src="JS/js.js"></script>
-    <!-- <script src="JS/registro.js"></script>
-    <script src="JS/validacion.js"></script> -->
 </head>
 
 <body>
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.html"); ?>
     <form action="controladores/registroUsuario.php" method="post">
-        <h2 id="titulo_NewUsu">
+        <h2 class="tituloForm">
             Crear nuevo usuario
         </h2>
         <div id="ui">
@@ -32,7 +30,7 @@
                 <p>
                     Usuario:
                 </p>
-                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="nombre@gmail.com" />
+                <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="nombre@gmail.com" />
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -41,14 +39,14 @@
                     <p>
                         Nombre:
                     </p>
-                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="nombre" />
+                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="nombre" />
                 </div>
 
                 <div class="usudat_NewUsu">
                     <p>
                         Apellidos:
                     </p>
-                    <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="apellidos" />
+                    <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="apellidos" />
                 </div>
             </div>
 
@@ -57,7 +55,7 @@
                 <p>
                     Email:
                 </p>
-                <input id="email" name="email" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
+                <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
             </div>
 
             <div class="grupodatos_NewUsu">
@@ -65,14 +63,14 @@
                 <p>
                     Contraseña:
                 </p>
-                <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
             </div>
 
             <div class="usudat_NewUsu">
                 <p>
                     Confirmar contraseña:
                 </p>
-                <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
             </div>
         </div>
         </div>

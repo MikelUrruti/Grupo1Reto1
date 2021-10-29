@@ -36,12 +36,19 @@ form div{
 #nombre [type=text]{
     margin-top: auto;
     margin-bottom: auto;
+    padding-top: 0.35%;
+    padding-bottom: 0.35%;
+    padding-left: 0.5em;
 }
 
 #nombre [type=text]::placeholder{
     font-size: small;
 }
 /*Fin nombre herramientas*/
+
+/*Animacion del focus*/
+
+/*Fin focus*/
 
 /*Estilo de la caja para subir imagenes*/
 #imagen label{
@@ -61,13 +68,15 @@ form div{
 /*Fin imagenes*/
 
 /*Estilo del campo de texto de descripcion*/
-
+textarea{
+    /*Estilo para que el campo de texto no se pueda hacer mas grande*/
+    width: 70%;
+    height: 110px;
+    resize: none;
+}
 /*Fin descripcion*/
 
-/*Estilo del boton de subir imagen*/
-
-/*Fin imagen*/
-
 /*Estilo del boton de enviar*/
-
+[type=submit]{
+}
 /*Fin del boton*/
