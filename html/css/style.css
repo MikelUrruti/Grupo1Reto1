@@ -80,7 +80,7 @@ header:not(header ul) {
 
 #index #section2 {
     display:flex;
-    flex-direction:column;
+    flex-direction:column;  
 }
 
 #index #section2 article {
@@ -90,9 +90,15 @@ header:not(header ul) {
     text-align: center;
     border-radius: 0.3em;
     width: 70%;
-    height: 310px;
+    height: auto;
     background-color:white;
     box-shadow: inset 0 0 10px 0.1px black;
+}
+
+#index #section2 article img {
+  bottom:0;
+  width:100%;
+  margin-bottom:0;
 }
 
 #index section article a {
@@ -104,6 +110,7 @@ header:not(header ul) {
     font-size: 1em;
     box-shadow: 10px 20px 30px black;
     padding: 5px;
+    margin-bottom:0;
 }
 
 /*De eimer*/
@@ -204,17 +211,23 @@ Si abro el menú, este tapará todo */
 @media Screen and (min-width: 1025px) {
 
   #index section article {
-      font-size: 2em;
+      font-size: 1.7em;
+  }
+
+  #index #section2 p {
+    font-size: 1.5em;
+    text-align:center;
   }
 
   #index #section2 {
-      font-size: 0.7em;
+      font-size: .7em;
       flex-direction: row;
+      justify-content: space-between;
   }
   
-  #index #section2 article {
-      justify-content: space-around;
-      
+  #index #section2 article{
+      margin-left:5%;
+      margin-right:5%;
   }
 }
 
@@ -272,3 +285,35 @@ Si abro el menú, este tapará todo */
 }
 
 /* Fin estilos Load */
+
+
+#txtTest, ::placeholder {
+  outline:none;
+  border:none;
+  border-radius: 1em;
+  /* text-align: center; */
+  writing-mode: horizontal-tb;
+  color: #EEC51F;
+  background-color:rgb(143, 143, 143);
+  text-shadow: -1px 1px 0 #000,
+  1px 1px 0 #000,
+ 1px -1px 0 #000,
+-1px -1px 0 #000;
+}
+
+#txtTest::placeholder {
+  color:white;
+  opacity: .3;
+}
+
+#txtTest {
+  font-size: 2em;
+  width: 180px;
+  height: 30px;
+}
+
+#txtTest:focus {
+  opacity: 1;
+  border-radius: 2rem;
+  box-shadow: 0 0 8px white;
+}
