@@ -29,6 +29,12 @@ header:not(header ul) {
 
 }
 
+.obligatorio {
+
+  color: red;
+
+}
+
 #index {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;

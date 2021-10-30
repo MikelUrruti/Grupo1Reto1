@@ -5,18 +5,18 @@
 
     session_start();
 
-    echo $_POST["Crear"];
-    echo $_POST["Buscar"];
+    echo var_dump($_POST);
 
-    if (isset($_POST["Buscar"])) {
+    if (isset($_POST["Eliminar"])) {
+        $accion = "Eliminar";
+    } elseif (isset($_POST["Buscar"])) {
+        // echo $_POST["Buscar"]." resultado";
         $accion = "Buscar";
     } elseif (isset($_POST["Crear"])) {
         $accion = "Crear";
     } elseif (isset($_POST["Modificar"])) {
         $accion = "Modificar";
-    } elseif (isset($_POST["Eliminar"])) {
-        $accion = "Eliminar";
-    }
+    } 
 
     if ($accion == "Crear") {
 
@@ -67,6 +67,8 @@
         }
 
         $_SESSION["filtrado"] = consultarDatoBD("select * from Usuario where usuario like ? or email like ? or nombre like ? or apellidos like ? or telefono like ?;",$parametros);
+
+        // echo var_dump($_SESSION["filtrado"]);
 
         redireccionar("../adminUsuarios.php");
 
