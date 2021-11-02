@@ -75,18 +75,41 @@
             <p>
                 Imagen:
             </p>
-            <!--Para dar estilo al boton de file-->
-            <label for="subirImg">Buscar imagen...</label>
-            <input id="subirImg" type="file" />
-        </div>
+            
 
+            <p>
+                <input type="file" accept="image/*" name="image" id="subirImg" onchange="cargarImg(event)">
+            </p>
+            
+            <p>
+                <!--Para dar estilo al boton de file-->
+                <label for="subirImg" style="cursor: pointer;">Subir imagen...</label>
+            </p>
+            
+            <p>
+                <!--Imagen en la que se va a visualizar la imagen a subir-->
+                <img id="imgVision" width="100" />
+            </p>
+
+            <!--Script que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior para poder verla-->
+            <script>
+                var cargarImg = function(event) {
+                    var imagen = document.getElementById('imgVision');
+                    imagen.src = URL.createObjectURL(event.target.files[0]);
+                };
+            </script>
+        </div>
+        
         <div id="desc">
             <p>
                 Descripción:
             </p>
             <textarea placeholder="Descripción de la herramienta..."></textarea>
         </div>
-        <input type="submit" value="Donar"/>
+
+        <div id="posbot">
+            <input class="boton" type="submit" value="Donar"/>
+        </div>
     </form>
 
     <footer class="footer">

@@ -15,7 +15,10 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css" />
+    <link rel="stylesheet" href="css/normalizar.css"/>
+    <link rel="stylesheet" href="css/cssFooter.css"/>
+    <link rel="stylesheet" href="css/cssNav.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/login.css" />
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
@@ -36,7 +39,7 @@
             <p>
                 Usuario:
             </p>
-            <input id="usuario" name="correo" class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
+            <input id="usuario" name="correo" class="textoForm" type="email" placeholder="nombre@gmail.com"/>
         </div>
 
         <div class="usucon_Log">
@@ -44,7 +47,7 @@
                 Contraseña:
             </p>
             <!--Campo de la contraseña, el title sirve para el texto que sale al estar un rato sobre la contraseña-->
-            <input id="contrasena" name="contrasena" class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
+            <input id="contrasena" name="contrasena" class="textoForm" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
             <?php
             
             if (isset($_SESSION["error"])) {
@@ -58,7 +61,7 @@
             ?>
         </div>
 
-        <input id="boton_Log" type="submit" value="Iniciar sesión" />
+        <input class="boton" type="submit" value="Iniciar sesión" />
 
         
 
@@ -68,14 +71,14 @@
                 ¿Te has olvidado la contraseña? Recuperar contraseña
             </a>
 
-            <a class="enlace_Log">
+            <a class="enlace_Log" href="registro.php">
                 ¿No tienes cuenta? Registrate ahora mismo
             </a>
         </div>
     </form>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexFooter.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexFooter.html"); ?>
+    
 </body>
 
 </html>
