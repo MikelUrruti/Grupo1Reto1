@@ -1,4 +1,27 @@
 body{
-    background-image: none;
+    background-image: url("../img/fondoError2.jpg");
+   background-size: cover;
+}
+#error404{
+    /* margin: auto; */
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 5px white;
 }
 
+#errorContent{
+    text-align: center;
+    color: white;
+}
+#errorH1{
+    font-size: 2em;
+}
+#errorP{
+    font-size: 0.7em;
+}
+
+.imgError{
+    width: 300%;
+}
