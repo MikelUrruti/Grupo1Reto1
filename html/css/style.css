@@ -21,6 +21,20 @@ header:not(header ul) {
     margin-right:auto;
 }
 
+.error {
+
+  font-size: 0.8em;
+  color: red;
+  font-weight: bold;
+
+}
+
+.obligatorio {
+
+  color: red;
+
+}
+
 #index {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;
