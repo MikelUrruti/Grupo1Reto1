@@ -80,10 +80,9 @@
     </header>
 
     <?php
-    if ($_GET["cerrado"]) {
-        session_destroy();
-        echo "HOLA";
-    }
+        if (($_GET["cerrado"])) {
+            session_destroy();
+        }
     ?>
     <!-- </body>
 </html> -->

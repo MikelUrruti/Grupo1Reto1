@@ -15,7 +15,7 @@
 </head>
 <body>
     <?php
-        include("plantillas/indexNav.html")
+        include("plantillas/indexNav.php")
     ?>
     <section id="conocenos">
         <article id="mision">
