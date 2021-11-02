@@ -1,27 +1,48 @@
-body{
-    background-image: url("../img/fondoError2.jpg");
-   background-size: cover;
+body {
+    background-image: url("../img/fondoError.jpg");
+    background-size: cover;
 }
-#error404{
+
+#error404 {
     /* margin: auto; */
     display: flex;
-    height: 80vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     text-shadow: 2px 2px 5px white;
 }
 
-#errorContent{
+#errorContent {
     text-align: center;
     color: white;
 }
-#errorH1{
+
+#errorH1 {
     font-size: 2em;
 }
-#errorP{
-    font-size: 0.7em;
+
+#errorP {
+    font-size: 1em;
 }
 
-.imgError{
-    width: 300%;
+/* Estilo Tablet */
+@media screen and (min-width: 480px) {
+    #errorH1 {
+        font-size: 2.5em;
+    }
+
+    #errorP {
+        font-size: 1em;
+    }
+}
+
+/* Estilo PC */
+@media screen and (min-width: 1025px) {
+    #errorH1 {
+        font-size: 3.5em;
+    }
+
+    #errorP {
+        font-size: 1.5em;
+    }
 }

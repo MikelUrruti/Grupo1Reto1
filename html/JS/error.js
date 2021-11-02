@@ -9,8 +9,6 @@ function paralaje() {
     window.onmousemove = function (e) {
         var x = e.clientX/5;
         // var y = e.clientY;
-        contenedor1.style.backgroundPositionX = x + "px";
-        contenedor1.style.backgroundPositionX = x + "px";
-        document.body.style.backgroundPosition = x + "px";
+        document.body.style.backgroundPositionX = x + "px";
     }
 }
