@@ -8,16 +8,14 @@
         
         $parametros = array($_POST["correo"], hash("sha512",$_POST["contrasena"]));
 
-        $resultados = consultarDatoBD("select email, usuario from Usuario where email=? and password=?;",$parametros);
+        $resultados = consultarDatoBD("select email, usuario from Usuario where email=? and password=? and estado='activo';",$parametros);
     
         if (is_array($resultados)) {
     
-            echo var_dump($resultados);
-    
             if (count($resultados) == 1) {
                     
-                $_SESSION["email"]=$resultado[0]["correo"];
-                $_SESSION["usuario"]=$resultado[0]["usuario"];
+                $_SESSION["email"]=$resultados[0]["email"];
+                $_SESSION["usuario"]=$resultados[0]["usuario"];
     
                 header("Location: ../index.php");
         
