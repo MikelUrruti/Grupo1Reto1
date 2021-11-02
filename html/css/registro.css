@@ -8,8 +8,7 @@ ESTILO DE MOVIL
 form{
     border: 4px solid #000000;
     border-radius: 17px;
-    margin: auto;
-    margin-top: 1em;
+    margin: 1em auto;
     width: 80%;
     /* padding-bottom: 6em; */
 }
@@ -19,13 +18,13 @@ form{
     text-align: center;
 }
 
-/* Estilo de la parte de usuario y contraseña
+/* Estilo de la parte de usuario y contraseña */
 .usudat_NewUsu{
     display: grid;
     margin: auto;
     text-align: left;
     width: 70%;
-} */
+}
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/
@@ -113,6 +112,7 @@ ESTILO DE ORDENADOR
     /*Estilo de los grupos de caja horizontales*/
     .grupodatos_NewUsu{
         display: flex;
+        column-gap: 5%;
     }
 
     .grupodatos_NewUsu > .usudat_NewUsu{

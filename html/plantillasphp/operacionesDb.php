@@ -41,7 +41,7 @@ function manipularDatoBD(string $consulta, array $parametros) {
 
 }
 
-function consultarDatoBD(string $consulta, array $parametros) {
+function consultarDatoBD(string $consulta, array $parametros = array()) {
 
     global $datosConexion;
 

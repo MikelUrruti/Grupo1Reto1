@@ -1,3 +1,13 @@
+<?php
+
+
+
+session_start();
+
+require("plantillasphp/funcionesFormularios.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +22,10 @@
     <link rel="stylesheet" href="css/normalizar.css"/>
     <link rel="stylesheet" href="css/cssFooter.css"/>
     <link rel="stylesheet" href="css/cssNav.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/registro.css"/>
     <!--Para el tipo de letra-->
-    <link rel="stylesheet" href="css/style.css"/>
+    
     <script src="JS/js.js"></script>
     <!-- <script src="JS/registro.js"></script>
     <script src="JS/validacion.js"></script> -->
@@ -31,47 +42,61 @@
         <div id="ui">
             <div class="usudat_NewUsu">
                 <p>
-                    Usuario:
+                    Usuario: <span class="obligatorio">*</span>
                 </p>
                 <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="Mecanico824" />
+                <?php cargarError("errorUsuario"); ?>
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
             <div class="grupodatos_NewUsu">
                 <div class="usudat_NewUsu">
                     <p>
-                        Nombre:
+                        Nombre: <span class="obligatorio">*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="nombre" />
+                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="Mikel" />
+                    <?php cargarError("errorNombre"); ?>
                 </div>
 
                 <div class="usudat_NewUsu">
                     <p>
-                        Apellidos:
+                        Apellidos: <span class="obligatorio">*</span>
                     </p>
-                    <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="apellidos" />
+                    <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="Urrutikoetxea" />
+                    <?php cargarError("errorApellidos"); ?>
                 </div>
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
             <div class="usudat_NewUsu">
                 <p>
-                    Email:
+                    Email: <span class="obligatorio">*</span>
                 </p>
                 <input id="email" name="email" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
+                <?php cargarError("errorEmail"); ?>
+            </div>
+
+            <!--Estan en un grupo para que se vean mejor en el ordenador-->
+            <div class="usudat_NewUsu">
+                <p>
+                    Numero de telefono:
+                </p>
+                <input id="telefono" name="telefono" class="datos_NewUsu" type="tel" placeholder="666777888" />
+                <?php cargarError("errorTelefono"); ?>
             </div>
 
             <div class="grupodatos_NewUsu">
             <div class="usudat_NewUsu">
                 <p>
-                    Contraseña:
+                    Contraseña: <span class="obligatorio">*</span>
                 </p>
                 <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                <?php cargarError("errorPassword"); ?>
             </div>
 
             <div class="usudat_NewUsu">
                 <p>
-                    Confirmar contraseña:
+                    Confirmar contraseña: <span class="obligatorio">*</span>
                 </p>
                 <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
             </div>
@@ -79,9 +104,9 @@
         </div>
         <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
-    <!--Lo que hay que poner para incluir una pagina:
+    <!--Lo que hay que poner para incluir una pagina: -->
     <?php include("plantillas/indexFooter.html"); ?>
-    -->
+    
 </body>
 
 </html>

@@ -37,21 +37,25 @@
                 a los usuarios para que 
                 sean capaces de reparar 
                 sus propias herramientas.</p>
-                <a href="#">saber más</a>
+                <a href="Manuales_lista.php">saber más</a>
+                <p></p>
         </article>
         <article>
             <h1>Descubre nuestras herramientas</h1>
             <p>Evita tener que comprar una herramiena para un solo uso, alquila una de nuetras 
                 herramientas</p>
                 <a href="#">saber más</a>
+                <p></p>
         </article>
         <article>
             <h1>¿Tienes herramientas que no usas?</h1>
             <h2>¡Dónalas!</h2>
+            <img src="img/herramientas_donar.png" alt="">
         </article>
     </section>
 
-    <input type="button" id="btnTest" value="s">
+    <input type="text" name="" placeholder="placeholder" id="txtTest">
+
     <?php 
         include ("plantillas/indexFooter.html");
     ?>
