@@ -32,11 +32,11 @@ require("plantillasphp/funcionesFormularios.php");
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
+    <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.html"); ?>
-    -->
+    
     <form action="controladores/registroUsuario.php" method="post">
-        <h2 id="titulo_NewUsu">
+        <h2 class="tituloForm">
             Registrarse
         </h2>
         <div id="ui">
@@ -44,7 +44,7 @@ require("plantillasphp/funcionesFormularios.php");
                 <p>
                     Usuario: <span class="obligatorio">*</span>
                 </p>
-                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="Mecanico824" />
+                <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
                 <?php cargarError("errorUsuario"); ?>
             </div>
 
@@ -54,7 +54,7 @@ require("plantillasphp/funcionesFormularios.php");
                     <p>
                         Nombre: <span class="obligatorio">*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="Mikel" />
+                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="Mikel" />
                     <?php cargarError("errorNombre"); ?>
                 </div>
 
@@ -62,7 +62,7 @@ require("plantillasphp/funcionesFormularios.php");
                     <p>
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
-                    <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="Urrutikoetxea" />
+                    <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="Urrutikoetxea" />
                     <?php cargarError("errorApellidos"); ?>
                 </div>
             </div>
@@ -72,7 +72,7 @@ require("plantillasphp/funcionesFormularios.php");
                 <p>
                     Email: <span class="obligatorio">*</span>
                 </p>
-                <input id="email" name="email" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
+                <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
                 <?php cargarError("errorEmail"); ?>
             </div>
 
@@ -81,7 +81,7 @@ require("plantillasphp/funcionesFormularios.php");
                 <p>
                     Numero de telefono:
                 </p>
-                <input id="telefono" name="telefono" class="datos_NewUsu" type="tel" placeholder="666777888" />
+                <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
                 <?php cargarError("errorTelefono"); ?>
             </div>
 
@@ -90,7 +90,7 @@ require("plantillasphp/funcionesFormularios.php");
                 <p>
                     Contraseña: <span class="obligatorio">*</span>
                 </p>
-                <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
                 <?php cargarError("errorPassword"); ?>
             </div>
 
@@ -98,11 +98,11 @@ require("plantillasphp/funcionesFormularios.php");
                 <p>
                     Confirmar contraseña: <span class="obligatorio">*</span>
                 </p>
-                <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
             </div>
         </div>
         </div>
-        <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
+        <input class="boton" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
     <!--Lo que hay que poner para incluir una pagina: -->
     <?php include("plantillas/indexFooter.html"); ?>

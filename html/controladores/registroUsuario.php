@@ -2,6 +2,7 @@
 
     require("../plantillasphp/validaciones.php");
     require("../plantillasphp/operacionesDb.php");
+    require("../plantillasphp/redirecciones.php");
     
 
     session_start();
@@ -79,7 +80,7 @@
 
         if (!validarUsuario($_POST["usuario"])) {
             
-            $_SESSION["errorUsuario"] = "El nombre del usuario no puede tener caracteres especiales, acentos ni espacios en blanco (longitud de 2 a 30 caracteres)";
+            $_SESSION["errorUsuario"] = "El nombre del usuario no puede tener numeros, caracteres especiales, acentos ni espacios en blanco (longitud de 2 a 30 caracteres)";
             $correcto = false;
 
         }
@@ -130,11 +131,11 @@
         if ($correcto) {
             
             $_SESSION["usuario"]=$_POST["usuario"];
-            $_SESSION["usuario"]=$_POST["email"];
-            $_SESSION["usuario"]=$_POST["nombre"];
-            $_SESSION["usuario"]=$_POST["apellidos"];
-            $_SESSION["usuario"]=hash("sha512",$_POST["password"]);
-            $_SESSION["usuario"]=$_POST["telefono"];
+            $_SESSION["email"]=$_POST["email"];
+            $_SESSION["nombre"]=$_POST["nombre"];
+            $_SESSION["apellidos"]=$_POST["apellidos"];
+            $_SESSION["password"]=hash("sha512",$_POST["password"]);
+            $_SESSION["telefono"]=$_POST["telefono"];
 
             redireccionar("../confirmarRegistro.php");
 
