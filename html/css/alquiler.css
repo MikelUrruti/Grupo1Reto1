@@ -1,0 +1,61 @@
+body {
+    background-color:white;
+}
+
+body > h1 {
+    text-align: center;
+}
+
+body section {
+    display:grid;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+    height:100%;
+    border-radius:0.5em;
+    grid-gap:1em;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+    "article1 article2"
+    "article3 article4";
+}
+
+#article1{grid-area:article1;}
+#article2{grid-area:article2;}
+#article3{grid-area:article3;}
+#article4{grid-area:article4;}
+
+
+body section article {
+    margin:0.5em 1em;
+    background-color:grey;
+    height: 5em;
+    border-radius: 0.5em;
+    cursor:pointer;
+}
+
+body section article img {
+    width:5em;
+    margin-left:170px;
+    z-index: 0;
+    transition: width 0.5s;
+}
+
+body section article img:hover, body section article:hover > img {
+    cursor:pointer;
+    width:7em;
+    transition: width 0.5s;
+}
+
+body section article h2 {
+    background-color:orange;
+    border-radius:0.5em;
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    text-align:center;
+    font-size: 1em; 
+    margin-top:0;
+    z-index: 1;
+}
