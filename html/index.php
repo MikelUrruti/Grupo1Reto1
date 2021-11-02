@@ -21,13 +21,21 @@
 
 <body id="index" class="ordenCajas">
     <?php
-        include("plantillas/indexNav.html")
+        include("plantillas/indexNav.php")
     ?>
+    
+     <noscript>
+            <h1>
+                Su navegador no tiene activado JavaScript.
+                                <br>
+                Es posible que no visualice la página correctamente
+            </h1>
+        </noscript>
 
      <!-- FIN HEADER COMIENZA CUERPO -->
     <section id="section1">
         <h1 id="txtEscribir"></h1>
-        <a href="#">comienza</a>
+        <a href="registro.php">comienza</a>
     </section>
 
     <section id="section2"> 
@@ -54,11 +62,14 @@
         </article>
     </section>
 
-    <input type="text" name="" placeholder="placeholder" id="txtTest">
-
     <?php 
         include ("plantillas/indexFooter.html");
     ?>
+
+
+
+
+
 </body>
 
 </html>

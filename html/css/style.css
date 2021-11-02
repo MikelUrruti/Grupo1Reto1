@@ -271,6 +271,11 @@ Si abro el menú, este tapará todo */
       font-size: 1.2em;
       transition: font-size 1s;
   }
+
+  #index #section1 {
+    margin-top: 10%;
+  }
+
 }
 /* Ordenador */
 @media Screen and (min-width: 1025px) {
@@ -350,35 +355,3 @@ Si abro el menú, este tapará todo */
 }
 
 /* Fin estilos Load */
-
-
-#txtTest, ::placeholder {
-  outline:none;
-  border:none;
-  border-radius: 1em;
-  /* text-align: center; */
-  writing-mode: horizontal-tb;
-  color: #EEC51F;
-  background-color:rgb(143, 143, 143);
-  text-shadow: -1px 1px 0 #000,
-  1px 1px 0 #000,
- 1px -1px 0 #000,
--1px -1px 0 #000;
-}
-
-#txtTest::placeholder {
-  color:white;
-  opacity: .3;
-}
-
-#txtTest {
-  font-size: 2em;
-  width: 180px;
-  height: 30px;
-}
-
-#txtTest:focus {
-  opacity: 1;
-  border-radius: 2rem;
-  box-shadow: 0 0 8px white;
-}
