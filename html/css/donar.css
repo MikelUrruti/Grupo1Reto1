@@ -22,7 +22,7 @@ form div{
 
 /*Estilo de la caja del nombre de las herramientas*/
 #nombre p{
-    padding-right: 5%;
+    margin-left: 7%;
 }
 
 #nombre [type=text]{
@@ -31,6 +31,7 @@ form div{
     padding-top: 0.35%;
     padding-bottom: 0.35%;
     padding-left: 0.5em;
+    margin-left: 5%;
 }
 
 #nombre [type=text]::placeholder{
@@ -39,6 +40,10 @@ form div{
 /*Fin nombre herramientas*/
 
 /*Estilo de la caja para subir imagenes*/
+#titBot>p{
+    margin-left: 3%;
+}
+
 #imagen label{
     background-color: black;
     color: white;
@@ -46,6 +51,7 @@ form div{
     border-radius: 1em;
     width: 7em;
     font-size: 15px;
+    margin-left: 2%;
     cursor: pointer;
     z-index: 0;
     transition: 0.5s;
@@ -62,11 +68,17 @@ form div{
 }
 
 #imgVision{
-    margin-top: 50px;
+    margin: 40px 20px 0px 20px;
+    height: auto;
+    width: 80%;
 }
 /*Fin imagenes*/
 
 /*Estilo del campo de texto de descripcion*/
+#desc>p{
+    margin-left: 7%;
+}
+
 textarea{
     /*Estilo para que el campo de texto no se pueda hacer mas grande*/
     width: 70%;
@@ -75,6 +87,9 @@ textarea{
     background-color: black;
     border: none;
     transition: 0.5s;
+    margin-left: 40px;
+    color: #EEC51F;
+    margin-bottom: 5%;
 }
 
 textarea::placeholder{
@@ -105,3 +120,161 @@ textarea:focus{
     margin: 0% auto 0% auto;
 }
 /*Fin del boton*/
+
+/*Contenedor de las cajas de formulario*/
+#contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 0.5fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "nombre"
+    "imagen"
+    "desc";
+}
+
+#nombre { 
+    grid-area: nombre; 
+}
+
+#imagen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: column;
+    grid-template-areas:
+    "textBot"
+    "imgpos";
+    grid-area: imagen;
+}
+
+#titBot { 
+    grid-area: textBot; 
+}
+
+#imgDonde { 
+    grid-area: imgpos; 
+}
+
+#desc { 
+    grid-area: desc; 
+}
+/*Fin cajas formulario*/
+
+/*
+
+ESTILO DE TABLET
+
+*/
+@media screen and (min-width: 480px) {
+    /*Contenedor de las cajas de formulario*/
+    #contenedor {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 0.5fr;
+        grid-template-areas:
+        "nombre nombre"
+        "imagen imagen"
+        "desc desc";
+    }
+
+    #imagen {
+        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-areas:
+        "textBot imgpos";
+    }
+    /*Fin cajas formulario*/
+
+    /*Estilo del campo de texto*/
+    #nombre p{
+        margin-left: 10%;
+    }
+
+    #nombre [type=text]{
+        margin-left: 13%;
+        width: 60%;
+    }
+    /*Fin campo texto*/
+
+    /*Estilo de la caja para subir imagenes*/
+    #titBot>p{
+        margin-left: 25%;
+    }
+
+    #imagen label{
+        padding: 0.5em 1em;
+        margin-left: 20%;
+    }
+
+    #imgVision{
+        margin: 5% 5% 5% 0%;
+        height: auto;
+        width: 80%;
+    }
+    /*Fin imagenes*/
+
+    /*Estilo del campo de texto de descripcion*/
+    #desc>p{
+        margin-left: 10%;
+    }
+
+    #desc>textarea{
+        width: 80%;
+        margin: 0% 10% 2% 10%;
+    }
+    /*Fin descripcion*/
+}
+
+/*
+
+ESTILO DE ORDENADOR
+
+*/
+@media screen and (min-width: 1025px) {    
+    /*Estilo de los titulos de cada campo*/
+    p{
+        font-size: 2em;
+    }
+    /*Fin titulos*/
+
+    /*Estilo del campo de texto*/
+
+    #nombre [type=text]{
+        margin-left: 13%;
+        width: 60%;
+        height: 50px;
+        font-size: 1.5em;
+    }
+    /*Fin campo texto*/
+
+    /*Estilo de la caja para subir imagenes*/
+    #titBot>p{
+        margin-left: 25%;
+    }
+
+    #imagen label{
+        padding: 0.5em 1em;
+        margin-left: 35%;
+    }
+
+    #imgVision{
+        margin: 2% 2% 2% 0%;
+        height: auto;
+        width: 50%;
+    }
+    /*Fin imagenes*/
+
+    /*Estilo del campo de texto de descripcion*/
+    #desc>p{
+        margin-left: 10%;
+    }
+
+    #desc>textarea{
+        width: 80%;
+        margin: 0% 10% 2% 10%;
+    }
+    /*Fin descripcion*/
+}
