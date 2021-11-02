@@ -87,6 +87,7 @@ ESTILO DE ORDENADOR
     /*Estilo de los grupos de caja horizontales*/
     .grupodatos_NewUsu{
         display: flex;
+        column-gap: 5%;
     }
 
     .grupodatos_NewUsu > .usudat_NewUsu{

@@ -1,3 +1,9 @@
+<?php
+
+require("plantillasphp/funcionesFormularios.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +41,7 @@
                     Usuario: <span class="obligatorio">*</span>
                 </p>
                 <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
+                <?php cargarError("errorUsuario"); ?>
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -43,14 +50,16 @@
                     <p>
                         Nombre: <span class="obligatorio">*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="nombre" />
+                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="Mikel" />
+                    <?php cargarError("errorNombre"); ?>
                 </div>
 
                 <div class="usudat_NewUsu">
                     <p>
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
-                    <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="apellidos" />
+                    <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="Urrutikoetxea" />
+                    <?php cargarError("errorApellidos"); ?>
                 </div>
             </div>
 
@@ -60,6 +69,7 @@
                     Email: <span class="obligatorio">*</span>
                 </p>
                 <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
+                <?php cargarError("errorEmail"); ?>
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -68,6 +78,7 @@
                     Numero de telefono:
                 </p>
                 <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
+                <?php cargarError("errorTelefono"); ?>
             </div>
 
             <div class="grupodatos_NewUsu">
@@ -76,6 +87,7 @@
                     Contraseña: <span class="obligatorio">*</span>
                 </p>
                 <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
+                <?php cargarError("errorPassword"); ?>
             </div>
 
             <div class="usudat_NewUsu">
