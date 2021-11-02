@@ -20,6 +20,14 @@ ESTILO DE MOVIL
 }
 /*Fin boton*/
 
+/*Estilo de las cajas de texto*/
+.datos_NewUsu{
+    background-color: rgb(0, 0, 0);
+    color: #EEC51F;
+    border: none;
+}
+/*Fin cajas texto*/
+
 /*
 
 ESTILO DE TABLET

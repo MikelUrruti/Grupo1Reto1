@@ -2,6 +2,12 @@
     ESTILO MOVIL
 */
 
+
+#primerUsu, #segundoUsu {
+    color:white;
+}
+
+
 /*Estilo de las imagenes*/
 .imgUsuario{
     display: none;

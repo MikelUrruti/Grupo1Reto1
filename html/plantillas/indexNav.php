@@ -10,24 +10,35 @@
     <script src="../JS/js.js"></script>
 </head>
 <body> -->
+
+
+    <?php
+        session_start();
+    ?>
+
     <input class="btnMenu" type="checkbox" name="" id="chkMenu">
     <label id="lblMenu" class="btnMenu" for="chkMenu">&#9776; <span id="lblSpan">Cerrar</span></label>
-    <header>
-        <noscript>
-            <h1>
-                Su navegador no tiene activado JavaScript.
-                                <br>
-                Es posible que no visualice la página correctamente
-            </h1>
-        </noscript>
-        
+    <header>        
         <div id="containerNav">
             <a href="index.php"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
 
             <ul id="primerUsu">
-                <li><a href="login.php">Iniciar sesión</a></li>
-                <li id="ultimousu"><a href="registro.php">Registrarse</a></li>
-                <a class="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
+                <?php
+                 if (isset($_SESSION["email"]) && isset($_SESSION["usuario"])) {
+                    echo "
+                    <li><p>Bienvenido, $_SESSION[usuario]</p></li>
+                    <li><a href=logout.php>Cerrar Sesión</a></li>
+                    ";
+                    // <li><a class=imgUsuario href=><img src=./img/inicio_sesion.png alt=></a></li>
+    
+                    } else {
+                        echo "
+                        <li><a href=login.php>Iniciar sesión</a></li>
+                        <li id=ultimousu><a href=registro.php>Registrarse</a></li>
+                        ";
+                    }
+                
+                ?>
             </ul>
         </div>
 
@@ -45,10 +56,27 @@
             </div>
         </nav>
 
+      
+
         <ul id="segundoUsu">
-            <a class="imgUsuario" href=""><img src="./img/inicio_sesion.png" alt=""></a>
-            <li><a href="login.php">Iniciar sesión</a></li>
-            <li><a href="registro.php">Registrarse</a></li>
+            <?php
+            
+            if (isset($_SESSION["email"]) && isset($_SESSION["usuario"])) {
+                $_GET["cerrado"] = false;
+                echo "
+                <li><p>Bienvenido, $_SESSION[usuario]</p></li>
+                <li><a href=logout.php>Cerrar Sesión</a></li>
+                ";
+                // <li><a class=imgUsuario href=><img src=./img/inicio_sesion.png alt=user></a> </li>
+
+                } else {
+                    echo "
+                    <li><a href=login.php>Iniciar sesión</a></li>
+                    <li><a href=registro.php>Registrarse</a></li>
+                    ";
+                }
+            
+            ?>
         </ul>
     </header>
     <!-- </body>
