@@ -9,12 +9,11 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/manuales_subir.css" />
     <script src="JS/validacion.js"></script>
     <script src="JS/manualesSubir.js"></script>
-    <!--Para el tipo de letra-->
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -22,7 +21,7 @@
     <?php include("../plantillas/indexNav.html"); ?>
     -->
     <form>
-        <h2 id="titulo_Man">
+        <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
         </h2>
 
@@ -34,28 +33,28 @@
             <p>
                 Nombre:
             </p>
-            <input class="datos_Man" id="nombre" type="text" placeholder="nombre" />
+            <input class="textoForm" id="nombre" type="text" placeholder="nombre" />
         </div>
 
         <div class="usucon_Man">
             <p>
                 Apellidos:
             </p>
-            <input class="datos_Man" id="apellidos" type="text" placeholder="apellidos" />
+            <input class="textoForm" id="apellidos" type="text" placeholder="apellidos" />
         </div>
 
         <div class="usucon_Man">
             <p>
                 Email:
             </p>
-            <input class="datos_Man" id="email" type="email" placeholder="nombre@gmail.com" />
+            <input class="textoForm" id="email" type="email" placeholder="nombre@gmail.com" />
         </div>
 
         <div class="usucon_Man">
             <p>
                 Teléfono de contacto:
             </p>
-            <input class="datos_Man" id="telefono" type="tel" placeholder="123456789" size="9" maxlength="9" />
+            <input class="textoForm" id="telefono" type="tel" placeholder="123456789" size="9" maxlength="9" />
         </div>
 
         <!--Los dos tipos de botones-->
