@@ -16,6 +16,7 @@ comprobarLogin();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalizar.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
@@ -48,7 +49,7 @@ comprobarLogin();
                 <div class="acciones">
                     <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
                     <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar">
-                    <input type="submit" class="boton botonEliminar" value="Eliminar" name="Eliminar">
+                    <input type="submit" class="boton botonEliminar" value="Desactivar Usuario" name="Eliminar">
 
 
                 </div>

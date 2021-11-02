@@ -102,6 +102,38 @@ function procesarErroresComunes($codigoError) {
 
 }
 
+function erroresInsertar($codigoError, array $unicos) {
+
+    if ($codigoError == 1062) {
+        
+        $error = "Alguno de los siguientes campos puede que esten siendo utilizados por otro usuario: ";
+
+        for ($i=0; $i < count($unicos); $i++) { 
+            
+            if ($i == count($unicos)-1) {
+                
+                $error .= " o ".$unicos[$i];
+
+            } else {
+                
+                $error .= $unicos[$i].", ";
+
+            }
+
+        }
+
+        $error .= ".";
+
+        return $error;
+
+    } else {
+
+        return procesarErroresComunes($codigoError);
+
+    }
+
+}
+
 // echo 
 // echo manipularDatoBD("insert into Categoria values ('peter2','peter','peter');");
 // echo manipularDatoBD("delete from Categoria where nombre='peter2';");

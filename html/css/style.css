@@ -35,6 +35,14 @@ header:not(header ul) {
 
 }
 
+.exito {
+
+  color: green;
+  font-size: 1.8em;
+  font-weight: bold;
+
+}
+
 #index {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;
