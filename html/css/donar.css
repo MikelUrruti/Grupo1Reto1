@@ -1,0 +1,82 @@
+/*
+    VERSiÓN MOviL
+*/
+/*Estilo de la caja del formulario*/
+form{
+    margin: 31.5px 0 0 0;
+    background-color: red;
+    width: 100%;
+    padding-bottom: 5%;
+}
+/*Fin caja form*/
+
+/*Estilo general de los elementos*/
+form>p{
+    text-align: center;
+    padding-top: 5%;
+    background-color: yellow;
+}
+
+form div{
+    background-color: white;
+    padding: 2% 0 2% 5%;
+    margin-top: 0%;
+}
+/*Fin elementos formulario*/
+
+/*Estilo de la caja del nombre de las herramientas*/
+#nombre{
+    display: flex;
+}
+
+#nombre p{
+    padding-right: 5%;
+}
+
+#nombre [type=text]{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 0.35%;
+    padding-bottom: 0.35%;
+    padding-left: 0.5em;
+}
+
+#nombre [type=text]::placeholder{
+    font-size: small;
+}
+/*Fin nombre herramientas*/
+
+/*Animacion del focus*/
+
+/*Fin focus*/
+
+/*Estilo de la caja para subir imagenes*/
+#imagen label{
+    background-color: red;
+    padding: 0.5em;
+    border-radius: 1em;
+    width: 7em;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 0;
+}
+
+#subirImg{
+    /*Esto esta hecho para "quitar" la caja del input*/
+    width: 0px;
+}
+/*Fin imagenes*/
+
+/*Estilo del campo de texto de descripcion*/
+textarea{
+    /*Estilo para que el campo de texto no se pueda hacer mas grande*/
+    width: 70%;
+    height: 110px;
+    resize: none;
+}
+/*Fin descripcion*/
+
+/*Estilo del boton de enviar*/
+[type=submit]{
+}
+/*Fin del boton*/
