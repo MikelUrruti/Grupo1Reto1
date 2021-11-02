@@ -287,6 +287,10 @@ Si abro el menú, este tapará todo */
 /* Ordenador */
 @media Screen and (min-width: 1025px) {
 
+  .tituloForm{
+    font-size: 2.5em;
+  }
+
   #index section article {
       font-size: 1.7em;
   }
