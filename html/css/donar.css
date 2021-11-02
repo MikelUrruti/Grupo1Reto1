@@ -15,15 +15,8 @@ form{
 /*Fin caja form*/
 
 /*Estilo general de los elementos*/
-form>p{
-    text-align: center;
-    padding-top: 5%;
-    background-color: yellow;
-}
-
 form div{
-    padding: 2% 0 2% 5%;
-    margin-top: 0%;
+    padding: 1% 0 2% 5%;
 }
 /*Fin elementos formulario*/
 
@@ -55,12 +48,21 @@ form div{
     font-size: 15px;
     cursor: pointer;
     z-index: 0;
+    transition: 0.5s;
 }
 
+#imagen label:hover{
+    background-color: #EEC51F;
+    color: black;
+}
 
 #subirImg{
     /*Esto esta hecho para "quitar" la caja del input*/
-    width: 0px;
+    display: none;
+}
+
+#imgVision{
+    margin-top: 50px;
 }
 /*Fin imagenes*/
 
