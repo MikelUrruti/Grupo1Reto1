@@ -39,7 +39,7 @@
             <p>
                 Usuario:
             </p>
-            <input id="usuario" name="correo" class="datos_Log" type="email" placeholder="nombre@gmail.com"/>
+            <input id="usuario" name="correo" class="textoForm" type="email" placeholder="nombre@gmail.com"/>
         </div>
 
         <div class="usucon_Log">
@@ -47,7 +47,7 @@
                 Contraseña:
             </p>
             <!--Campo de la contraseña, el title sirve para el texto que sale al estar un rato sobre la contraseña-->
-            <input id="contrasena" name="contrasena" class="datos_Log" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
+            <input id="contrasena" name="contrasena" class="textoForm" type="password" placeholder="**********" title="La contraseña es el de la cuenta de FixPoint"/>
             <?php
             
             if (isset($_SESSION["error"])) {
@@ -61,7 +61,7 @@
             ?>
         </div>
 
-        <input id="boton_Log" type="submit" value="Iniciar sesión" />
+        <input class="boton" type="submit" value="Iniciar sesión" />
 
         
 

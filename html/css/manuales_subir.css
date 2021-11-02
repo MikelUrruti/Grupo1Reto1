@@ -15,19 +15,10 @@ ESTILO DE MOVIL
 /*Fin de usuario y contraseña*/
 
 /*Estilo de los botones*/
-.botones{
-    color: white;
-    border: outset;
+.boton{
     padding: 1.5%;
     margin-top: 2em;
     margin-bottom: 1em;
-    background-color: black;
-}
-
-.botones:hover{
-    color: #EEC51F;
-    border: inset;
-    cursor: pointer;
 }
 
 #subir_Man{
