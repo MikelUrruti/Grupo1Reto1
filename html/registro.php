@@ -22,9 +22,9 @@
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
+    <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.php"); ?>
-    -->
+    
     <form action="controladores/registroUsuario.php" method="post">
         <h2 class="tituloForm">
             Registrarse
