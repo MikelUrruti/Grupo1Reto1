@@ -1,34 +1,26 @@
 /*
     VERSiÓN MOviL
 */
+/*Imagen de fondo de la pantalla*/
+#index{
+    background-image: url(../img/fondoError.jpg);
+}
+/*Fin fondo*/
+
 /*Estilo de la caja del formulario*/
 form{
-    margin: 31.5px 0 0 0;
-    background-color: red;
-    width: 100%;
-    padding-bottom: 5%;
+    background-color: white;
+    margin-top: 35px;
 }
 /*Fin caja form*/
 
 /*Estilo general de los elementos*/
-form>p{
-    text-align: center;
-    padding-top: 5%;
-    background-color: yellow;
-}
-
 form div{
-    background-color: white;
-    padding: 2% 0 2% 5%;
-    margin-top: 0%;
+    padding: 1% 0 2% 5%;
 }
 /*Fin elementos formulario*/
 
 /*Estilo de la caja del nombre de las herramientas*/
-#nombre{
-    display: flex;
-}
-
 #nombre p{
     padding-right: 5%;
 }
@@ -46,24 +38,31 @@ form div{
 }
 /*Fin nombre herramientas*/
 
-/*Animacion del focus*/
-
-/*Fin focus*/
-
 /*Estilo de la caja para subir imagenes*/
 #imagen label{
-    background-color: red;
+    background-color: black;
+    color: white;
     padding: 0.5em;
     border-radius: 1em;
     width: 7em;
     font-size: 15px;
     cursor: pointer;
     z-index: 0;
+    transition: 0.5s;
+}
+
+#imagen label:hover{
+    background-color: #EEC51F;
+    color: black;
 }
 
 #subirImg{
     /*Esto esta hecho para "quitar" la caja del input*/
-    width: 0px;
+    display: none;
+}
+
+#imgVision{
+    margin-top: 50px;
 }
 /*Fin imagenes*/
 
@@ -73,10 +72,36 @@ textarea{
     width: 70%;
     height: 110px;
     resize: none;
+    background-color: black;
+    border: none;
+    transition: 0.5s;
+}
+
+textarea::placeholder{
+    font-size: medium;
+    color: #e1dede;
+}
+
+textarea:focus{
+    outline: none;
+    background-color: grey;
+    text-shadow: -0.5px 0.5px 0 black,
+        0.3px 0.8px 0 black,
+        0px -0.8px 0 black,
+        1px 0.8px 0 black,
+        0.7px -0.6px 0 black,
+        -0.8px -0.5px 0 black;
 }
 /*Fin descripcion*/
 
 /*Estilo del boton de enviar*/
-[type=submit]{
+#posbot{
+    display: flex;
+    padding: 0%;
+    justify-content: right;
+}
+.boton{
+    padding: 1% 2% 1% 2%;
+    margin: 0% auto 0% auto;
 }
 /*Fin del boton*/

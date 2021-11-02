@@ -22,11 +22,11 @@
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("plantillas/indexNav.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexNav.php"); ?>
+    
     <form action="controladores/registroUsuario.php" method="post">
-        <h2 id="tituloForm">
+        <h2 class="tituloForm">
             Registrarse
         </h2>
         <div id="ui">
@@ -43,14 +43,14 @@
                     <p>
                         Nombre: <span class="obligatorio">*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="datos_NewUsu" type="text" placeholder="nombre" />
+                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="nombre" />
                 </div>
 
                 <div class="usudat_NewUsu">
                     <p>
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
-                    <input id="apellidos" name="apellidos" class="datos_NewUsu" type="text" placeholder="apellidos" />
+                    <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="apellidos" />
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 <p>
                     Email: <span class="obligatorio">*</span>
                 </p>
-                <input id="email" name="email" class="datos_NewUsu" type="email" placeholder="nombre@gmail.com" />
+                <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -67,7 +67,7 @@
                 <p>
                     Numero de telefono:
                 </p>
-                <input id="telefono" name="telefono" class="datos_NewUsu" type="tel" placeholder="666777888" />
+                <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
             </div>
 
             <div class="grupodatos_NewUsu">
@@ -75,18 +75,18 @@
                 <p>
                     Contraseña: <span class="obligatorio">*</span>
                 </p>
-                <input id="password" name="password" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
             </div>
 
             <div class="usudat_NewUsu">
                 <p>
                     Confirmar contraseña: <span class="obligatorio">*</span>
                 </p>
-                <input id="confPassword" name="confirmarPassword" class="datos_NewUsu" type="password" placeholder="**********" />
+                <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
             </div>
         </div>
         </div>
-        <input id="button_NewUsu" type="submit" value="Crear cuenta" name="Registrar" />
+        <input class="boton" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
     <!--Lo que hay que poner para incluir una pagina: -->
     <?php include("plantillas/indexFooter.html"); ?>

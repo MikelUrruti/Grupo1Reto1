@@ -21,13 +21,21 @@
 
 <body id="index" class="ordenCajas">
     <?php
-        include("plantillas/indexNav.html")
+        include("plantillas/indexNav.php")
     ?>
+    
+     <noscript>
+            <h1>
+                Su navegador no tiene activado JavaScript.
+                                <br>
+                Es posible que no visualice la página correctamente
+            </h1>
+        </noscript>
 
      <!-- FIN HEADER COMIENZA CUERPO -->
     <section id="section1">
         <h1 id="txtEscribir"></h1>
-        <a href="#">comienza</a>
+        <a href="registro.php">comienza</a>
     </section>
 
     <section id="section2"> 
@@ -37,24 +45,31 @@
                 a los usuarios para que 
                 sean capaces de reparar 
                 sus propias herramientas.</p>
-                <a href="#">saber más</a>
+                <a href="Manuales_lista.php">saber más</a>
+                <p></p>
         </article>
         <article>
             <h1>Descubre nuestras herramientas</h1>
             <p>Evita tener que comprar una herramiena para un solo uso, alquila una de nuetras 
                 herramientas</p>
                 <a href="#">saber más</a>
+                <p></p>
         </article>
         <article>
             <h1>¿Tienes herramientas que no usas?</h1>
             <h2>¡Dónalas!</h2>
+            <img src="img/herramientas_donar.png" alt="">
         </article>
     </section>
 
-    <input type="button" id="btnTest" value="s">
     <?php 
         include ("plantillas/indexFooter.html");
     ?>
+
+
+
+
+
 </body>
 
 </html>

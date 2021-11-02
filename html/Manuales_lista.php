@@ -20,7 +20,7 @@
 <body>
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php
-        include("plantillas/indexNav.html")
+        include("plantillas/indexNav.php")
     ?>
     
     <form>

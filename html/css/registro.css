@@ -13,22 +13,20 @@ ESTILO DE MOVIL
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/
-#button_NewUsu{
+.boton{
     display: block;
-    background-color: black;
-    color: white;
-    margin: 5% auto;
-    border: outset;
+    margin: 5% auto 0% auto;
     padding: 1.5%;
-    transition: 0.6s;
-}
-
-#button_NewUsu:hover{
-    color: #EEC51F;
-    border:inset;
-    cursor: pointer;
 }
 /*Fin boton*/
+
+/*Estilo de las cajas de texto*/
+.datos_NewUsu{
+    background-color: rgb(0, 0, 0);
+    color: #EEC51F;
+    border: none;
+}
+/*Fin cajas texto*/
 
 /*
 
