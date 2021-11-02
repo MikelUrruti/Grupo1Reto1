@@ -223,16 +223,6 @@ form{
   color: rgb(188, 188, 188);
 }
 
-.textoForm:focus{
-  outline: none;
-  background-color: grey;
-  text-shadow: -0.5px 0.5px 0 black,
-      0.3px 0.8px 0 black,
-      0px -0.8px 0 black,
-      1px 0.8px 0 black,
-      0.7px -0.6px 0 black,
-      -0.8px -0.5px 0 black;
-}
 /*Fin cajas texto formulario*/
 
 /*Estilo del boton de enviar los formularios*/
