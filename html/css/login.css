@@ -73,6 +73,10 @@ form{
     overflow: hidden;
 }
 
+.enlace_Log{
+    text-decoration: none;
+}
+
 .enlace_Log:hover{
     font-weight: bold;
     cursor: pointer;

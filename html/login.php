@@ -15,7 +15,10 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css" />
+    <link rel="stylesheet" href="css/normalizar.css"/>
+    <link rel="stylesheet" href="css/cssFooter.css"/>
+    <link rel="stylesheet" href="css/cssNav.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/login.css" />
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
@@ -24,9 +27,9 @@
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexNav.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexNav.html"); ?>
+    
     <form action="controladores/verificarLogin.php" method="post">
         <h2 id="titulo_Log">
             Inicio de sesión
@@ -68,14 +71,14 @@
                 ¿Te has olvidado la contraseña? Recuperar contraseña
             </a>
 
-            <a class="enlace_Log">
+            <a class="enlace_Log" href="registro.php">
                 ¿No tienes cuenta? Registrate ahora mismo
             </a>
         </div>
     </form>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexFooter.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexFooter.html"); ?>
+    
 </body>
 
 </html>
