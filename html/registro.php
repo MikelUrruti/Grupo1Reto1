@@ -26,7 +26,7 @@
     <?php include("plantillas/indexNav.html"); ?>
     -->
     <form action="controladores/registroUsuario.php" method="post">
-        <h2 id="titulo_NewUsu">
+        <h2 id="tituloForm">
             Registrarse
         </h2>
         <div id="ui">
@@ -34,7 +34,7 @@
                 <p>
                     Usuario: <span class="obligatorio">*</span>
                 </p>
-                <input id="usuario" name="usuario" class="datos_NewUsu" type="text" placeholder="Mecanico824" />
+                <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
