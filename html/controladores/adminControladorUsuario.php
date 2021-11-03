@@ -4,14 +4,10 @@
     require_once("../plantillasphp/operacionesDb.php");
 
     session_start();
-
-    echo var_dump($_POST);
+    
 
     if (isset($_POST["Eliminar"])) {
         $accion = "Eliminar";
-    } elseif (isset($_POST["Buscar"])) {
-        // echo $_POST["Buscar"]." resultado";
-        $accion = "Buscar";
     } elseif (isset($_POST["Crear"])) {
         $accion = "Crear";
     } elseif (isset($_POST["Modificar"])) {
@@ -20,11 +16,11 @@
 
     if ($accion == "Crear") {
 
-        redireccionar("../FormularioCrearUsuario.php");
+        redireccionar("../formularioCrearUsuario.php");
 
     } elseif ($accion == "Modificar") {
         
-        redireccionar("../FormularioModificarUsuario.php");
+        redireccionar("../formularioModificarUsuario.php");
 
     } elseif ($accion == "Eliminar") {
 
@@ -53,22 +49,6 @@
         }
 
         manipularDatoBD($consulta,$parametros);
-
-        redireccionar("../adminUsuarios.php");
-
-    } elseif ($accion == "Buscar") {
-
-        $parametros = array();
-
-        for ($i=0; $i < 5; $i++) { 
-            
-            array_push($parametros,"%".$_POST["Buscar"]."%");
-
-        }
-
-        $_SESSION["filtrado"] = consultarDatoBD("select * from Usuario where usuario like ? or email like ? or nombre like ? or apellidos like ? or telefono like ?;",$parametros);
-
-        // echo var_dump($_SESSION["filtrado"]);
 
         redireccionar("../adminUsuarios.php");
 

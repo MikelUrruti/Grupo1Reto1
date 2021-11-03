@@ -35,6 +35,14 @@ header:not(header ul) {
 
 }
 
+.exito {
+
+  color: green;
+  font-size: 1.8em;
+  font-weight: bold;
+
+}
+
 #index {
     background-image: url("../img/fondoIndex.jpg");
     background-repeat: no-repeat;
@@ -240,6 +248,19 @@ form{
   cursor: pointer;
 }
 /*Fin boton*/
+
+/*Estilo de la animacion de los formularios*/
+.textoForm:focus{
+  outline: none;
+  background-color: grey;
+  text-shadow: -0.5px 0.5px 0 black,
+      0.3px 0.8px 0 black,
+      0px -0.8px 0 black,
+      1px 0.8px 0 black,
+      0.7px -0.6px 0 black,
+      -0.8px -0.5px 0 black;
+}
+/*Fin animacion formulario*/
 /*
 Fin formularios
 */

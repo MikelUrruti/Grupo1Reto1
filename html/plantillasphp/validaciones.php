@@ -60,9 +60,9 @@ function validarTelefono($telefono) {
 
 function validarPassword($password) {
 
-    $regex = "/^[a-zA-Z0-9]{8,32}";
+    $regex = "/^[a-zA-Z0-9]{8,32}$/";
 
-    return true;
+    return preg_match($regex,$password);
 
 }
 
