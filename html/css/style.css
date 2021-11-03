@@ -268,18 +268,19 @@ Fin formularios
   /* Cuando estoy en móvil el menú se quedará en su sitio,
 Si abro el menú, este tapará todo */
 @media Screen and (max-width: 480px) {
-  body label, body header {
+  #lblMenu, header {
       position:absolute;
   }
   
-  #index label {
-      z-index: 2;
+   #lblMenu {
+      z-index: 999;
   }
   
-  #index header {
-      z-index: 1;
+  header {
+      z-index: 998;
   }
 }
+
 /* Tablet */
 @media Screen and (min-width:480px) {
   

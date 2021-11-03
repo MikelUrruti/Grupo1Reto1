@@ -19,27 +19,32 @@
     <title>Alquiler - Fix Point</title>
 </head>
 
-<body id="index" class="ordenCajas">
+<body>
     <?php
         include("plantillas/indexNav.php")
     ?>
     
     <h1>Escoge la sección que quieras visualizar:</h1>
 
+    <a id="flechaIzqMovil" class="flechasMovil"> < </a>
+    <a id="flechaDchMovil" class="flechasMovil"> > </a>
+
     <section>
-       <article id="article1">
+        <a class="test" id="article1" href="#">
             <img src="img/martillo.png" alt="">
             <h2>Martillos</h2>
-       </article>
-       <article id="article2">
+        </a>
 
-       </article>
-       <article id="article3">
+       <a class="test" id="article2">
+           <img src="img/caladora.png" alt="">
+           <h2>Caladoras</h2>
+       </a>
+       <a class="test" id="article3">
 
-       </article>
-       <article id="article4">
+       </a>
+       <a class="test" id="article4">
 
-       </article>
+       </a>
     </section>
 
      <noscript>
