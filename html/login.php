@@ -20,9 +20,9 @@
 </head>
 
 <body>
-    <!--Lo que hay que poner para incluir una pagina:
+    <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.php"); ?>
-    -->
+    
     <form action="controladores/verificarLogin.php" method="post">
         <h2 id="titulo_Log">
             Inicio de sesión

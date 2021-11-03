@@ -39,6 +39,7 @@ if ($totalconsulta > 0) {
 
     //Comprobacion de los elementos que hay en la bd para crear las bolitas necesarias
     if ($_SESSION["total_pages"] > 1) {
+        //Flecha que sirve para ir hacia la izquierda, solo aparece siempre y cuando no este en la primera pagina
         if ($page != 1) {
             echo '
             <section id="movIzq">
@@ -48,21 +49,26 @@ if ($totalconsulta > 0) {
 
         //Estilo de las bolitas que marcan las paginas
         for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
+            //Si entra aqui es que esta en esa pagina
             if ($page == $i) {
                 echo '
-                <section class="numPag">
-                        <a href="Manuales_lista.php?page='.$i.'">' . $page . '</a>
-                </section>';
+                <a class="numPag" id="posAct" href="Manuales_lista.php?page='.$i.'">
+                    <section>
+                            ' .$page. '
+                    </section>
+                </a>';                
+            //Aqui solo entra cuando la posicion de $i no concuerda con la pagina en la que esta
             } else {
                 echo '
-                <section class="numPag">
-                    
-                        <a href="Manuales_lista.php?page=' . $i . '">' . $i . '</a>
-                    
-                </section>';
+                <a class="numPag" href="Manuales_lista.php?page=' . $i . '">
+                    <section>
+                        ' .$i. '                    
+                    </section>
+                </a>';
             }
         }
 
+        //Flecha que sirve para ir hacia la derecha, solo aparece siempre y cuando no este en la ultima pagina
         if ($page != $_SESSION["total_pages"]) {
             echo '
             <section id="movDer">
@@ -70,7 +76,6 @@ if ($totalconsulta > 0) {
             </section>';
         }
     }
-
     echo '</article>';
 }
 
