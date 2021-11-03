@@ -86,6 +86,30 @@
                 <?php cargarError("errorTelefono",""); ?>
             </div>
 
+            <div class="usudat_NewUsu">
+                <p>
+                    Tipo de usuario:
+                </p>
+
+                <?php echo $_SESSION["tipo"]; ?>
+
+                <select name="tipo" id="" class="textoForm">
+
+                    <option value="usuario">Usuario</option>
+
+                    <?php
+
+                        if ($_SESSION["tipo"] == "superadministrador") {
+                            echo "<option value='administrador'>Administrador</option>";
+                            echo "<option value='superadministrador'>SuperAdministrador</option>";
+                        }
+                    
+                    ?>
+
+                </select>
+                <!-- <input id="tipo" name="tipo" class="textoForm" type="tel" placeholder="666777888" /> -->
+            </div>
+
             <div class="grupodatos_NewUsu">
             <div class="usudat_NewUsu">
                 <p>
