@@ -22,7 +22,6 @@
         $start = ($page - 1) * 6;
     }
     //calculo el total de paginas
-    // $total_page = ceil($totalconsulta / 6);
     $total_pages = ceil($totalconsulta /6);
  
     // //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
