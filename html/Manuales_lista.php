@@ -10,11 +10,11 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
-    <link rel="stylesheet" href="css/manualesLista.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manualesLista.css" />
 </head>
 
 <body>
@@ -34,89 +34,6 @@
             <img id="lupa" src="img/lupa.png" />
         </div>
 <?php include("controladores/paginador.php") ?>
-        <!-- <section id="cajaMan">
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-        </section> -->
-
-        <!-- <article id="cantPag">
-            <section id="movIzq">
-                <img src="img/Paso.png" />
-            </section>
-
-            <section class="numPag">
-                <p>
-                    1
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    ...
-                </p>
-            </section>
-
-            <section class="numPag" id="posAct">
-                <p>
-                    5
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    ...
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    10
-                </p>
-            </section>
-
-            <section id="movDer">
-                <img src="img/Paso.png" />
-            </section>
-        </article> -->
     </form>
     <?php 
         include ("plantillas/indexFooter.html");

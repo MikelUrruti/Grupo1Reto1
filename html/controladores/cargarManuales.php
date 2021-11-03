@@ -1,24 +1,28 @@
 <?php 
 
-    // require("plantillasphp/operacionesDb.php");
-
-    // $consulta = "select titulo from Manual;";
-    // $parametros = array();
-
-    // $filas = consultarDatoBD($consulta, $parametros);
-
-    // mostrarmanuales($filas);
-
-
-    function mostrarmanuales($consulta){
+    function mostrarmanuales($consulta,$page,$nummanuales){
 
     print('<section id="cajaMan">');
-    foreach($consulta as $columnas){
-        print('<article class="manpos">');
-            print('<img class="manimg" src="img/ImagenPDF.png" />');
-            print('<p>'.$columnas['titulo'].'</p>');
-        print("</article>");
+
+    if ($_SESSION["total_pages"] == $page) {
+        
+        $limite = count($consulta);
+
+    } else {
+
+        $limite = $page*$nummanuales;
+
     }
+
+    for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
+        
+        print('<article class="manpos">');
+        print('<img class="manimg" src="img/ImagenPDF.png" />');
+        print('<p>'.$consulta[$i]['titulo'].'</p>');
+        print("</article>");
+
+    }
+
     print('</section>');
 
     }
