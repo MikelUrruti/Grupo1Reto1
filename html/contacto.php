@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/contacto.css">
-    <title>Contacto</title>
+    <title>Contacto - Fix Point</title>
 </head>
 
 <body>
