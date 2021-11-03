@@ -33,30 +33,26 @@ if ($totalconsulta > 0) {
 
     //Inicio de la creacion de las bolitas
     echo '<article id="cantPag">';
-    echo '<section id="movIzq">
-        <img src="img/Paso.png" />
-        </section>';
 
     if ($_SESSION["total_pages"] > 1) {
         if ($page != 1) {
-            echo '<section class="numPag" class="page-item">
-                <p>
-                    <a class="page-link" href="Manuales_lista.php?page='.($page-1).'"><span aria-hidden="true">&laquo;</span></a>
-                </p>
+            echo '
+            <section id="movIzq">
+                <a href="Manuales_lista.php?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
             </section>';
         }
 
         for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
             if ($page == $i) {
                 echo '
-                <section class="numPag" class="page-item active">
-                        <a class="page-link" href="Manuales_lista.php">' . $page . '</a>
+                <section class="numPag">
+                        <a href="Manuales_lista.php">' . $page . '</a>
                 </section>';
             } else {
                 echo '
-                <section class="numPag" class="page-item>
+                <section class="numPag">
                     
-                        <a class="page-link" href="Manuales_lista.php?page=' . $i . '">' . $i . '</a>
+                        <a href="Manuales_lista.php?page=' . $i . '">' . $i . '</a>
                     
                 </section>';
             }
@@ -64,16 +60,12 @@ if ($totalconsulta > 0) {
 
         if ($page != $_SESSION["total_pages"]) {
             echo '
-            <section class="numPag" class="page-item">
-                    <p>
-                    <a class="page-link" href="Manuales_lista.php?page=' . ($page + 1) . '"><span aria-hidden="true">&raquo;</span></a>
-                    </p>
-                </section>';
+            <section id="movDer">
+                <a href="Manuales_lista.php?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
+            </section>';
         }
     }
-    echo '<section id="movDer">
-        <img src="img/Paso.png" />
-        </section>';
+
     echo '</article>';
 }
 
