@@ -35,6 +35,7 @@ function validarEmail($email) {
 }
 
 function validarTelefono($telefono) {
+    $cambio;
 
     if (strlen($telefono) == 9) {
         
@@ -43,18 +44,19 @@ function validarTelefono($telefono) {
             for ($i=1; $i < strlen($telefono); $i++) { 
 
                 if (is_numeric(substr($telefono,$i,1))) {
-                    return false;
+                    $cambio=false;
                 }
 
             }
 
-            return true;
+            $cambio=true;
 
         }
 
     } 
 
     return false;
+    return preg_match()
 
 }
 
