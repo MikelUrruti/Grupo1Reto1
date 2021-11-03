@@ -16,6 +16,7 @@ comprobarLogin();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalizar.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
@@ -36,21 +37,19 @@ comprobarLogin();
     <section class="contenido">
         <article>
             <h1 class="titulo">USUARIOS DEL SITIO WEB</h1>
-            <p>En</p>
         </article>
         <article>
+            <form action="controladores/buscarUsuario.php" method="get" id="buscador">
+                        <input type="text" name="Buscar" id="txtbus" placeholder="Buscar usuarios..." />
+                        <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
+            </form>
+
             <form action="controladores/adminControladorUsuario.php" method="post">
 
                 <div class="acciones">
                     <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
                     <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar">
-                    <input type="submit" class="boton botonEliminar" value="Eliminar" name="Eliminar">
-
-                    <div id="buscador">
-                        <input type="text" name="Buscar" id="txtbus" placeholder="Buscar usuarios..." />
-                        <img src="img/lupa.png" alt="Lupa" id="lupa" />
-                    </div>
-
+                    <input type="submit" class="boton botonEliminar" value="Desactivar Usuario" name="Eliminar">
 
 
                 </div>
@@ -102,6 +101,7 @@ comprobarLogin();
 
                                 $resultados = $_SESSION["filtrado"];
                                 unset($_SESSION["filtrado"]);
+
                             } else {
 
                                 $resultados = consultarDatoBD("select * from Usuario;", array());

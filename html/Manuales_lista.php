@@ -10,11 +10,11 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
-    <link rel="stylesheet" href="css/manualesLista.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manualesLista.css" />
 </head>
 
 <body>
@@ -33,8 +33,8 @@
             <input id="txtbus" type="text" placeholder="Buscar manuales..." />
             <img id="lupa" src="img/lupa.png" />
         </div>
-
-        <section id="cajaMan">
+<?php include("controladores/paginador.php") ?>
+        <!-- <section id="cajaMan">
             <article class="manpos">
                 <img class="manimg" src="img/ImagenPDF.png" />
                 <p>
@@ -76,9 +76,9 @@
                     Nombre del manual
                 </p>
             </article>
-        </section>
+        </section> -->
 
-        <article id="cantPag">
+        <!-- <article id="cantPag">
             <section id="movIzq">
                 <img src="img/Paso.png" />
             </section>
@@ -116,7 +116,7 @@
             <section id="movDer">
                 <img src="img/Paso.png" />
             </section>
-        </article>
+        </article> -->
     </form>
     <?php 
         include ("plantillas/indexFooter.html");

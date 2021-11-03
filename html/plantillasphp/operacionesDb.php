@@ -41,7 +41,7 @@ function manipularDatoBD(string $consulta, array $parametros) {
 
 }
 
-function consultarDatoBD(string $consulta, array $parametros) {
+function consultarDatoBD(string $consulta, array $parametros = array()) {
 
     global $datosConexion;
 
@@ -97,6 +97,38 @@ function procesarErroresComunes($codigoError) {
     } else {
 
         return "Se ha producido el siguiente error a la hora de trabajar con la base de datos: ".$codigoError.". Por favor, contacta con el administrador del sitio web para que resuelva este problema";
+
+    }
+
+}
+
+function erroresInsertar($codigoError, array $unicos) {
+
+    if ($codigoError == 1062) {
+        
+        $error = "Alguno de los siguientes campos puede que esten siendo utilizados por otro usuario: ";
+
+        for ($i=0; $i < count($unicos); $i++) { 
+            
+            if ($i == count($unicos)-1) {
+                
+                $error .= " o ".$unicos[$i];
+
+            } else {
+                
+                $error .= $unicos[$i].", ";
+
+            }
+
+        }
+
+        $error .= ".";
+
+        return $error;
+
+    } else {
+
+        return procesarErroresComunes($codigoError);
 
     }
 

@@ -46,7 +46,7 @@
             <a href="index.php">Inicio</a>
             <a href="Manuales_lista.php">Manuales</a>
             <a href="alquiler.php">Alquiler</a>
-            <a href="donar.html">Dónanos</a>
+            <a href="donar.php">Dónanos</a>
             <a class="oculto" href="conocenos.php">Sobre nosotros</a>
             <a class="oculto" href="contacto.php">Contacto</a>
             <div id="masTit">

@@ -21,7 +21,7 @@
 
 <body id="index" class="ordenCajas">
     <?php
-        include("plantillas/indexNav.php")
+        include("plantillas/indexNav.php");
     ?>
     
      <noscript>
