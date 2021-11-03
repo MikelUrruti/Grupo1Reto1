@@ -1,6 +1,6 @@
 <?php
 
-require_once("plantillasphp/redirecciones.php");
+require("plantillasphp/redirecciones.php");
 
 session_start();
 
@@ -21,6 +21,7 @@ comprobarLogin();
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
     <link rel="stylesheet" href="css/adminUsuarios.css">
+    <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
     <title>Usuarios</title>
 </head>
@@ -39,45 +40,65 @@ comprobarLogin();
             <h1 class="titulo">USUARIOS DEL SITIO WEB</h1>
         </article>
         <article>
+
+        
             <form action="controladores/buscarUsuario.php" method="get" id="buscador">
-                        <input type="text" name="Buscar" id="txtbus" placeholder="Buscar usuarios..." />
-                        <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
+                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar usuarios..." />
+                <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
+            <div id="buscadorFiltros">
 
-            <form action="controladores/adminControladorUsuario.php" method="post">
-
-                <div class="acciones">
-                    <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
-                    <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar">
-                    <input type="submit" class="boton botonEliminar" value="Desactivar Usuario" name="Eliminar">
-
-
-                </div>
-                <div id="filtros">
+                <form action="controladores/filtrosUsuario.php" id="filtros" method="get">
                     <div>
-                        <div>
-                            <input type="checkbox" name="buscarTipo[]" value="usuario" id="">
+                        <h2 class="tituloFiltro">Tipo de usuario:</h2>
+                        <div>    
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="usuario" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("usuario",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
                             <label for="">Usuario</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="buscarTipo[]" value="administrador" id="">
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="administrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("administrador",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
                             <label for="">Administrador</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="buscarTipo[]" value="superAdministrador" id="">
-                            <label for="">Superadministrador</label>
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="superadministrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("superadministrador",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">SuperAdministrador</label>
                         </div>
                     </div>
                     <div>
+                        <h2 class="tituloFiltro">Estado del usuario:</h2>
                         <div>
-                            <input type="checkbox" name="buscarActivos[]" value="activo" id="">
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="activo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("activo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
                             <label for="">Activo</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="buscarActivos[]" value="inactivo" id="">
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="inactivo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("inactivo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
                             <label for="">Inactivo</label>
                         </div>
                     </div>
+
+                </form>
+
+            </div>
+
+
+            <form action="controladores/adminControladorUsuario.php" method="post" id="acciones">
+
+                <div class="acciones">
+                    <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
+                    <!-- <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar"> -->
+                    <input type="submit" class="boton botonEliminar" value="Desactivar Usuario" name="Eliminar">
+
+
                 </div>
                 <table class="tabla">
                     <thead>
@@ -95,7 +116,7 @@ comprobarLogin();
                     <tbody>
                         <?php
 
-                        if (!isset($filas)) {
+                            // echo var_dump($_SESSION["filtrado"]);
 
                             if (isset($_SESSION["filtrado"])) {
 
@@ -105,20 +126,35 @@ comprobarLogin();
                             } else {
 
                                 $resultados = consultarDatoBD("select * from Usuario;", array());
+
+                                $_SESSION["filas"] = array();
+
+                                foreach ($resultados as $resultado) {
+    
+                                    array_push($_SESSION["filas"], $resultado);
+    
+                                }
+                            
                             }
 
-                            $filas = array();
+                            // if (!isset($_SESSION["filas"])) {
+                                
+                            //     $_SESSION["filas"] = array();
 
-                            foreach ($resultados as $resultado) {
+                            //     foreach ($resultados as $resultado) {
+    
+                            //         array_push($_SESSION["filas"], $resultado);
+    
+                            //     }
 
-                                array_push($filas, $resultado);
-                            }
-                        }
-
-                        if (isset($filas) && count($filas) > 0) {
+                            // }
 
 
-                            foreach ($filas as $fila) {
+
+                        if (isset($resultados) && count($resultados) > 0) {
+
+
+                            foreach ($resultados as $fila) {
 
                         ?>
 
