@@ -33,21 +33,14 @@
 
 <section class="contenido">
 
-    <form action="controladores/crearUsuario.php" method="post">
+    <form action="controladores/modificarUsuario.php" method="post">
     
         <h2 id="titulo_NewUsu">
-            Crear nuevo usuario
+            Modificar Usuario
         </h2>
         <?php cargarExito("exito",""); ?>
         <?php cargarError("errorGeneral","text-align:center"); ?>
         <div id="ui">
-            <div class="usudat_NewUsu">
-                <p>
-                    Usuario: <span class="obligatorio">*</span>
-                </p>
-                <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
-                <?php cargarError("errorUsuario",""); ?>
-            </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
             <div class="grupodatos_NewUsu">
@@ -103,7 +96,7 @@
             </div>
         </div>
         </div>
-        <input class="boton" type="submit" value="Crear Usuario" name="Registrar" id="button_NewUsu" />
+        <input class="boton" type="submit" value="Modificar Usuario" name="Registrar" id="button_NewUsu" />
     </form>
 
 </section>

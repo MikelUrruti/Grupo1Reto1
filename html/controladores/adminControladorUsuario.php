@@ -16,11 +16,11 @@
 
     if ($accion == "Crear") {
 
-        redireccionar("../FormularioCrearUsuario.php");
+        redireccionar("../formularioCrearUsuario.php");
 
     } elseif ($accion == "Modificar") {
         
-        redireccionar("../FormularioModificarUsuario.php");
+        redireccionar("../formularioModificarUsuario.php");
 
     } elseif ($accion == "Eliminar") {
 

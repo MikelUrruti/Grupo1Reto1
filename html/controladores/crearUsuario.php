@@ -4,7 +4,6 @@
     require("../plantillasphp/operacionesDb.php");
     require("../plantillasphp/redirecciones.php");
     
-
     session_start();
 
     if (isset($_POST["usuario"]) && isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirmarPassword"])) {
@@ -63,29 +62,33 @@
 
         if ($correcto) {
             
-            $_SESSION["usuario"]=$_POST["usuario"];
-            $_SESSION["email"]=$_POST["email"];
-            $_SESSION["nombre"]=$_POST["nombre"];
-            $_SESSION["apellidos"]=$_POST["apellidos"];
-            $_SESSION["password"]=hash("sha512",$_POST["password"]);
-            $_SESSION["telefono"]=$_POST["telefono"];
+            
 
-            redireccionar("../confirmarRegistro.php");
+            $parametros = array($_POST["usuario"], $_POST["email"], $_POST["nombre"], $_POST["apellidos"], hash("sha512",$_POST["password"]), null, "usuario", "activo");
 
-            // $parametros = array($_POST["usuario"], $_POST["email"], $_POST["nombre"], $_POST["apellidos"], hash("sha512",$_POST["password"]), null, "usuario", "activo");
+            $consulta = manipularDatoBD("insert into Usuario values (?, ?, ?, ?, ?, ?, ?, ?)",$parametros);
 
-            // manipularDatoBD("insert into Usuario values (?, ?, ?, ?, ?, ?, ?, ?)",$parametros);
+            if (is_integer($consulta)) {
+                
+                $_SESSION["errorGeneral"] = erroresInsertar($consulta,array("Usuario","Email","Telefono"));
+                echo $_SESSION["errorGeneral"];
 
-            // header("Location: ../index.html");
+            } else {
+
+                $_SESSION["exito"]="Se ha creado el Usuario de manera exitosa";
+
+            }
+
+            redireccionar("../formularioCrearUsuario.php");
 
         } else {
 
-            redireccionar("../registro.php");
+            redireccionar("../formularioCrearUsuario.php");
 
         }
 
     } else {
 
-        redireccionar("../registro.php");
+        redireccionar("../formularioCrearUsuario.php");
 
     }
