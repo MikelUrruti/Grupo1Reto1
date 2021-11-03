@@ -1,6 +1,4 @@
 <?php 
-// function paginamiento(){
-    // define('NUM_ITEMS_BY_PAGE', 6);
     require("plantillasphp/operacionesDb.php");  
     require("cargarManuales.php");    
     $consulta = "select titulo from Manual;";
@@ -25,7 +23,7 @@
     }
     //calculo el total de paginas
     // $total_page = ceil($totalconsulta / 6);
-    $total_pages = ceil($num_total_rows /6);
+    $total_pages = ceil($totalconsulta /6);
  
     // //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
 
@@ -77,4 +75,3 @@
         </section>';
     echo '</article>';
 }
-// }
