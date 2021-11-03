@@ -27,7 +27,7 @@
                  if (isset($_SESSION["email"]) && isset($_SESSION["usuario"])) {
                     echo "
                     <li><p>Bienvenido, $_SESSION[usuario]</p></li>
-                    <li><a href=index.php?cerrado=true>Cerrar Sesión</a></li>
+                    <li><a href=plantillasphp/logout.php>Cerrar Sesión</a></li>
                     ";
                     // <li><a class=imgUsuario href=><img src=./img/inicio_sesion.png alt=></a></li>
     
@@ -45,11 +45,11 @@
         <nav>
             <a href="index.php">Inicio</a>
             <a href="Manuales_lista.php">Manuales</a>
-            <a href="#">Alquiler</a>
+            <a href="alquiler.php">Alquiler</a>
             <a href="donar.html">Dónanos</a>
             <a class="oculto" href="conocenos.php">Sobre nosotros</a>
             <a class="oculto" href="contacto.php">Contacto</a>
-            <div id="masTit" href="#">
+            <div id="masTit">
                 Más <div id="flecha">-></div>
                 <a class="oculto" href="conocenos.php">Sobre nosotros</a>
                 <a class="oculto" href="contacto.php">Contacto</a>
@@ -62,9 +62,10 @@
             <?php
             
             if (isset($_SESSION["email"]) && isset($_SESSION["usuario"])) {
+                $_GET["cerrado"] = false;
                 echo "
                 <li><p>Bienvenido, $_SESSION[usuario]</p></li>
-                <li><a href=.php>Cerrar Sesión</a></li>
+                <li><a href=plantillasphp/logout.php>Cerrar Sesión</a></li>
                 ";
                 // <li><a class=imgUsuario href=><img src=./img/inicio_sesion.png alt=user></a> </li>
 
@@ -78,11 +79,5 @@
             ?>
         </ul>
     </header>
-
-    <?php
-        if (($_GET["cerrado"])) {
-            session_destroy();
-        }
-    ?>
     <!-- </body>
 </html> -->
