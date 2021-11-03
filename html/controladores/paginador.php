@@ -1,12 +1,12 @@
 <?php 
-// function paginamiento(){
-    // define('NUM_ITEMS_BY_PAGE', 6);
     require("plantillasphp/operacionesDb.php");  
     require("cargarManuales.php");    
+    //La consulta para cargar los datos
     $consulta = "select titulo from Manual;";
     $parametros = array();
     $filas = consultarDatoBD($consulta, $parametros);
     $totalconsulta = count($filas);
+    echo ($totalconsulta);
 
 
       if ($totalconsulta > 0) {
@@ -25,12 +25,13 @@
     }
     //calculo el total de paginas
     // $total_page = ceil($totalconsulta / 6);
-    $total_pages = ceil($num_total_rows /6);
+    $total_pages = ceil($totalconsulta /6);
  
-    // //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
+    //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
 
     mostrarmanuales($filas);
  
+    //Inicio de la creacion de las bolitas
     echo '<article id="cantPag">';
     echo '<section id="movIzq">
         <img src="img/Paso.png" />
@@ -49,16 +50,14 @@
             if ($page == $i) {
                 echo '
                 <section class="numPag" class="page-item active>
-                    <p>
                         <a class="page-link" href="#">'.$page.'</a>
-                    </p>
                 </section>';
             } else {
                 echo '
                 <section class="numPag" class="page-item>
-                    <p>
+                    
                         <a class="page-link" href="index.php?page='.$i.'">'.$i.'</a>
-                    </p>
+                    
                 </section>';
             }
         }

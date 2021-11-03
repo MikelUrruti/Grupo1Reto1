@@ -10,11 +10,11 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
-    <link rel="stylesheet" href="css/manualesLista.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manualesLista.css" />
 </head>
 
 <body>

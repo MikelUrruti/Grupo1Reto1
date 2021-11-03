@@ -75,6 +75,7 @@
 /*Estilo de la caja de las flechas*/
 #movIzq > img{
     height: 2em;
+    margin-top: 50%;
 }
 
 #movIzq > img:hover{
@@ -113,6 +114,7 @@
 #movDer > img{
     transform: rotate(180deg);
     height: 2em;
+    margin-top: 50%;
 }
 
 #movDer > img:hover{
@@ -156,6 +158,10 @@
     text-align: center;
     opacity: 0.5;
     background-color: #EEC51F;
+    /*Para que los botones esten lo mas centrados posibles*/
+    padding-top: 5%;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 #posAct{
