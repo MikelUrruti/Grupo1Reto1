@@ -34,7 +34,7 @@ body section a img {
 }
 
 body section a:hover {
-   filter: drop-shadow(0 0 4mm black);
+   filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
    /* rgb(160, 0, 210) */
    transition: filter 0.5s;
 }
