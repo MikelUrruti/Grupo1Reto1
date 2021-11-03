@@ -25,11 +25,14 @@ if ($totalconsulta > 0) {
     } else {
         $start = ($page - 1) * 6;
     }
+
     //calculo el total de paginas
-    $total_pages = ceil($totalconsulta / 6);
+    $nummanuales = 6;
+    //Esta sesion es para la cantidad de bolitas que va a haber
+    $_SESSION["total_pages"] = ceil($totalconsulta / $nummanuales);
 
     //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
-    mostrarmanuales($filas,$page);
+    mostrarmanuales($filas,$page,$nummanuales);
 
     //Inicio de la creacion de las bolitas
     echo '<article id="cantPag">';
@@ -38,7 +41,7 @@ if ($totalconsulta > 0) {
         </section>';
 
     //Comprobacion de los elementos que hay en la bd para crear las bolitas necesarias
-    if ($total_pages > 1) {
+    if ($_SESSION["total_pages"] > 1) {
         if ($page != 1) {
             echo '<section class="numPag" class="page-item">
                 <p>
@@ -46,9 +49,9 @@ if ($totalconsulta > 0) {
                 </p>
             </section>';
         }
-        
+
         //Estilo de las bolitas que marcan las paginas
-        for ($i = 1; $i <= $total_pages; $i++) {
+        for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
             if ($page == $i) {
                 echo '
                 <section class="numPag" class="page-item active>
@@ -64,7 +67,7 @@ if ($totalconsulta > 0) {
             }
         }
 
-        if ($page != $total_pages) {
+        if ($page != $_SESSION["total_pages"]) {
             echo '
             <section class="numPag" class="page-item">
                     <p>
@@ -78,5 +81,5 @@ if ($totalconsulta > 0) {
         </section>';
     echo '</article>';
 }
-// }
+
 ?>
