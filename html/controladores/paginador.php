@@ -46,7 +46,7 @@ if ($totalconsulta > 0) {
             if ($page == $i) {
                 echo '
                 <section class="numPag">
-                        <a href="Manuales_lista.php">' . $page . '</a>
+                        <a href="Manuales_lista.php?page='.$i.'">' . $page . '</a>
                 </section>';
             } else {
                 echo '
