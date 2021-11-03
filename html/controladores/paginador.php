@@ -2,7 +2,7 @@
 require("plantillasphp/operacionesDb.php");
 require("cargarManuales.php");
 //La consulta para cargar los datos
-$consulta = "SELECT titulo FROM Manual;";
+$consulta = "select titulo from Manual;";
 $parametros = array();
 $filas = consultarDatoBD($consulta, $parametros);
 //Cantidad total de elementos que hemos recibido de la consulta
@@ -25,12 +25,11 @@ if ($totalconsulta > 0) {
     } else {
         $start = ($page - 1) * 6;
     }
-
-    //Calculo el total de paginas
+    //calculo el total de paginas
     $total_pages = ceil($totalconsulta / 6);
 
-    //Pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
-    mostrarmanuales($filas);
+    //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
+    mostrarmanuales($filas,$page);
 
     //Inicio de la creacion de las bolitas
     echo '<article id="cantPag">';
@@ -40,6 +39,14 @@ if ($totalconsulta > 0) {
 
     //Comprobacion de los elementos que hay en la bd para crear las bolitas necesarias
     if ($total_pages > 1) {
+        if ($page != 1) {
+            echo '<section class="numPag" class="page-item">
+                <p>
+                    <a class="page-link" href="Manuales_lista.php?page='.($page-1).'"><span aria-hidden="true">&laquo;</span></a>
+                </p>
+            </section>';
+        }
+        
         //Estilo de las bolitas que marcan las paginas
         for ($i = 1; $i <= $total_pages; $i++) {
             if ($page == $i) {
@@ -50,9 +57,20 @@ if ($totalconsulta > 0) {
             } else {
                 echo '
                 <section class="numPag" class="page-item>
-                    <a class="page-link" href="Manuales_lista.php' . $i . '">' . $i . '</a>
+                    
+                        <a class="page-link" href="Manuales_lista.php?page=' . $i . '">' . $i . '</a>
+                    
                 </section>';
             }
+        }
+
+        if ($page != $total_pages) {
+            echo '
+            <section class="numPag" class="page-item">
+                    <p>
+                    <a class="page-link" href="Manuales_lista.php?page=' . ($page + 1) . '"><span aria-hidden="true">&raquo;</span></a>
+                    </p>
+                </section>';
         }
     }
     echo '<section id="movDer">
@@ -61,3 +79,4 @@ if ($totalconsulta > 0) {
     echo '</article>';
 }
 // }
+?>

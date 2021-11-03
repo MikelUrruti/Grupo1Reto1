@@ -10,15 +10,19 @@
     // mostrarmanuales($filas);
 
 
-    function mostrarmanuales($consulta){
+    function mostrarmanuales($consulta,$page){
 
     print('<section id="cajaMan">');
-    foreach($consulta as $columnas){
+
+    for ($i=(($page-1)*6); $i < ($page*6); $i++) { 
+        
         print('<article class="manpos">');
-            print('<img class="manimg" src="img/ImagenPDF.png" />');
-            print('<p>'.$columnas['titulo'].'</p>');
+        print('<img class="manimg" src="img/ImagenPDF.png" />');
+        print('<p>'.$consulta[$i]['titulo'].'</p>');
         print("</article>");
+
     }
+    
     print('</section>');
 
     }
