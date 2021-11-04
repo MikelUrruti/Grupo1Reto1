@@ -31,12 +31,12 @@
 
     <section>
         <a class="test" id="article1" href="#">
-            <img src="img/martillo.png" alt="">
+            <img src="img/categoria/martillo.png" alt="">
             <h2>Martillos</h2>
         </a>
 
        <a class="test" id="article2">
-           <img src="img/caladora.png" alt="">
+           <img src="img/categoria/caladora.png" alt="">
            <h2>Caladoras</h2>
        </a>
        <a class="test" id="article3">

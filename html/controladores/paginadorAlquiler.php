@@ -1,8 +1,8 @@
 <?php
 require("plantillasphp/operacionesDb.php");
-require("cargarManuales.php");
+require("cargarHerramientas.php");
 //La consulta para cargar los datos
-$consulta = "select titulo from Manual;";
+$consulta = "select titulo from Herramientas;";
 $parametros = array();
 $filas = consultarDatoBD($consulta, $parametros);
 //Cantidad total de elementos que hemos recibido de la consulta
