@@ -19,7 +19,7 @@ function validarApellidos($apellidos) {
 
 function validarUsuario($usuario) {
 
-    $regex = "/^[a-zA-Z]{2,30}$/";
+    $regex = "/^[a-zA-Z0-9]{2,30}$/";
 
     return preg_match($regex,$usuario);
 
