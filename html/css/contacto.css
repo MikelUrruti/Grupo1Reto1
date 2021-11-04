@@ -55,9 +55,11 @@ table {
     background-color: black;
     /* border: 1px solid white */
 }
+
 .cerrado{
     background-color: #E54040;
 }
+
 .abierto{
     background-color: #24862B;
 }
