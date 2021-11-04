@@ -21,6 +21,7 @@ comprobarLogin();
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
     <link rel="stylesheet" href="css/adminUsuarios.css">
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
     <title>Usuarios</title>
