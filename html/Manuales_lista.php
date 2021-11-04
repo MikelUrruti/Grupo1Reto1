@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
+    <script src="JS/js.js"></script>
+    <script src="JS/nav.js"></script>
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/manualesLista.css" />
@@ -33,7 +35,7 @@
             <input id="txtbus" type="text" placeholder="Buscar manuales..." />
             <img id="lupa" src="img/lupa.png" />
         </div>
-<?php include("controladores/paginador.php") ?>
+        <?php include("controladores/paginadorManuales.php") ?>
     </form>
     <?php 
         include ("plantillas/indexFooter.html");
