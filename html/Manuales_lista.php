@@ -19,7 +19,7 @@
     <script src="JS/nav.js"></script>
 </head>
 
-<body>
+<body id="index">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php
         include("plantillas/indexNav.php")
