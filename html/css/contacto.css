@@ -4,6 +4,7 @@ p {
     margin: 0;
 
 }
+
 .titulo {
 
     font-size: 1.25rem;
@@ -11,36 +12,54 @@ p {
     margin: 0.2rem;
 
 }
+#contenedor{
+    display: block;
+}
 
 .caja {
     border: 2px black solid;
     background-color: rgb(228, 222, 222);
     border-radius: 5px;
-    -webkit-border-radius: 5px;
+    /* -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    -o-border-radius: 5px; */
 }
 
 table {
 
-    border-collapse: collapse;
-    margin: 3% auto;
+    /* border-collapse: collapse; */
+    /* margin: 3% auto; */
     width: 90%;
 
 }
 
 .fila {
-
+    
+    text-align: center;
     border-collapse: collapse;
 
 }
 
 .celda {
 
+    font-size: 1.25rem;
+    padding: 2%;
     border: 2px solid black;
     border-collapse: collapse;
 
+}
+
+.dia{
+    color: #EEC51F;
+    background-color: black;
+    /* border: 1px solid white */
+}
+.cerrado{
+    background-color: #E54040;
+}
+.abierto{
+    background-color: #24862B;
 }
 
 #contacto {
@@ -76,7 +95,7 @@ table {
 
 #mapa {
 
-    display: block;
+    /* display: block; */
     width: 100%;
     height: 100%;
     border: 0;
