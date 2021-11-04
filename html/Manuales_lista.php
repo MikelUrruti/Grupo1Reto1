@@ -33,6 +33,9 @@
             <input id="txtbus" type="text" placeholder="Buscar manuales..." />
             <img id="lupa" src="img/lupa.png" />
         </div>
+        
+    </form>
+    <form method="POST" action="">
         <?php include("controladores/paginador.php") ?>
     </form>
     <?php 
