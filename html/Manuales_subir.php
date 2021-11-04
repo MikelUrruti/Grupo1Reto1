@@ -10,16 +10,22 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssNav.css">
+    <link rel="stylesheet" href="css/cssFooter.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/manuales_subir.css" />
+    <!--Scripts-->
+    <script src="JS/js.js"></script>
+    <script src="JS/nav.js"></script>
     <script src="JS/validacion.js"></script>
     <script src="JS/manualesSubir.js"></script>
 </head>
 
-<body>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexNav.php"); ?>
-    -->
+<body id="index">
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexNav.php"); ?>
+    
     <form>
         <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
@@ -72,9 +78,8 @@
             </section>
         </article>
     </form>
-    <!--Lo que hay que poner para incluir una pagina:
-    <?php include("../plantillas/indexFooter.html"); ?>
-    -->
+    <!--Lo que hay que poner para incluir una pagina:-->
+    <?php include("plantillas/indexFooter.html"); ?>
 </body>
 
 </html>
