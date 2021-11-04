@@ -1,6 +1,8 @@
 <?php
 
 require("plantillasphp/redirecciones.php");
+// require("controladores/paginador.php");
+require("plantillasphp/paginadorFunciones.php");
 
 session_start();
 
@@ -101,7 +103,7 @@ comprobarLogin();
 
 
                 </div>
-                <table class="tabla">
+                <!-- <table class="tabla">
                     <thead>
                         <tr>
                             <th class="celda tituloColumna">Seleccionado</th>
@@ -114,7 +116,7 @@ comprobarLogin();
                             <th class="celda tituloColumna">Estado</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> -->
                         <?php
 
                             // echo var_dump($_SESSION["filtrado"]);
@@ -138,6 +140,8 @@ comprobarLogin();
                             
                             }
 
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta","page","nummanuales")); 
+
                             // if (!isset($_SESSION["filas"])) {
                                 
                             //     $_SESSION["filas"] = array();
@@ -152,32 +156,34 @@ comprobarLogin();
 
 
 
-                        if (isset($resultados) && count($resultados) > 0) {
+                //         if (isset($resultados) && count($resultados) > 0) {
+
+                            
 
 
-                            foreach ($resultados as $fila) {
+                //             foreach ($resultados as $fila) {
 
-                        ?>
+                //         ?>
 
-                                <tr>
-                                    <td class="celda contenidoTabla"><input type="checkbox" name="usuariosSeleccionados[]" value="<?php echo $fila["usuario"]; ?>" id=""></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["usuario"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["email"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["nombre"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["apellidos"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["telefono"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["tipo"]; ?></td>
-                                    <td class="celda contenidoTabla"><?php echo $fila["estado"]; ?></td>
-                                </tr>
-                        <?php
-                            }
-                        }
+                <!-- //                 <tr>
+                //                     <td class="celda contenidoTabla"><input type="checkbox" name="usuariosSeleccionados[]" value="<?php echo $fila["usuario"]; ?>" id=""></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["usuario"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["email"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["nombre"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["apellidos"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["telefono"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["tipo"]; ?></td>
+                //                     <td class="celda contenidoTabla"><?php echo $fila["estado"]; ?></td>
+                //                 </tr> -->
+                         <?php
+                //             }
+                //         }
 
 
-                        ?>
+                //         ?>
 
-                    </tbody>
-                </table>
+                     <!-- </tbody>
+                 </table> -->
 
             </form>
 

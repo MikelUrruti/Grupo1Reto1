@@ -178,6 +178,8 @@ header ul li{
         margin-left: 1%;
         margin-right: 0%;
         display: grid;
+        justify-items: center;
+        align-content: center;
         grid-area: Imagen;
     }
 
@@ -264,6 +266,9 @@ header ul li{
         display: grid;
         width: max-content;
         height: 100%;
+        margin-top: 0;
+        align-content: center;
+        justify-items: center;
         grid-area: usuario;
     }
 
@@ -293,5 +298,12 @@ header ul li{
         color: white;
         font-size: 1.5em;
     }
+
+    #primerUsu > li:not(#ultimousu):first-child{
+        padding-top: 0;
+        /* background-color: green; */
+    }
+
+
     /*Fin inicio/registro*/
 }
