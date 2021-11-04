@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/cssNav.css">    
     <link rel="stylesheet" href="css/contacto.css">
     <script src="JS/js.js"></script>
+    <script src="JS/nav.js"></script>
     <title>Contacto</title>
 </head>
 
