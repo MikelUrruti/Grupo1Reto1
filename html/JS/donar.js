@@ -1,6 +1,15 @@
 window.onload = function () {
-
-    var nombre = document.getElementById("nombre");
+/**
+ * 
+ * 
+ * HAY QUE CAMBIARLO PARA QUE SEA EL DE DONAR
+ * SOLAMENTE ES UN COPIA PEGA PARA SABER COMO
+ * TENGO QUE PONERLO
+ * 
+ * 
+ * 
+ */
+    nombre = document.getElementById("nombre");
     apellidos = document.getElementById("apellidos");
     email = document.getElementById("email");
     telefono = document.getElementById("telefono");
@@ -10,13 +19,11 @@ window.onload = function () {
     email.addEventListener("keyup", validarCampo);
     telefono.addEventListener("keyup", validarCampo);
 
-    nombre.innerHTML("HOLA");
 }
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
 function validarCampo(source) {
 
-    //Se guarda el id de la caja que se haya seleccionado
     let cajaId = source.target.id;
 
     if (cajaId == nombre.id || cajaId == apellidos.id) {
