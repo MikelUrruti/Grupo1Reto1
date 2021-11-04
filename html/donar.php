@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="css/cssNav.css" />
     <link rel="stylesheet" href="css/donar.css" />
     <link rel="stylesheet" href="css/style.css">
+    <!--Scripts-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
+    <script src="JS/validacion.js"></script>
 </head>
 
 <body id="index">
-<?php
+    <?php
         include("plantillas/indexNav.php")
     ?>
 

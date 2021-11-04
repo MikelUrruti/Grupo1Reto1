@@ -8,7 +8,7 @@
         
         $parametros = array($_POST["correo"], hash("sha512",$_POST["contrasena"]));
 
-        $resultados = consultarDatoBD("select email, usuario from Usuario where email=? and password=? and estado='activo';",$parametros);
+        $resultados = consultarDatoBD("select email, usuario, tipo from Usuario where email=? and password=? and estado='activo';",$parametros);
     
         if (is_array($resultados)) {
     
@@ -16,7 +16,8 @@
                     
                 $_SESSION["email"]=$resultados[0]["email"];
                 $_SESSION["usuario"]=$resultados[0]["usuario"];
-    
+                $_SESSION["tipo"]=$resultados[0]["tipo"];
+                
                 header("Location: ../index.php");
         
             } else {

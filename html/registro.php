@@ -20,17 +20,15 @@ require("plantillasphp/funcionesFormularios.php");
     <link rel="stylesheet" href="css/cssNav.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/registro.css"/>
-    <!--Para el tipo de letra-->
-    
+    <!--Scripts en concreto-->
     <script src="JS/js.js"></script>
-    <!-- <script src="JS/registro.js"></script>
-    <script src="JS/validacion.js"></script> -->
+    <script src="JS/registro.js"></script>
+    <script src="JS/validacion.js"></script>
 </head>
 
 <body>
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.php"); ?>
-    
     <form action="controladores/registroUsuario.php" method="post">
         <h2 class="tituloForm">
             Registrarse
@@ -41,7 +39,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Usuario: <span class="obligatorio">*</span>
                 </p>
                 <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
-                <?php cargarError("errorUsuario"); ?>
+                
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -51,7 +49,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Nombre: <span class="obligatorio">*</span>
                     </p>
                     <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="Mikel" />
-                    <?php cargarError("errorNombre"); ?>
+                    
                 </div>
 
                 <div class="usudat_NewUsu">
@@ -59,7 +57,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
                     <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="Urrutikoetxea" />
-                    <?php cargarError("errorApellidos"); ?>
+                    
                 </div>
             </div>
 
@@ -69,7 +67,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Email: <span class="obligatorio">*</span>
                 </p>
                 <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
-                <?php cargarError("errorEmail"); ?>
+                
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -78,7 +76,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Numero de telefono:
                 </p>
                 <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
-                <?php cargarError("errorTelefono"); ?>
+                
             </div>
 
             <div class="grupodatos_NewUsu">
@@ -87,7 +85,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Contraseña: <span class="obligatorio">*</span>
                 </p>
                 <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
-                <?php cargarError("errorPassword"); ?>
+               
             </div>
 
             <div class="usudat_NewUsu">

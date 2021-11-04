@@ -33,13 +33,7 @@ ESTILO DE MOVIL
 ESTILO DE TABLET
 
 */
-@media screen and (min-width: 480px) {
-    /*Estilo de la caja general*/
-    /* form{
-        padding-bottom: 8em;
-    } */
-    /*Fin caja*/
-    
+@media screen and (min-width: 480px) {    
     /*Estilo del titulo*/
     #titulo_NewUsu{
         font-size: 2em;
@@ -94,10 +88,4 @@ ESTILO DE ORDENADOR
         justify-content: space-around;
     }
     /*Fin cajas horizontales*/
-
-    /*Estilo del boton*/
-    /* #button_NewUsu{
-        float: right;
-    } */
-    /*Fin boton*/
 }

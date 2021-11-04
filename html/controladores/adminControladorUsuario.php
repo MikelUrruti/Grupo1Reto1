@@ -10,19 +10,20 @@
         $accion = "Eliminar";
     } elseif (isset($_POST["Crear"])) {
         $accion = "Crear";
-    } elseif (isset($_POST["Modificar"])) {
-        $accion = "Modificar";
-    } 
+    }
+    // } elseif (isset($_POST["Modificar"])) {
+    //     $accion = "Modificar";
+    // } 
 
     if ($accion == "Crear") {
 
         redireccionar("../formularioCrearUsuario.php");
 
-    } elseif ($accion == "Modificar") {
+     } /* elseif ($accion == "Modificar") {
         
-        redireccionar("../formularioModificarUsuario.php");
+    //     redireccionar("../formularioModificarUsuario.php");
 
-    } elseif ($accion == "Eliminar") {
+    } */ elseif ($accion == "Eliminar") {
 
         $usuarios = $_POST["usuariosSeleccionados"];
 
