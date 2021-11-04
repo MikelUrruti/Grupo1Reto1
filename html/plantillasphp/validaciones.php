@@ -55,7 +55,6 @@ function validarTelefono($telefono) {
     } 
 
     return false;
-    return preg_match()
 
 }
 
