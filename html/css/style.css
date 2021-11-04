@@ -95,8 +95,6 @@ header:not(header ul) {
 
 
 #index #txtEscribir {
-    /* width:fit-content; */
-    /* text-align:center; */
     font-size: 3em;
 }
 
@@ -147,13 +145,13 @@ header:not(header ul) {
   left:0;
   opacity:0.7;
 }
+
 #miModal:target{
   opacity:1;
   pointer-events:auto;
 }
 
-.loader {
-  
+.loader {  
   position: absolute;
   top: calc(50% - 32px);
   left: calc(50% - 32px);
@@ -191,10 +189,10 @@ header:not(header ul) {
   animation: rotate-three 1s linear infinite;
   border-top: 3px solid #EFEFFA;
 }
-
 /*
 Estilo general de los formularios
 */
+
 /*Estilo general de la caja de formulario*/
 form{
   margin: auto;
@@ -254,13 +252,14 @@ form{
   outline: none;
   background-color: grey;
   text-shadow: -0.5px 0.5px 0 black,
-      0.3px 0.8px 0 black,
-      0px -0.8px 0 black,
-      1px 0.8px 0 black,
-      0.7px -0.6px 0 black,
-      -0.8px -0.5px 0 black;
+    0.3px 0.8px 0 black,
+    0px -0.8px 0 black,
+    1px 0.8px 0 black,
+    0.7px -0.6px 0 black,
+    -0.8px -0.5px 0 black;
 }
 /*Fin animacion formulario*/
+
 /*
 Fin formularios
 */
@@ -269,15 +268,15 @@ Fin formularios
 Si abro el menú, este tapará todo */
 @media Screen and (max-width: 480px) {
   #lblMenu, header {
-      position:absolute;
+    position:absolute;
   }
   
    #lblMenu {
-      z-index: 999;
+    z-index: 999;
   }
   
   header {
-      z-index: 998;
+    z-index: 998;
   }
 }
 
@@ -286,31 +285,31 @@ Si abro el menú, este tapará todo */
 
   /*El fondo de pantalla cambia para tablet y ordenador*/
   #index {
-      background-image: url("../img/fondoIndex.jpg");
+    background-image: url("../img/fondoIndex.jpg");
   }
   
   #index section article > * {
-      margin-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   #index section article a {
-      padding: 20px;
+    padding: 20px;
   }
 
   #index section article {
-      font-size: 1.3em;
+    font-size: 1.3em;
   }
   
   #index section a:hover {
-      font-size: 1.2em;
-      transition: font-size 1s;
+    font-size: 1.2em;
+    transition: font-size 1s;
   }
 
   #index #section1 {
     margin-top: 10%;
   }
-
 }
+
 /* Ordenador */
 @media Screen and (min-width: 1025px) {
 
@@ -328,17 +327,16 @@ Si abro el menú, este tapará todo */
   }
 
   #index #section2 {
-      font-size: .7em;
-      flex-direction: row;
-      justify-content: space-between;
+    font-size: .7em;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   #index #section2 article{
-      margin-left:5%;
-      margin-right:5%;
+    margin-left:5%;
+    margin-right:5%;
   }
 }
-
 
 @keyframes rotate-one {
   0% {
@@ -349,9 +347,7 @@ Si abro el menú, este tapará todo */
   }
 }
 
-
-
-    /* Animacion para las lineas */
+/* Animacion para las lineas */
 @keyframes rotate-one {
   0% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
@@ -391,5 +387,4 @@ Si abro el menú, este tapará todo */
       transform: translateY(0);
   }
 }
-
 /* Fin estilos Load */
