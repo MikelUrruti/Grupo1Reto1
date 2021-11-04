@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@
             <input id="txtbus" type="text" placeholder="Buscar manuales..." />
             <img id="lupa" src="img/lupa.png" />
         </div>
-<?php include("controladores/paginador.php") ?>
+        <?php include("controladores/paginador.php") ?>
     </form>
     <?php 
         include ("plantillas/indexFooter.html");
