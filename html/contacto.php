@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Favicon de las paginas-->
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <link rel="stylesheet" href="css/normalizar.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/cssNav.css">    
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Scripts-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
-    <title>Contacto</title>
+    <title>Contacto - Fix Point</title>
 </head>
 
-<body>
+<body id="index">
     <?php include("plantillas/indexNav.php") ?>
     <div id="contenedor">
         <section id="contacto">

@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conocenos - Fix Point</title>
+    <!--Favicon de las paginas-->
+    <link rel="shortcut icon" href="img/Logo Header.png" />
+    <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/conocenos.css">
-    <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
+    <!--Scripts-->
     <script src="JS/js.js"></script>
+    <script src="JS/nav.js"></script>
 </head>
 <body>
     <?php
