@@ -76,3 +76,8 @@ function validarTelefono(source) {
     }
     return false;
 }
+
+//Validaciones que se hacen en la pestaña de donar
+function validarHerramienta(source) {
+    
+}
