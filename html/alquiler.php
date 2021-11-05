@@ -20,10 +20,17 @@
     <title>Alquiler - Fix Point</title>
 </head>
 
-<body>
+<body class="fondo">
     <?php
         include("plantillas/indexNav.php")
     ?>
+    <noscript>
+           <h1>
+               Su navegador no tiene activado JavaScript.
+                               <br>
+               Es posible que no visualice la página correctamente.
+           </h1>
+       </noscript>
     
     <h1>Escoge la sección que quieras visualizar:</h1>
 
@@ -31,32 +38,25 @@
     <a id="flechaDchMovil" class="flechasMovil"> > </a>
 
     <section>
-        <a class="test" id="article1" href="#">
+        <a id="article1" href="#">
             <img src="img/categoria/martillo.png" alt="">
             <h2>Martillos</h2>
         </a>
 
-       <a class="test" id="article2">
+       <a id="article2">
            <img src="img/categoria/caladora.png" alt="">
            <h2>Caladoras</h2>
        </a>
-       <a class="test" id="article3">
+       <a id="article3">
             <img src="img/categoria/destornillador.png" alt="">
             <h2>Destornilladores</h2>
        </a>
-       <a class="test" id="article4">
+       <a id="article4">
             <img src="img/categoria/alicate.png" alt="">
             <h2>Alicates</h2>
        </a>
     </section>
 
-     <noscript>
-            <h1>
-                Su navegador no tiene activado JavaScript.
-                                <br>
-                Es posible que no visualice la página correctamente
-            </h1>
-        </noscript>
 
     <?php 
         include ("plantillas/indexFooter.html");

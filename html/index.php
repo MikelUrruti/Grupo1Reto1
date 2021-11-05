@@ -20,7 +20,7 @@
     <title>Inicio - Fix Point</title>
 </head>
 
-<body id="index" class="ordenCajas">
+<body id="index" class="ordenCajas fondo">
     <?php
     include("plantillas/indexNav.php");
     ?>

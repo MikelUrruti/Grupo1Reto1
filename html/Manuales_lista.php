@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/manualesLista.css" />
 </head>
 
-<body id="index">
+<body class="fondo">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php
     include("plantillas/indexNav.php")
