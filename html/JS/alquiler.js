@@ -1,15 +1,18 @@
 
 window.onload = function () {
-
+    // Popurrí de variables
     const flechaIzqMovil = document.getElementById("flechaIzqMovil");
     const flechaDchMovil = document.getElementById("flechaDchMovil");
 
+    // Int para controlar la posición
     posicionCarrusel = 1;
 
+    // EventListener de click a ambas flechas
     flechaIzqMovil.addEventListener("click",cambiarPosicionCarrusel);
     flechaDchMovil.addEventListener("click",cambiarPosicionCarrusel);
     
 }
+
 function cambiarPosicionCarrusel(comp) {
     comp = comp.target;
     switch (comp) {
@@ -19,7 +22,7 @@ function cambiarPosicionCarrusel(comp) {
             else posicionCarrusel--;
             agregarAnimacionIzq();
             carruselMovil();
-            quitarAnimacion();
+            // quitarAnimacion();
             break;
         case flechaDchMovil:
             console.log("click Flecha Dch");
@@ -27,7 +30,7 @@ function cambiarPosicionCarrusel(comp) {
             else posicionCarrusel++;
             agregarAnimacionDch();
             carruselMovil();
-            quitarAnimacion();
+            // quitarAnimacion();
             break;
     }
 
@@ -63,3 +66,15 @@ function agregarAnimacionDch() {
 function quitarAnimacion() {
     section.style.animation = "none";
 }
+
+/* FUNCION cambiarPosicionCarrusel
+    No devuelve nada
+    El valor que recoge se transforma en el propio componente que llama a la función
+    Dividimos 2 casos, si el elemento es la flecha Izquiera o Derecha
+    Si es la izquierda,
+        El int posicionCarrusel incrementará en 1 si es 1, de lo contrario decrementará en 1
+        Se aplicará una animación para que el section aparezca por la izquierda
+    Si es la derecha,
+        El int posicionCarrusel decrementará en 1 si es 2, de lo contrario incrementará en 1
+        Se aplicará una animación para que el section aparezca por la derecha
+*/

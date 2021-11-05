@@ -112,6 +112,11 @@ body section a h2 {
     #article4{grid-area:article4;}
 }
 
+/* Ordenador */
+@media Screen and (min-width: 1025px) {
+    
+}
+
 
 /* Estas animaciones se aplican en alquiler.js */
 @keyframes apareceSectionIzq {
