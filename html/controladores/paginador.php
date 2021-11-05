@@ -6,6 +6,6 @@ $consulta = "select titulo from Manual;";
 $parametros = array();
 $filas = consultarDatoBD($consulta, $parametros);
 
-generarPaginador($filas, "mostrarManuales", array("resultadoConsulta","page","nummanuales"));
+generarPaginador($filas, "mostrarManuales", array("resultadoConsulta","page","nummanuales"), "Manuales_lista.php");
 
 ?>
