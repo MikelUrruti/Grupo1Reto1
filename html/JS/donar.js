@@ -10,12 +10,10 @@ window.onload = function () {
  * 
  */
     nombre = document.getElementById("nombre");
-    apellidos = document.getElementById("apellidos");
     email = document.getElementById("email");
     telefono = document.getElementById("telefono");
 
     nombre.addEventListener("keyup", validarCampo);
-    apellidos.addEventListener("keyup", validarCampo);
     email.addEventListener("keyup", validarCampo);
     telefono.addEventListener("keyup", validarCampo);
 
