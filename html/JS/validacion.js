@@ -58,26 +58,19 @@ function validarEmail(source) {
 }
 
 function validarTelefono(source) {
-    if (source.value.length > 0) {
-        if (source.value != null) {
-            if (source.value.length == 9) {
-                // Se comprueba el primer digito introducido
-                if (source.value.charAt(0) == 6 || source.value.charAt(0) == 7 || source.value.charAt(0) == 9) {
-                    for (let index = 0; index <= source.value.length; index++) {
-                        // Se asegura que se introduzca un numero
-                        if (isNaN(source.value.charAt(index))) {
-                            return false;
-                        }
+    if (source.value.length > 0 || source.value != null) {
+        if (source.value.length == 9) {
+            // Se comprueba el primer digito introducido
+            if (source.value.charAt(0) == 6 || source.value.charAt(0) == 7 || source.value.charAt(0) == 9) {
+                for (let index = 0; index <= source.value.length; index++) {
+                    // Se asegura que se introduzca un numero
+                    if (isNaN(source.value.charAt(index))) {
+                        return false;
                     }
-                    return true;
                 }
+                return true;
             }
         }
     }
     return false;
-}
-
-//Validaciones que se hacen en la pestaña de donar
-function validarHerramienta(source) {
-    
 }

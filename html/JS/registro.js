@@ -21,8 +21,10 @@ function validarRegistro(source) {
     if (cajaId == nombre.id || cajaId == apellidos.id || cajaId == usuario.id) {
         //Se pone el ultimo cajaId para especificar a que caja hace referencia
         validar(source, validarNombre(source.target, cajaId));
+    //Si la caja es la del email
     }else if(cajaId == email.id){
         validar(source, validarEmail(source.target));
+    //Si es la caja del telefono
     }else if(cajaId == telefono.id){
         validar(source, validarTelefono(source.target));
     }

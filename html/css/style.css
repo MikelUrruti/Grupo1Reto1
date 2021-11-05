@@ -8,113 +8,103 @@ font-family: 'Georama', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Georama:wght@200;900&family=Quattrocento+Sans&family=Red+Hat+Display:wght@300&family=Roboto:wght@100&display=swap');
 
 body:not(header) {
-    font-family: 'Quattrocento Sans',sans-serif;
+  font-family: 'Quattrocento Sans',sans-serif;
 }
 
 header:not(header ul) {
-    font-family:'Georama',sans-serif;    
+  font-family:'Georama',sans-serif;    
 }
 
 #txtEscribir {
-    width:fit-content;
-    margin-left:auto;
-    margin-right:auto;
+  width:fit-content;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .error {
-
   font-size: 0.8em;
   color: red;
   font-weight: bold;
-
 }
 
 .obligatorio {
-
   color: red;
-
 }
 
 .exito {
-
   color: green;
   font-size: 1.8em;
   font-weight: bold;
-
 }
 
 #index {
-    background-image: url("../img/fondoError.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("../img/fondoError.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #index #section1 {
-    margin-top: 5%;
-    /* background-image: url("../img/fondoIndex.jpg"); */
-    /* background-color:red; */
-    height: 10em;
-    width: 100%;
-    text-align:center;
-    color:white;
+  margin-top: 5%;
+  height: 10em;
+  width: 100%;
+  text-align:center;
+  color:white;
 }
 
 #index #section1 img {
-    width:10em;
-    height:10em;
+  width:10em;
+  height:10em;
 }
 
 #index section a:not(article a):hover {
-    font-size: 3.5em;
-    transition: font-size 1s;
+  font-size: 3.5em;
+  transition: font-size 1s;
 }
 
 #index section a:not(article a){
-    text-decoration: none;
-    color:white;
-    text-transform:uppercase;
-    background-color: #EEC51F;
-    border-radius: 0.3em;
-    font-size: 3em;
-    box-shadow: 10px 20px 30px black;
-    padding: 30px;
-    transition: font-size 1s;
+  text-decoration: none;
+  color:white;
+  text-transform:uppercase;
+  background-color: #EEC51F;
+  border-radius: 0.3em;
+  font-size: 3em;
+  box-shadow: 10px 20px 30px black;
+  padding: 30px;
+  transition: font-size 1s;
 }
 
 #index section a {
-    transition: font-size 1s;
+  transition: font-size 1s;
 }
 
 #index section a:hover {
-    font-size: 1.7em;
-    transition: font-size 1s;
+  font-size: 1.7em;
+  transition: font-size 1s;
 }
 
 
 
 #index #txtEscribir {
-    /* width:fit-content; */
-    /* text-align:center; */
-    font-size: 3em;
+  font-size: 3em;
 }
 
 #index #section2 {
-    display:flex;
-    flex-direction:column;  
+  display:flex;
+  flex-direction:column;  
 }
 
 #index #section2 article {
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: 10%;
-    text-align: center;
-    border-radius: 0.3em;
-    width: 70%;
-    height: auto;
-    background-color:white;
-    box-shadow: inset 0 0 10px 0.1px black;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 10%;
+  text-align: center;
+  border-radius: 0.3em;
+  width: 70%;
+  height: auto;
+  background-color:white;
+  box-shadow: inset 0 0 10px 0.1px black;
 }
 
 #index #section2 article img {
@@ -124,15 +114,15 @@ header:not(header ul) {
 }
 
 #index section article a {
-    text-decoration: none;
-    color:white;
-    text-transform:uppercase;
-    background-color: #EEC51F;
-    border-radius: 0.3em;
-    font-size: 1em;
-    box-shadow: 10px 20px 30px black;
-    padding: 5px;
-    margin-bottom:0;
+  text-decoration: none;
+  color:white;
+  text-transform:uppercase;
+  background-color: #EEC51F;
+  border-radius: 0.3em;
+  font-size: 1em;
+  box-shadow: 10px 20px 30px black;
+  padding: 5px;
+  margin-bottom:0;
 }
 
 /*De eimer*/
@@ -147,13 +137,13 @@ header:not(header ul) {
   left:0;
   opacity:0.7;
 }
+
 #miModal:target{
   opacity:1;
   pointer-events:auto;
 }
 
-.loader {
-  
+.loader {  
   position: absolute;
   top: calc(50% - 32px);
   left: calc(50% - 32px);
@@ -191,19 +181,20 @@ header:not(header ul) {
   animation: rotate-three 1s linear infinite;
   border-top: 3px solid #EFEFFA;
 }
-
 /*
 Estilo general de los formularios
 */
+
 /*Estilo general de la caja de formulario*/
 form{
   margin: auto;
   margin-top: 1%;
   margin-bottom: 1%;
   padding-bottom: 3%;
-  border: 4px solid #000000;
+  border: 4px solid #b0b0b0;
   border-radius: 17px;
   width: 75%;
+  background-color: white;
 }
 /*Fin caja general*/
 
@@ -254,13 +245,14 @@ form{
   outline: none;
   background-color: grey;
   text-shadow: -0.5px 0.5px 0 black,
-      0.3px 0.8px 0 black,
-      0px -0.8px 0 black,
-      1px 0.8px 0 black,
-      0.7px -0.6px 0 black,
-      -0.8px -0.5px 0 black;
+    0.3px 0.8px 0 black,
+    0px -0.8px 0 black,
+    1px 0.8px 0 black,
+    0.7px -0.6px 0 black,
+    -0.8px -0.5px 0 black;
 }
 /*Fin animacion formulario*/
+
 /*
 Fin formularios
 */
@@ -269,15 +261,15 @@ Fin formularios
 Si abro el menú, este tapará todo */
 @media Screen and (max-width: 480px) {
   #lblMenu, header {
-      position:absolute;
+    position:absolute;
   }
   
    #lblMenu {
-      z-index: 999;
+    z-index: 999;
   }
   
   header {
-      z-index: 998;
+    z-index: 998;
   }
 }
 
@@ -286,31 +278,31 @@ Si abro el menú, este tapará todo */
 
   /*El fondo de pantalla cambia para tablet y ordenador*/
   #index {
-      background-image: url("../img/fondoIndex.jpg");
+    background-image: url("../img/fondoIndex.jpg");
   }
   
   #index section article > * {
-      margin-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   #index section article a {
-      padding: 20px;
+    padding: 20px;
   }
 
   #index section article {
-      font-size: 1.3em;
+    font-size: 1.3em;
   }
   
   #index section a:hover {
-      font-size: 1.2em;
-      transition: font-size 1s;
+    font-size: 1.2em;
+    transition: font-size 1s;
   }
 
   #index #section1 {
     margin-top: 10%;
   }
-
 }
+
 /* Ordenador */
 @media Screen and (min-width: 1025px) {
 
@@ -328,17 +320,16 @@ Si abro el menú, este tapará todo */
   }
 
   #index #section2 {
-      font-size: .7em;
-      flex-direction: row;
-      justify-content: space-between;
+    font-size: .7em;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   #index #section2 article{
-      margin-left:5%;
-      margin-right:5%;
+    margin-left:5%;
+    margin-right:5%;
   }
 }
-
 
 @keyframes rotate-one {
   0% {
@@ -349,9 +340,7 @@ Si abro el menú, este tapará todo */
   }
 }
 
-
-
-    /* Animacion para las lineas */
+/* Animacion para las lineas */
 @keyframes rotate-one {
   0% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
@@ -391,5 +380,4 @@ Si abro el menú, este tapará todo */
       transform: translateY(0);
   }
 }
-
 /* Fin estilos Load */
