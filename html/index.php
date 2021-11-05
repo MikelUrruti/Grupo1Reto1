@@ -22,49 +22,51 @@
 
 <body id="index" class="ordenCajas">
     <?php
-        include("plantillas/indexNav.php");
+    include("plantillas/indexNav.php");
     ?>
-    
-     <noscript>
-            <h1>
-                Su navegador no tiene activado JavaScript.
-                                <br>
-                Es posible que no visualice la página correctamente
-            </h1>
-        </noscript>
 
-     <!-- FIN HEADER COMIENZA CUERPO -->
+    <noscript>
+        <h1>
+            Su navegador no tiene activado JavaScript.
+            <br>
+            Es posible que no visualice la página correctamente
+        </h1>
+    </noscript>
+
+    <!-- FIN HEADER COMIENZA CUERPO -->
     <section id="section1">
         <h1 id="txtEscribir"></h1>
         <a href="registro.php">comienza</a>
     </section>
 
-    <section id="section2"> 
+    <section id="section2">
         <article>
             <h1>Descubre nuestros manuales</h1>
-            <p>Los manuales capacitan 
-                a los usuarios para que 
-                sean capaces de reparar 
+            <p>Los manuales capacitan
+                a los usuarios para que
+                sean capaces de reparar
                 sus propias herramientas.</p>
-                <a href="Manuales_lista.php">saber más</a>
-                <p></p>
+            <a href="Manuales_lista.php">saber más</a>
+            <!--Estas "p" estan para que dejasen el espacio y las cajas tuviesen el mismo tamaño-->
+            <p></p>
         </article>
         <article>
             <h1>Descubre nuestras herramientas</h1>
-            <p>Evita tener que comprar una herramiena para un solo uso, alquila una de nuetras 
+            <p>Evita tener que comprar una herramiena para un solo uso, alquila una de nuetras
                 herramientas</p>
-                <a href="alquiler.php">saber más</a>
-                <p></p>
+            <a href="alquiler.php">saber más</a>
+            <!--Estas "p" estan para que dejasen el espacio y las cajas tuviesen el mismo tamaño-->
+            <p></p>
         </article>
         <article id="articulo3">
             <h1>¿Tienes herramientas que no usas?</h1>
             <h2>¡Dónalas!</h2>
-            <img src="img/herramientas_donar.png" alt=""> 
+            <img src="img/herramientas_donar.png" alt="">
         </article>
     </section>
 
-    <?php 
-        include ("plantillas/indexFooter.html");
+    <?php
+    include("plantillas/indexFooter.html");
     ?>
 
 

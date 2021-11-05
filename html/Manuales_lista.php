@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/normalizar.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
-    <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/manualesLista.css" />
 </head>
@@ -20,9 +19,9 @@
 <body id="index">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php
-        include("plantillas/indexNav.php")
+    include("plantillas/indexNav.php")
     ?>
-    
+
     <form>
         <h1 id="titManLis">
             Escoge el manual que quieras visualizar
@@ -33,13 +32,13 @@
             <input id="txtbus" type="text" placeholder="Buscar manuales..." />
             <img id="lupa" src="img/lupa.png" />
         </div>
-        
+
     </form>
     <form method="POST" action="">
         <?php include("controladores/paginador.php") ?>
     </form>
-    <?php 
-        include ("plantillas/indexFooter.html");
+    <?php
+    include("plantillas/indexFooter.html");
     ?>
 </body>
 

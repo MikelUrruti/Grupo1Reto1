@@ -25,7 +25,7 @@
 <body id="index">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.php"); ?>
-    
+
     <form>
         <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
