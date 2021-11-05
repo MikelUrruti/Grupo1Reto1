@@ -1,24 +1,12 @@
 window.onload = function () {
-/**
- * 
- * 
- * HAY QUE CAMBIARLO PARA QUE SEA EL DE DONAR
- * SOLAMENTE ES UN COPIA PEGA PARA SABER COMO
- * TENGO QUE PONERLO
- * 
- * 
- * 
- */
     nombre = document.getElementById("nombre");
-    apellidos = document.getElementById("apellidos");
-    email = document.getElementById("email");
-    telefono = document.getElementById("telefono");
+    var descripcion = document.getElementById("descripcion");
 
     nombre.addEventListener("keyup", validarCampo);
-    apellidos.addEventListener("keyup", validarCampo);
-    email.addEventListener("keyup", validarCampo);
-    telefono.addEventListener("keyup", validarCampo);
+    descripcion.addEventListener("keyup", validacionDesc);
 
+    //Para darle el maximo de caracteres mediante JS
+    descripcion.maxlength= "5";
 }
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
@@ -28,9 +16,28 @@ function validarCampo(source) {
 
     if (cajaId == nombre.id || cajaId == apellidos.id) {
         validar(source, validarNombre(source.target, cajaId));
-    } else if (cajaId == email.id) {
-        validar(source, validarEmail(source.target));
-    } else if (cajaId == telefono.id) {
-        validar(source, validarTelefono(source.target));
     } 
+}
+
+//Para crear la etiqueta del textarea, que sirve para la descripcion
+function CrearDesc() {
+    //Asi creamos el textarea desde JS, pero no tiene ningun atributo ni nada
+    var txtA = document.createElement("textarea");
+    //Le damos un id y un nombre al textarea
+    txtA.id = "descripcion";
+    txtA.name = "descripcion";
+    //Le damos el placeholder y 
+}
+
+/*
+Validacion para que solo pueda escribir 500 caracteres en el textarea como maximo
+*/
+function validacionDesc() {
+    //Para saber el tamaño completo del texto
+    var tamanio = descripcion.value;
+    if(tamanio.length>500){
+        console.log("te has pasado");
+    }else{
+        console.log(tamanio.length);
+    }
 }

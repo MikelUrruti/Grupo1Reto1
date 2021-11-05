@@ -8,6 +8,7 @@ function validar(source, correcto) {
     }
 }
 
+//Para comprobar el nombre, apellido, usuario y el nombre de la herramienta
 function validarNombre(source, id) {
     // validar nombre-apellidos permitiendo texto a-z y varios simbolos(tildes, ñ...), 
     // espacios en blanco entre texto y se ajusta el limite de caracteres
@@ -43,6 +44,7 @@ function validarNombre(source, id) {
     return false;
 }
 
+//Validar email
 function validarEmail(source) {
     // Se hacen comprobaciones para cada seccion de un email (usuario, dominio y extension)
     let regex = /^([a-zA-Z0-9.])+(@{1})+([a-zA-Z0-9]{2,30})+(\.[a-zA-Z0-9]{2,3}){1}$/igm;
