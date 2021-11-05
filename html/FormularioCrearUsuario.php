@@ -88,10 +88,8 @@
 
             <div class="usudat_NewUsu">
                 <p>
-                    Tipo de usuario:
+                    Tipo de usuario: <span class="obligatorio">*</span>
                 </p>
-
-                <?php echo $_SESSION["tipo"]; ?>
 
                 <select name="tipo" id="" class="textoForm">
 

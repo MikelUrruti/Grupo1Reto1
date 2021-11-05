@@ -11,17 +11,26 @@
 
             <ul id="primerUsu">
                 <?php
-                 if (isset($_SESSION["email"]) && isset($_SESSION["usuario"])) {
+                 if (isset($_SESSION["email"]) && isset($_SESSION["usuario"]) && isset($_SESSION["tipo"])) {
+
+                    $opcionAdmin="";
+
+                    if ($_SESSION["tipo"] == "administrador" || $_SESSION["tipo"] == "superadministrador") {
+
+                        $opcionAdmin = "<a href='admin.php'>Administracion</a>";
+
+                    }
+
                     echo "
                     <li><p>Bienvenido, $_SESSION[usuario]</p></li>
-                    <li><a href=plantillasphp/logout.php>Cerrar Sesión</a></li>
+                    <li>".$opcionAdmin."<a href='plantillasphp/logout.php'>Cerrar Sesión</a></li>
                     ";
                     // <li><a class=imgUsuario href=><img src=./img/inicio_sesion.png alt=></a></li>
     
                     } else {
                         echo "
                         <li><a href=login.php>Iniciar sesión</a></li>
-                        <li id=ultimousu><a href=registro.php>Registrarse</a></li>
+                        <li id=ultimousu><a href='registro.php'>Registrarse</a></li>
                         ";
                     }
                 
