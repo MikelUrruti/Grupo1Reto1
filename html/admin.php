@@ -1,6 +1,6 @@
 <?php
 
-    require_once("plantillasphp/redirecciones.php");
+    require("plantillasphp/redirecciones.php");
 
     session_start();
 

@@ -1,0 +1,194 @@
+
+/*Fin cajas*/
+
+/*Estilo de la caja general, con flechas y las bolitas*/
+#cantPag{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 3em auto 2em auto;
+    justify-content: space-evenly;
+}
+/*Fin caja general*/
+
+/*Estilo de la caja de las flechas*/
+#movIzq  img{
+    height: 2.5em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#movIzq img:hover{
+    cursor: pointer;
+    animation: movIzq 2s ease 0s infinite normal forwards;
+}
+
+@keyframes movIzq {
+    0%,
+    100% {
+    transform: translateY(0) rotate(0);
+    }
+
+    15% {
+    transform: translateY(-15px) rotate(10deg);
+    }
+
+    30% {
+    transform: translateY(7.5px) rotate(-10deg);
+    }
+
+    45% {
+    transform: translateY(-7.5px) rotate(5deg);
+    }
+
+    60% {
+    transform: translateY(4.5px) rotate(-5deg);
+    }
+
+    75% {
+    transform: translateY(-3px) ;
+    }
+}
+
+
+#movDer img{
+    transform: rotate(180deg);
+    height: 2.5em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#movDer img:hover{
+    cursor: pointer;
+    animation: movDer 2s ease 0s infinite normal forwards;
+}
+
+@keyframes movDer {
+    0%,
+    100% {
+    transform: translateY(0) rotate(180deg);
+    }
+
+    15% {
+    transform: translateY(-15px) rotate(170deg);
+    }
+
+    30% {
+    transform: translateY(7.5px) rotate(185deg);
+    }
+
+    45% {
+    transform: translateY(-7.5px) rotate(175deg);
+    }
+
+    60% {
+    transform: translateY(4.5px) rotate(182deg);
+    }
+
+    75% {
+    transform: translateY(-3px) rotate(179deg);
+    }
+}
+/*Fin caja flechas*/
+
+/*Estilo de cajas de posicion*/
+.numPag{
+    border-radius: 2em;
+    text-align: center;
+    opacity: 0.5;
+    text-decoration: none;
+    background-color: #EEC51F;
+    transition: 0.5s;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.numPag:hover{
+    opacity: 100;
+    cursor: pointer;
+}
+
+a>section{
+    padding: 10px 17px;
+}
+/*Fin posicion*/
+
+/*
+
+ESTILO DE TABLET
+
+*/
+@media screen and (min-width: 480px){
+    /*Fin cajas*/
+
+    /*Estilo de la caja general, con flechas y las bolitas*/
+    #cantPag{
+        width: 60%;
+    }
+    /*Fin caja general*/
+
+    /*Estilo de la caja de las flechas*/
+    #movIzq > img{
+        height: 3em;
+    }
+
+    #movDer > img{
+        transform: rotate(180deg);
+        height: 3em;
+    }
+    /*Fin caja flechas*/
+
+    /*Estilo de cajas de posicion*/
+    .numPag{
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+    }
+
+    .numPag > p{
+        margin: 0px;
+        padding: 0.9em;
+    }
+    /*Fin posicion*/
+}
+
+/*
+
+ESTILO DE ORDENADOR
+
+*/
+@media screen and (min-width: 1025px) {
+    /*Fin lupa*/
+
+    /*Estilo de la caja general, con flechas y las bolitas*/
+    #cantPag{
+        width: 60%;
+    }
+    /*Fin caja general*/
+
+    /*Estilo de la caja de las flechas*/
+    #movIzq > img{
+        height: 3em;
+    }
+
+    #movDer > img{
+        transform: rotate(180deg);
+        height: 3em;
+    }
+    /*Fin caja flechas*/
+
+    /*Estilo de cajas de posicion*/
+    .numPag{
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+    }
+
+    .numPag > p{
+        margin: 0px;
+        padding: 0.9em;
+    }
+    /*Fin posicion*/
+
+    /*Fin cajas*/
+}
