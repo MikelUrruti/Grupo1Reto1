@@ -53,22 +53,19 @@
             <h1>Descubre nuestras herramientas</h1>
             <p>Evita tener que comprar una herramiena para un solo uso, alquila una de nuetras 
                 herramientas</p>
-                <a href="#">saber más</a>
+                <a href="alquiler.php">saber más</a>
                 <p></p>
         </article>
-        <article>
+        <article id="articulo3">
             <h1>¿Tienes herramientas que no usas?</h1>
             <h2>¡Dónalas!</h2>
-            <img src="img/herramientas_donar.png" alt="">
+            <img src="img/herramientas_donar.png" alt=""> 
         </article>
     </section>
 
     <?php 
         include ("plantillas/indexFooter.html");
     ?>
-
-
-
 
 
 </body>
