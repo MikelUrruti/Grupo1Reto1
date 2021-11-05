@@ -143,8 +143,6 @@
 
         echo "<tbody>";
 
-        print('<table id="cajaMan">');
-
         if ($_SESSION["total_pages"] == $page) {
             
             $limite = count($consulta);
