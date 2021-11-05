@@ -1,5 +1,5 @@
 body{
-  background-image: url("../img/fondoError.jpg");
+  background-image: url("../img/fondoIndex.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -7,10 +7,15 @@ body{
 }
 
 body > h1 {
+    background-color: white;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
 }
 
 body section {
+    background-color: white;
     display:column;
     margin-left:auto;
     margin-right:auto;
@@ -66,7 +71,7 @@ body section a h2 {
 }
 
 .flechasMovil {
-    display:block;
+    display:none;
     position:absolute;
     top:40%;
     width: 80px;
@@ -83,10 +88,20 @@ body section a h2 {
 #flechaDchMovil {right:0;}
 
 
-@media Screen and (min-width:480px) {
-    body{
-        background-image: url("../img/fondoIndex.jpg");
+/* SOLO EN MOVIL */
+@media Screen and (max-width:480px) {
+    /* Solo se mostrarán las 2 primeras secciones */
+    body section a:nth-child(3),body section a:nth-child(4) {
+        display:none;
     }
+    /* Las flechas para alternar secciones se mostrarán */
+    .flechasMovil {
+        display:block;
+    }
+}
+
+/* Tablet */
+@media Screen and (min-width:480px) {
     .flechasMovil {display:none;}
 
     body section {
@@ -102,4 +117,22 @@ body section a h2 {
     #article2{grid-area:article2;}
     #article3{grid-area:article3;}
     #article4{grid-area:article4;}
+}
+
+@keyframes apareceSectionIzq {
+    from {
+        transform: translateX(-10em);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes apareceSectionDch {
+    from {
+        transform: translateX(10em);
+    }
+    to {
+        transform: translateX(0);
+    }
 }

@@ -15,6 +15,7 @@
     <!--Para el tipo de letra-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
+    <script src="JS/alquiler.js"></script>
 
     <title>Alquiler - Fix Point</title>
 </head>
@@ -40,10 +41,12 @@
            <h2>Caladoras</h2>
        </a>
        <a class="test" id="article3">
-
+            <img src="img/categoria/destornillador.png" alt="">
+            <h2>Destornilladores</h2>
        </a>
        <a class="test" id="article4">
-
+            <img src="img/categoria/alicate.png" alt="">
+            <h2>Alicates</h2>
        </a>
     </section>
 
