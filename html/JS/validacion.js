@@ -12,11 +12,14 @@ function validarNombre(source, id) {
     // validar nombre-apellidos permitiendo texto a-z y varios simbolos(tildes, ñ...), 
     // espacios en blanco entre texto y se ajusta el limite de caracteres
     let regex = {
+        //El nombre de usuario acepta cualquier letra, en mayus y minus, y letras con tilde
         "regexNom" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/,
         "regexApe" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/,
-        "regexUser" : /^[a-zA-Z]{2,30}$/
+        //El nombre de usuario acepta cualquier letra, sin contar con tilde, y numeros
+        "regexUser" : /^[a-zA-Z0-9]{2,30}$/
     };
     
+    //Si el tamaño es mayor a 0
     if (source.value.length > 0) {
         if (source.value != null) {
             //Comprobación de espacios en blanco como unico texto introducido
@@ -55,7 +58,6 @@ function validarEmail(source) {
 }
 
 function validarTelefono(source) {
-
     if (source.value.length > 0) {
         if (source.value != null) {
             if (source.value.length == 9) {
@@ -75,6 +77,7 @@ function validarTelefono(source) {
     return false;
 }
 
-function validarUsuario(source) {
+//Validaciones que se hacen en la pestaña de donar
+function validarHerramienta(source) {
     
 }

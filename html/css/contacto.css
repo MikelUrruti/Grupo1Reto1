@@ -55,9 +55,11 @@ table {
     background-color: black;
     /* border: 1px solid white */
 }
+
 .cerrado{
     background-color: #E54040;
 }
+
 .abierto{
     background-color: #24862B;
 }
@@ -68,8 +70,8 @@ table {
     grid-template-areas: "localizacion"
                           "contacto"
                           "horario";
-    grid-template-rows: 1.5fr 1fr 1fr;
-    row-gap: 5%;
+    grid-template-rows: 1.5fr 1fr 1fr ;
+    row-gap: 10px;
     margin: 5% 4%; 
 
 }
@@ -119,7 +121,8 @@ table {
     #contacto {
         grid-template-areas: "localizacion localizacion"
                             "contacto horario";
-        column-gap: 5%;
+        column-gap: 20px;
+        row-gap: 20px;
         grid-template-columns: 1.25fr 1.75fr;
         grid-template-rows: 2fr 1fr;
     

@@ -44,7 +44,7 @@ header:not(header ul) {
 }
 
 #index {
-    background-image: url("../img/fondoIndex.jpg");
+    background-image: url("../img/fondoError.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -283,6 +283,11 @@ Si abro el menú, este tapará todo */
 
 /* Tablet */
 @media Screen and (min-width:480px) {
+
+  /*El fondo de pantalla cambia para tablet y ordenador*/
+  #index {
+      background-image: url("../img/fondoIndex.jpg");
+  }
   
   #index section article > * {
       margin-bottom: 30px;
