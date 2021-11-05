@@ -8,15 +8,17 @@ body{
 
 body > h1 {
     background-color: white;
+    border: 4px solid #b0b0b0;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width:fit-content;
+    border-radius:0.5em;
 }
 
 body section {
     background-color: white;
-    display:column;
+    border: 4px solid #b0b0b0;
     margin-left:auto;
     margin-right:auto;
     width:70%;
@@ -26,7 +28,6 @@ body section {
 
 
 body section a{
-    display:column;
     text-decoration:none;
     margin:0.5em auto 1em;
     background-color:grey;
@@ -34,7 +35,7 @@ body section a{
     height: 10em;
     border-radius: 0.5em;
     cursor:pointer;
-    transition: filter 0.5s;
+    transition: 0.5s;
 }
 
 body section a img {
@@ -48,7 +49,7 @@ body section a img {
 body section a:hover {
    filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
    /* rgb(160, 0, 210) */
-   transition: filter 0.5s;
+   transition: 0.5s;
 }
 
 body section a:hover > img{
@@ -67,14 +68,13 @@ body section a h2 {
     text-align:center;
     font-size: 2em; 
     bottom:35px;
-    /* z-index: 1; */
 }
 
 .flechasMovil {
     display:none;
     position:absolute;
     top:40%;
-    width: 80px;
+    width: 40px;
     text-align: center;
     font-size: 5em;
     color:orange;
@@ -90,14 +90,15 @@ body section a h2 {
 
 /* SOLO EN MOVIL */
 @media Screen and (max-width:480px) {
-    /* Solo se mostrarán las 2 primeras secciones */
+    /* SOLO muestro los dos primeros artículos */
     body section a:nth-child(3),body section a:nth-child(4) {
         display:none;
     }
-    /* Las flechas para alternar secciones se mostrarán */
+    /* Muestro flechas para cambiar secciones en móvil */
     .flechasMovil {
         display:block;
     }
+   
 }
 
 /* Tablet */
@@ -119,6 +120,8 @@ body section a h2 {
     #article4{grid-area:article4;}
 }
 
+
+/* Estas animaciones se aplican en alquiler.js */
 @keyframes apareceSectionIzq {
     from {
         transform: translateX(-10em);
