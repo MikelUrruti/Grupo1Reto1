@@ -17,6 +17,7 @@
     <!--Scripts-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
+    <script src="JS/donar.js"></script>
     <script src="JS/validacion.js"></script>
 </head>
 
@@ -35,7 +36,7 @@
                 <p>
                     Herramientas:
                 </p>
-                <input class="textoForm" placeholder="Nombre de herramienta" type="text" />
+                <input id="nombre" class="textoForm" placeholder="Nombre de herramienta" type="text" />
             </section>
 
             <section id="imagen">
@@ -66,7 +67,7 @@
                 <p>
                     Descripción:
                 </p>
-                <textarea placeholder="Descripción de la herramienta..."></textarea>
+                <textarea id="descripcion" placeholder="Descripción de la herramienta..."></textarea>
             </section>
         </article>
         </div>
