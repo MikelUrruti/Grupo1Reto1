@@ -39,7 +39,7 @@ noscript {color:red;}
   font-weight: bold;
 }
 
-#index {
+.fondo {
   background-image: url("../img/fondoError.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -279,7 +279,7 @@ Si abro el menú, este tapará todo */
 @media Screen and (min-width:480px) {
 
   /*El fondo de pantalla cambia para tablet y ordenador*/
-  #index {
+  .fondo {
     background-image: url("../img/fondoIndex.jpg");
   }
   

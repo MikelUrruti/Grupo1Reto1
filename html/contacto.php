@@ -18,7 +18,7 @@
     <title>Contacto - Fix Point</title>
 </head>
 
-<body id="index">
+<body class="fondo">
     <?php include("plantillas/indexNav.php") ?>
     <div id="contenedor">
         <section id="contacto">

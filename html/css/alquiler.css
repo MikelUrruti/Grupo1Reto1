@@ -1,11 +1,3 @@
-body{
-  background-image: url("../img/fondoIndex.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 body > h1 {
     background-color: white;
     border: 4px solid #b0b0b0;

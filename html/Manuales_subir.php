@@ -22,7 +22,7 @@
     <script src="JS/manualesSubir.js"></script>
 </head>
 
-<body id="index">
+<body class="fondo">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php include("plantillas/indexNav.php"); ?>
     

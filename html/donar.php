@@ -20,7 +20,7 @@
     <script src="JS/validacion.js"></script>
 </head>
 
-<body id="index">
+<body class="fondo">
     <?php
         include("plantillas/indexNav.php")
     ?>

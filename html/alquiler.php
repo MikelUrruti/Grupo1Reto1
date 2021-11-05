@@ -20,7 +20,7 @@
     <title>Alquiler - Fix Point</title>
 </head>
 
-<body>
+<body class="fondo">
     <?php
         include("plantillas/indexNav.php")
     ?>
