@@ -17,7 +17,7 @@
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
 </head>
-<body>
+<body id="index">
     <?php
         include("plantillas/indexNav.php")
     ?>
