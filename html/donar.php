@@ -67,7 +67,13 @@
                 <p>
                     Descripción:
                 </p>
-                <textarea id="descripcion" placeholder="Descripción de la herramienta..."></textarea>
+                
+                <!--Span donde van la cantidad de caracteres restantes que tienes-->
+                <p id="cantidad">
+                    <span id="restantes">500</span> caracteres restantes
+                </p>
+
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" maxlength="500" placeholder="Descripción de la herramienta..."></textarea>
             </section>
         </article>
         </div>
