@@ -1,6 +1,6 @@
 <?php 
 
-    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion) {
+    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina) {
 
         $totalconsulta = count($resultadoConsulta);
 
@@ -35,15 +35,52 @@
                 
                 if ($i == count($parametrosFuncion)-1) {
                     
-                    $nombreFuncion .= "$".$parametrosFuncion[$i].");";
+                    if (gettype($parametrosFuncion[$i]) == "array") {
+
+                        $array = "array(";
+
+                        for ($j=0; $j < count($parametrosFuncion[$i]); $j++) { 
+                            
+                            if ($j == count($parametrosFuncion[$i])-1) {
+                                $array .= "'".$parametrosFuncion[$i][$j]."')";
+                            } else {
+                                $array .= "'".$parametrosFuncion[$i][$j]."',";
+                            }
+
+                        }
+
+                        $nombreFuncion .= $array.");";
+
+                    } else {
+                        $nombreFuncion .= "$".$parametrosFuncion[$i].");";
+                    }
 
                 } else {
                     
-                    $nombreFuncion .= "$".$parametrosFuncion[$i].",";
+                    if (gettype($parametrosFuncion[$i]) == "array") {
+
+                        $array = "array(";
+
+                        for ($j=0; $j < count($parametrosFuncion[$i]); $j++) { 
+                            
+                            if ($j == count($parametrosFuncion[$i])-1) {
+                                $array .= "'".$parametrosFuncion[$i][$j]."')";
+                            } else {
+                                $array .= "'".$parametrosFuncion[$i][$j]."',";
+                            }
+
+                        }
+
+                        $nombreFuncion .= $array.",";
+                    } else {
+                        $nombreFuncion .= "$".$parametrosFuncion[$i].",";
+                    }
 
                 }
 
             }
+
+            // echo $nombreFuncion;
 
             // echo $nombreFuncion;
 
@@ -60,7 +97,7 @@
                 if ($page != 1) {
                     echo '
                     <section id="movIzq">
-                        <a href="Manuales_lista.php?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
+                        <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                 }
 
@@ -69,7 +106,7 @@
                     //Si entra aqui es que esta en esa pagina
                     if ($page == $i) {
                         echo '
-                        <a class="numPag" id="posAct" href="Manuales_lista.php?page='.$i.'">
+                        <a class="numPag" id="posAct" href="'.$pagina.'?page='.$i.'">
                             <section>
                                     ' .$page. '
                             </section>
@@ -77,7 +114,7 @@
                     //Aqui solo entra cuando la posicion de $i no concuerda con la pagina en la que esta
                     } else {
                         echo '
-                        <a class="numPag" href="Manuales_lista.php?page=' . $i . '">
+                        <a class="numPag" href="'.$pagina.'?page=' . $i . '">
                             <section>
                                 ' .$i. '                    
                             </section>
@@ -89,7 +126,7 @@
                 if ($page != $_SESSION["total_pages"]) {
                     echo '
                     <section id="movDer">
-                        <a href="Manuales_lista.php?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
+                        <a href="'.$pagina.'?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                 }
             }
@@ -125,19 +162,19 @@
 
     }
 
-    function mostrarTabla($consulta,$page,$numRegistros){
+    function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
 
         echo "<table class='tabla'>";
         echo "<thead>";
         echo "<tr>";
         echo "<th class='celda tituloColumna'>Seleccionado</th>";
-        echo "<th class='celda tituloColumna'>Usuario</th>";
-        echo "<th class='celda tituloColumna'>Email</th>";
-        echo "<th class='celda tituloColumna'>Nombre</th>";
-        echo "<th class='celda tituloColumna'>Apellidos</th>";
-        echo "<th class='celda tituloColumna'>Telefono</th>";
-        echo "<th class='celda tituloColumna'>Tipo de usuario</th>";
-        echo "<th class='celda tituloColumna'>Estado</th>";
+
+        foreach ($columnasmostrar as $valor) {
+                
+            echo "<th class='celda tituloColumna'>".$valor."</th>";
+            
+        }
+
         echo "</tr>";
         echo "</thead>";
 
@@ -153,17 +190,28 @@
 
         }
 
-        for ($i=(($page-1)*$numRegistros); $i < $limite; $i++) { 
+        for ($i=(($page-1)*$numRegistros); $i < $limite; $i++) {
             
             echo "<tr>";
+
             echo "<td class='celda contenidoTabla'><input type='checkbox' name='usuariosSeleccionados[]' value='<?php echo ".$consulta[$i]['usuario']."; ?>' id=''></td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["usuario"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["email"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["nombre"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["apellidos"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["telefono"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["tipo"]."</td>";
-            echo "<td class='celda contenidoTabla'>".$consulta[$i]["estado"]."</td>";
+
+            foreach ($consulta[$i] as $key => $valor) {
+
+                if (gettype($key) == "string") {
+                    echo "<td class='celda contenidoTabla'>".$valor."</td>";
+                }
+
+            }
+
+            
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["usuario"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["email"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["nombre"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["apellidos"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["telefono"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["tipo"]."</td>";
+            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["estado"]."</td>";
             echo "</tr>";
 
         }

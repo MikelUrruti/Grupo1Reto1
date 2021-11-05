@@ -22,6 +22,7 @@ comprobarLogin();
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
+    <link rel="stylesheet" href="css/paginador.css">
     <link rel="stylesheet" href="css/adminUsuarios.css">
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
@@ -103,23 +104,7 @@ comprobarLogin();
 
 
                 </div>
-                <!-- <table class="tabla">
-                    <thead>
-                        <tr>
-                            <th class="celda tituloColumna">Seleccionado</th>
-                            <th class="celda tituloColumna">Usuario</th>
-                            <th class="celda tituloColumna">Email</th>
-                            <th class="celda tituloColumna">Nombre</th>
-                            <th class="celda tituloColumna">Apellidos</th>
-                            <th class="celda tituloColumna">Telefono</th>
-                            <th class="celda tituloColumna">Tipo de usuario</th>
-                            <th class="celda tituloColumna">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody> -->
                         <?php
-
-                            // echo var_dump($_SESSION["filtrado"]);
 
                             if (isset($_SESSION["filtrado"])) {
 
@@ -128,7 +113,7 @@ comprobarLogin();
 
                             } else {
 
-                                $resultados = consultarDatoBD("select * from Usuario;", array());
+                                $resultados = consultarDatoBD("select usuario, email, nombre, apellidos, telefono, tipo, estado from Usuario;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -140,59 +125,11 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta","page","nummanuales")); 
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","email","nombre","apellidos","telefono","tipo","estado"),"page","nummanuales"),"adminUsuarios.php"); ?>
 
-                            // if (!isset($_SESSION["filas"])) {
-                                
-                            //     $_SESSION["filas"] = array();
-
-                            //     foreach ($resultados as $resultado) {
-    
-                            //         array_push($_SESSION["filas"], $resultado);
-    
-                            //     }
-
-                            // }
-
-
-
-                //         if (isset($resultados) && count($resultados) > 0) {
-
-                            
-
-
-                //             foreach ($resultados as $fila) {
-
-                //         ?>
-
-                <!-- //                 <tr>
-                //                     <td class="celda contenidoTabla"><input type="checkbox" name="usuariosSeleccionados[]" value="<?php echo $fila["usuario"]; ?>" id=""></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["usuario"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["email"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["nombre"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["apellidos"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["telefono"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["tipo"]; ?></td>
-                //                     <td class="celda contenidoTabla"><?php echo $fila["estado"]; ?></td>
-                //                 </tr> -->
-                         <?php
-                //             }
-                //         }
-
-
-                //         ?>
-
-                     <!-- </tbody>
-                 </table> -->
 
             </form>
 
-            <!-- <div class="ventanaEmergente">
-                <form action="controladores/adminControladorUsuario.php" method="post"></form>
-            </div>
-            <div class="ventanaEmergente">
-                <form action="controladores/adminControladorUsuario.php" method="post"></form>
-            </div> -->
 
         </article>
 
