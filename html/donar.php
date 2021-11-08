@@ -1,6 +1,7 @@
 <?php
 
     require("plantillasphp/redirecciones.php");
+    require("plantillasphp/funcionesFormularios.php");
     // require("controladores/paginador.php");
 
 
@@ -38,10 +39,20 @@
     ?>
 
     <form action="controladores/donarHerramienta.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" value="<?php $_SESSION["usuario"] ?>" name="usuario" />
         <h2 class="tituloForm">
             DONAR HERRAMIENTAS
         </h2>
+
+        <?php cargarExito("exito", ""); ?>
+        <?php 
+        if (isset($_SESSION["errorGeneral"])) {
+            cargarError("errorGeneral", "text-align:center");
+            unset($_SESSION["errorGeneral"]);
+        }
+        if(isset($_SESSION["ruta"])){
+            echo $_SESSION["ruta"];
+        }
+        ?>
 
         <article id="contenedor">
             <section id="nombre">
@@ -49,6 +60,7 @@
                     Herramientas:
                 </p>
                 <input id="nombre" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
+                <?php cargarError("errorHerramienta", ""); ?>
             </section>
 
             <section id="imagen">
@@ -60,6 +72,8 @@
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
+
+                <?php cargarError("errorImg", ""); ?>
 
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
@@ -80,6 +94,9 @@
                     Descripción:
                 </p>
                 <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
+
+                <?php cargarError("errorDescripcion", ""); ?>
+
             </section>
         </article>
         </div>

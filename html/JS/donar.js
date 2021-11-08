@@ -50,7 +50,7 @@ function validacionDesc() {
     //Cantidad de caracteres actuales
     var tamanio = descripcion.value;
     //Mientras que el tamaño no llegue al tamaño maximo
-    if(tamanio.length<tamanoMaximo){
+    if(tamanio.length<=tamanoMaximo){
         //Resta del tamaño maximo menos el tamaño actual
         valor = tamanoMaximo-document.getElementById("descripcion").value.length;
         //Se pone la resta en el campo de texto
