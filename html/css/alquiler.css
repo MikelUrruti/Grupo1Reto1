@@ -104,6 +104,12 @@ body section a h2 {
         grid-template-areas:
         "article1 article2"
         "article3 article4";
+        /* z-index: 1; */
+    }
+
+    body section a {
+        width: max-content;
+        /* z-index: 2; */
     }
     
     #article1{grid-area:article1;}
