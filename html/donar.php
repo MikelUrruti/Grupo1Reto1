@@ -1,5 +1,12 @@
+<?php
+
+    require("plantillasphp/redirecciones.php");
+    // require("controladores/paginador.php");
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,15 +24,21 @@
     <!--Scripts-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
+    <!-- <script src="JS/donar.js"></script> -->
     <script src="JS/validacion.js"></script>
 </head>
 
-<body class="fondo">
+<body id="index">
     <?php
-        include("plantillas/indexNav.php")
+
+        include("plantillas/indexNav.php");
+
+        comprobarLogin();
+
     ?>
 
-    <form>
+    <form action="controladores/donarHerramienta.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="<?php $_SESSION["usuario"] ?>" name="usuario" />
         <h2 class="tituloForm">
             DONAR HERRAMIENTAS
         </h2>
@@ -35,7 +48,7 @@
                 <p>
                     Herramientas:
                 </p>
-                <input class="textoForm" placeholder="Nombre de herramienta" type="text" />
+                <input id="nombre" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
             </section>
 
             <section id="imagen">
@@ -43,7 +56,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="image" onchange="cargarImg(event)" />
+                    <input id="subirImg" type="file" name="foto" onchange="cargarImg(event)"/>
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -66,7 +79,7 @@
                 <p>
                     Descripción:
                 </p>
-                <textarea placeholder="Descripción de la herramienta..."></textarea>
+                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
             </section>
         </article>
         </div>

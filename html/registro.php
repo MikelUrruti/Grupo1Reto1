@@ -15,11 +15,11 @@ require("plantillasphp/funcionesFormularios.php");
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/normalizar.css"/>
-    <link rel="stylesheet" href="css/cssFooter.css"/>
-    <link rel="stylesheet" href="css/cssNav.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/registro.css"/>
+    <link rel="stylesheet" href="css/normalizar.css" />
+    <link rel="stylesheet" href="css/cssFooter.css" />
+    <link rel="stylesheet" href="css/cssNav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/registro.css" />
     <!--Scripts en concreto-->
     <script src="JS/js.js"></script>
     <script src="JS/registro.js"></script>
@@ -39,7 +39,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Usuario: <span class="obligatorio">*</span>
                 </p>
                 <input id="usuario" name="usuario" class="textoForm" type="text" placeholder="Mecanico824" />
-                
+
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -48,8 +48,8 @@ require("plantillasphp/funcionesFormularios.php");
                     <p>
                         Nombre: <span class="obligatorio">*</span>
                     </p>
-                    <input id="nombre" name="nombre"  class="textoForm" type="text" placeholder="Mikel" />
-                    
+                    <input id="nombre" name="nombre" class="textoForm" type="text" placeholder="Mikel" />
+
                 </div>
 
                 <div class="usudat_NewUsu">
@@ -57,7 +57,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
                     <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="Urrutikoetxea" />
-                    
+
                 </div>
             </div>
 
@@ -67,7 +67,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Email: <span class="obligatorio">*</span>
                 </p>
                 <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
-                
+
             </div>
 
             <!--Estan en un grupo para que se vean mejor en el ordenador-->
@@ -76,31 +76,31 @@ require("plantillasphp/funcionesFormularios.php");
                     Numero de telefono:
                 </p>
                 <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
-                
+
             </div>
 
             <div class="grupodatos_NewUsu">
-            <div class="usudat_NewUsu">
-                <p>
-                    Contraseña: <span class="obligatorio">*</span>
-                </p>
-                <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
-               
-            </div>
+                <div class="usudat_NewUsu">
+                    <p>
+                        Contraseña: <span class="obligatorio">*</span>
+                    </p>
+                    <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
 
-            <div class="usudat_NewUsu">
-                <p>
-                    Confirmar contraseña: <span class="obligatorio">*</span>
-                </p>
-                <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
+                </div>
+
+                <div class="usudat_NewUsu">
+                    <p>
+                        Confirmar contraseña: <span class="obligatorio">*</span>
+                    </p>
+                    <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
+                </div>
             </div>
-        </div>
         </div>
         <input class="boton" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
     <!--Lo que hay que poner para incluir una pagina: -->
     <?php include("plantillas/indexFooter.html"); ?>
-    
+
 </body>
 
 </html>
