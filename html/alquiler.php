@@ -41,18 +41,24 @@
 
     <?php
         require("plantillasphp/operacionesDb.php");
+        require("plantillasphp/paginadorFunciones.php");
         $consulta = "select nombre,foto from Categoria";
         $categorias = consultarDatoBD($consulta);
-        $numCategoria = 0;
-        foreach($categorias as $categoria) {
-            $numCategoria ++;
-            echo "
-                <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
-                    <img src='$categoria[foto]'>
-                    <h2>$categoria[nombre]</h2>
-                </a>
-            ";
-        }
+        $numRegistros = 4;
+        
+        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
+        
+        // $numCategoria = 0;
+
+        // foreach($categorias as $categoria) {
+        //     $numCategoria ++;
+        //     echo "
+        //         <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
+        //             <img src='$categoria[foto]'>
+        //             <h2>$categoria[nombre]</h2>
+        //         </a>
+        //     ";
+        // }
     ?>
 
 
