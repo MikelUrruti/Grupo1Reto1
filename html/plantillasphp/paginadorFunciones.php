@@ -161,7 +161,21 @@
         }
 
         print('</section>');
+    }
 
+    function mostrarHerramientas($consulta,$page,$nummanuales) {
+        $numCategoria = 0;
+
+        for ($i=(($page-1)*$nummanuales);$i<$limite;$i++) {
+            $numCategoria++;
+            echo "
+                <a>
+                    <img src='$consulta[$i][foto]' href=herramientas.php?tipoHerramienta=$consulta[$i][nombre]>
+                    <h2>$consulta[$i][nombre]</h2>
+                </a>
+            ";
+        }
+        
     }
 
     function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
