@@ -10,7 +10,7 @@ $rutaIndex = dirname(realpath(__FILE__));
 $rutaOrigen = $_FILES['foto']['name'];
 $rutaDestino = $rutaIndex . '/img/herramientas/' . $_FILES['foto']['name'];
 
-echo $rutaIndex . "       " . $rutaOrigen . "       " . $rutaDestino;
+// echo $rutaIndex . "  --------     " . $rutaOrigen . "  ---------     " . $rutaDestino;
 
 // if (validacionImg()) {
 //     //Se guarda el fichero
@@ -36,7 +36,12 @@ function validacionImg(){
 
         if ($_FILES['foto']['size'] < $maxTam) {
             // echo "Pesa menos de 1MB";
-            return true;
+
+            if($_SESSION["herramientas"]){
+
+                return true;
+            }
+
         }
     }
     return false;
