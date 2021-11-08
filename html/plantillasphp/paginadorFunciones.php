@@ -11,8 +11,12 @@
 
             //examino la pagina a mostrar y el inicio del registro a mostrar
             if (isset($_GET["page"])) {
+
                 $page = $_GET["page"];
+                $_SESSION["mantenerFiltrado"] = true;
+                
             }
+            
 
             $nummanuales = $numRegistros;
 
@@ -96,15 +100,27 @@
             //Comprobacion de los elementos que hay en la bd para crear las bolitas necesarias
             if ($_SESSION["total_pages"] > 1) {
                 //Flecha que sirve para ir hacia la izquierda, solo aparece siempre y cuando no este en la primera pagina
-                if ($page != 1) {
+
+                if ($page > 1) {
                     echo '
-                    <section id="movIzq">
+                    <section class="movIzq">
+                        <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
+                    </section>';
+                    echo '
+                    <section class="movIzq">
                         <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                 }
 
-                //Estilo de las bolitas que marcan las paginas
-                for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
+                $limite = $page + 4;
+
+                if ($limite > $_SESSION["total_pages"]) {
+                    
+                    $limite = $_SESSION["total_pages"];
+
+                }
+
+                for ($i = $page; ($i <= $limite); $i++) {
                     //Si entra aqui es que esta en esa pagina
                     if ($page == $i) {
                         echo '
@@ -124,15 +140,42 @@
                     }
                 }
 
+                //Estilo de las bolitas que marcan las paginas
+                // for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
+                //     //Si entra aqui es que esta en esa pagina
+                //     if ($page == $i) {
+                //         echo '
+                //         <a class="numPag" id="posAct" href="'.$pagina.'?page='.$i.'">
+                //             <section>
+                //                     ' .$page. '
+                //             </section>
+                //         </a>';                
+                //     //Aqui solo entra cuando la posicion de $i no concuerda con la pagina en la que esta
+                //     } else {
+                //         echo '
+                //         <a class="numPag" href="'.$pagina.'?page=' . $i . '">
+                //             <section>
+                //                 ' .$i. '                    
+                //             </section>
+                //         </a>';
+                //     }
+                // }
+
                 //Flecha que sirve para ir hacia la derecha, solo aparece siempre y cuando no este en la ultima pagina
-                if ($page != $_SESSION["total_pages"]) {
+                if ($page < $_SESSION["total_pages"]) {
                     echo '
-                    <section id="movDer">
+                    <section class="movDer">
                         <a href="'.$pagina.'?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
+                    </section>';
+                    echo '
+                    <section class="movDer">
+                        <a href="'.$pagina.'?page=' . $_SESSION["total_pages"] . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
                     </section>';
                 }
             }
             echo '</article>';
+            
+            
         }
 
     }

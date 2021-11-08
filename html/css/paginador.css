@@ -12,13 +12,13 @@
 /*Fin caja general*/
 
 /*Estilo de la caja de las flechas*/
-#movIzq  img{
+.movIzq  img{
     height: 2.5em;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-#movIzq img:hover{
+.movIzq:hover img{
     cursor: pointer;
     animation: movIzq 2s ease 0s infinite normal forwards;
 }
@@ -51,14 +51,14 @@
 }
 
 
-#movDer img{
+.movDer img{
     transform: rotate(180deg);
     height: 2.5em;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-#movDer img:hover{
+.movDer:hover img{
     cursor: pointer;
     animation: movDer 2s ease 0s infinite normal forwards;
 }
@@ -128,11 +128,11 @@ ESTILO DE TABLET
     /*Fin caja general*/
 
     /*Estilo de la caja de las flechas*/
-    #movIzq > img{
+    .movIzq > img{
         height: 3em;
     }
 
-    #movDer > img{
+    .movDer > img{
         transform: rotate(180deg);
         height: 3em;
     }
@@ -167,11 +167,11 @@ ESTILO DE ORDENADOR
     /*Fin caja general*/
 
     /*Estilo de la caja de las flechas*/
-    #movIzq > img{
+    .movIzq > img{
         height: 3em;
     }
 
-    #movDer > img{
+    .movDer > img{
         transform: rotate(180deg);
         height: 3em;
     }

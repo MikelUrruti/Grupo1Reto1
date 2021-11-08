@@ -47,11 +47,11 @@ comprobarLogin();
 
         
             <form action="controladores/buscarSubidoManual.php" method="get" id="buscador">
-                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Solicitudes..." />
+                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Manuales..." />
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
 
-            <form action="controladores/adminControladorSolicitudesManuales.php" method="post" id="acciones">
+            <form action="controladores/adminControladorSubidosManuales.php" method="post" id="acciones">
 
                 <div class="acciones">
                     <input type="submit" class="boton" value="Modificar" name="Modificar">
@@ -78,7 +78,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante","Usuario aprobador"),"page","nummanuales"),"adminSubidosManuales.php", 6); ?>
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),"adminSubidosManuales.php", 1); ?>
 
 
             </form>

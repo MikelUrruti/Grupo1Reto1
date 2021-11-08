@@ -17,6 +17,8 @@
     
         $_SESSION["filtrado"] = consultarDatoBD("select titulo, descripcion, fichero, usuariosube from Manual where usuarioaprueba is null and (titulo like ? or descripcion like ? or usuariosube like ?);",$parametros);
 
+        $_SESSION["mantenerFiltrado"] = true;
+
         redireccionar("../adminSolicitudesManuales.php");
 
     }

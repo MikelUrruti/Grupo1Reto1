@@ -8,6 +8,12 @@ session_start();
 
 comprobarLogin();
 
+if (!isset($_SESSION["mantenerFiltrado"])) {
+
+    $_SESSION["mantenerFiltrado"] = false;
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,12 +52,12 @@ comprobarLogin();
         <article>
 
         
-            <form action="controladores/buscarSubidoManual.php" method="get" id="buscador">
+            <form action="controladores/buscarSolicitudManual.php" method="get" id="buscador">
                 <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Solicitudes..." />
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
 
-            <form action="controladores/adminControladorSubidosManuales.php" method="post" id="acciones">
+            <form action="controladores/adminControladorSolicitudesManuales.php" method="post" id="acciones">
 
                 <div class="acciones">
                     <input type="submit" class="boton botonCrear" value="Aprobar" name="Aprobar">
@@ -62,7 +68,12 @@ comprobarLogin();
                             if (isset($_SESSION["filtrado"])) {
 
                                 $resultados = $_SESSION["filtrado"];
-                                unset($_SESSION["filtrado"]);
+
+                                if (!$_SESSION["mantenerFiltrado"]) {
+
+                                    unset($_SESSION["filtrado"]);
+    
+                                }
 
                             } else {
 
@@ -78,7 +89,19 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),"adminSolicitudesManuales.php", 6); ?>
+                            echo $_SESSION["mantenerFiltrado"]==false;
+
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),"adminSolicitudesManuales.php", 1); 
+
+                            if (!$_SESSION["mantenerFiltrado"]) {
+
+                                unset($_SESSION["filtrado"]);
+
+                            }
+
+                            $_SESSION["mantenerFiltrado"] = false;
+
+                            ?>
 
 
             </form>
