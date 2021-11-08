@@ -9,15 +9,15 @@
 
         $parametros = array();
 
-        for ($i=0; $i < 3; $i++) { 
+        for ($i=0; $i < 4; $i++) { 
             
             array_push($parametros,"%".$_GET["Buscar"]."%");
     
         }
     
-        $_SESSION["filtrado"] = consultarDatoBD("select titulo, descripcion, fichero, usuariosube from Manual where usuarioaprueba is null and (titulo like ? or descripcion like ? or usuariosube like ?);",$parametros);
+        $_SESSION["filtrado"] = consultarDatoBD("select * from Manual where usuarioaprueba is not null and (titulo like ? or descripcion like ? or usuariosube like ? or usuarioaprueba like ?);",$parametros);
 
-        redireccionar("../adminSolicitudesManuales.php");
+        redireccionar("../adminSubidosManuales.php");
 
     }
 

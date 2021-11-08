@@ -27,7 +27,7 @@ comprobarLogin();
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
-    <title>Solicitudes Manuales</title>
+    <title>Manuales</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@ comprobarLogin();
 
     <section class="contenido">
         <article>
-            <h1 class="titulo">SOLICITUDES PARA SUBIR MANUALES</h1>
+            <h1 class="titulo">MANUALES DISPONIBLES EN EL SITIO WEB</h1>
         </article>
         <article>
 
@@ -51,11 +51,11 @@ comprobarLogin();
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
 
-            <form action="controladores/adminControladorSubidosManuales.php" method="post" id="acciones">
+            <form action="controladores/adminControladorSolicitudesManuales.php" method="post" id="acciones">
 
                 <div class="acciones">
-                    <input type="submit" class="boton botonCrear" value="Aprobar" name="Aprobar">
-                    <input type="submit" class="boton botonEliminar" value="Rechazar" name="Rechazar">
+                    <input type="submit" class="boton" value="Modificar" name="Modificar">
+                    <input type="submit" class="boton" value="Eliminar" name="Eliminar">
                 </div>
                         <?php
 
@@ -66,7 +66,7 @@ comprobarLogin();
 
                             } else {
 
-                                $resultados = consultarDatoBD("select titulo, descripcion, fichero, usuariosube from Manual where usuarioaprueba is null;", array());
+                                $resultados = consultarDatoBD("select * from Manual where usuarioaprueba is not null;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -78,7 +78,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),"adminSolicitudesManuales.php", 6); ?>
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante","Usuario aprobador"),"page","nummanuales"),"adminSubidosManuales.php", 6); ?>
 
 
             </form>
