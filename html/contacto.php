@@ -18,7 +18,7 @@
     <title>Contacto - Fix Point</title>
 </head>
 
-<body id="index">
+<body class="fondo">
     <?php include("plantillas/indexNav.php") ?>
     <div id="contenedor">
         <section id="contacto">
@@ -27,6 +27,7 @@
             </article>
             <article id="informacionContacto" class="caja">
                 <h1 class="titulo">Metodos de contacto:</h1>
+                <!--Este "p" esta puesto con este estilo tan raro para que dejasen bien los espacios-->
                 <p>    Telefono:
         975 23 94 43
 
@@ -39,6 +40,8 @@
         975 23 94 43
                 </p>
             </article>
+
+            <!--Seccion de la hora-->
             <article id="horario" class="caja">
                 <h1 class="titulo">Horario:</h1>
                 <table>
