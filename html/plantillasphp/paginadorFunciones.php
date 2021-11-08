@@ -1,6 +1,6 @@
 <?php 
 
-    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina) {
+    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros) {
 
         $totalconsulta = count($resultadoConsulta);
 
@@ -14,16 +14,18 @@
                 $page = $_GET["page"];
             }
 
+            $nummanuales = $numRegistros;
+
             //Lo que hace al cargar la pagina
             if (!$page) {
                 $start = 0;
                 $page = 1;
             } else {
-                $start = ($page - 1) * 6;
+                $start = ($page - 1) * $nummanuales;
             }
 
             //calculo el total de paginas
-            $nummanuales = 6;
+            
             //Esta sesion es para la cantidad de bolitas que va a haber
             $_SESSION["total_pages"] = ceil($totalconsulta / $nummanuales);
 
@@ -169,7 +171,7 @@
         echo "<tr>";
         echo "<th class='celda tituloColumna'>Seleccionado</th>";
 
-        foreach ($columnasmostrar as $valor) {
+        foreach (array_slice($columnasmostrar,1) as $valor) {
                 
             echo "<th class='celda tituloColumna'>".$valor."</th>";
             
@@ -194,7 +196,10 @@
             
             echo "<tr>";
 
-            echo "<td class='celda contenidoTabla'><input type='checkbox' name='usuariosSeleccionados[]' value='<?php echo ".$consulta[$i]['usuario']."; ?>' id=''></td>";
+            // echo $clave;
+
+            echo "<td class='celda contenidoTabla'><input type='checkbox' name='registrosSeleccionados[]' value='".array_slice($consulta[$i],1)[0]."' id=''></td>";
+            next($consulta[$i]);
 
             foreach ($consulta[$i] as $key => $valor) {
 
@@ -204,14 +209,6 @@
 
             }
 
-            
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["usuario"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["email"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["nombre"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["apellidos"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["telefono"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["tipo"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["estado"]."</td>";
             echo "</tr>";
 
         }

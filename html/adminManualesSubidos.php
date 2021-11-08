@@ -27,7 +27,7 @@ comprobarLogin();
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
-    <title>Usuarios</title>
+    <title>Manuales</title>
 </head>
 
 <body>
@@ -41,52 +41,43 @@ comprobarLogin();
 
     <section class="contenido">
         <article>
-            <h1 class="titulo">USUARIOS DEL SITIO WEB</h1>
+            <h1 class="titulo">SOLICITUDES PARA SUBIR MANUALES</h1>
         </article>
         <article>
 
         
             <form action="controladores/buscarUsuario.php" method="get" id="buscador">
-                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar usuarios..." />
+                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Solicitudes..." />
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
             <div id="buscadorFiltros">
 
                 <form action="controladores/filtrosUsuario.php" id="filtros" method="get">
                     <div>
-                        <h2 class="tituloFiltro">Tipo de usuario:</h2>
-                        <div>    
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="usuario" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("usuario",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Usuario</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="administrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("administrador",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Administrador</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="superadministrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("superadministrador",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">SuperAdministrador</label>
-                        </div>
-                    </div>
-                    <div>
-                        <h2 class="tituloFiltro">Estado del usuario:</h2>
+                        <h2 class="tituloFiltro">Estado de la solicitud:</h2>
                         <div>
                             <input type="checkbox" class="checkbox" name="buscarActivos[]" value="activo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("activo",$_SESSION["checkActivos"])) {
                                 echo "checked";
                             } ?>>
-                            <label for="">Activo</label>
+                            <label for="">Pendiente</label>
                         </div>
                         <div>
                             <input type="checkbox" class="checkbox" name="buscarActivos[]" value="inactivo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("inactivo",$_SESSION["checkActivos"])) {
                                 echo "checked";
                             } ?>>
-                            <label for="">Inactivo</label>
+                            <label for="">Aceptada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="activo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("activo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Rechazada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="inactivo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("inactivo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Expirada</label>
                         </div>
                     </div>
 
@@ -113,7 +104,7 @@ comprobarLogin();
 
                             } else {
 
-                                $resultados = consultarDatoBD("select usuario, email, nombre, apellidos, telefono, tipo, estado from Usuario;", array());
+                                $resultados = consultarDatoBD("select * from Manual;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -125,7 +116,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","Usuario","Email","Nombre","Apellidos","Telefono","Tipo","Estado"),"page","nummanuales"),"adminUsuarios.php", 6); ?>
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Fecha de solicitud","Estado de la solicitud","Usuario Solicitante","Herramienta Solicitada"),"page","nummanuales"),"adminSolicitudesManuales.php", 6); ?>
 
 
             </form>

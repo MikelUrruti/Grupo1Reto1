@@ -25,7 +25,7 @@
 
     } */ elseif ($accion == "Eliminar") {
 
-        $usuarios = $_POST["usuariosSeleccionados"];
+        $usuarios = $_POST["registrosSeleccionados"];
 
         $consulta = "update Usuario set estado='inactivo' where usuario in (";
         $parametros = array();
@@ -51,7 +51,9 @@
 
         manipularDatoBD($consulta,$parametros);
 
-        redireccionar("../adminUsuarios.php");
+        echo var_dump($_POST["registrosSeleccionados"]);
+
+        // redireccionar("../adminUsuarios.php");
 
     } else {
         
