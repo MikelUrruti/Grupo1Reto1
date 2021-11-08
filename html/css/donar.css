@@ -107,6 +107,10 @@ textarea:focus{
         0.7px -0.6px 0 black,
         -0.8px -0.5px 0 black;
 }
+
+#restantes{
+    display: none;        
+}
 /*Fin descripcion*/
 
 /*Estilo del boton de enviar*/
@@ -187,6 +191,12 @@ ESTILO DE TABLET
         "textBot imgpos";
     }
     /*Fin cajas formulario*/
+    
+    /*Estilo de los titulos de cada campo*/
+    p{
+        font-size: 1.6em;
+    }
+    /*Fin titulos*/
 
     /*Estilo del campo de texto*/
     #nombre p{
@@ -196,6 +206,12 @@ ESTILO DE TABLET
     #nombre [type=text]{
         margin-left: 13%;
         width: 60%;
+        padding-top: 0.6%;
+        padding-bottom: 0.6%;
+    }
+
+    #nombre [type=text]::placeholder{
+        font-size: large;
     }
     /*Fin campo texto*/
 
@@ -241,12 +257,17 @@ ESTILO DE ORDENADOR
     /*Fin titulos*/
 
     /*Estilo del campo de texto*/
-
     #nombre [type=text]{
         margin-left: 13%;
         width: 60%;
         height: 50px;
         font-size: 1.5em;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+
+    #nombre [type=text]::placeholder{
+        font-size: x-large;
     }
     /*Fin campo texto*/
 
@@ -272,9 +293,25 @@ ESTILO DE ORDENADOR
         margin-left: 10%;
     }
 
+
     #desc>textarea{
         width: 80%;
         margin: 0% 10% 2% 10%;
+        font-size: x-large;
+    }
+
+    #desc>textarea::placeholder{
+        font-size: x-large;
+    }
+    
+    #cantidad{
+        display: block;
+        font-size: 1.3em; 
+    }
+
+    #restantes{
+        display: inline;
+        font-size: 1.3em;
     }
     /*Fin descripcion*/
 }
