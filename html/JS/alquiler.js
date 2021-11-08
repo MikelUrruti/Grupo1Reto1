@@ -1,5 +1,7 @@
 
 window.onload = function () {
+    cerrarMenuMovil();
+    codigoOriginal();
     // Popurrí de variables
     const flechaIzqMovil = document.getElementById("flechaIzqMovil");
     const flechaDchMovil = document.getElementById("flechaDchMovil");
@@ -20,7 +22,7 @@ function cambiarPosicionCarrusel(comp) {
             console.log("click Flecha Izq");
             if (posicionCarrusel==1) posicionCarrusel++;
             else posicionCarrusel--;
-            agregarAnimacionIzq();
+            agregarAnimacionDch();
             carruselMovil();
             // quitarAnimacion();
             break;
@@ -28,7 +30,7 @@ function cambiarPosicionCarrusel(comp) {
             console.log("click Flecha Dch");
             if (posicionCarrusel==2) posicionCarrusel--;
             else posicionCarrusel++;
-            agregarAnimacionDch();
+            agregarAnimacionIzq();
             carruselMovil();
             // quitarAnimacion();
             break;
@@ -43,7 +45,6 @@ function carruselMovil() {
     const article3 = document.getElementById("article3");
     const article4 = document.getElementById("article4");
     if (posicionCarrusel == 1) {
-        console.log("articulos 1 y 2");
         section.insertBefore(article1,article3);
         section.insertBefore(article2,article3);
     }
@@ -65,6 +66,21 @@ function agregarAnimacionDch() {
 
 function quitarAnimacion() {
     section.style.animation = "none";
+}
+
+function codigoOriginal() {
+    window.onresize = function() {
+        if (window.innerWidth >= 489) {
+            const section = document.querySelector("body section");
+            const article1 = document.getElementById("article1");
+            const article2 = document.getElementById("article2");
+            const article3 = document.getElementById("article3");
+            section.insertBefore(article1,article3);
+            section.insertBefore(article2,article3);
+            // agregarAnimacionDch();
+            // agregarAnimacionIzq();
+        }
+    }
 }
 
 /* FUNCION cambiarPosicionCarrusel

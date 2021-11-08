@@ -16,10 +16,6 @@ body section {
     width:70%;
     height:100%;
     border-radius:0.5em;
-    -webkit-border-radius:0.5em;
-    -moz-border-radius:0.5em;
-    -ms-border-radius:0.5em;
-    -o-border-radius:0.5em;
 }
 
 
@@ -101,6 +97,11 @@ body section a h2 {
 @media Screen and (min-width:480px) {
     .flechasMovil {display:none;}
 
+   
+}
+
+/* Ordenador */
+@media Screen and (min-width: 1025px) {
     body section {
         display:grid;
         grid-gap:1em;
@@ -108,12 +109,6 @@ body section a h2 {
         grid-template-areas:
         "article1 article2"
         "article3 article4";
-        /* z-index: 1; */
-    }
-
-    body section a {
-        width: max-content;
-        /* z-index: 2; */
     }
     
     #article1{grid-area:article1;}
@@ -122,27 +117,65 @@ body section a h2 {
     #article4{grid-area:article4;}
 }
 
-/* Ordenador */
-@media Screen and (min-width: 1025px) {
-    
-}
-
 
 /* Estas animaciones se aplican en alquiler.js */
 @keyframes apareceSectionIzq {
-    from {
-        transform: translateX(-10em);
+    /* from {
+        visibility: hidden;
+        transform: translateX(-20em);
     }
     to {
+        visibility: visible;
+        transform: translateX(0);
+    } */
+
+    0% {
         transform: translateX(0);
     }
+
+    49% {
+        transform: translateX(30em);
+        opacity:-1;
+    }
+
+
+    50% {
+        opacity: -1;
+        transform:translateX(-30em);
+    }
+
+    100% {
+        opacity: none;
+        transform: translateX(0);
+    }
+
 }
 
 @keyframes apareceSectionDch {
-    from {
+    /* from {
         transform: translateX(10em);
     }
     to {
+        transform: translateX(0);
+    } */
+
+    0% {
+        transform: translateX(0);
+    }
+
+    49% {
+        transform: translateX(-30em);
+        opacity:-1;
+    }
+
+
+    50% {
+        opacity: -1;
+        transform:translateX(30em);
+    }
+
+    100% {
+        opacity: none;
         transform: translateX(0);
     }
 }
