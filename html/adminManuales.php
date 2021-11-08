@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/adminComun.css">
-    <link rel="stylesheet" href="css/adminManuales.css">
+    <link rel="stylesheet" href="css/adminSecciones.css">
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
@@ -36,11 +36,11 @@
     <section class="contenido">
 
         <a href="adminSolicitudesManuales.php" class="seccion">
-           <img src="img/caladora.png" alt="">
+           <img src="img/solicitud.png" alt="">
            <h2>Solicitudes</h2>
         </a>
         <a href="adminSubidosManuales.php" class="seccion">
-           <img src="img/caladora.png" alt="">
+           <img src="img/manual.png" alt="">
            <h2>Manuales subidos</h2>
         </a>
 

@@ -7,7 +7,7 @@
     text-decoration: none;
     color: black;
     text-align: center;
-    background-color: grey;
+    background-color: #EEC51F;
     border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     -moz-border-radius: 0.5em;
@@ -27,14 +27,15 @@ body section a img {
     display:block;
     margin: auto;
     width:15em;
+    height: 12em;
     transition: 0.5s;
 }
 
 body section a:hover {
-    filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
-    /* rgb(160, 0, 210) */
-    transition: filter 0.5s;
- }
+    filter: drop-shadow(0 0 8mm rgb(210, 0, 0));
+    /*rgb(160,0,210)*/transition: filter 0.5s;
+    -webkit-filter: drop-shadow(0 0 8mm rgb(210, 0, 0));
+}
  
  body section a:hover > img{
      transform:scale3d(1.6, 1, 1) rotate(20deg) translate(-5px, -5px);
