@@ -94,6 +94,7 @@
                     Descripción:
                 </p>
                 <p id="cantidad">
+                    <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
                     <script src="JS/donar.js">
                         validacionDesc();
                     </script>
