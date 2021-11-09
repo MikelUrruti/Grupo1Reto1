@@ -47,7 +47,7 @@ function validarTelefono($telefono) {
 
             for ($i=1; $i < strlen($telefono); $i++) { 
 
-                if (is_numeric(substr($telefono,$i,1))) {
+                if (!is_numeric(substr($telefono,$i,1))) {
                     return false;
                 }
 
