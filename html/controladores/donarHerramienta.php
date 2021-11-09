@@ -9,11 +9,11 @@ session_start();
 //Ruta para almacenar las imagenes
 //realpath: ruta absoluta del fichero
 $rutaIndex = dirname(realpath(__FILE__));
-$rutaOrigen = $_FILES['foto']['name'];
+$rutaOrigen = $_FILES['foto']['tmp_name'];
 $rutaDestino = '../img/herramientas/' . $_FILES['foto']['name'];
 
 
-$_SESSION["ruta"] = $rutaDestino. " ------- ". $rutaOrigen;
+$_SESSION["ruta"] = $rutaDestino. " ------- ". $rutaOrigen. "-----".$rutaIndex;
 
 //Comprobaciones
 if (isset($_POST["herramienta"]) && isset($_POST["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto'])) {
