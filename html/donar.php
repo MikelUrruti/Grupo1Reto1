@@ -62,7 +62,7 @@
                 <p>
                     Herramientas:
                 </p>
-                <input id="nombre" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
+                <input id="nombreInput" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
                 <?php cargarError("errorHerramienta", ""); ?>
             </section>
 
@@ -95,6 +95,14 @@
             <section id="desc">
                 <p>
                     Descripción:
+                </p>
+                <p id="cantidad">
+                    <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
+                    <script src="JS/donar.js">
+                        validacionDesc();
+                    </script>
+                    <span id="restantes">500</span>
+                    palabras restantes
                 </p>
                 <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
 

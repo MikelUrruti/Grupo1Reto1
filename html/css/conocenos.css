@@ -1,9 +1,10 @@
 section article p{
-    visibility: hidden;
+    /* visibility: hidden; */
     position: absolute; 
     font-size: 0px;
-    opacity: 0;
+    /* opacity: 0; */
     white-space: pre-wrap;
+    /* transition: 1.5s; */
 }
 
 .verMas {
@@ -41,27 +42,30 @@ cursor: pointer;
 #herramientas{
     grid-area: herramientas;
 }
-
+#mostrar1{
+    /* visibility: hidden; */
+    transition: 1.5s;
+}
 #mostrar1:checked ~ #mParrafo {
     position: static;
-    visibility: visible; 
+    /* visibility: visible;  */
     font-size: 1em;
     transition: 1.5s;
-    opacity: 1;
+    /* opacity: 1; */
 }
 #mostrar2:checked ~ #vParrafo {
     position: static;
-    visibility: visible; 
+    /* visibility: visible;  */
     font-size: 1em;
     transition: 1.5s;
-    opacity: 1;
+    /* opacity: 1; */
 }
 #mostrar3:checked ~ #hParrafo {
     position: static;
-    visibility: visible; 
+    /* visibility: visible;  */
     font-size: 1em;
     transition: 1.5s;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 #mostrar1:not():checked ~ #mParrafo {
@@ -87,9 +91,9 @@ cursor: pointer;
     }
     section article p{
         position: static;
-        visibility: visible; 
+        /* visibility: visible;  */
         font-size: 1em;
-        opacity: 1;
+        /* opacity: 1; */
     }
     #vision{
         margin-top: 0;

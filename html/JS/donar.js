@@ -52,7 +52,7 @@ function validacionDesc() {
     //Mientras que el tamaño no llegue al tamaño maximo
     if(tamanio.length<=tamanoMaximo){
         //Resta del tamaño maximo menos el tamaño actual
-        valor = tamanoMaximo-document.getElementById("descripcion").value.length;
+        valor = tamanoMaximo-parseInt(tamanio.length);
         //Se pone la resta en el campo de texto
         restantes.innerHTML=""+valor;
     }
