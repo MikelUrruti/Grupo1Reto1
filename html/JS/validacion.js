@@ -13,7 +13,7 @@ function validarNombre(source, id) {
     // validar nombre-apellidos permitiendo texto a-z y varios simbolos(tildes, ñ...), 
     // espacios en blanco entre texto y se ajusta el limite de caracteres
     let regex = {
-        //El nombre de usuario acepta cualquier letra, en mayus y minus, y letras con tilde
+        //El nombre de usuario acepta cualquier letra, en mayus y minus, vocales con tilde y espacios en blanco
         "regexNom" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/,
         "regexApe" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/,
         //El nombre de usuario acepta cualquier letra, sin contar con tilde, y numeros
