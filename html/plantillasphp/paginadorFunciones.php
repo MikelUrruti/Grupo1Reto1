@@ -104,7 +104,7 @@
                 if ($page > 1) {
                     echo '
                     <section class="movIzq">
-                        <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
+                        <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
                     </section>';
                     echo '
                     <section class="movIzq">
@@ -169,7 +169,7 @@
                     </section>';
                     echo '
                     <section class="movDer">
-                        <a href="'.$pagina.'?page=' . $_SESSION["total_pages"] . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
+                        <a href="'.$pagina.'?page=' . $_SESSION["total_pages"] . '"> <img src="img/Pasodoble.png" /></a>
                     </section>';
                 }
             }
