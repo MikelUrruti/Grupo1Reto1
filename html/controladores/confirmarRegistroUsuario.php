@@ -13,9 +13,9 @@
 
             $consulta = manipularDatoBD("insert into Usuario values (?, ?, ?, ?, ?, ?, ?, ?)",$parametros);
 
-            if (gettype($consulta) == "string") {
+            if ($consulta != 1) {
                 
-                $_SESSION["errorCodigo"] = $consulta;
+                $_SESSION["errorCodigo"] = erroresInsertar($consulta,array($_SESSION["usuario"],$_SESSION["email"],$_SESSION["telefono"]));
                 redireccionar("../confirmarRegistro.php");
 
             } else {
@@ -24,12 +24,10 @@
 
                     unset($_SESSION["password"]);
                     $_SESSION["tipo"]="usuario";
-    
+
                     redireccionar("../index.php");
 
                 }
-
-                echo $_SESSION["telefono"];
 
             }
 
@@ -40,6 +38,10 @@
             
         }
 
-    } 
+    } else {
+        
+        redireccionar("../confirmarRegistro.php");
+
+    }
 
 ?>
