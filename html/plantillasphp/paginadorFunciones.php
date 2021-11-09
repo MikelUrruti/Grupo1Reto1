@@ -35,6 +35,7 @@
 
             //pongo el numero de registros total, el tamano de pagina y la pagina que se muestra
 
+            // Parametros de la consulta
             $nombreFuncion .= "(";
 
             for ($i=0; $i < count($parametrosFuncion); $i++) { 
@@ -90,6 +91,7 @@
 
             // echo $nombreFuncion;
 
+            // Ejecuta lo que le pases como si fuese código php
             eval($nombreFuncion);
             
             // mostrarmanuales($resultadoConsulta,$page,$nummanuales);
@@ -111,15 +113,20 @@
                         <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                 }
-
+                // si hay más de 4 te genera 6 bolas
+                // si tienes 23 bolas la muestra de 5 en 5,
+                // Cuando llega a las últimas depndiendo de en la posición en la que esté intenta llegar al final
+                // Osea, si estás en la 21 te muestra 22 23
+                // Si está por el medio hace otra cosa pero solo lo recuerda Dios y el que lo hizo en su momento
                 $limite = $page + 4;
 
+                // Igualo el límite para que sea igual a la página que le pasemos
                 if ($limite > $_SESSION["total_pages"]) {
                     
                     $limite = $_SESSION["total_pages"];
 
                 }
-
+                //  para imprimir las bolas
                 for ($i = $page; ($i <= $limite); $i++) {
                     //Si entra aqui es que esta en esa pagina
                     if ($page == $i) {
@@ -162,6 +169,8 @@
                 // }
 
                 //Flecha que sirve para ir hacia la derecha, solo aparece siempre y cuando no este en la ultima pagina
+                
+                //Es como lo de arriba pero en plan al revés
                 if ($page < $_SESSION["total_pages"]) {
                     echo '
                     <section class="movDer">
@@ -179,11 +188,12 @@
         }
 
     }
-
+    // Recoge consulta, página actual y el límite
     function mostrarmanuales($consulta,$page,$nummanuales){
 
         print('<section id="cajaMan">');
 
+        //Si la página actual no es la última
         if ($_SESSION["total_pages"] == $page) {
             
             $limite = count($consulta);
@@ -194,7 +204,7 @@
 
         }
 
-        for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
+        for ($i=(($page-1)*$nummanuales); $i < $nummanuales; $i++) { 
             
             print('<article class="manpos">');
             print('<img class="manimg" src="img/ImagenPDF.png" />');
@@ -209,17 +219,32 @@
     function mostrarHerramientas($consulta,$page,$nummanuales) {
         $numCategoria = 0;
 
-        for ($i=(($page-1)*$nummanuales);$i<$limite;$i++) {
-            $numCategoria++;
-            echo "
-                <a>
-                    <img src='$consulta[$i][foto]' href=herramientas.php?tipoHerramienta=$consulta[$i][nombre]>
-                    <h2>$consulta[$i][nombre]</h2>
-                </a>
-            ";
-        }
+        for ($i=(($page-1)*$nummanuales);$i<$nummanuales;$i++) {
+            print('<section id="cajaMan">');
+
+            if ($_SESSION["total_pages"] == $page) {
+                
+                $limite = count($consulta);
+    
+            } else {
+    
+                $limite = $page*$nummanuales;
+    
+            }
+    
+            for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
+                
+                print('<article class="manpos">');
+                print('<img class="manimg" src="img/ImagenPDF.png" />');
+                print('<p>'.$consulta[$i]['titulo'].'</p>');
+                print("</article>");
+    
+            }
+    
+            print('</section>');
         
-    }
+        }
+    }   
 
     function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
 
