@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/manualesLista.css" />
+    <link rel="stylesheet" href="css/paginador.css" />
 </head>
 
 <body class="fondo">
