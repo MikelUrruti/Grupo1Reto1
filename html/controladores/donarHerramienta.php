@@ -7,7 +7,6 @@ require("../plantillasphp/redirecciones.php");
 session_start();
 
 //Ruta para almacenar las imagenes
-//realpath: ruta absoluta del fichero
 $rutaOrigen = $_FILES['foto']['tmp_name'];
 $rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 
@@ -36,7 +35,8 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
                 $correcto2 = false;
         }
         if ($correcto2) {
-            $parametros = array($_SESSION["usuario"], $_POST["herramienta"], $_FILES['foto']['name'], $_POST["descripcion"]);
+            $nomImg = consultarDatoBD("select max(id)+1 from Donaciones");
+            $parametros = array($_SESSION["usuario"], $_POST["herramienta"], $nomImg[0]["max(id)+1"], $_POST["descripcion"]);
             $consulta = manipularDatoBD("insert into Donaciones(usuario,nomHerramienta,fichero,descripcion) values (?, ?, ?, ?)", $parametros);
 
             if (is_integer($consulta)) {
