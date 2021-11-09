@@ -14,6 +14,7 @@ $rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 
 
 //Comprobaciones
+//isset => la variable esta declarada y no es nulo
 if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto'])) {
     $correcto = true;
     if (!validarNombre($_POST["herramienta"])) {
