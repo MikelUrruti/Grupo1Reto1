@@ -59,10 +59,12 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
     <form action="controladores/confirmarRegistroUsuario.php" method="post">
 
         <h1>Verificar Cuenta</h1>
-        <label for="">Introduce el codigo que se ha enviado al correo electronico indicado previamente.</label>
+        <p>Codigo de verificacion enviado a <?php echo $_SESSION["email"];?></p>
         <input type="text" name="codigo" id="">
-        <input type="submit" class="boton" name="Confirmar" value="Confirmar Registro">
-        <input type="submit" class="boton" name="Enviar" value="Volver a Enviar">
+        <div>
+            <input type="submit" class="boton" name="Confirmar" value="Confirmar Registro">
+            <input type="submit" class="boton" name="Enviar" value="Volver a Enviar">
+        </div>
 
     </form>
 

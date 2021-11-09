@@ -10,3 +10,10 @@ h1, p {
     text-align: center;
 
 }
+
+input {
+
+    margin-right: auto;
+    margin-left: auto;
+
+}
