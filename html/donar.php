@@ -48,7 +48,7 @@
                 <p>
                     Herramientas:
                 </p>
-                <input id="nombre" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
+                <input id="nombreInput" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
             </section>
 
             <section id="imagen">
