@@ -93,6 +93,13 @@
                 <p>
                     Descripción:
                 </p>
+                <p id="cantidad">
+                    <script src="JS/donar.js">
+                        validacionDesc();
+                    </script>
+                    <span id="restantes">500</span>
+                    palabras restantes
+                </p>
                 <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
 
                 <?php cargarError("errorDescripcion", ""); ?>
