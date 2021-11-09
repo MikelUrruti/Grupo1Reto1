@@ -125,7 +125,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","email","nombre","apellidos","telefono","tipo","estado"),"page","nummanuales"),"adminUsuarios.php"); ?>
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","Usuario","Email","Nombre","Apellidos","Telefono","Tipo","Estado"),"page","nummanuales"),"adminUsuarios.php", 6); ?>
 
 
             </form>

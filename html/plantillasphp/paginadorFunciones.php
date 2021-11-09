@@ -1,6 +1,6 @@
 <?php 
 
-    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina) {
+    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros) {
 
         $totalconsulta = count($resultadoConsulta);
 
@@ -11,19 +11,25 @@
 
             //examino la pagina a mostrar y el inicio del registro a mostrar
             if (isset($_GET["page"])) {
+
                 $page = $_GET["page"];
+                $_SESSION["mantenerFiltrado"] = true;
+                
             }
+            
+
+            $nummanuales = $numRegistros;
 
             //Lo que hace al cargar la pagina
             if (!$page) {
                 $start = 0;
                 $page = 1;
             } else {
-                $start = ($page - 1) * 6;
+                $start = ($page - 1) * $nummanuales;
             }
 
             //calculo el total de paginas
-            $nummanuales = 6;
+            
             //Esta sesion es para la cantidad de bolitas que va a haber
             $_SESSION["total_pages"] = ceil($totalconsulta / $nummanuales);
 
@@ -94,15 +100,27 @@
             //Comprobacion de los elementos que hay en la bd para crear las bolitas necesarias
             if ($_SESSION["total_pages"] > 1) {
                 //Flecha que sirve para ir hacia la izquierda, solo aparece siempre y cuando no este en la primera pagina
-                if ($page != 1) {
+
+                if ($page > 1) {
                     echo '
-                    <section id="movIzq">
+                    <section class="movIzq">
+                        <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
+                    </section>';
+                    echo '
+                    <section class="movIzq">
                         <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                 }
 
-                //Estilo de las bolitas que marcan las paginas
-                for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
+                $limite = $page + 4;
+
+                if ($limite > $_SESSION["total_pages"]) {
+                    
+                    $limite = $_SESSION["total_pages"];
+
+                }
+
+                for ($i = $page; ($i <= $limite); $i++) {
                     //Si entra aqui es que esta en esa pagina
                     if ($page == $i) {
                         echo '
@@ -122,15 +140,42 @@
                     }
                 }
 
+                //Estilo de las bolitas que marcan las paginas
+                // for ($i = 1; $i <= $_SESSION["total_pages"]; $i++) {
+                //     //Si entra aqui es que esta en esa pagina
+                //     if ($page == $i) {
+                //         echo '
+                //         <a class="numPag" id="posAct" href="'.$pagina.'?page='.$i.'">
+                //             <section>
+                //                     ' .$page. '
+                //             </section>
+                //         </a>';                
+                //     //Aqui solo entra cuando la posicion de $i no concuerda con la pagina en la que esta
+                //     } else {
+                //         echo '
+                //         <a class="numPag" href="'.$pagina.'?page=' . $i . '">
+                //             <section>
+                //                 ' .$i. '                    
+                //             </section>
+                //         </a>';
+                //     }
+                // }
+
                 //Flecha que sirve para ir hacia la derecha, solo aparece siempre y cuando no este en la ultima pagina
-                if ($page != $_SESSION["total_pages"]) {
+                if ($page < $_SESSION["total_pages"]) {
                     echo '
-                    <section id="movDer">
+                    <section class="movDer">
                         <a href="'.$pagina.'?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
+                    </section>';
+                    echo '
+                    <section class="movDer">
+                        <a href="'.$pagina.'?page=' . $_SESSION["total_pages"] . '"> <img src="img/Paso.png" /><img src="img/Paso.png" /></a>
                     </section>';
                 }
             }
             echo '</article>';
+            
+            
         }
 
     }
@@ -159,7 +204,21 @@
         }
 
         print('</section>');
+    }
 
+    function mostrarHerramientas($consulta,$page,$nummanuales) {
+        $numCategoria = 0;
+
+        for ($i=(($page-1)*$nummanuales);$i<$limite;$i++) {
+            $numCategoria++;
+            echo "
+                <a>
+                    <img src='$consulta[$i][foto]' href=herramientas.php?tipoHerramienta=$consulta[$i][nombre]>
+                    <h2>$consulta[$i][nombre]</h2>
+                </a>
+            ";
+        }
+        
     }
 
     function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
@@ -169,7 +228,7 @@
         echo "<tr>";
         echo "<th class='celda tituloColumna'>Seleccionado</th>";
 
-        foreach ($columnasmostrar as $valor) {
+        foreach (array_slice($columnasmostrar,1) as $valor) {
                 
             echo "<th class='celda tituloColumna'>".$valor."</th>";
             
@@ -194,7 +253,10 @@
             
             echo "<tr>";
 
-            echo "<td class='celda contenidoTabla'><input type='checkbox' name='usuariosSeleccionados[]' value='<?php echo ".$consulta[$i]['usuario']."; ?>' id=''></td>";
+            // echo $clave;
+
+            echo "<td class='celda contenidoTabla'><input type='checkbox' name='registrosSeleccionados[]' value='".array_slice($consulta[$i],1)[0]."' id=''></td>";
+            next($consulta[$i]);
 
             foreach ($consulta[$i] as $key => $valor) {
 
@@ -204,14 +266,6 @@
 
             }
 
-            
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["usuario"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["email"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["nombre"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["apellidos"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["telefono"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["tipo"]."</td>";
-            // echo "<td class='celda contenidoTabla'>".$consulta[$i]["estado"]."</td>";
             echo "</tr>";
 
         }

@@ -10,8 +10,6 @@ $_SESSION["checkActivos"] = array();
 
         $_SESSION["filtrado"] = array();
 
-        echo var_dump($_SESSION["filas"])."<br>";
-
         foreach ($_SESSION["filas"] as $fila) {
 
             if (isset($_GET["buscarTipo"])) {

@@ -38,7 +38,32 @@
     <a id="flechaDchMovil" class="flechasMovil"> > </a>
 
     <section>
-        <a id="article1" href="#">
+
+    <?php
+        require("plantillasphp/operacionesDb.php");
+        require("plantillasphp/paginadorFunciones.php");
+        $consulta = "select nombre,foto from Categoria";
+        $categorias = consultarDatoBD($consulta);
+        $numRegistros = 4;
+        
+        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
+        
+        // $numCategoria = 0;
+
+        // foreach($categorias as $categoria) {
+        //     $numCategoria ++;
+        //     echo "
+        //         <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
+        //             <img src='$categoria[foto]'>
+        //             <h2>$categoria[nombre]</h2>
+        //         </a>
+        //     ";
+        // }
+    ?>
+
+
+<!-- 
+        <a id="article1" href="herramientas.php?tipoHerramienta=Martillos">
             <img src="img/categoria/martillo.png" alt="">
             <h2>Martillos</h2>
         </a>
@@ -54,7 +79,10 @@
        <a id="article4">
             <img src="img/categoria/alicate.png" alt="">
             <h2>Alicates</h2>
-       </a>
+       </a> -->
+
+
+       
     </section>
 
 

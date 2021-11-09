@@ -5,7 +5,8 @@ require("plantillasphp/paginadorFunciones.php");
 $consulta = "select titulo from Manual where usuarioaprueba is not null;";
 $parametros = array();
 $filas = consultarDatoBD($consulta, $parametros);
+$numRegistros = 6;
 
-generarPaginador($filas, "mostrarManuales", array("resultadoConsulta","page","nummanuales"), "Manuales_lista.php");
+generarPaginador($filas, "mostrarManuales", array("resultadoConsulta","page","nummanuales"), "Manuales_lista.php",$numRegistros);
 
 ?>

@@ -97,6 +97,11 @@ body section a h2 {
 @media Screen and (min-width:480px) {
     .flechasMovil {display:none;}
 
+   
+}
+
+/* Ordenador */
+@media Screen and (min-width: 1025px) {
     body section {
         display:grid;
         grid-gap:1em;
@@ -115,19 +120,62 @@ body section a h2 {
 
 /* Estas animaciones se aplican en alquiler.js */
 @keyframes apareceSectionIzq {
-    from {
-        transform: translateX(-10em);
+    /* from {
+        visibility: hidden;
+        transform: translateX(-20em);
     }
     to {
+        visibility: visible;
+        transform: translateX(0);
+    } */
+
+    0% {
         transform: translateX(0);
     }
+
+    49% {
+        transform: translateX(30em);
+        opacity:-1;
+    }
+
+
+    50% {
+        opacity: -1;
+        transform:translateX(-30em);
+    }
+
+    100% {
+        opacity: none;
+        transform: translateX(0);
+    }
+
 }
 
 @keyframes apareceSectionDch {
-    from {
+    /* from {
         transform: translateX(10em);
     }
     to {
+        transform: translateX(0);
+    } */
+
+    0% {
+        transform: translateX(0);
+    }
+
+    49% {
+        transform: translateX(-30em);
+        opacity:-1;
+    }
+
+
+    50% {
+        opacity: -1;
+        transform:translateX(30em);
+    }
+
+    100% {
+        opacity: none;
         transform: translateX(0);
     }
 }
