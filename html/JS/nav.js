@@ -7,13 +7,12 @@ function cerrarMenuMovil() {
     //Defino chkMenu almacenando un elemento del documento
     const chkMenu = document.getElementById("chkMenu");
     //Cada vez que el ancho de la pantalla cambie...
-    window.onresize = function () {
+
         //...verificaré si es un dispositivo móvil...
         if (window.innerWidth <= 480) {
             //... si lo es, chkMenu se deschequeará 
             chkMenu.checked = false;
         }
-    }
 }
 
 /*

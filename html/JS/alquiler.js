@@ -1,7 +1,7 @@
 
 window.onload = function () {
-    cerrarMenuMovil();
-    codigoOriginal();
+
+   
     // Popurrí de variables
     const flechaIzqMovil = document.getElementById("flechaIzqMovil");
     const flechaDchMovil = document.getElementById("flechaDchMovil");
@@ -14,6 +14,11 @@ window.onload = function () {
     flechaDchMovil.addEventListener("click",cambiarPosicionCarrusel);
     
 }
+
+window.onresize = function() {
+    codigoOriginal();
+    cerrarMenuMovil();
+}   
 
 function cambiarPosicionCarrusel(comp) {
     comp = comp.target;
@@ -69,7 +74,6 @@ function quitarAnimacion() {
 }
 
 function codigoOriginal() {
-    window.onresize = function() {
         if (window.innerWidth >= 489) {
             const section = document.querySelector("body section");
             const article1 = document.getElementById("article1");
@@ -80,7 +84,6 @@ function codigoOriginal() {
             // agregarAnimacionDch();
             // agregarAnimacionIzq();
         }
-    }
 }
 
 /* FUNCION cambiarPosicionCarrusel

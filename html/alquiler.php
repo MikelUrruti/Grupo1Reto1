@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/alquiler.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/paginador.css">
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Para el tipo de letra-->
@@ -37,7 +38,7 @@
     <a id="flechaIzqMovil" class="flechasMovil"> < </a>
     <a id="flechaDchMovil" class="flechasMovil"> > </a>
 
-    <section>
+    <section id="section1">
 
     <?php
         require("plantillasphp/operacionesDb.php");
@@ -46,20 +47,24 @@
         $categorias = consultarDatoBD($consulta);
         $numRegistros = 4;
         
-        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
         
-        // $numCategoria = 0;
+        $numCategoria = 0;
+        
+        foreach($categorias as $categoria) {
+            $numCategoria ++;
+            echo "
+            <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
+            <img src='$categoria[foto]'>
+            <h2>$categoria[nombre]</h2>
+            </a>
+            ";
+        }
+        ?>
+    </section>
 
-        // foreach($categorias as $categoria) {
-        //     $numCategoria ++;
-        //     echo "
-        //         <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
-        //             <img src='$categoria[foto]'>
-        //             <h2>$categoria[nombre]</h2>
-        //         </a>
-        //     ";
-        // }
-    ?>
+<?php
+    generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
+?>
 
 
 <!-- 
@@ -83,7 +88,6 @@
 
 
        
-    </section>
 
 
     <?php 
