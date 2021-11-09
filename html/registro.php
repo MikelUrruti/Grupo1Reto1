@@ -49,6 +49,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Nombre: <span class="obligatorio">*</span>
                     </p>
                     <input id="nombre" name="nombre" class="textoForm" type="text" placeholder="Mikel" />
+                    <?php cargarError("errorNombre", ""); ?>
 
                 </div>
 
@@ -57,6 +58,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Apellidos: <span class="obligatorio">*</span>
                     </p>
                     <input id="apellidos" name="apellidos" class="textoForm" type="text" placeholder="Urrutikoetxea" />
+                    <?php cargarError("errorApellidos", ""); ?>
 
                 </div>
             </div>
@@ -67,6 +69,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Email: <span class="obligatorio">*</span>
                 </p>
                 <input id="email" name="email" class="textoForm" type="email" placeholder="nombre@gmail.com" />
+                <?php cargarError("errorEmail", ""); ?>
 
             </div>
 
@@ -76,6 +79,7 @@ require("plantillasphp/funcionesFormularios.php");
                     Numero de telefono:
                 </p>
                 <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
+                <?php cargarError("errorTelefono", ""); ?>
 
             </div>
 
@@ -85,6 +89,7 @@ require("plantillasphp/funcionesFormularios.php");
                         Contraseña: <span class="obligatorio">*</span>
                     </p>
                     <input id="password" name="password" class="textoForm" type="password" placeholder="**********" />
+                    <?php cargarError("errorPassword", ""); ?>
 
                 </div>
 

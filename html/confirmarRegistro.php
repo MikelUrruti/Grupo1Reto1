@@ -15,30 +15,27 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
     redireccionar("registro.php");
 
 } else {
-    
-    $_SESSION["codigoUsuario"] = "";
-    $pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
-    $max = strlen($pattern)-1;
-    for($i=0;$i < 6;$i++) $_SESSION["codigoUsuario"] .= $pattern[mt_rand(0,$max)];
 
-    $to      = $_SESSION["email"]; // Send email to our user
-    $subject = 'Signup | Verification'; // Give the email a subject 
-    $message = '
-     
-    Thanks for signing up!
-    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-     
-    ------------------------
-    Codigo: '.$_SESSION['codigoUsuario'].'
-    ------------------------
-     
-    Please click this link to activate your account:
-    http://www.yourwebsite.com/verify.php?email='.$_SESSION["email"].'&hash='.$_SESSION["email"].'
-     
-    '; // Our message above including the link
-                         
-    $headers = 'From:urruti00@gmail.com' . "\r\n"; // Set from headers
-    mail($to, $subject, $message, $headers); // Send our email
+    $correo = new PHPMailer(true);
+
+    $correo->SMTPDebug=0;
+    $correo->isSMTP();
+    $correo->Host="smtp.gmail.com";
+    $correo->SMTPAuth=true;
+    $correo->Username="";
+    $correo->Password="";
+    $correo->SMTPSecure="tls";
+    $correo->Port=587;
+    $correo->setFrom("");
+    $correo->addAddress($_SESSION["email"]);
+
+    $correo->isHTML(true);
+    $correo->Subject="Verificar registro en fixPoint";
+    $correo->Body="";
+    $correo->AltBody="";
+
+    $correo->send();
+
 }
 
 ?>
