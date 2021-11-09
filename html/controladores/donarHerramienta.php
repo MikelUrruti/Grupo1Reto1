@@ -8,9 +8,9 @@ session_start();
 
 //Ruta para almacenar las imagenes
 //La ruta de origen es de donde viene la foto
-$rutaOrigen = $_FILES['foto']['name'];
+$rutaOrigen = $_FILES['foto']['tmp_name'];
 //La ruta a la que queremos mandar la foto
-$rutaDestino = '../img/herramientas/' . $_FILES['foto']['name'];
+$rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 
 
 //Comprobaciones
@@ -32,6 +32,7 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
     if ($correcto) {
         print("Me meto a correcto");
         try {
+            // hago una copia de la imagen subida y la almaceno
             move_uploaded_file($rutaOrigen, $rutaDestino);
             $correcto2 = true;
         }
@@ -39,7 +40,8 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
                 $correcto2 = false;
         }
         if ($correcto2) {
-            $parametros = array($_SESSION["usuario"], $_POST["herramienta"], $_FILES['foto']['name'], $_POST["descripcion"]);
+            $nomImg = consultarDatoBD("select max(id)+1 from Donaciones");
+            $parametros = array($_SESSION["usuario"], $_POST["herramienta"], $nomImg[0]["max(id)+1"], $_POST["descripcion"]);
             //Los signos de interrogacion, en este caso, cogen los valores de la primera variable que encuentre, en orden de creacion de esas subvariables
             $consulta = manipularDatoBD("insert into Donaciones(usuario,nomHerramienta,fichero,descripcion) values (?, ?, ?, ?)", $parametros);
 

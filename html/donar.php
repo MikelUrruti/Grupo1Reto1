@@ -51,7 +51,10 @@
         }
         if(isset($_SESSION["ruta"])){
             echo $_SESSION["ruta"];
+            
         }
+        echo " ----- ";
+        echo $_SERVER['SERVER_NAME'];
         ?>
 
         <article id="contenedor">
