@@ -1,40 +1,43 @@
 <?php 
 
 require("plantillasphp/redirecciones.php");
-require("phpMailer/src/PHPMailer.php");
-require("phpMailer/src/SMTP.php");
-require("phpMailer/src/Exception.php");
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+require("plantillasphp/funcionesCorreos.php");
+require("plantillasphp/funcionesFormularios.php");
 
 session_start();
 
-if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSION["nombre"]) || !isset($_SESSION["apellidos"]) || !isset($_SESSION["password"]) || !isset($_SESSION["telefono"])) {
+if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSION["nombre"]) || !isset($_SESSION["apellidos"]) || !isset($_SESSION["password"])) {
     
     redireccionar("registro.php");
 
 } else {
 
-    $correo = new PHPMailer(true);
+    $_SESSION["codigoGenerado"] = generarCodigo();
 
-    $correo->SMTPDebug=0;
-    $correo->isSMTP();
-    $correo->Host="smtp.gmail.com";
-    $correo->SMTPAuth=true;
-    $correo->Username="";
-    $correo->Password="";
-    $correo->SMTPSecure="tls";
-    $correo->Port=587;
-    $correo->setFrom("");
-    $correo->addAddress($_SESSION["email"]);
+    enviarCorreo(
+        "Verificar registro fixPoint",
+        $_SESSION["email"],
+        "
+        <style>
+        
+            p {
 
-    $correo->isHTML(true);
-    $correo->Subject="Verificar registro en fixPoint";
-    $correo->Body="";
-    $correo->AltBody="";
+                font-size: 2em;
 
-    $correo->send();
+            }
+        
+        </style>
+        <p>Bienvenido al sitio web de fixPoint <span style='font-weight:bold'>".$_SESSION["usuario"]."</span>.</p>
+        <p>Para completar el registro en nuestro sitio web deberas de introducir el siguiente codigo en el formulario donde se verifica tu cuenta:</p>
+        <p style='font-weight:bold; font-size: 2em'>".$_SESSION["codigoGenerado"]."</p>
+        <p>Si tienes algun problema a la hora de crear tu cuenta en este sitio web, respondenos en este hilo comentandonos tu situacion.</p>
+        <p style='white-space:pre-line'>Un saludo,
+        fixPoint
+        </p>
+        <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
+        "pues eso, que me chingo a tu madre maricon",
+        array("./img/logo.png")
+    );
 
 }
 
@@ -54,12 +57,19 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
 </head>
 <body>
     
+  
+    <a href="index.php"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
+
     <form action="controladores/confirmarRegistroUsuario.php" method="post">
 
         <h1>Verificar Cuenta</h1>
-        <label for="">Introduce el codigo que se ha enviado al correo electronico indicado previamente.</label>
-        <input type="text" name="codigo" id="">
-        <input type="submit" class="boton" value="Enviar">
+        <p>Codigo de verificacion enviado a <span id="receptor"><?php echo $_SESSION["email"];?>.</span></p>
+        <input type="text" name="codigo" id="codigo">
+        <?php cargarError("errorCodigo", ""); ?>
+        <div id="botones">
+            <input type="submit" class="boton" name="Enviar" value="Volver a Enviar">
+            <input type="submit" class="boton" name="Confirmar" value="Confirmar Registro">
+        </div>
 
     </form>
 

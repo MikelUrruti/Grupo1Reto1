@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/manualesLista.css" />
+    <link rel="stylesheet" href="css/paginador.css" />
 </head>
 
 <body class="fondo">
@@ -27,12 +28,17 @@
             Escoge el manual que quieras visualizar
         </h1>
 
-        <!--Caja del buscador, con el campo de texto y la imagen-->
-        <div id="buscador">
-            <input id="txtbus" type="text" placeholder="Buscar manuales..." />
-            <img id="lupa" src="img/lupa.png" />
-        </div>
+        <section id="buscBot">
+            <!--Caja del buscador, con el campo de texto y la imagen de la lupa-->
+            <article id="buscador">
+                <input id="txtbus" type="text" placeholder="Buscar manuales..." />
+                <img id="lupa" src="img/lupa.png" />
+            </article>
 
+            <article id="posBotSubMan">
+                <input id="subirMan" class="boton" value="Subir Manual"></input>
+            </article>
+        </section>
     </form>
     <form method="POST" action="">
         <?php include("controladores/paginador.php") ?>

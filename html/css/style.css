@@ -231,6 +231,7 @@ form{
   background-color: black;
   color: white;
   border: outset;
+  border-radius: 5px;
   transition: 0.5s;
 }
 

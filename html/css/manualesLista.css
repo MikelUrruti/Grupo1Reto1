@@ -8,11 +8,9 @@
 /*Estilo de la caja del buscador*/
 #buscador{
     display: flex;
-    align-items: center;
     border: 1px solid black;
     border-radius: 10px;
-    width: fit-content;
-    margin: 1em auto 2em auto;
+    margin: 1em auto 1em auto;
     padding: 0.25em 0.5em 0.25em 0.5em;
     background-color: black;
 }
@@ -22,7 +20,7 @@
 #txtbus{
     height: 1.5em;
     border: none;
-    width: 25em;
+    width: 13em;
     background-color: black;
     color: #EEC51F;
 }
@@ -35,9 +33,11 @@
 
 /*Estilo de la lupa*/
 #lupa{
-    height: 1.8em;
+    height: 1.5em;
     background-color: rgb(87, 87, 87);
     margin-left: 0.5em;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #lupa:hover{
@@ -187,20 +187,54 @@ a>section{
 }
 /*Fin posicion*/
 
+/*Estilo de la posicion del boton*/
+#buscBot{
+    display: flex;
+    height: 70px;
+    flex-direction: column;
+}
+
+#posBotSubMan{
+    width: 100%;
+    display: flex;
+}
+/*Fin posicion boton*/
+
+/*Estilo del boton de subir manuales*/
+#subirMan{
+    width: 6em;
+    padding: 2px 1px 2px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Fin boton*/
+
 /*
 
 ESTILO DE TABLET
 
 */
 @media screen and (min-width: 480px){
+    /*Estilo de la caja que tiene todo lo del primer formulario*/
+
+    /*Fin primer formulario*/
+
     /*Estilo del buscador*/
     #txtbus{
         height: 2em;
         width: 25em;
-        background-color: black;
         margin-left: auto;
         margin-right: 0;
     }
+    /*Fin buscador*/
+
+    /*Estilo de la caja del buscador*/
+    #buscador{
+        width: 50%;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    /*Fin  caja buscador*/
 
     /*Estilo de la lupa*/
     #lupa{
@@ -249,6 +283,26 @@ ESTILO DE TABLET
         padding: 0.9em;
     }
     /*Fin posicion*/
+
+    /*Estilo de la posicion del boton*/
+    #buscBot{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #posBotSubMan{
+        width: 20%;
+        margin: 1.5em auto 1em 1em;
+    }
+    /*Fin posicion boton*/
+
+    /*Estilo del boton de subir manuales*/
+    #subirMan{
+        padding: 0px 3px 0px 5px;
+        height: 30px;
+    }
+    /*Fin boton*/
 }
 
 /*
@@ -259,20 +313,22 @@ ESTILO DE ORDENADOR
 @media screen and (min-width: 1025px) {
     /*Estilo del buscador*/
     #buscador{
-        width: max-content;
+        width: fit-content;
     }
     /*Fin buscador*/
 
     /*Estilo de la caja buscador*/
     #txtbus{
         height: 2.5em;
+        padding-left: 3px;
+        width: 50em;
+        margin-left: 0%;
     }
     /*Fin caja buscador*/
 
     /*Estilo de la lupa*/
     #lupa{
         height: 2em;
-        margin-right: auto;
     }
     /*Fin lupa*/
 
