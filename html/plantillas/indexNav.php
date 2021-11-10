@@ -1,5 +1,6 @@
 
     <?php
+        //Para crear o reanudar una sesión
         session_start();
     ?>
 
