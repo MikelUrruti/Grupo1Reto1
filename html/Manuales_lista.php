@@ -36,7 +36,9 @@
             </article>
 
             <article id="posBotSubMan">
-                <input id="subirMan" class="boton" value="Subir Manual"></input>
+                <a href="Manuales_subir.php">
+                    <input id="subirMan" class="boton" type="button" value="Subir Manual"></input>
+                </a>
             </article>
         </section>
     </form>

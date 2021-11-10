@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/alquiler.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/paginador.css">
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Para el tipo de letra-->
@@ -37,27 +38,36 @@
     <a id="flechaIzqMovil" class="flechasMovil"> < </a>
     <a id="flechaDchMovil" class="flechasMovil"> > </a>
 
-    <section>
-       <?php require("plantillasphp/operacionesDb.php");
-       $tipoHerramienta = $_GET["tipoHerramienta"];
+    <section id="section1">
+       <?php 
+            require("plantillasphp/operacionesDb.php");
+            require("plantillasphp/paginadorFunciones.php");
+            $consulta = "select nombre,foto from Herramienta";
+            $categorias = consultarDatoBD($consulta);
+            $numRegistros = 4;
 
-       $consulta = "select nombre,foto from Herramienta where categoria like ?;";
-       $parametro = array($tipoHerramienta);
-    //    $datosHerramienta = consultarDatoBD($consulta,$parametro);
-$datosHerramienta = consultarDatoBD("select nombre,foto from Herramienta");
+            generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros);
 
-    $numArticulo = 0;
-       foreach($datosHerramienta as $herramienta) {
-                $numArticulo++;   
-                echo "
+
+//        $tipoHerramienta = $_GET["tipoHerramienta"];
+
+//        $consulta = "select nombre,foto from Herramienta where categoria like ?;";
+//        $parametro = array($tipoHerramienta);
+//     //    $datosHerramienta = consultarDatoBD($consulta,$parametro);
+// $datosHerramienta = consultarDatoBD("select nombre,foto from Herramienta");
+
+//     $numArticulo = 0;
+//        foreach($datosHerramienta as $herramienta) {
+//                 $numArticulo++;   
+//                 echo "
                    
-                   <a id=article$numArticulo>
-                    <img src='$herramienta[foto]'>
-                    <h2>$herramienta[nombre]</h2>
-                   </a>
-                   ";
+//                    <a id=article$numArticulo>
+//                     <img src='$herramienta[foto]'>
+//                     <h2>$herramienta[nombre]</h2>
+//                    </a>
+//                    ";
 
-            }
+//             }
        
        ?>
     </section>

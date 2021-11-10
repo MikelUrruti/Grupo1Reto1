@@ -197,13 +197,15 @@ a>section{
 #posBotSubMan{
     width: 100%;
     display: flex;
+    /*Para centrar el boton en le centro, horizontalmente*/
+    justify-content: center;
 }
 /*Fin posicion boton*/
 
 /*Estilo del boton de subir manuales*/
 #subirMan{
-    width: 6em;
-    padding: 2px 1px 2px 5px;
+    width: 7em;
+    padding: 2px 4px 2px 5px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -215,9 +217,9 @@ ESTILO DE TABLET
 
 */
 @media screen and (min-width: 480px){
-    /*Estilo de la caja que tiene todo lo del primer formulario*/
-
-    /*Fin primer formulario*/
+    /*
+        Estilo de la caja que tiene todo lo del primer formulario
+    */
 
     /*Estilo del buscador*/
     #txtbus{
@@ -242,6 +244,17 @@ ESTILO DE TABLET
         margin-right: auto;
     }
     /*Fin lupa*/
+
+    /*Estilo del boton de subir manuales*/
+    #subirMan{
+        padding: 0px 5px 0px 5px;
+        height: 30px;
+    }
+    /*Fin boton*/
+
+    /*
+        Fin primer formulario
+    */
 
     /*Estilo de las cajas de los manuales*/
     .manpos{
@@ -296,13 +309,6 @@ ESTILO DE TABLET
         margin: 1.5em auto 1em 1em;
     }
     /*Fin posicion boton*/
-
-    /*Estilo del boton de subir manuales*/
-    #subirMan{
-        padding: 0px 3px 0px 5px;
-        height: 30px;
-    }
-    /*Fin boton*/
 }
 
 /*
@@ -313,7 +319,7 @@ ESTILO DE ORDENADOR
 @media screen and (min-width: 1025px) {
     /*Estilo del buscador*/
     #buscador{
-        width: fit-content;
+        width: 50em;
     }
     /*Fin buscador*/
 

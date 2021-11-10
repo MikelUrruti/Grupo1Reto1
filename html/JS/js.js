@@ -1,9 +1,12 @@
 window.onload = function () {
-    cerrarMenuMovil();
     var checkbox = document.querySelectorAll("input[name=checkbox]");
     checkbox.forEach(element => {
         element.addEventListener("change", cambiarTexto);
     });
+}
+
+window.onresize = function () {
+    cerrarMenuMovil();
 }
 
 // Sobreescribir el texto de la caja
