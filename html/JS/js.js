@@ -4,8 +4,9 @@ window.onload = function () {
         element.addEventListener("change", cambiarTexto);
     });
 }
-
+// Cada vez que el ancho de la pantalla cambie...
 window.onresize = function () {
+    //...realizaré las siguientes funciones:
     cerrarMenuMovil();
 }
 
