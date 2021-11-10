@@ -19,6 +19,8 @@
 
         $_SESSION["mantenerFiltrado"] = true;
 
+        $_SESSION["filtradoPrimeraVez"] = true;
+
         redireccionar("../adminSolicitudesManuales.php");
 
     }

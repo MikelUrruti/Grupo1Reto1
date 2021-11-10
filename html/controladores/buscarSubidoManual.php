@@ -17,6 +17,10 @@
     
         $_SESSION["filtrado"] = consultarDatoBD("select * from Manual where usuarioaprueba is not null and (titulo like ? or descripcion like ? or usuariosube like ? or usuarioaprueba like ?);",$parametros);
 
+        $_SESSION["mantenerFiltrado"] = true;
+
+        $_SESSION["filtradoPrimeraVez"] = true;
+
         redireccionar("../adminSubidosManuales.php");
 
     }

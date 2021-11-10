@@ -65,6 +65,25 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
                 </div>
                         <?php
 
+                            if (!isset($_GET["page"])) {
+
+                                if (!isset($_SESSION["filtradoPrimeraVez"])) {
+
+                                    // echo "hola";
+                                    $_SESSION["mantenerFiltrado"] = false;
+
+                                    unset($_SESSION["filtrado"]);
+
+                                } else {
+                                    
+                                    // echo "que cojones";
+                                    $_SESSION["mantenerFiltrado"] = true;
+                                    unset($_SESSION["filtradoPrimeraVez"]);
+
+                                }
+
+                            }
+
                             if (isset($_SESSION["filtrado"])) {
 
                                 $resultados = $_SESSION["filtrado"];
@@ -91,17 +110,17 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            
-
                             generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),"adminSolicitudesManuales.php", 1); 
 
-                            if (!$_SESSION["mantenerFiltrado"]) {
+                            // if (!$_SESSION["mantenerFiltrado"]) {
 
-                                unset($_SESSION["filtrado"]);
+                            //     unset($_SESSION["filtrado"]);
 
-                            }
+                            // }
 
-                            $_SESSION["mantenerFiltrado"] = false;
+                            // $_SESSION["mantenerFiltrado"] = false;
+
+                            // $_SESSION["mantenerFiltrado"] = false;
 
                             ?>
 
