@@ -13,13 +13,21 @@
             if (isset($_GET["page"])) {
 
                 $page = $_GET["page"];
-                $_SESSION["mantenerFiltrado"] = true;
-                
-            } else {
+                // echo "entra".$_SESSION["mantenerFiltrado"];
 
-                $_SESSION["mantenerFiltrado"] = false;
-           
+                if (isset($_SESSION["mantenerFiltrado"])) {
+                    $_SESSION["mantenerFiltrado"] = true;
+                }
+ 
             }
+
+                // echo "no entra".$_SESSION["mantenerFiltrado"];
+
+                // echo $_SESSION["filtradoPrimeraVez"];
+
+
+
+            
             
 
             $nummanuales = $numRegistros;
@@ -94,6 +102,8 @@
             // echo $nombreFuncion;
 
             // echo $nombreFuncion;
+
+            // echo "ejecuta".$_SESSION["mantenerFiltrado"];
 
             // Ejecuta lo que le pases como si fuese código php
             eval($nombreFuncion);
