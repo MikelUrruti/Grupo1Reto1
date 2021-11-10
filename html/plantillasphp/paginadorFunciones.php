@@ -2,6 +2,7 @@
 
     function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros) {
 
+
         $totalconsulta = count($resultadoConsulta);
 
         //Si nos devuelve alguna consulta entra, si no, no
