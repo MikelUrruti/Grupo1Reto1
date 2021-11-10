@@ -1,9 +1,11 @@
 window.onload = function () {
     nombre = document.getElementById("nombre");
     var descripcion = document.getElementById("descripcion");
+    var subirImg = document.getElementById("subirImg");
 
     nombre.addEventListener("keyup", validarCampo);
     descripcion.addEventListener("keyup", validacionDesc);
+    subirImg.addEventListener("change", cargarImg);
 
     //Para darle el maximo de caracteres mediante JS
     descripcion.maxlength= "5";
@@ -56,4 +58,13 @@ function validacionDesc() {
         //Se pone la resta en el campo de texto
         restantes.innerHTML=""+valor;
     }
+}
+
+/*
+Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior
+para poder verla
+*/
+function cargarImg(event){
+    var imagen = document.getElementById("imgVision");
+    imagen.src = URL.createObjectURL(event.target.files[0]);
 }
