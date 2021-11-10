@@ -17,6 +17,10 @@
     
         $_SESSION["filtrado"] = consultarDatoBD("select * from Usuario where usuario like ? or email like ? or nombre like ? or apellidos like ? or telefono like ?;",$parametros);
 
+        $_SESSION["mantenerFiltrado"] = true;
+
+        $_SESSION["filtradoPrimeraVez"] = true;
+        
         redireccionar("../adminUsuarios.php");
 
     }
