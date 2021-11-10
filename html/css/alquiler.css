@@ -19,7 +19,7 @@ body > h1 {
 }
 
 
-#section1 a{
+#section1 .enlaces{
     text-decoration:none;
     margin:0.5em auto 1em;
     background-color:grey;
@@ -30,7 +30,7 @@ body > h1 {
     transition: 0.5s;
 }
 
-#section1 a img {
+#section1 .enlaces img {
     overflow: hidden;
     display:block;
     width:15em;
@@ -38,19 +38,19 @@ body > h1 {
     transition: 0.5s;
 }
 
-#section1 a:hover {
+#section1 .enlaces:hover {
    filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
    /* rgb(160, 0, 210) */
    transition: 0.5s;
 }
 
-#section1 a:hover > img{
+#section1 .enlaces:hover > img{
     transform:scale3d(1.6, 1, 1) rotate(20deg) translate(-5px, -5px);
     filter: saturate(200%);
     transition: 0.5s;    
 }
 
-#section1 a h2 {
+#section1 .enlaces h2 {
     position: relative;
     color:black;
     background-color:orange;
@@ -83,7 +83,7 @@ body > h1 {
 /* SOLO EN MOVIL */
 @media Screen and (max-width:480px) {
     /* SOLO muestro los dos primeros artículos */
-    #section1 a:not(:nth-child(1)), #section1 a:not(:nth-child(2)) {
+    #section1 .enlaces:not(:nth-child(1)), #section1 a:not(:nth-child(2)) {
         display:none;
     }
     /* Muestro flechas para cambiar secciones en móvil */

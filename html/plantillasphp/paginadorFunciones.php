@@ -220,7 +220,6 @@
         $numCategoria = 0;
 
         for ($i=(($page-1)*$nummanuales);$i<$nummanuales;$i++) {
-            print('<section id="cajaMan">');
 
             if ($_SESSION["total_pages"] == $page) {
                 
@@ -233,15 +232,15 @@
             }
     
             for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
-                
-                print('<article class="manpos">');
-                print('<img class="manimg" src="img/ImagenPDF.png" />');
-                print('<p>'.$consulta[$i]['titulo'].'</p>');
-                print("</article>");
+                $numCategoria ++;
+                echo "
+                    <a id=article$numCategoria class=enlaces href=herramientas.php?tipoHerramienta=".$consulta[$i]['nombre'].">
+                    <img src='".$consulta[$i]['foto']."'>
+                    <h2>".$consulta[$i]['nombre']."</h2>
+                    </a>
+                ";  
     
             }
-    
-            print('</section>');
         
         }
     }   
