@@ -50,11 +50,11 @@
             unset($_SESSION["errorGeneral"]);
         }
         if(isset($_SESSION["ruta"])){
-            echo $_SESSION["ruta"];
+            //echo $_SESSION["ruta"];
             
         }
-        echo " ----- ";
-        echo $_SERVER['SERVER_NAME'];
+        //echo " ----- ";
+        //echo $_SERVER['SERVER_NAME'];
         ?>
 
         <article id="contenedor">

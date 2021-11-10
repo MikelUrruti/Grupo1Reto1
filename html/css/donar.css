@@ -109,7 +109,7 @@ textarea:focus{
 }
 
 #cantidad{
-    display: none;        
+    font-size: 0.7em; 
 }
 /*Fin descripcion*/
 
@@ -242,6 +242,12 @@ ESTILO DE TABLET
         margin: 0% 10% 2% 10%;
     }
     /*Fin descripcion*/
+
+    /*Tamaño del texto que te dice cuantos caracteres faltan*/
+    #cantidad{
+        font-size: 1.2em; 
+    }
+    /*Fin aviso caracteres*/
 }
 
 /*
@@ -303,15 +309,11 @@ ESTILO DE ORDENADOR
     #desc>textarea::placeholder{
         font-size: x-large;
     }
-    
-    #cantidad{
-        display: block;
-        font-size: 1.3em; 
-    }
-
-    #restantes{
-        display: inline;
-        font-size: 1.3em;
-    }
     /*Fin descripcion*/
+
+    /*Tamaño del texto que te dice cuantos caracteres faltan*/
+    #cantidad{
+        font-size: 1.5em; 
+    }
+    /*Fin aviso caracteres*/
 }
