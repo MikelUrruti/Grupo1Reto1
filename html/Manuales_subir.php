@@ -17,7 +17,6 @@
     <!--Favicon de las paginas-->
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/style.css">
