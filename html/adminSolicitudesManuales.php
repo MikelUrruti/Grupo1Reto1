@@ -69,11 +69,11 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                                 $resultados = $_SESSION["filtrado"];
 
-                                if (!$_SESSION["mantenerFiltrado"]) {
+                                // if (!$_SESSION["mantenerFiltrado"]) {
 
-                                    unset($_SESSION["filtrado"]);
+                                //     unset($_SESSION["filtrado"]);
     
-                                }
+                                // }
 
                             } else {
 
@@ -89,7 +89,9 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
                             
                             }
 
-                            echo $_SESSION["mantenerFiltrado"]==false;
+                            // echo $_SESSION["mantenerFiltrado"]==false;
+
+                            
 
                             generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),"adminSolicitudesManuales.php", 1); 
 

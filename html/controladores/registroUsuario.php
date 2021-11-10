@@ -70,6 +70,10 @@
             $_SESSION["password"]=hash("sha512",$_POST["password"]);
             $_SESSION["telefono"]=$_POST["telefono"];
 
+            if ($_SESSION["telefono"] == "") {
+                $_SESSION["telefono"]=null;
+            }
+
             redireccionar("../confirmarRegistro.php");
 
             // $parametros = array($_POST["usuario"], $_POST["email"], $_POST["nombre"], $_POST["apellidos"], hash("sha512",$_POST["password"]), null, "usuario", "activo");

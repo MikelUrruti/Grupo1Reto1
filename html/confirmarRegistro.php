@@ -2,10 +2,11 @@
 
 require("plantillasphp/redirecciones.php");
 require("plantillasphp/funcionesCorreos.php");
+require("plantillasphp/funcionesFormularios.php");
 
 session_start();
 
-if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSION["nombre"]) || !isset($_SESSION["apellidos"]) || !isset($_SESSION["password"]) || !isset($_SESSION["telefono"])) {
+if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSION["nombre"]) || !isset($_SESSION["apellidos"]) || !isset($_SESSION["password"])) {
     
     redireccionar("registro.php");
 
@@ -56,13 +57,19 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
 </head>
 <body>
     
+  
+    <a href="index.php"><img src="./img/logo.png" alt="cabecera" id="imgCab"></a>
+
     <form action="controladores/confirmarRegistroUsuario.php" method="post">
 
         <h1>Verificar Cuenta</h1>
-        <label for="">Introduce el codigo que se ha enviado al correo electronico indicado previamente.</label>
-        <input type="text" name="codigo" id="">
-        <input type="submit" class="boton" name="Confirmar" value="Confirmar Registro">
-        <input type="submit" class="boton" name="Enviar" value="Volver a Enviar">
+        <p>Codigo de verificacion enviado a <span id="receptor"><?php echo $_SESSION["email"];?>.</span></p>
+        <input type="text" name="codigo" id="codigo">
+        <?php cargarError("errorCodigo", ""); ?>
+        <div id="botones">
+            <input type="submit" class="boton" name="Enviar" value="Volver a Enviar">
+            <input type="submit" class="boton" name="Confirmar" value="Confirmar Registro">
+        </div>
 
     </form>
 

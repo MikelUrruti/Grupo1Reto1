@@ -15,6 +15,10 @@
                 $page = $_GET["page"];
                 $_SESSION["mantenerFiltrado"] = true;
                 
+            } else {
+
+                $_SESSION["mantenerFiltrado"] = false;
+           
             }
             
 
