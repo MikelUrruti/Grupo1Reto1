@@ -47,24 +47,9 @@
         $categorias = consultarDatoBD($consulta);
         $numRegistros = 4;
         
-        
-        $numCategoria = 0;
-        
-        foreach($categorias as $categoria) {
-            $numCategoria ++;
-            echo "
-            <a id=article$numCategoria href=herramientas.php?tipoHerramienta=$categoria[nombre]>
-            <img src='$categoria[foto]'>
-            <h2>$categoria[nombre]</h2>
-            </a>
-            ";
-        }
+        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
         ?>
     </section>
-
-<?php
-    generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
-?>
 
 
 <!-- 
