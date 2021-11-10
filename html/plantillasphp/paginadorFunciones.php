@@ -207,6 +207,8 @@
 
         print('<section id="cajaMan">');
 
+        $limite = 0;
+
         //Si la página actual no es la última
         if ($_SESSION["total_pages"] == $page) {
             
@@ -218,7 +220,10 @@
 
         }
 
-        for ($i=(($page-1)*$nummanuales); $i < $nummanuales; $i++) { 
+        // echo $limite;
+        // echo (($page-1)*$nummanuales);
+
+        for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
             
             print('<article class="manpos">');
             print('<img class="manimg" src="img/ImagenPDF.png" />');
