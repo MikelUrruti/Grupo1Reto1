@@ -1,5 +1,4 @@
 <?php 
-
     function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros, string $filtro=null) {
 
 
@@ -119,27 +118,28 @@
                 //Flecha que sirve para ir hacia la izquierda, solo aparece siempre y cuando no este en la primera pagina
 
                 if ($page > 1) {
-                    if ($filtro != null) {
+                    // if ($filtro != null) {
+                        // $filtro = $_SESSION["filtro"];
                         echo '
                         <section class="movIzq">
-                            <a href="'.$pagina.'$page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
+                            <a href="'.$pagina.'?filtro='.$filtro.'&page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
                         </section>';
                         echo '
                         <section class="movIzq">
-                            <a href="'.$pagina.'&page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
+                            <a href="'.$pagina.'?filtro='.$filtro.'&page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
                         </section>';
 
-                    }
-                    else {
-                        echo '
-                        <section class="movIzq">
-                            <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
-                        </section>';
-                        echo '
-                        <section class="movIzq">
-                            <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
-                        </section>';
-                    }
+                    // }
+                    // else {
+                        // echo '
+                        // <section class="movIzq">
+                        //     <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
+                        // </section>';
+                        // echo '
+                        // <section class="movIzq">
+                        //     <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
+                        // </section>';
+                    // }
                 }
                 // si hay más de 4 te genera 6 bolas
                 // si tienes 23 bolas la muestra de 5 en 5,
@@ -159,7 +159,7 @@
                     //Si entra aqui es que esta en esa pagina
                     if ($page == $i) {
                         echo '
-                        <a class="numPag" id="posAct" href="'.$pagina.'?page='.$i.'">
+                        <a class="numPag" id="posAct" href="'.$pagina.'?filtro='.$filtro.'&page='.$i.'">
                             <section>
                                     ' .$page. '
                             </section>
@@ -167,7 +167,7 @@
                     //Aqui solo entra cuando la posicion de $i no concuerda con la pagina en la que esta
                     } else {
                         echo '
-                        <a class="numPag" href="'.$pagina.'?page=' . $i . '">
+                        <a class="numPag" href="'.$pagina.'?filtro='.$filtro.'&page=' . $i . '">
                             <section>
                                 ' .$i. '                    
                             </section>
@@ -202,11 +202,11 @@
                 if ($page < $_SESSION["total_pages"]) {
                     echo '
                     <section class="movDer">
-                        <a href="'.$pagina.'?page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
+                        <a href="'.$pagina.'?filtro='.$filtro.'&page=' . ($page + 1) . '"> <img src="img/Paso.png" /></a>
                     </section>';
                     echo '
                     <section class="movDer">
-                        <a href="'.$pagina.'?page=' . $_SESSION["total_pages"] . '"> <img src="img/Pasodoble.png" /></a>
+                        <a href="'.$pagina.'?filtro='.$filtro.'&page=' . $_SESSION["total_pages"] . '"> <img src="img/Pasodoble.png" /></a>
                     </section>';
                 }
             }
@@ -266,7 +266,7 @@
             for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
                 $numCategoria ++;
                 echo "
-                    <a id=article$numCategoria class=enlaces href=herramientas.php?tipoHerramienta=".$consulta[$i]['nombre'].">
+                    <a id=article$numCategoria class=enlaces href=herramientas.php?filtro=".$consulta[$i]['nombre'].">
                     <img src='".$consulta[$i]['foto']."'>
                     <h2>".$consulta[$i]['nombre']."</h2>
                     </a>

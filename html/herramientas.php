@@ -42,14 +42,16 @@
        <?php 
             require("plantillasphp/operacionesDb.php");
             require("plantillasphp/paginadorFunciones.php");
+            // $_SESSION["filtro"] = $_GET["filtro"];
+            // $filtro = $_SESSION["filtro"];
+            $filtro = $_GET["filtro"];
             $consulta = "select nombre,foto from Herramienta";
             $categorias = consultarDatoBD($consulta);
             $numRegistros = 4;
 
-            generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros);
+            generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros,$filtro);
 
 
-//        $tipoHerramienta = $_GET["tipoHerramienta"];
 
 //        $consulta = "select nombre,foto from Herramienta where categoria like ?;";
 //        $parametro = array($tipoHerramienta);
