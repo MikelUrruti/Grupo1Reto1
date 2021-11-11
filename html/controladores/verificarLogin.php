@@ -13,7 +13,9 @@
         if (is_array($resultados)) {
     
             if (count($resultados) == 1) {
-                    
+                //Para poder acceder a estas variables necesitaremos poner antes de todo el "session start"
+                //Despues donde queramos, dentro del body, ponemos dentro de un "php" la variable que queramos
+                //Las variables siendo lo de "$_SESSION['email']"
                 $_SESSION["email"]=$resultados[0]["email"];
                 $_SESSION["usuario"]=$resultados[0]["usuario"];
                 $_SESSION["tipo"]=$resultados[0]["tipo"];

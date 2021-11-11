@@ -1,11 +1,9 @@
 <?php
-
     require("plantillasphp/redirecciones.php");
     require("plantillasphp/funcionesFormularios.php");
     // require("controladores/paginador.php");
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,7 +23,7 @@
     <!--Scripts-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
-    <!-- <script src="JS/donar.js"></script> -->
+    <script src="JS/donar.js"></script>
     <script src="JS/validacion.js"></script>
 </head>
 
@@ -71,7 +69,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="foto" onchange="cargarImg(event)"/>
+                    <input id="subirImg" type="file" name="foto" />
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -82,14 +80,6 @@
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <img id="imgVision" />
                 </div>
-
-                <!--Script que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior para poder verla-->
-                <script>
-                    var cargarImg = function (event) {
-                        var imagen = document.getElementById('imgVision');
-                        imagen.src = URL.createObjectURL(event.target.files[0]);
-                    };
-                </script>
             </section>
 
             <section id="desc">
