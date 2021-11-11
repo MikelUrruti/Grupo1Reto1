@@ -273,9 +273,42 @@
                 ";  
     
             }
+            
+        }  
+
+        function mostrarHerramientasDetalle($consulta,$page,$nummanuales) {
+            $numCategoria = 0;
+            $limite =0;
+    
+                if ($_SESSION["total_pages"] == $page) {
+                    
+                    $limite = count($consulta);
         
+                } else {
         
-    }   
+                    $limite = $page*$nummanuales;
+        
+                }
+        
+                for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
+                    $numCategoria ++;
+                    // echo "
+                    //     <a id=article$numCategoria class=enlaces href=detalleHerramienta.php?filtro='".$consulta[$i]['nombre']."'>
+                    //     <img src='".$consulta[$i]['foto']."'>
+                    //     <h2>".$consulta[$i]['nombre']."</h2>
+                    //     </a>
+                    // ";  
+
+                    echo "
+                        <a id=article$numCategoria class=enlaces href='detalleHerramienta.php?filtro=" .$consulta[$i]['nombre']. "'>
+                            <img src='". $consulta[$i]['foto']. "'>
+                            <h2>" .$consulta[$i]['nombre']. "</h2>
+                        </a>
+                    
+                    ";
+        
+                }
+        }
 
     function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
 

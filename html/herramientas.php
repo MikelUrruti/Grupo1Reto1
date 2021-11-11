@@ -51,7 +51,7 @@
             $categorias = consultarDatoBD($consulta,$parametro);
             $numRegistros = 4;
 
-            generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros,$filtro);
+            generarPaginador($categorias, "mostrarHerramientasDetalle",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros,$filtro);
 
 
 
