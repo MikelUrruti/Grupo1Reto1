@@ -59,10 +59,29 @@ comprobarLogin();
                 </div>
                         <?php
 
+                            if (!isset($_GET["page"])) {
+
+                                if (!isset($_SESSION["filtradoPrimeraVez"])) {
+
+                                    // echo "hola";
+                                    $_SESSION["mantenerFiltrado"] = false;
+
+                                    unset($_SESSION["filtrado"]);
+
+                                } else {
+                                    
+                                    // echo "que cojones";
+                                    $_SESSION["mantenerFiltrado"] = true;
+                                    unset($_SESSION["filtradoPrimeraVez"]);
+
+                                }
+
+                            }
+
                             if (isset($_SESSION["filtrado"])) {
 
                                 $resultados = $_SESSION["filtrado"];
-                                unset($_SESSION["filtrado"]);
+                                // unset($_SESSION["filtrado"]);
 
                             } else {
 
@@ -78,7 +97,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),"adminSubidosManuales.php", 1); ?>
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); ?>
 
 
             </form>

@@ -62,6 +62,10 @@ $_SESSION["checkActivos"] = array();
 
         }
 
+        $_SESSION["mantenerFiltrado"] = true;
+
+        $_SESSION["filtradoPrimeraVez"] = true;
+
     }
 
     // echo var_dump($_SESSION["filtrado"]);

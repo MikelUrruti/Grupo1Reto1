@@ -35,11 +35,11 @@
 
     <section class="contenido">
 
-        <a href="adminSolicitudesManuales.php" class="seccion">
+        <a href="adminSolicitudesAlquileres.php" class="seccion">
            <img src="img/solicitud.png" alt="">
            <h2>Solicitudes</h2>
         </a>
-        <a href="adminSubidosManuales.php" class="seccion">
+        <a href="adminRealizadosAlquileres.php" class="seccion">
            <img src="img/manual.png" alt="">
            <h2>Alquileres</h2>
         </a>

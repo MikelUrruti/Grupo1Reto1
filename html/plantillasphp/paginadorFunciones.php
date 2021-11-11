@@ -13,13 +13,21 @@
             if (isset($_GET["page"])) {
 
                 $page = $_GET["page"];
-                $_SESSION["mantenerFiltrado"] = true;
-                
-            } else {
+                // echo "entra".$_SESSION["mantenerFiltrado"];
 
-                $_SESSION["mantenerFiltrado"] = false;
-           
+                if (isset($_SESSION["mantenerFiltrado"])) {
+                    $_SESSION["mantenerFiltrado"] = true;
+                }
+ 
             }
+
+                // echo "no entra".$_SESSION["mantenerFiltrado"];
+
+                // echo $_SESSION["filtradoPrimeraVez"];
+
+
+
+            
             
 
             $nummanuales = $numRegistros;
@@ -94,6 +102,8 @@
             // echo $nombreFuncion;
 
             // echo $nombreFuncion;
+
+            // echo "ejecuta".$_SESSION["mantenerFiltrado"];
 
             // Ejecuta lo que le pases como si fuese código php
             eval($nombreFuncion);
@@ -197,6 +207,8 @@
 
         print('<section id="cajaMan">');
 
+        $limite = 0;
+
         //Si la página actual no es la última
         if ($_SESSION["total_pages"] == $page) {
             
@@ -208,7 +220,10 @@
 
         }
 
-        for ($i=(($page-1)*$nummanuales); $i < $nummanuales; $i++) { 
+        // echo $limite;
+        // echo (($page-1)*$nummanuales);
+
+        for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
             
             print('<article class="manpos">');
             print('<img class="manimg" src="img/ImagenPDF.png" />');
