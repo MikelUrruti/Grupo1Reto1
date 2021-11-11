@@ -1,6 +1,6 @@
 <?php 
 
-    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros) {
+    function generarPaginador(array $resultadoConsulta, string $nombreFuncion, array $parametrosFuncion, string $pagina, int $numRegistros, string $filtro=null) {
 
 
         $totalconsulta = count($resultadoConsulta);
@@ -119,14 +119,27 @@
                 //Flecha que sirve para ir hacia la izquierda, solo aparece siempre y cuando no este en la primera pagina
 
                 if ($page > 1) {
-                    echo '
-                    <section class="movIzq">
-                        <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
-                    </section>';
-                    echo '
-                    <section class="movIzq">
-                        <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
-                    </section>';
+                    if ($filtro != null) {
+                        echo '
+                        <section class="movIzq">
+                            <a href="'.$pagina.'$page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
+                        </section>';
+                        echo '
+                        <section class="movIzq">
+                            <a href="'.$pagina.'&page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
+                        </section>';
+
+                    }
+                    else {
+                        echo '
+                        <section class="movIzq">
+                            <a href="'.$pagina.'?page=' . 1 . '"> <img src="img/Pasodoble.png" /></a>
+                        </section>';
+                        echo '
+                        <section class="movIzq">
+                            <a href="'.$pagina.'?page=' . ($page - 1) . '"> <img src="img/Paso.png" /></a>
+                        </section>';
+                    }
                 }
                 // si hay más de 4 te genera 6 bolas
                 // si tienes 23 bolas la muestra de 5 en 5,
@@ -238,8 +251,7 @@
 
     function mostrarHerramientas($consulta,$page,$nummanuales) {
         $numCategoria = 0;
-
-        for ($i=(($page-1)*$nummanuales);$i<$nummanuales;$i++) {
+        $limite =0;
 
             if ($_SESSION["total_pages"] == $page) {
                 
@@ -262,7 +274,7 @@
     
             }
         
-        }
+        
     }   
 
     function mostrarTabla($consulta,array $columnasmostrar,$page,$numRegistros){
