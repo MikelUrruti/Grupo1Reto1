@@ -96,21 +96,21 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             } else {
 
-                                $resultados = consultarDatoBD("select titulo, descripcion, fichero, usuariosube from Manual where usuarioaprueba is null;", array());
+                                $resultados = consultarDatoBD("select titulo, descripcion, fichero, portada, usuariosube from Manual where usuarioaprueba is null;", array());
 
-                                // $_SESSION["filas"] = array();
+                                $_SESSION["filas"] = array();
 
-                                // foreach ($resultados as $resultado) {
+                                foreach ($resultados as $resultado) {
     
-                                //     array_push($_SESSION["filas"], $resultado);
+                                    array_push($_SESSION["filas"], $resultado);
     
-                                // }
+                                }
                             
                             }
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Usuario Solicitante"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Usuario Solicitante"),"page",array("fichero"),array("portada"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
 
                             // if (!$_SESSION["mantenerFiltrado"]) {
 

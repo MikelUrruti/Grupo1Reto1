@@ -10,6 +10,20 @@ form {
 
 }
 
+.botonDescargar {
+
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.imagenTabla {
+
+    width: 200px;
+    height: 100px;
+
+}
+
 .celda {
 
     border: 2px solid black;

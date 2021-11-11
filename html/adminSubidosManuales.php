@@ -89,16 +89,21 @@ comprobarLogin();
 
                                 // $_SESSION["filas"] = array();
 
-                                // foreach ($resultados as $resultado) {
+                                foreach ($resultados as $resultado) {
     
-                                //     array_push($_SESSION["filas"], $resultado);
+                                    array_push($_SESSION["filas"], $resultado);
     
-                                // }
+                                }
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); ?>
+                            // generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Publicador","Aprobado por"),"page",array("fichero"),array("portada"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            
+                            ?>
 
+                            
 
             </form>
 
