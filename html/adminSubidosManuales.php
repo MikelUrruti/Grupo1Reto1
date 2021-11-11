@@ -87,13 +87,13 @@ comprobarLogin();
 
                                 $resultados = consultarDatoBD("select * from Manual where usuarioaprueba is not null;", array());
 
-                                $_SESSION["filas"] = array();
+                                // $_SESSION["filas"] = array();
 
-                                foreach ($resultados as $resultado) {
+                                // foreach ($resultados as $resultado) {
     
-                                    array_push($_SESSION["filas"], $resultado);
+                                //     array_push($_SESSION["filas"], $resultado);
     
-                                }
+                                // }
                             
                             }
 

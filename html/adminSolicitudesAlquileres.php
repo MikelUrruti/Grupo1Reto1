@@ -84,7 +84,7 @@ comprobarLogin();
 
             </div>
 
-            <form action="controladores/adminControladorUsuario.php" method="post" id="acciones">
+            <form action="controladores/adminControladorSolicitudesAlquileres.php" method="post" id="acciones">
 
                 <div class="acciones">
                     <input type="submit" class="boton" value="Aprobar" name="Aprobar">
@@ -123,13 +123,13 @@ comprobarLogin();
 
                                 $resultados = consultarDatoBD("select Solicitud.id, fechasolicitud, estado, usuariosolicitante, herramientasolicitada from Solicitud left join Alquiler on Alquiler.idsolicitud=Solicitud.id where idsolicitud is null;", array());
 
-                                $_SESSION["filas"] = array();
+                                // $_SESSION["filas"] = array();
 
-                                foreach ($resultados as $resultado) {
+                                // foreach ($resultados as $resultado) {
     
-                                    array_push($_SESSION["filas"], $resultado);
+                                //     array_push($_SESSION["filas"], $resultado);
     
-                                }
+                                // }
                             
                             }
 

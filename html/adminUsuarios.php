@@ -134,13 +134,13 @@ comprobarLogin();
 
                                 $resultados = consultarDatoBD("select usuario, email, nombre, apellidos, telefono, tipo, estado from Usuario;", array());
 
-                                $_SESSION["filas"] = array();
+                                // $_SESSION["filas"] = array();
 
-                                foreach ($resultados as $resultado) {
+                                // foreach ($resultados as $resultado) {
     
-                                    array_push($_SESSION["filas"], $resultado);
+                                //     array_push($_SESSION["filas"], $resultado);
     
-                                }
+                                // }
                             
                             }
 
