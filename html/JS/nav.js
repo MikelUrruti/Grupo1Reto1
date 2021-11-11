@@ -1,5 +1,6 @@
 
 //Este Script se ejecuta al cargar el documento
+//Y en el evento window.onresize
 
 
 
@@ -21,12 +22,12 @@ el menú se oculte siempre,
 aunque se le haya hecho clic antes.
 
 Por si no se ha entendido:
-El menú hamburguesa, que se oclta y se muestra de izquiera a derecha al pulsar un botón,
+El menú hamburguesa, que se oculta y se muestra de izquiera a derecha al pulsar un botón,
 se controla mediante un checkbox,
 inicialmente está oculto pero al pulsar sobre él su valor cambia y se muestra.
 
 El problema de esto es que si pulsamos el botón y cambiamos de ancho,
-al volver el menú no se ocultará por que el checkbox estará activo
+al volver el menú no se ocultará por que el checkbox seguirá activo
 (el menú se muestra siempre que no sea dispositivo móvil mediante media query; no se deschequea),
 gracias a este Script, el checkbox se desactiva siempre que el ancho de la pantalla sea el de un dispositivo móvil.
 */
