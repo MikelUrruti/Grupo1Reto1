@@ -1,7 +1,7 @@
 window.onload = function () {
     //Guardo los elementos en distintas variables
-    var telefono = document.getElementById("telefono");
-    var subir_Man = document.getElementById("subir_Man");
+    telefono = document.getElementById("telefono");
+    subir_Man = document.getElementById("subir_Man");
 
     //Añado los eventlistener necesarios a las variables
     telefono.addEventListener("keyup", validarCampo);
