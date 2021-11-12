@@ -30,7 +30,7 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
 
     //Si los tres pasos anteriores son correctos
     if ($correcto) {
-        print("Me meto a correcto");
+        
         try {
             // hago una copia de la imagen subida y la almaceno
             move_uploaded_file($rutaOrigen, $rutaDestino);

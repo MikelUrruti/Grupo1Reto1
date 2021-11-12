@@ -42,25 +42,6 @@ function CrearDesc() {
 }
 
 /*
-Validacion para que solo pueda escribir 500 caracteres en el textarea como maximo
-*/
-function validacionDesc() {
-    //Para saber el tamaño completo del texto
-    var tamanoMaximo = 500;
-    //Para guardar el texto que se va a cambiar
-    var restantes = document.getElementById("restantes");
-    //Cantidad de caracteres actuales
-    var tamanio = descripcion.value;
-    //Mientras que el tamaño no llegue al tamaño maximo
-    if(tamanio.length<=tamanoMaximo){
-        //Resta del tamaño maximo menos el tamaño actual
-        valor = tamanoMaximo-parseInt(tamanio.length);
-        //Se pone la resta en el campo de texto
-        restantes.innerHTML=""+valor;
-    }
-}
-
-/*
 Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior
 para poder verla
 */
