@@ -43,7 +43,9 @@
         </section>
     </form>
     <form method="POST" action="">
-        <?php include("controladores/paginador.php") ?>
+        <?php 
+            include("controladores/paginador.php");
+        ?>
     </form>
     <?php
     include("plantillas/indexFooter.html");

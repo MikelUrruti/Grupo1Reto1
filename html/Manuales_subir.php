@@ -1,7 +1,7 @@
 <?php
     //PHP que comprueba si ha iniciado sesion para poder continuar
     require("plantillasphp/redirecciones.php");
-    
+    //PHP que comprueba 
     require("plantillasphp/funcionesFormularios.php");
     // require("controladores/paginador.php");
 ?>
@@ -39,7 +39,7 @@
         comprobarLogin();    
     ?>
 
-    <form>
+    <form enctype="multipart/form-data" action="controladores/donarHerramienta.php" method="post">
         <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
         </h2>
@@ -82,7 +82,7 @@
 
         <div id="cajaBot">
             <!--Los dos tipos de botones-->
-            <input id="subir_Man" type="file" />
+            <input id="subir_Man" type="file" name="manual"/>
             <!--Para dar estilo al boton de file-->
             <label class="boton" type="button" for="subir_Man">Subir manuales...</label>
             <!--Sitio donde va a salir el nombre del manual-->
