@@ -78,19 +78,28 @@
                     
                     if (gettype($parametrosFuncion[$i]) == "array") {
 
-                        $array = "array(";
+                        if (count($parametrosFuncion[$i]) == 0) {
 
-                        for ($j=0; $j < count($parametrosFuncion[$i]); $j++) { 
-                            
-                            if ($j == count($parametrosFuncion[$i])-1) {
-                                $array .= "'".$parametrosFuncion[$i][$j]."')";
-                            } else {
-                                $array .= "'".$parametrosFuncion[$i][$j]."',";
+                            $array = "array()";
+
+                        } else {
+                            $array = "array(";
+
+                            for ($j=0; $j < count($parametrosFuncion[$i]); $j++) { 
+                                
+                                if ($j == count($parametrosFuncion[$i])-1) {
+                                    $array .= "'".$parametrosFuncion[$i][$j]."')";
+                                } else {
+                                    $array .= "'".$parametrosFuncion[$i][$j]."',";
+                                }
+    
                             }
-
+    
                         }
 
                         $nombreFuncion .= $array.",";
+
+
                     } else {
                         $nombreFuncion .= "$".$parametrosFuncion[$i].",";
                     }
@@ -353,6 +362,97 @@
                     echo "<td class='celda contenidoTabla'>".$valor."</td>";
                 }
 
+            }
+
+            echo "</tr>";
+
+        }
+
+        echo "</tbody>";
+        echo "</table>";
+
+    }
+
+    function mostrarTablaConFicherosImagenes($consulta,array $columnasmostrar,$page,array $columnasFicheros,array $columnasImagenes,$numRegistros){
+
+        echo "<table class='tabla'>";
+        echo "<thead>";
+        echo "<tr>";
+        echo "<th class='celda tituloColumna'>Seleccionado</th>";
+
+        foreach (array_slice($columnasmostrar,1) as $valor) {
+                
+            echo "<th class='celda tituloColumna'>".$valor."</th>";
+            
+        }
+
+        echo "</tr>";
+        echo "</thead>";
+
+        echo "<tbody>";
+
+        if ($_SESSION["total_pages"] == $page) {
+            
+            $limite = count($consulta);
+
+        } else {
+
+            $limite = $page*$numRegistros;
+
+        }
+
+        for ($i=(($page-1)*$numRegistros); $i < $limite; $i++) {
+            
+            echo "<tr>";
+
+            // echo $clave;
+
+            echo "<td class='celda contenidoTabla'><input type='checkbox' name='registrosSeleccionados[]' value='".array_slice($consulta[$i],1)[0]."' id=''></td>";
+            next($consulta[$i]);
+
+            foreach ($consulta[$i] as $key => $valor) {
+
+                if (gettype($key) == "string") {
+
+                    if (in_array($key,$columnasFicheros)) {
+                        echo "<td class='celda contenidoTabla'><a href='../manuales/".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
+                    } elseif (in_array($key,$columnasImagenes)) {
+                        echo "<td class='celda contenidoTabla'><img src='../manuales/portadas/".$valor."' class='imagenTabla'/></td>";
+                    } else {
+                        echo "<td class='celda contenidoTabla'>".$valor."</td>";
+                    }
+
+
+                    // foreach ($columnasFicheros as $keyFichero => $value) {
+                        
+                    //     if ($key == $keyFichero) {
+        
+                    //         echo "<td class='celda contenidoTabla'><a href='../manuales/".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
+        
+                    //     } else {
+        
+                    //         echo "<td class='celda contenidoTabla'>".$valor."</td>";
+        
+                    //     }
+        
+                    // }
+
+                    // foreach ($columnasImagenes as $keyImagen => $value) {
+                        
+                    //     if ($key == $keyImagen) {
+        
+                    //         echo "<td class='celda contenidoTabla'><img src='../manuales/portadas/".$valor."' /></td>";
+        
+                    //     } else {
+        
+                    //         echo "<td class='celda contenidoTabla'>".$valor."</td>";
+        
+                    //     }
+        
+                    // }
+
+                }
+                
             }
 
             echo "</tr>";

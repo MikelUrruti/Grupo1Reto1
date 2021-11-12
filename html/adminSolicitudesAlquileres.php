@@ -1,6 +1,7 @@
 <?php
 
 require("plantillasphp/redirecciones.php");
+require("plantillasphp/funcionesFormularios.php");
 // require("controladores/paginador.php");
 require("plantillasphp/paginadorFunciones.php");
 
@@ -37,9 +38,12 @@ comprobarLogin();
     require("plantillasphp/operacionesDb.php");
     include("plantillas/menuAdmin.html");
 
+    
+
     ?>
 
     <section class="contenido">
+
         <article>
             <h1 class="titulo">SOLICITUDES DE ALQUILER</h1>
         </article>
@@ -60,12 +64,12 @@ comprobarLogin();
                             } ?>>
                             <label for="">Pendiente</label>
                         </div>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarEstado[]" value="aceptada" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("aceptada",$_SESSION["checkActivos"])) {
+                        <!-- <div>
+                            <input type="checkbox" class="checkbox" name="buscarEstado[]" value="aceptada" id="" <?php /* if (isset($_SESSION["checkActivos"]) && in_array("aceptada",$_SESSION["checkActivos"])) {
                                 echo "checked";
-                            } ?>>
+                            }*/ ?>>
                             <label for="">Aceptada</label>
-                        </div>
+                        </div> -->
                         <div>
                             <input type="checkbox" class="checkbox" name="buscarEstado[]" value="rechazada" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("rechazada",$_SESSION["checkActivos"])) {
                                 echo "checked";
@@ -79,12 +83,31 @@ comprobarLogin();
                             <label for="">Expirada</label>
                         </div>
                     </div>
+                    <div>
+                        <h2 class="tituloFiltro">Periodo de fechas:</h2>
+                        <div>
+
+                            <label for="">Inicio:</label>
+                            <input type="date" name="fechaInicio" value="<?php echo date('Y-m-d');?>" id="">
+                            <label for="">Fin:</label>
+                            <input type="date" name="fechaFin" value="<?php echo date('Y-m-d');?>" id="">
+                            <input type="submit" class="boton" value="Buscar" name="BuscarFecha">
+                            
+                            
+                        </div>
+                    </div>
 
                 </form>
 
+
+            </div>
+            <div id="">
+
+
             </div>
 
-            <form action="controladores/adminControladorUsuario.php" method="post" id="acciones">
+
+            <form action="controladores/adminControladorSolicitudesAlquileres.php" method="post" id="acciones">
 
                 <div class="acciones">
                     <input type="submit" class="boton" value="Aprobar" name="Aprobar">
@@ -94,6 +117,15 @@ comprobarLogin();
 
                 </div>
                         <?php
+
+                        if (isset($_SESSION["errorAccion"])) {
+
+                            echo cargarError("errorAccion","");
+                            unset($_SESSION["errorAccion"]);
+
+                        }
+
+                        
 
                             if (!isset($_GET["page"])) {
 

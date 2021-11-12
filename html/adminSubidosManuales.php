@@ -87,7 +87,7 @@ comprobarLogin();
 
                                 $resultados = consultarDatoBD("select * from Manual where usuarioaprueba is not null;", array());
 
-                                $_SESSION["filas"] = array();
+                                // $_SESSION["filas"] = array();
 
                                 foreach ($resultados as $resultado) {
     
@@ -97,8 +97,13 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); ?>
+                            // generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Publicador","Aprobado por"),"page",array("fichero"),array("portada"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            
+                            ?>
 
+                            
 
             </form>
 
