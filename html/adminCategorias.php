@@ -33,7 +33,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
-    <title>Solicitudes Manuales</title>
+    <title>Categorias</title>
 </head>
 
 <body>
@@ -47,21 +47,22 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
     <section class="contenido">
         <article>
-            <h1 class="titulo">SOLICITUDES PARA SUBIR MANUALES</h1>
+            <h1 class="titulo">CATEGORIAS DE HERRAMIENTAS</h1>
         </article>
         <article>
 
         
-            <form action="controladores/buscarSolicitudManual.php" method="get" id="buscador">
-                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Solicitudes..." />
+            <form action="controladores/buscarCategoria.php" method="get" id="buscador">
+                <input type="text" name="Buscar" id="txtbus" placeholder="Buscar Categorias..." />
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
 
-            <form action="controladores/adminControladorSolicitudesManuales.php" method="post" id="acciones">
+            <form action="controladores/adminControladorCategorias.php" method="post" id="acciones">
 
                 <div class="acciones">
-                    <input type="submit" class="boton botonCrear" value="Aprobar" name="Aprobar">
-                    <input type="submit" class="boton botonEliminar" value="Rechazar" name="Rechazar">
+                    <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
+                    <input type="submit" class="boton botonCrear" value="Modificar" name="Modificar">
+                    <input type="submit" class="boton botonEliminar" value="Eliminar" name="Eliminar">
                 </div>
                         <?php
 
@@ -96,7 +97,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             } else {
 
-                                $resultados = consultarDatoBD("select titulo, descripcion, fichero, portada, usuariosube from Manual where usuarioaprueba is null;", array());
+                                $resultados = consultarDatoBD("select * from Categoria;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -110,7 +111,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Usuario Solicitante"),"page",array("fichero"),array("portada"),"../manuales/","../manuales/portadas","nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Descripcion","Foto"),"page",array(),array("foto"),array(),array("../categoria/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
 
                             // if (!$_SESSION["mantenerFiltrado"]) {
 

@@ -328,7 +328,7 @@
 
     }
 
-    function mostrarTablaConFicherosImagenes($consulta,array $columnasmostrar,$page,array $columnasFicheros,array $columnasImagenes,$numRegistros){
+    function mostrarTablaConFicherosImagenes($consulta,array $columnasmostrar,$page,array $columnasFicheros,array $columnasImagenes,array $rutaFichero,array $rutaImagen,$numRegistros){
 
         echo "<table class='tabla'>";
         echo "<thead>";
@@ -370,9 +370,9 @@
                 if (gettype($key) == "string") {
 
                     if (in_array($key,$columnasFicheros)) {
-                        echo "<td class='celda contenidoTabla'><a href='../manuales/".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
+                        echo "<td class='celda contenidoTabla'><a href='".$rutaFichero[0]."".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
                     } elseif (in_array($key,$columnasImagenes)) {
-                        echo "<td class='celda contenidoTabla'><img src='../manuales/portadas/".$valor."' class='imagenTabla'/></td>";
+                        echo "<td class='celda contenidoTabla'><img src='".$rutaImagen[0]."".$valor."' class='imagenTabla'/></td>";
                     } else {
                         echo "<td class='celda contenidoTabla'>".$valor."</td>";
                     }

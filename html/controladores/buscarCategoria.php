@@ -9,19 +9,19 @@
 
         $parametros = array();
 
-        for ($i=0; $i < 3; $i++) { 
+        for ($i=0; $i < 2; $i++) { 
             
             array_push($parametros,"%".$_GET["Buscar"]."%");
     
         }
     
-        $_SESSION["filtrado"] = consultarDatoBD("select titulo, descripcion, fichero, usuariosube from Manual where usuarioaprueba is null and (titulo like ? or descripcion like ? or usuariosube like ?);",$parametros);
+        $_SESSION["filtrado"] = consultarDatoBD("select nombre, descripcion, foto from Categoria where nombre like ? or descripcion like ?;",$parametros);
 
         $_SESSION["mantenerFiltrado"] = true;
 
         $_SESSION["filtradoPrimeraVez"] = true;
 
-        redireccionar("../adminSolicitudesManuales.php");
+        redireccionar("../adminCategorias.php");
 
     }
 

@@ -83,18 +83,12 @@
                 if (!isset($_SESSION["errorAccion"])) {
 
                     $parametrosInsertar = array();
-
-                    $parametrosActualizar = array();
         
                     $parametrosActualizarSolicitud = array(); 
 
                     $consultaInsertar = "insert into Alquiler(fechainicio, idsolicitud) values ";
-
-                    $consultaActualizar = "update Herramienta set stock=stock-? where nombre in (select distinct(herramientasolicitada) from Solicitud where id in (";
         
                     $consultaActualizarSolicitud = "update Solicitud set estado='aceptada' where id in (";
-
-                    array_push($parametrosActualizar,count($solicitudes));
 
                     $contador = 0;
                     
@@ -104,18 +98,12 @@
             
                         array_push($parametrosInsertar,$solicitud);
         
-                        array_push($parametrosActualizar,$solicitud);
-        
                         array_push($parametrosActualizarSolicitud,$solicitud);
         
                         if (count($solicitudes)-1 == $contador) {
                             $consultaInsertar .= "(?, ?);";
         
                             $consultaInsertar = manipularDatoBD($consultaInsertar,$parametrosInsertar);
-        
-                            $consultaActualizar .= "?));";
-        
-                            $consultaActualizar = manipularDatoBD($consultaActualizar,$parametrosActualizar);
         
                             $consultaActualizarSolicitud .= "?);";
         
@@ -124,8 +112,6 @@
                         } else {
         
                             $consultaInsertar .= "(?, ?), ";
-        
-                            $consultaActualizar .= "?, ";
         
                             $consultaActualizarSolicitud .= "?, ";
         
