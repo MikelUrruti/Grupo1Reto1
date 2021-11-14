@@ -87,7 +87,7 @@
             <label class="boton" type="button" for="subir_Man">Subir manuales...</label>
             <!--Sitio donde va a salir el nombre del manual-->
             <p id="nombreManual">
-                asdsafas
+                Formulario.pdf
             </p>
             <input class="boton" id="enviar_Man" type="submit" value="Enviar" />
         </div>
