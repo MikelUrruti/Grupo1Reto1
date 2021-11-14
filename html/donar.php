@@ -92,10 +92,10 @@
                         validacionDesc();
                     </script>
                     <span id="restantes">500</span>
-                    palabras restantes
+                    letras restantes
                 </p>
                 <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
-
+ 
                 <?php cargarError("errorDescripcion", ""); ?>
 
             </section>
