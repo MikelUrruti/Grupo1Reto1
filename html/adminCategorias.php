@@ -3,6 +3,7 @@
 require("plantillasphp/redirecciones.php");
 // require("controladores/paginador.php");
 require("plantillasphp/paginadorFunciones.php");
+require("plantillasphp/funcionesFormularios.php");
 
 session_start();
 
@@ -66,6 +67,13 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
                 </div>
                         <?php
 
+                        if (isset($_SESSION["errorAccion"])) {
+
+                            echo cargarError("errorAccion","");
+                            unset($_SESSION["errorAccion"]);
+
+                        }
+
                             if (!isset($_GET["page"])) {
 
                                 if (!isset($_SESSION["filtradoPrimeraVez"])) {
@@ -97,7 +105,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             } else {
 
-                                $resultados = consultarDatoBD("select * from Categoria;", array());
+                                $resultados = consultarDatoBD("select nombre, foto, descripcion from Categoria;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -111,7 +119,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Descripcion","Foto"),"page",array(),array("foto"),array(),array("../categoria/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Foto","Descripcion"),"page",array(),array("foto"),array(),array("../categoria/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
 
                             // if (!$_SESSION["mantenerFiltrado"]) {
 

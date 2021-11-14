@@ -106,13 +106,17 @@ function erroresInsertar($codigoError, array $unicos) {
 
     if ($codigoError == 1062) {
         
-        $error = "Alguno de los siguientes campos puede que esten siendo utilizados por otro usuario: ";
+        $error = "Alguno de los siguientes campos puede que esten siendo utilizados por otro registro: ";
 
         for ($i=0; $i < count($unicos); $i++) { 
             
             if ($i == count($unicos)-1) {
-                
-                $error .= " o ".$unicos[$i];
+
+                if (count($unicos) == 1) {
+                    $error .= " ".$unicos[$i];
+                } else {
+                    $error .= " o ".$unicos[$i];
+                }
 
             } else {
                 
