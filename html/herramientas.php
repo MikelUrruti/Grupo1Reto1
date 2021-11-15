@@ -42,8 +42,6 @@
        <?php 
             require("plantillasphp/operacionesDb.php");
             require("plantillasphp/paginadorFunciones.php");
-            // $_SESSION["filtro"] = $_GET["filtro"];
-            // $filtro = $_SESSION["filtro"];
             $filtro = $_GET["filtro"];
             $consulta = "select nombre,foto from Herramienta";
             $consulta = "select nombre,foto from Herramienta where categoria like ?;";
@@ -53,23 +51,6 @@
 
             generarPaginador($categorias, "mostrarHerramientasDetalle",array("resultadoConsulta","page","nummanuales"),"herramientas.php",$numRegistros,$filtro);
 
-
-
-//     //    $datosHerramienta = consultarDatoBD($consulta,$parametro);
-// $datosHerramienta = consultarDatoBD("select nombre,foto from Herramienta");
-
-//     $numArticulo = 0;
-//        foreach($datosHerramienta as $herramienta) {
-//                 $numArticulo++;   
-//                 echo "
-                   
-//                    <a id=article$numArticulo>
-//                     <img src='$herramienta[foto]'>
-//                     <h2>$herramienta[nombre]</h2>
-//                    </a>
-//                    ";
-
-//             }
        
        ?>
     </section>

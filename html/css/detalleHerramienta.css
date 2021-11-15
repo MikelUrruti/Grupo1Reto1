@@ -9,7 +9,7 @@
 }
 
 #section1 img {
-    width:220px;
+    width:120px;
     height:auto;
     cursor:pointer;
     transition: 1s;
@@ -19,14 +19,11 @@
     font-size:1em;
 }
 
-#stock{
-    color:red;
-}
-
 #section1 a {
     display:block;
-    padding: .5%;
-    width: 25%;
+    font-size: 2em;
+    padding: 2%;
+    width: fit-content;
     margin: 0 auto; 
     text-transform: uppercase;
     text-decoration:none;
@@ -37,12 +34,9 @@
     transition: 1s;
 }
 
-#disponible {
-    cursor:pointer;
-}
-
-#disponible:hover {
+#section1 a:hover:not(#noDisponible) {
     background-color: orange;
+    cursor:pointer;
 }
 
 #noDisponible {
@@ -51,14 +45,18 @@
 
 @media Screen and (min-width: 480px) {
     #section1 a {
-        font-size: 2em;
+        font-size: 3em;
+    }
+
+    #section1 img {
+        width:220px;
     }
     
 
     
 @media Screen and (min-width:1025px) {
     #section1 a {
-        font-size: 3em;
+        font-size: 4em;
         }
     }
 }
