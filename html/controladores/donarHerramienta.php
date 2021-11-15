@@ -18,19 +18,25 @@ $rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto'])) {
     $correcto = true;
     if (!validarNombre($_POST["herramienta"])) {
+        //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorHerramienta"] = "No se permiten numeros ni caracteres especiales. Deber contener de 2 a 30 caracteres.";
         $correcto = false;
     } else if (!validarImg($_FILES["foto"])) {
+        //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorImg"] = "Debe introducir una imagen de la herramienta.";
         $correcto = false;
     } else if (strlen($_POST["descripcion"]) > 500) {
+        //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorDescripcion"] = "La descripción debe tener menos de 500 carácteres.";
+        $correcto = false;
+    } else if (!validarManual($_FILES["manual"])) {
+        //Este $_SESSION devuelve un mensaje de error
+        $_SESSION["errorManual"] = "Error";
         $correcto = false;
     }
 
     //Si los tres pasos anteriores son correctos
     if ($correcto) {
-        print("Me meto a correcto");
         try {
             // hago una copia de la imagen subida y la almaceno
             move_uploaded_file($rutaOrigen, $rutaDestino);
@@ -72,25 +78,5 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
 
 
 
-function validarImg($foto)
-{
-    //Filtros para la imagen
-    $extensiones = array(
-        0 => 'image/jpg',
-        1 => 'image/jpeg',
-        2 => 'image/png',
-    );
-    // Peso de 8Mb aprox
-    $maxTam = 1600 * 1200 * 8;
 
-    if (in_array($foto['type'], $extensiones)) {
-        // echo "Es una imagen";
-        
-        if ($foto['size'] < $maxTam) {
-            // echo "Pesa menos de 8MB";
-            return true;
-        }
-    return false;
-    }
-}
 ?>
