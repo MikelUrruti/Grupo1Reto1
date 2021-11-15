@@ -19,10 +19,14 @@ if (isset($_POST["titulo"]) && isset($_SESSION["descripcion"]) && isset($_FILES[
         //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorTitulo"] = "No se permiten numeros ni caracteres especiales. Deber contener de 2 a 30 caracteres.";
         $correcto = false;
-    }else if (!validarImg($_FILES["fichero"])) {
+    }else if (!validarManual($_FILES["fichero"])) {
         //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorManual"] = "Debe introducir un manual.";
         $correcto = false;
+    }else if(!validarImg($_FILES["portada"])){
+        $_SESSION["errorManual"] = "Debe introducir un manual.";
+        $correcto = false;
     }
+    
 }
 ?>
