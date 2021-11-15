@@ -9,9 +9,10 @@ window.onload = function () {
 
     //Añado los eventlistener necesarios a las variables
     titulo.addEventListener("keyup", validarCampo);
-    // descripcion.addEventListener("keyup",  validacionDesc);
-    fichero.addEventListener("change",  validarCampo);
-    portada.addEventListener("change",  validarCampo);
+    //Al no estar este comentado lo ejecuta una vez
+    descripcion.addEventListener("keyup",  validacionDesc);
+    //fichero.addEventListener("change",  validarCampo);
+    //portada.addEventListener("change",  validarCampo);
     //subirImg.addEventListener("change", cargarImg);
 }
 
