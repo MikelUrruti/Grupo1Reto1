@@ -57,6 +57,60 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
                 <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </form>
 
+            <div id="buscadorFiltros">
+
+                <form action="controladores/filtrosUsuario.php" id="filtros" method="get">
+                    <div>
+                        <h2 class="tituloFiltro">Categoria de la herramienta:</h2>
+
+                        <?php 
+
+                            $CategoriasFabricantes = consultarDatoBD("select distinct(categoria), distinct(fabricante) from Categoria;");
+
+                            
+
+                        ?>
+                        
+
+                        <!-- <div>    
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="usuario" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("usuario",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Usuario</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="administrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("administrador",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Administrador</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="superadministrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("superadministrador",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">SuperAdministrador</label>
+                        </div> -->
+                    </div>
+                    <div>
+                        <h2 class="tituloFiltro">Estado del usuario:</h2>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="activo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("activo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Activo</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="inactivo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("inactivo",$_SESSION["checkActivos"])) {
+                                echo "checked";
+                            } ?>>
+                            <label for="">Inactivo</label>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
             <form action="controladores/adminControladorHerramientas.php" method="post" id="acciones">
 
                 <div class="acciones">
