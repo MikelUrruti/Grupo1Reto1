@@ -15,7 +15,7 @@
     
         }
     
-        $_SESSION["filtrado"] = consultarDatoBD("select nombre, fabricante, categoria, stock, foto, descripcion from Herramienta where nombre like ? or descripcion like ?;",$parametros);
+        $_SESSION["filtrado"] = consultarDatoBD("select nombre, categoria, stock, foto, estado, descripcion from Herramienta where nombre like ? or descripcion like ?;",$parametros);
 
         $_SESSION["mantenerFiltrado"] = true;
 

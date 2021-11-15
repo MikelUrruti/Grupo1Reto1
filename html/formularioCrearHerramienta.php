@@ -21,6 +21,8 @@ comprobarLoginAdmin();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/formularioCrearUsuario.css">
     <link rel="shortcut icon" href="img/Logo Header.png" />
+    <script src="JS/validacion.js"></script>
+    <script src="JS/formularioCrearHerramienta.js"></script>
     <title>Crear Herramienta - Fix Point</title>
 </head>
 
@@ -39,10 +41,6 @@ comprobarLoginAdmin();
 
                 if (isset($_SESSION["exito"])) {
                     cargarExito("exito", ""); 
-                }
-            
-                if (isset($_SESSION["errorGeneral"])) {
-                    cargarError("errorGeneral", "text-align:center");
                 }
             
              ?>
@@ -88,8 +86,8 @@ comprobarLoginAdmin();
                     <input id="stock" name="stock" class="textoForm" type="text" placeholder="123" value="1"/>
                     <?php 
                     
-                    if (isset($_SESSION["errorNombre"])) {
-                        cargarError("errorNombre", "");
+                    if (isset($_SESSION["errorStock"])) {
+                        cargarError("errorStock", "");
                     }
 
                     ?>
@@ -97,8 +95,12 @@ comprobarLoginAdmin();
                 <div class="usudat_NewUsu">
                     <p>
                         Descripcion: <span class="obligatorio">*</span>
+                        <span id="restantes">500</span>
+                        palabras restantes
                     </p>
+                    
                     <textarea id="descripcion" name="descripcion" class="textoForm" placeholder="destornillador de 30cm utilizado para sacar tornillos..." cols="10" rows="5"></textarea>
+                    
                 
                     <?php 
                     
