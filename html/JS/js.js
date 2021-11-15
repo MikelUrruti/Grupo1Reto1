@@ -81,7 +81,7 @@ function CrearDesc() {
 Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior
 para poder verla
 */
-function cargarImg(source){
-    var imagen = source.target;
-    imagen.src = URL.createObjectURL(source.target.files[0]);
+function cargarImg(event){
+    var imagen = document.getElementById("imgVision");
+    imagen.src = URL.createObjectURL(event.target.files[0]);
 }

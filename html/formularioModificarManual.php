@@ -40,8 +40,6 @@ comprobarLogin();
                     Titulo:
                 </p>
 
-                <p></p>
-
                 <input type="text" name="titulo" placeholder="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
                 <?php cargarError("errorTitulo", ""); ?>
             </div>
@@ -51,11 +49,11 @@ comprobarLogin();
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
+                    <span id="restantes">500</span>
+                    letras restantes
                     <script src="JS/validacion.js">
                         validacionDesc();
                     </script>
-                    <span id="restantes">500</span>
-                    palabras restantes
                 </p>
                 <textarea name="descripcion" class="textoForm" id="descripcion"></textarea>
                 <?php cargarError("errorDescripcion", ""); ?>
@@ -64,19 +62,29 @@ comprobarLogin();
                 <p>
                     Fichero:
                 </p>
-                <label for="fichero" class="txtSubir">Subir Manual</label>
+
                 <input type="file" name="fichero" id="fichero" class="btnSubir" />
+                <label for="fichero" class="txtSubir">Subir Manual</label>
+                
+                <div id="imgDonde">
+                    <!--Imagen en la que se va a visualizar la imagen a subir-->
+                    <img id="imgVision" style="width: 200px; height: 200px;" />
+                </div>
+
                 <?php cargarError("errorFichero", ""); ?>
             </div>
             <div class="apartados">
                 <p>
                     Portada:
                 </p>
-                <label for="portada" class="txtSubir">Subir Imagen</label>
-                <input type="file" name="portada" id="portada" class="btnSubir" />
 
-                <div id="imgDonde">
+                <input type="file" name="portada" id="portada" class="btnSubir" />
+                <label for="portada" class="txtSubir">Subir Imagen</label>
+                
+
+                <div id="img Donde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
+                    <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
                     <img id="imgVision" style="width: 200px; height: 200px;" />
                 </div>
 
