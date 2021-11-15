@@ -21,8 +21,8 @@ if (isset($_POST["titulo"]) && isset($_SESSION["descripcion"]) && isset($_FILES[
         $correcto = false;
     }else if (!validarImg($_FILES["fichero"])) {
         //Este $_SESSION devuelve un mensaje de error
-        $_SESSION["errorImg"] = "Debe introducir una imagen de la herramienta.";
-        $correcto = false
+        $_SESSION["errorManual"] = "Debe introducir un manual.";
+        $correcto = false;
     }
 }
 ?>
