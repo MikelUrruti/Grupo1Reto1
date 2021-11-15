@@ -276,7 +276,7 @@
                 $numCategoria ++;
                 echo "
                     <a id=article$numCategoria class=enlaces href=herramientas.php?filtro=".$consulta[$i]['nombre'].">
-                    <img src='".$consulta[$i]['foto']."'>
+                    <img src='../categoria/".$consulta[$i]['foto']."'>
                     <h2>".$consulta[$i]['nombre']."</h2>
                     </a>
                 ";  
@@ -310,7 +310,7 @@
 
                     echo "
                         <a id=article$numCategoria class=enlaces href='detalleHerramienta.php?filtro=" .$consulta[$i]['nombre']. "'>
-                            <img src='". $consulta[$i]['foto']. "'>
+                            <img src='../herramientas/". $consulta[$i]['foto']. "'>
                             <h2>" .$consulta[$i]['nombre']. "</h2>
                         </a>
                     
