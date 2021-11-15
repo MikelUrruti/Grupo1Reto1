@@ -42,3 +42,46 @@ function Loading(activar) {
         document.body.removeChild(getDiv);
     }
 }
+
+/*
+Script que muestra el nombre del manual seleccionado
+*/
+function cargarNombMan(event){
+    //Con esto cogemos el primer archivo
+    //Tenemos que poner el "target" para especificar que elemento es
+    var manualEntero = event.target.files[0];
+    //Asi guardamos solo el nombre del manual
+    var manualNombre = manualEntero.name;
+    //Con esto ponemos el valor del documento en el html
+    document.getElementById("nombreManual").innerHTML=manualNombre;
+    console.log(manualNombre);
+}
+
+//Para crear la etiqueta del textarea, que sirve para la descripcion
+function CrearDesc() {
+    //Asi creamos el textarea, pero no tiene estilos
+    var txtA = document.createElement("textarea");
+
+    var total = 500;
+
+    //Le damos un id y un nombre al textarea
+    txtA.id = "descripcion";
+    txtA.name = "descripcion";
+    //Le damos el placeholder y el tamaño maximo
+    txtA.placeholder = "Descripción de la herramienta..."
+    txtA.maxLength = total;
+
+    /*Si queremos que carge la etiqueta como "etiqueta" y no como texto,
+    tenemos que poner appendChild. 
+    Si por el contrario, ponemos innerHTML, solo va a ponerlo como texto*/
+    document.getElementById("desc").appendChild(txtA);
+}
+
+/*
+Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior
+para poder verla
+*/
+function cargarImg(source){
+    var imagen = source.target;
+    imagen.src = URL.createObjectURL(source.target.files[0]);
+}

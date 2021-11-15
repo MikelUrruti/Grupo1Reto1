@@ -17,7 +17,8 @@ function validarNombre(source, id) {
         "regexNom" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,30}$/,
         "regexApe" : /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ(?!\s)]{2,100}$/,
         //El nombre de usuario acepta cualquier letra, sin contar con tilde, y numeros
-        "regexUser" : /^[a-zA-Z0-9]{2,30}$/
+        "regexUser" : /^[a-zA-Z0-9]{2,30}$/,
+        "regexTi" : /^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚüÜ(?!\s)]{2,30}$/
     };
     
     //Si el tamaño es mayor a 0
@@ -35,6 +36,10 @@ function validarNombre(source, id) {
                     }
                 }else if(id == "usuario"){
                     if(regex["regexUser"].test(source.value)){
+                        return true;
+                    }
+                }else if(id == "titulo"){
+                    if(regex["regexTi"].test(source.value)){
                         return true;
                     }
                 }

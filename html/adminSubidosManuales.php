@@ -57,6 +57,10 @@ comprobarLoginAdmin();
                     <input type="submit" class="boton" value="Modificar" name="Modificar">
                     <input type="submit" class="boton" value="Eliminar" name="Eliminar">
                 </div>
+                <?php 
+                if(isset($_SESSION["exito"])){
+                    cargarExito("exito", "");
+                }  ?>
                         <?php
 
                             if (!isset($_GET["page"])) {

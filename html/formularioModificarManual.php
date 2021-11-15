@@ -21,6 +21,7 @@ comprobarLogin();
     <title>Modificar Manual - Fix Point</title>
     <script src="JS/validacion.js"></script>
     <script src="JS/modificarManual.js"></script>
+    <script src="JS/js.js"></script>
 </head>
 
 <body>
@@ -33,13 +34,15 @@ comprobarLogin();
             <h2 id="tituloManual">
                 Modificar Manual
             </h2>
-            <?php cargarExito("exito", ""); ?>
             <?php cargarError("errorGeneral", "text-align:center"); ?>
             <div class="apartados">
                 <p>
                     Titulo:
                 </p>
-                <input type="text" name="titulo" placeholder="" class="textoForm" id="nombre" />
+
+                <p></p>
+
+                <input type="text" name="titulo" placeholder="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
                 <?php cargarError("errorTitulo", ""); ?>
             </div>
             <div class="apartados">
@@ -48,7 +51,7 @@ comprobarLogin();
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
-                    <script src="JS/donar.js">
+                    <script src="JS/validacion.js">
                         validacionDesc();
                     </script>
                     <span id="restantes">500</span>
@@ -61,7 +64,7 @@ comprobarLogin();
                 <p>
                     Fichero:
                 </p>
-                <label for="portada" class="txtSubir">Subir Manual</label>
+                <label for="fichero" class="txtSubir">Subir Manual</label>
                 <input type="file" name="fichero" id="fichero" class="btnSubir" />
                 <?php cargarError("errorFichero", ""); ?>
             </div>
@@ -71,6 +74,12 @@ comprobarLogin();
                 </p>
                 <label for="portada" class="txtSubir">Subir Imagen</label>
                 <input type="file" name="portada" id="portada" class="btnSubir" />
+
+                <div id="imgDonde">
+                    <!--Imagen en la que se va a visualizar la imagen a subir-->
+                    <img id="imgVision" style="width: 200px; height: 200px;" />
+                </div>
+
                 <?php cargarError("errorPortada", ""); ?>
             </div>
             <input type="submit" value="Modificar Manual" name="modificar" class="boton" />

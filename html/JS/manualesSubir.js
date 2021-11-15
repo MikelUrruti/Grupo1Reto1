@@ -20,16 +20,3 @@ function validarCampo(source) {
         validar(source, validarTelefono(source.target));
     }
 }
-
-/*
-Script que muestra el nombre del manual seleccionado
-*/
-function cargarNombMan(event){
-    //Con esto cogemos el primer archivo
-    //Tenemos que poner el "target" para especificar que elemento es
-    var manualEntero = event.target.files[0];
-    //Asi guardamos solo el nombre del manual
-    var manualNombre = manualEntero.name;
-    //Con esto ponemos el valor del documento en el html
-    document.getElementById("nombreManual").innerHTML=manualNombre;
-}
