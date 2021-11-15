@@ -1,17 +1,18 @@
 window.onload = function () {
+    // validacionDesc();
     //Guardo los elementos en distintas variables
     titulo = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");
     fichero = document.getElementById("fichero");
     portada = document.getElementById("portada");
-    subirImg = document.getElementById("fichero");
+    // subirImg = document.getElementById("fichero");
 
     //Añado los eventlistener necesarios a las variables
     titulo.addEventListener("keyup", validarCampo);
-    // descripcion.addEventListener("keyup",  validacionDesc);
-    fichero.addEventListener("change",  validarCampo);
-    portada.addEventListener("change",  validarCampo);
-    subirImg.addEventListener("change", cargarImg);
+    descripcion.addEventListener("keyup",  validacionDesc());
+    fichero.addEventListener("change",  cargarImg);
+    portada.addEventListener("change",  cargarNombMan);
+    // subirImg.addEventListener("change", cargarImg);
 }
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
