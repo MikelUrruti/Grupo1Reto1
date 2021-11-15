@@ -1,7 +1,6 @@
 
 
 window.onload = function() {
-   cerrarMenuMovil();
     const txt = document.getElementById("txtEscribir");
     const articulo3 = document.getElementById("articulo3");
     

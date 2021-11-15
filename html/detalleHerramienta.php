@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/cssNav.css">
-    <link rel="stylesheet" href="css/alquiler.css">
+    <link rel="stylesheet" href="css/detalleHerramienta.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/paginador.css">
     <!--Favicon de las paginas-->
@@ -16,7 +16,7 @@
     <!--Para el tipo de letra-->
     <script src="JS/js.js"></script>
     <script src="JS/nav.js"></script>
-    <script src="JS/alquiler.js"></script>
+    <script src="JS/detalleHerramienta.js"></script>
 
     <title>Alquiler - Fix Point</title>
 </head>
@@ -32,48 +32,42 @@
                Es posible que no visualice la página correctamente.
            </h1>
        </noscript>
-    
-    <h1>Escoge la sección que quieras visualizar:</h1>
 
-    <a id="flechaIzqMovil" class="flechasMovil"> < </a>
-    <a id="flechaDchMovil" class="flechasMovil"> > </a>
 
     <section id="section1">
 
     <?php
         require("plantillasphp/operacionesDb.php");
         require("plantillasphp/paginadorFunciones.php");
-        $consulta = "select nombre,foto from Categoria";
-        $categorias = consultarDatoBD($consulta);
-        $numRegistros = 4;
-        
-        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
-        ?>
+        $consulta = "select * from Herramienta where nombre like ?";
+        $parametro = array($_GET["filtro"]);
+        $categorias = consultarDatoBD($consulta,$parametro);
+
+            foreach($categorias as $herramienta) {
+                echo "
+                    <img src='$herramienta[foto]'>
+                    <h1>$herramienta[nombre]</h1>
+                    <h2 id=descripcion>$herramienta[descripcion]</h2>
+                    <h2 id=stock>Stock: $herramienta[stock]</h2>
+                ";
+
+                if ($herramienta['stock']<=0) {
+                    echo "
+                        <a id=noDisponible href=#>no disponible</a>
+                    ";
+                }
+                else {
+                    echo "
+                        <a id=disponible href=#>alquilar</a>
+                    ";
+                }
+            }
+
+    ?>
+
+    
         </section>
-
-
-<!-- 
-        <a id="article1" href="herramientas.php?tipoHerramienta=Martillos">
-            <img src="img/categoria/martillo.png" alt="">
-            <h2>Martillos</h2>
-        </a>
-
-       <a id="article2">
-           <img src="img/categoria/caladora.png" alt="">
-           <h2>Caladoras</h2>
-       </a>
-       <a id="article3">
-            <img src="img/categoria/destornillador.png" alt="">
-            <h2>Destornilladores</h2>
-       </a>
-       <a id="article4">
-            <img src="img/categoria/alicate.png" alt="">
-            <h2>Alicates</h2>
-       </a> -->
-
-
        
-
 
     <?php 
         include ("plantillas/indexFooter.html");

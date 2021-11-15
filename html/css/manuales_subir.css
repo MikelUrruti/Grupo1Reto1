@@ -84,6 +84,12 @@ ESTILO DE MOVIL
 }
 /*Fin manuales*/
 
+/*Estilo del nombre del manual*/
+#nombreManual{
+    font-size: 8px;
+}
+/*Fin nombre*/
+
 /*
 
 ESTILO DE TABLET
@@ -140,6 +146,12 @@ ESTILO DE TABLET
         height: 25px;
     }
     /*Fin boton enviar*/
+
+    /*Estilo del nombre del manual*/
+    #nombreManual{
+        font-size: 15px;
+    }
+    /*Fin nombre*/
 }
 /*
 
@@ -186,4 +198,10 @@ ESTILO DE ORDENADOR
         font-size: x-large;
     }
     /*Fin placeholder*/
+
+    /*Estilo del nombre del manual*/
+    #nombreManual{
+        font-size: 20px;
+    }
+    /*Fin nombre*/
 }

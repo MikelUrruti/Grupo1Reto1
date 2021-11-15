@@ -6,6 +6,7 @@ body > h1 {
     margin-right: auto;
     width:fit-content;
     border-radius:0.5em;
+    padding: 5px;
 }
 
 #section1 {
@@ -22,8 +23,8 @@ body > h1 {
     text-decoration:none;
     margin:0.5em auto 1em;
     background-color:grey;
-    width: 20em;
-    height: 10em;
+    width: 100%;
+    height: 80%;
     border-radius: 0.5em;
     cursor:pointer;
     transition: 0.5s;
@@ -32,33 +33,37 @@ body > h1 {
 #section1 .enlaces img {
     overflow: hidden;
     display:block;
-    width:15em;
+    width:90%;
+    height: 80%;
     margin:auto;
     transition: 0.5s;
 }
 
 #section1 .enlaces:hover {
    filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
+   animation: bounce 1s;
    /* rgb(160, 0, 210) */
-   transition: 0.5s;
+   /* transition: 0.5s; */
 }
 
 #section1 .enlaces:hover > img{
-    transform:scale3d(1.6, 1, 1) rotate(20deg) translate(-5px, -5px);
-    filter: saturate(200%);
-    transition: 0.5s;    
+    /* width: 18em; */
+    /* transform:scale3d(1, 1, 1)  translate(1px, 1px); */
+    /* filter: saturate(200%); */
+    /* transition: 0.5s;   */
 }
 
 #section1 .enlaces h2 {
-    position: relative;
+    /* position: relative; */
     color:black;
     background-color:orange;
-    margin-left:auto;
-    margin-right:auto;
-    width: 100%;
+    /* margin-left:auto; */
+    /* margin-right:auto; */
+    margin: 0 auto;
+    /* width: 100%; */
     text-align:center;
     font-size: 2em; 
-    bottom:35px;
+    /* bottom:0; */
 }
 
 .flechasMovil {
@@ -107,13 +112,15 @@ body > h1 {
         grid-template-columns: repeat(2,1fr);
         grid-template-areas:
         "article1 article2"
-        "article3 article4";
+        "article3 article4"
+        "pag pag";
     }
     
     #article1{grid-area:article1;}
     #article2{grid-area:article2;}
     #article3{grid-area:article3;}
     #article4{grid-area:article4;}
+    #cantPag{grid-area: pag;}
 }
 
 
@@ -177,4 +184,22 @@ body > h1 {
         opacity: none;
         transform: translateX(0);
     }
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
 }
