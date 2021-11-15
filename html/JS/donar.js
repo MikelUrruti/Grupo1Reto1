@@ -4,7 +4,7 @@ window.onload = function () {
     subirImg = document.getElementById("subirImg");
 
     nombre.addEventListener("keyup", validarCampo);
-    // descripcion.addEventListener("keyup", validacionDesc);
+    descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
 
     //Para darle el maximo de caracteres mediante JS

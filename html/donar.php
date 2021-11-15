@@ -92,9 +92,8 @@
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
-                    <script src="JS/validacion.js">
-                        validacionDesc();
-                    </script>
+                    <!--No le llamamos desde aqui a la funcion de contar los caracteres, por que si no lo hace
+                        dos veces y no lo ejecuta nunca-->
                     <span id="restantes">500</span>
                     letras restantes
                 </p>

@@ -21,7 +21,6 @@ comprobarLogin();
     <title>Modificar Manual - Fix Point</title>
     <script src="JS/validacion.js"></script>
     <script src="JS/modificarManual.js"></script>
-    <script src="JS/js.js"></script>
 </head>
 
 <body>
@@ -49,11 +48,10 @@ comprobarLogin();
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
+                    <!--No hace falta ponerlo aqui, ya que esta puesto en el js llamandolo, si lo ponias aqui,
+                        lo ejecutaba dos veces o algo asi y no funcionaba-->
                     <span id="restantes">500</span>
                     letras restantes
-                    <script src="JS/validacion.js">
-                        validacionDesc();
-                    </script>
                 </p>
                 <textarea name="descripcion" class="textoForm" id="descripcion"></textarea>
                 <?php cargarError("errorDescripcion", ""); ?>
