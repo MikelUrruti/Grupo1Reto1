@@ -21,20 +21,4 @@ function validarImg($foto)
     return false;
     }
 }
-
-//Funcion creada para validar el tipo de manuales que se suben
-function validarManual($manual){
-    //Filtros para los manuales
-    $extensiones = array(
-        0 => ".doc",
-        1 => ".docx",
-        2 => "application/pdf"
-    );
-
-    //Si el archivo es uno de los aceptados
-    if(in_array($manual["type"], $extensiones)){
-        return true;
-    }
-    return false;
-}
 ?>
