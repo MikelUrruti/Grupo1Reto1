@@ -3,6 +3,7 @@
 require("../plantillasphp/validaciones.php");
 require("../plantillasphp/operacionesDb.php");
 require("../plantillasphp/redirecciones.php");
+require("../controladores/valImgMan.php");
 
 session_start();
 
@@ -29,11 +30,7 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
         //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorDescripcion"] = "La descripción debe tener menos de 500 carácteres.";
         $correcto = false;
-    } else if (!validarManual($_FILES["manual"])) {
-        //Este $_SESSION devuelve un mensaje de error
-        $_SESSION["errorManual"] = "Error";
-        $correcto = false;
-    }
+    } 
 
     //Si los tres pasos anteriores son correctos
     if ($correcto) {
@@ -75,8 +72,4 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
 
     redireccionar("../donar.php");
 }
-
-
-
-
 ?>
