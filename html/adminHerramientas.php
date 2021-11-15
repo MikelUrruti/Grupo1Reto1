@@ -39,7 +39,7 @@
            <img src="img/solicitud.png" alt="">
            <h2>Herramientas</h2>
         </a>
-        <a href="adminSubidosManuales.php" class="seccion">
+        <a href="adminDonaciones.php" class="seccion">
            <img src="img/manual.png" alt="">
            <h2>Donaciones</h2>
         </a>    
