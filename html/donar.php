@@ -76,10 +76,14 @@
 
                 <?php cargarError("errorImg", ""); ?>
 
+
+                
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <img id="imgVision" />
                 </div>
+
+
             </section>
 
             <section id="desc">
@@ -88,7 +92,7 @@
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
-                    <script src="JS/donar.js">
+                    <script src="JS/validacion.js">
                         validacionDesc();
                     </script>
                     <span id="restantes">500</span>
