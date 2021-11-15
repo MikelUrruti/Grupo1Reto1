@@ -49,7 +49,7 @@
         
         generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
         ?>
-    </section>
+        </section>
 
 
 <!-- 
