@@ -3,6 +3,8 @@
 require("plantillasphp/redirecciones.php");
 // require("controladores/paginador.php");
 require("plantillasphp/paginadorFunciones.php");
+require("plantillasphp/funcionesFormularios.php");
+// require("plantillasphp/operacionesDb.php");
 
 session_start();
 
@@ -59,52 +61,50 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
             <div id="buscadorFiltros">
 
-                <form action="controladores/filtrosUsuario.php" id="filtros" method="get">
+                <form action="controladores/filtrosHerramienta.php" id="filtros" method="get">
                     <div>
                         <h2 class="tituloFiltro">Categoria de la herramienta:</h2>
 
-                        <?php 
+                            <?php 
 
-                            $CategoriasFabricantes = consultarDatoBD("select distinct(categoria), distinct(fabricante) from Categoria;");
+                            // echo var_dump($_SESSION["filtrado"]);
 
-                            
+                                $categorias = consultarDatoBD("select nombre from Categoria;",array());
 
-                        ?>
+                                foreach($categorias as $categoria) {
+                            ?>
+
+                                <div>    
+                                    <input type="checkbox" class="checkbox" name="buscarCategoria[]" value="<?php echo $categoria["nombre"]; ?>" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array($categoria["nombre"],$_SESSION["checkActivos"])) {
+                                        echo "checked";
+                                    } ?>>
+                                    <label for=""><?php echo $categoria["nombre"]; ?></label>
+                                </div>
+
+                            <?php } ?>
+
                         
-
-                        <!-- <div>    
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="usuario" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("usuario",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Usuario</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="administrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("administrador",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Administrador</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarTipo[]" value="superadministrador" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("superadministrador",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">SuperAdministrador</label>
-                        </div> -->
                     </div>
                     <div>
-                        <h2 class="tituloFiltro">Estado del usuario:</h2>
-                        <div>
-                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="activo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("activo",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Activo</label>
+                        <h2 class="tituloFiltro">Estado de la herramienta:</h2>
+                        
+                        <div>   
+
+                                <input type="checkbox" class="checkbox" name="buscarEstado[]" value="catalogada" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("catalogada",$_SESSION["checkActivos"])) {
+                                    echo "checked";
+                                } ?>>
+                                <label for="">catalogada</label>
+
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" name="buscarActivos[]" value="inactivo" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("inactivo",$_SESSION["checkActivos"])) {
-                                echo "checked";
-                            } ?>>
-                            <label for="">Inactivo</label>
+
+                                <input type="checkbox" class="checkbox" name="buscarEstado[]" value="descatalogada" id="" <?php if (isset($_SESSION["checkActivos"]) && in_array("descatalogada",$_SESSION["checkActivos"])) {
+                                    echo "checked";
+                                } ?>>
+                                <label for="">descatalogada</label>
+
                         </div>
+
                     </div>
 
                 </form>
@@ -119,6 +119,13 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
                     <input type="submit" class="boton" value="Eliminar" name="Eliminar">
                 </div>
                         <?php
+
+                            if (isset($_SESSION["errorAccion"])) {
+                                
+                                cargarError("errorAccion","");
+                                unset($_SESSION["errorAccion"]);
+
+                            }
 
                             if (!isset($_GET["page"])) {
 
@@ -151,7 +158,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             } else {
 
-                                $resultados = consultarDatoBD("select nombre, fabricante, categoria, stock, foto, descripcion from Herramienta;", array());
+                                $resultados = consultarDatoBD("select nombre, categoria, stock, foto, estado, descripcion from Herramienta;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -165,7 +172,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Fabricante","Categoria","Stock","Foto","Descripcion"),"page",array(),array("foto"),array(),array("../herramientas/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Categoria","Stock","Foto","Estado","Descripcion"),"page",array(),array("foto"),array(),array("../herramientas/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
 
                             // if (!$_SESSION["mantenerFiltrado"]) {
 
