@@ -33,13 +33,15 @@ comprobarLogin();
             <h2 id="tituloManual">
                 Modificar Manual
             </h2>
-            <?php cargarExito("exito", ""); ?>
             <?php cargarError("errorGeneral", "text-align:center"); ?>
             <div class="apartados">
                 <p>
                     Titulo:
                 </p>
-                <input type="text" name="titulo" placeholder="" class="textoForm" id="nombre" />
+
+                <p></p>
+
+                <input type="text" name="titulo" placeholder="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
                 <?php cargarError("errorTitulo", ""); ?>
             </div>
             <div class="apartados">
@@ -48,7 +50,7 @@ comprobarLogin();
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
-                    <script src="JS/donar.js">
+                    <script src="JS/validacion.js">
                         validacionDesc();
                     </script>
                     <span id="restantes">500</span>

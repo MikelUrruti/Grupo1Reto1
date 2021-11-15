@@ -1,6 +1,6 @@
 window.onload = function () {
     //Guardo los elementos en distintas variables
-    titulo = document.getElementById("nombre");
+    titulo = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");
     fichero = document.getElementById("fichero");
     portada = document.getElementById("portada");
