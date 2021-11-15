@@ -1,7 +1,7 @@
 <?php
 
-    require_once("../plantillasphp/redirecciones.php");
-    require_once("../plantillasphp/operacionesDb.php");
+    require("../plantillasphp/redirecciones.php");
+    require("../plantillasphp/operacionesDb.php");
 
     session_start();
     

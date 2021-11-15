@@ -11,6 +11,24 @@
 
     }
 
+    function comprobarLoginAdmin() {
+
+        if (!isset($_SESSION["email"]) || !isset($_SESSION["usuario"]) || !isset($_SESSION["tipo"])) {
+        
+            redireccionar("login.php");    
+    
+        } else {
+            
+            if ($_SESSION["tipo"] != "administrador" && $_SESSION["tipo"] != "superadministrador") {
+                
+                redireccionar("index.php");
+
+            }
+
+        }
+
+    }
+
     //Funcion que nos envia a un fichero en concreto
     function redireccionar($fichero) {
 
