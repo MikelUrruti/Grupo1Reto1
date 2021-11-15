@@ -100,3 +100,16 @@ function validacionDesc() {
         restantes.innerHTML=""+valor;
     }
 }
+
+function validarStock(source) {
+
+    for (let index = 0; index <= source.value.length; index++) {
+        // Se asegura que se introduzca un numero
+        if (isNaN(source.value.charAt(index))) {
+            return false;
+        }
+    }
+
+    return true;
+
+}
