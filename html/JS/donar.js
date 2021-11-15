@@ -1,10 +1,10 @@
 window.onload = function () {
     nombre = document.getElementById("nombre");
-    var descripcion = document.getElementById("descripcion");
-    var subirImg = document.getElementById("subirImg");
+    descripcion = document.getElementById("descripcion");
+    subirImg = document.getElementById("subirImg");
 
     nombre.addEventListener("keyup", validarCampo);
-    descripcion.addEventListener("keyup", validacionDesc);
+    // descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
 
     //Para darle el maximo de caracteres mediante JS

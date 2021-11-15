@@ -21,6 +21,7 @@ comprobarLogin();
     <title>Modificar Manual - Fix Point</title>
     <script src="JS/validacion.js"></script>
     <script src="JS/modificarManual.js"></script>
+    <script src="JS/js.js"></script>
 </head>
 
 <body>
@@ -63,7 +64,7 @@ comprobarLogin();
                 <p>
                     Fichero:
                 </p>
-                <label for="portada" class="txtSubir">Subir Manual</label>
+                <label for="fichero" class="txtSubir">Subir Manual</label>
                 <input type="file" name="fichero" id="fichero" class="btnSubir" />
                 <?php cargarError("errorFichero", ""); ?>
             </div>
@@ -73,6 +74,12 @@ comprobarLogin();
                 </p>
                 <label for="portada" class="txtSubir">Subir Imagen</label>
                 <input type="file" name="portada" id="portada" class="btnSubir" />
+
+                <div id="imgDonde">
+                    <!--Imagen en la que se va a visualizar la imagen a subir-->
+                    <img id="imgVision" style="width: 200px; height: 200px;" />
+                </div>
+
                 <?php cargarError("errorPortada", ""); ?>
             </div>
             <input type="submit" value="Modificar Manual" name="modificar" class="boton" />

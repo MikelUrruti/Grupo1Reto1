@@ -4,12 +4,14 @@ window.onload = function () {
     descripcion = document.getElementById("descripcion");
     fichero = document.getElementById("fichero");
     portada = document.getElementById("portada");
+    subirImg = document.getElementById("fichero");
 
     //Añado los eventlistener necesarios a las variables
     titulo.addEventListener("keyup", validarCampo);
-    descripcion.addEventListener("keyup",  validacionDesc);
+    // descripcion.addEventListener("keyup",  validacionDesc);
     fichero.addEventListener("change",  validarCampo);
     portada.addEventListener("change",  validarCampo);
+    subirImg.addEventListener("change", cargarImg);
 }
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
