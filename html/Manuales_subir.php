@@ -39,7 +39,7 @@
         comprobarLogin();    
     ?>
 
-    <form enctype="multipart/form-data" action="controladores/donarHerramienta.php" method="post">
+    <form enctype="multipart/form-data" action="controladores/subManVal.php" method="post">
         <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
         </h2>

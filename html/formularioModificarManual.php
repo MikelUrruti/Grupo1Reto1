@@ -53,7 +53,7 @@ comprobarLogin();
                     <span id="restantes">500</span>
                     letras restantes
                 </p>
-                <textarea name="descripcion" class="textoForm" id="descripcion"></textarea>
+                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion" class="textoForm"></textarea>
                 <?php cargarError("errorDescripcion", ""); ?>
             </div>
             <div class="apartados">

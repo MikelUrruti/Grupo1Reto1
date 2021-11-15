@@ -249,7 +249,7 @@
         for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
             
             print('<article class="manpos">');
-            print('<img class="manimg" src="img/ImagenPDF.png" />');
+            print('<img class="manimg" src="../manuales/portadas/'.$consulta[$i]['portada'].'" />');
             print('<p>'.$consulta[$i]['titulo'].'</p>');
             print("</article>");
 

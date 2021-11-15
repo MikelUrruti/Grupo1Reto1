@@ -3,10 +3,15 @@ window.onload = function () {
     telefono = document.getElementById("telefono");
     subir_Man = document.getElementById("subir_Man");
 
+    //Comprobamos si el usuario tiene un telefono o no
+    if(telefono.value.length==9){
+        //Si el usuario tiene telefono bloquea la caja
+        telefono.disabled = true;
+    }
+
     //Añado los eventlistener necesarios a las variables
     telefono.addEventListener("keyup", validarCampo);
     subir_Man.addEventListener("change",  cargarNombMan);
-
 
 }
 
@@ -15,7 +20,6 @@ function validarCampo(source) {
 
     //Se guarda el id de la caja que se haya seleccionado
     let cajaId = source.target.id;
-    console.log(telefono.value);
     if (cajaId == telefono.id) {
         validar(source, validarTelefono(source.target));
     }
