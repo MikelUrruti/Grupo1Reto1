@@ -12,7 +12,7 @@
         
     } else {
         
-        if (count($_POST["registrosSeleccionados"]) > 0) {
+        if (isset($_POST["registrosSeleccionados"])) {
         
             if (isset($_POST["Modificar"])) {
     
@@ -28,39 +28,9 @@
                 
                 $parametrosEliminar = array();
     
-                $consultaEliminar = "delete from Herramienta where nombre in (";
-    
-                $contador = 0;
+                $consultaEliminar = "update Herramienta set estado = ? where nombre in (";
 
-                $parametrosEliminarFotos = array();
-
-                $eliminarFotos = "select foto from Herramienta where nombre in (";
-                
-                foreach ($_POST["registrosSeleccionados"] as $registroSeleccionado) {
-
-                    array_push($parametrosEliminarFotos,$registroSeleccionado);
-
-                    if (count($_POST["registrosSeleccionados"])-1 == $contador) {
-                                
-                        $eliminarFotos .= "?);";
-    
-                    } else {
-    
-                        $eliminarFotos .= "?, ";
-    
-                    }
-    
-                    $contador++;
-
-                }
-
-                $eliminarFotos = consultarDatoBD($eliminarFotos,$parametrosEliminarFotos);
-
-                foreach ($eliminarFotos as $eliminaFoto) {
-                    
-                    unlink("../../herramientas/".$eliminaFoto["foto"]);
-
-                }
+                array_push($parametrosEliminar,"descatalogada");
 
                 $contador = 0;
     
@@ -83,12 +53,6 @@
                 }
     
                 $resultados = manipularDatoBD($consultaEliminar,$parametrosEliminar);
-    
-                if ($resultados === 1451) {
-                
-                    $_SESSION["errorAccion"] = "No se pueden eliminar las herramientas que tengan alquileres asociadas a las mismas";
-    
-                }
 
                 redireccionar("../adminHerramientasAlmacen.php");
     
