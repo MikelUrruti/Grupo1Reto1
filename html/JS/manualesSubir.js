@@ -6,13 +6,16 @@ window.onload = function () {
     //Añado los eventlistener necesarios a las variables
     telefono.addEventListener("keyup", validarCampo);
     subir_Man.addEventListener("change",  cargarNombMan);
+
+
 }
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
 function validarCampo(source) {
+
     //Se guarda el id de la caja que se haya seleccionado
     let cajaId = source.target.id;
-
+    console.log(telefono.value);
     if (cajaId == telefono.id) {
         validar(source, validarTelefono(source.target));
     }
@@ -29,4 +32,5 @@ function cargarNombMan(event){
     var manualNombre = manualEntero.name;
     //Con esto ponemos el valor del documento en el html
     document.getElementById("nombreManual").innerHTML=manualNombre;
+    console.log(manualNombre);
 }
