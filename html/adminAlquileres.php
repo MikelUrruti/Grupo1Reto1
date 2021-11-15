@@ -4,7 +4,7 @@
 
     session_start();
 
-    comprobarLogin();
+    comprobarLoginAdmin();
 
 ?>
 
@@ -23,7 +23,7 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
-    <title>Gestionar Manuales</title>
+    <title>Gestionar Alquileres</title>
 </head>
 <body>
     
