@@ -51,30 +51,6 @@
         ?>
         </section>
 
-
-<!-- 
-        <a id="article1" href="herramientas.php?tipoHerramienta=Martillos">
-            <img src="img/categoria/martillo.png" alt="">
-            <h2>Martillos</h2>
-        </a>
-
-       <a id="article2">
-           <img src="img/categoria/caladora.png" alt="">
-           <h2>Caladoras</h2>
-       </a>
-       <a id="article3">
-            <img src="img/categoria/destornillador.png" alt="">
-            <h2>Destornilladores</h2>
-       </a>
-       <a id="article4">
-            <img src="img/categoria/alicate.png" alt="">
-            <h2>Alicates</h2>
-       </a> -->
-
-
-       
-
-
     <?php 
         include ("plantillas/indexFooter.html");
     ?>

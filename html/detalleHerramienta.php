@@ -31,46 +31,42 @@
                                <br>
                Es posible que no visualice la página correctamente.
            </h1>
-       </noscript>
+    </noscript>
 
 
     <section id="section1">
-
-    <?php
-        require("plantillasphp/operacionesDb.php");
-        require("plantillasphp/paginadorFunciones.php");
-        $consulta = "select * from Herramienta where nombre like ?";
-        $parametro = array($_GET["filtro"]);
-        $categorias = consultarDatoBD($consulta,$parametro);
+        <?php
+            require("plantillasphp/operacionesDb.php");
+            require("plantillasphp/paginadorFunciones.php");
+            $consulta = "select * from Herramienta where nombre like ?";
+            $parametro = array($_GET["filtro"]);
+            $categorias = consultarDatoBD($consulta,$parametro);
+            
+            if (isset($_SESSION["exito"])) {
+               echo  "<script>alert('$_SESSION[exito]')</script>";
+               $_SESSION["exito"] = null;
+            }
 
             foreach($categorias as $herramienta) {
                 echo "
-                    <img src='$herramienta[foto]'>
+                    <img src='../herramientas/$herramienta[foto]'>
                     <h1>$herramienta[nombre]</h1>
-                    <h2 id=descripcion>$herramienta[descripcion]</h2>
-                    <h2 id=stock>Stock: $herramienta[stock]</h2>
-                ";
+                    <h2 id=descripcion>$herramienta[descripcion]</h2>";
 
-                if ($herramienta['stock']<=0) {
-                    echo "
-                        <a id=noDisponible href=#>no disponible</a>
-                    ";
+                    if ($herramienta['stock']<=0) 
+                        echo 
+                        "<h2 style=color:red; id=stock>No disponible</h2>
+                        <a id=noDisponible>no disponible</a>";
+                    else 
+                        echo
+                        "<h2 style=color:green; id=stock>Disponible</h2>
+                        <a href='controladores/solicitarHerramienta.php?filtro=$herramienta[nombre]'>alquilar</a>";                    
                 }
-                else {
-                    echo "
-                        <a id=disponible href=#>alquilar</a>
-                    ";
-                }
-            }
-
-    ?>
-
-    
-        </section>
-       
-
+        ?>
+    </section>
+       <br>
     <?php 
-        include ("plantillas/indexFooter.html");
+        include ("plantillas/indexFooter.html");    
     ?>
 
 </body>
