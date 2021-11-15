@@ -6,7 +6,7 @@ require("plantillasphp/paginadorFunciones.php");
 
 session_start();
 
-comprobarLogin();
+comprobarLoginAdmin();
 
 ?>
 
