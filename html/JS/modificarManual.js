@@ -1,17 +1,16 @@
 window.onload = function () {
-    // validacionDesc();
     //Guardo los elementos en distintas variables
     titulo = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");
-    //fichero = document.getElementById("fichero");
-    portada = document.getElementById("portada");
+    fichero = document.getElementById("fichero");
+    //portada = document.getElementById("portada");
     //subirImg = document.getElementById("fichero");
 
     //Añado los eventlistener necesarios a las variables
     titulo.addEventListener("keyup", validarCampo);
     //Al no estar este comentado lo ejecuta una vez
     descripcion.addEventListener("keyup",  validacionDesc);
-    //fichero.addEventListener("change",  validarCampo);
+    fichero.addEventListener("change", cargarImg);
     //portada.addEventListener("change",  validarCampo);
     //subirImg.addEventListener("change", cargarImg);
 }

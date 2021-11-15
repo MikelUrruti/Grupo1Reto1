@@ -11,6 +11,8 @@ comprobarLogin();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Favicon de las paginas-->
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/menuAdmin.css">
@@ -19,6 +21,8 @@ comprobarLogin();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/formularioModificarManual.css">
     <title>Modificar Manual - Fix Point</title>
+    <!--Scripts-->
+    <script src="JS/js.js"></script>
     <script src="JS/validacion.js"></script>
     <script src="JS/modificarManual.js"></script>
 </head>
@@ -63,7 +67,6 @@ comprobarLogin();
 
                 <input type="file" name="fichero" id="fichero" class="btnSubir" />
                 <label for="fichero" class="txtSubir">Subir Manual</label>
-                
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <img id="imgVision" style="width: 200px; height: 200px;" />
@@ -83,7 +86,7 @@ comprobarLogin();
                 <div id="img Donde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
-                    <img id="imgVision" style="width: 200px; height: 200px;" />
+                    <img id="imgVision23" style="width: 200px; height: 200px;" />
                 </div>
 
                 <?php cargarError("errorPortada", ""); ?>
