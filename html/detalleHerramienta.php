@@ -49,18 +49,28 @@
 
             foreach($categorias as $herramienta) {
                 echo "
-                    <img src='../herramientas/$herramienta[foto]'>
-                    <h1>$herramienta[nombre]</h1>
-                    <h2 id=descripcion>$herramienta[descripcion]</h2>";
+                <img src='../herramientas/$herramienta[foto]' alt='$herramienta[nombre]'>
+                <h1>$herramienta[nombre]</h1>
+                <h2 id=descripcion>$herramienta[descripcion]</h2>
+                <div id=imgGrande>
+                    <span>&times;</span>
+                    <img>
+                    <div></div>
+                </div>
+                ";
 
                     if ($herramienta['stock']<=0) 
                         echo 
                         "<h2 style=color:red; id=stock>No disponible</h2>
                         <a id=noDisponible>no disponible</a>";
-                    else 
+                    else {
                         echo
-                        "<h2 style=color:green; id=stock>Disponible</h2>
-                        <a href='controladores/solicitarHerramienta.php?filtro=$herramienta[nombre]'>alquilar</a>";                    
+                        "<h2 style=color:green; id=stock>Disponible</h2>";
+                        if (isset($_SESSION["usuario"]))
+                            echo "<a href='controladores/solicitarHerramienta.php?filtro=$herramienta[nombre]'>alquilar</a>";
+                        else
+                            echo "<a href=login.php>Iniciar Sesión</a>";                
+                    }
                 }
         ?>
     </section>
