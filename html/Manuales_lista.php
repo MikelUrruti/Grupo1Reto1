@@ -23,7 +23,7 @@
     include("plantillas/indexNav.php")
     ?>
 
-    <form>
+    <form action="controladores/buscarSubidoManual.php" method="get">
         <h1 id="titManLis">
             Escoge el manual que quieras visualizar
         </h1>
@@ -31,7 +31,7 @@
         <section id="buscBot">
             <!--Caja del buscador, con el campo de texto y la imagen de la lupa-->
             <article id="buscador">
-                <input id="txtbus" type="text" placeholder="Buscar manuales..." />
+                <input id="txtbus" type="text" placeholder="Buscar manuales..." name="Buscar" />
                 <img id="lupa" src="img/lupa.png" />
             </article>
 

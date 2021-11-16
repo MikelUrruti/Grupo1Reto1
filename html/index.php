@@ -36,7 +36,21 @@
     <!-- FIN HEADER COMIENZA CUERPO -->
     <section id="section1">
         <h1 id="txtEscribir"></h1>
-        <a href="registro.php">comienza</a>
+
+        <?php 
+        
+            if (!isset($_SESSION["email"]) && !isset($_SESSION["usuario"])) {
+
+        ?>        
+                <a href="registro.php">comienza</a>
+
+        <?php
+
+            }
+
+        ?>
+
+        
     </section>
 
     <section id="section2">

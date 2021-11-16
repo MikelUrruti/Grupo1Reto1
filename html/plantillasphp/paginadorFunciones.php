@@ -226,7 +226,7 @@
 
     }
     // Recoge consulta, página actual y el límite
-    function mostrarmanuales($consulta,$page,$nummanuales){
+    function mostrarmanuales($consulta,$page,$nummanuales,$rutaFichero,$rutaPortada){
 
         print('<section id="cajaMan">');
 
@@ -248,10 +248,15 @@
 
         for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
             
-            print('<article class="manpos">');
-            print('<img class="manimg" src="../manuales/portadas/'.$consulta[$i]['portada'].'" />');
+            // print('<article class="manpos">');
+            // print("<a href='".$rutaFichero[0]."".$consulta[$i]["fichero"]."' download class='boton botonDescargar'><img class='manimg' src='".$rutaPortada[0]."".$consulta[$i]['portada']."' />");
+            // print('<p>'.$consulta[$i]['titulo'].'</p>');
+            // print("</article>");
+
+            print("<a href='".$rutaFichero[0]."".$consulta[$i]["fichero"]."' download class='manpos'>");
+            print("<img class='manimg' src='".$rutaPortada[0]."".$consulta[$i]['portada']."' />");
             print('<p>'.$consulta[$i]['titulo'].'</p>');
-            print("</article>");
+            print("</a>");
 
         }
 

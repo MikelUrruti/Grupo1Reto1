@@ -73,16 +73,6 @@ require("plantillasphp/funcionesFormularios.php");
 
             </div>
 
-            <!--Estan en un grupo para que se vean mejor en el ordenador-->
-            <div class="usudat_NewUsu">
-                <p>
-                    Numero de telefono:
-                </p>
-                <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
-                <?php cargarError("errorTelefono", ""); ?>
-
-            </div>
-
             <div class="grupodatos_NewUsu">
                 <div class="usudat_NewUsu">
                     <p>
@@ -100,6 +90,32 @@ require("plantillasphp/funcionesFormularios.php");
                     <input id="confPassword" name="confirmarPassword" class="textoForm" type="password" placeholder="**********" />
                 </div>
             </div>
+
+            <div class="usudat_NewUsu">
+                <p>
+                    Numero de telefono:
+                </p>
+                <input id="telefono" name="telefono" class="textoForm" type="tel" placeholder="666777888" />
+                <?php cargarError("errorTelefono", ""); ?>
+
+            </div>
+
+            <div class="usudat_NewUsu">
+
+                <div>
+                    <input type="checkbox" name="condiciones" id=""><label for="condiciones">He leido y acepto los terminos de <a href="../condiciones/Condiciones de uso.docx" download>condiciones de uso</a>.</label> <span class="obligatorio">*</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="montaje" id=""><label for="montaje">He leido acerca de las reglas del <a href="../condiciones/proceso de montaje.docx" download>proceso de montaje</a>.</label> <span class="obligatorio">*</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="desmontaje" id=""><label for="desmontaje">He leido acerca de las reglas del <a href="../condiciones/proceso de desmontaje.docx" download>proceso de desmontaje</a>.</label> <span class="obligatorio">*</span>
+                </div>
+
+                <?php cargarError("errorCondiciones", ""); ?>
+
+            </div>
+
         </div>
         <input class="boton" type="submit" value="Crear cuenta" name="Registrar" />
     </form>
