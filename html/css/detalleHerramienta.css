@@ -42,6 +42,7 @@
 #imgGrande img {
     margin:auto;
     display:block;
+    border-bottom: none;
     width:100%;
     max-width:700px;
 }
@@ -144,6 +145,11 @@
 
     #section1 h1 {
         grid-area:titulo;
+        font-size: 3em;
+    }
+
+    #section1 h2 {
+        font-size: 1.5em;
     }
 
     #section1 h2:nth-child(1) {
