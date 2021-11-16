@@ -80,6 +80,12 @@
             <input class="textoForm" id="telefono" type="tel" value="<?php echo $_SESSION["telefono"]; ?>" placeholder="629374638" size="9" maxlength="9" title="Debe empezar con: 6, 7 o 9"/>
         </div>
 
+        <div id="cajaFoto">
+            <!--El boton para seleccionar la imagen que se quiera-->
+            
+            <!--El sitio donde se va a previsualizar la imagen seleccionada-->
+        </div>
+
         <div id="cajaBot">
             <!--Los dos tipos de botones-->
             <input id="subir_Man" type="file" name="manual"/>
