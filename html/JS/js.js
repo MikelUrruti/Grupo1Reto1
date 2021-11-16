@@ -62,6 +62,10 @@ Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen ant
 para poder verla
 */
 function cargarImg(event){
-    var imagen = document.getElementById("imgVision");
-    imagen.src = URL.createObjectURL(event.target.files[0]);
+    var imagenF = document.getElementById("imgFichero");
+        if(event.target.id == "fichero"){
+            imagenF.src = URL.createObjectURL(event.target.files[0]);
+        }else if(event.target.id == "portada"){
+            imagenF.src = URL.createObjectURL(event.target.files[0]);
+        }
 }

@@ -38,12 +38,13 @@ comprobarLogin();
                 Modificar Manual
             </h2>
             <?php cargarError("errorGeneral", "text-align:center"); ?>
+            <?php cargarError("errorFoto", ""); ?>
             <div class="apartados">
                 <p>
                     Titulo:
                 </p>
 
-                <input type="text" name="titulo" placeholder="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
+                <input type="text" name="titulo" value="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
                 <?php cargarError("errorTitulo", ""); ?>
             </div>
             <div class="apartados">
@@ -69,7 +70,7 @@ comprobarLogin();
                 <label for="fichero" class="txtSubir">Subir Manual</label>
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <img id="imgVision" style="width: 200px; height: 200px;" />
+                    <img id="imgFichero" class="cajaImg" style="width: 200px; height: 200px;" />
                 </div>
 
                 <?php cargarError("errorFichero", ""); ?>
@@ -86,7 +87,7 @@ comprobarLogin();
                 <div id="img Donde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
-                    <img id="imgVision23" style="width: 200px; height: 200px;" />
+                    <img id="imgPortada" class="cajaImg" style="width: 200px; height: 200px;" />
                 </div>
 
                 <?php cargarError("errorPortada", ""); ?>

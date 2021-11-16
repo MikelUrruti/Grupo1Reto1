@@ -5,70 +5,77 @@ require("../plantillasphp/redirecciones.php");
 require("../controladores/valImgMan.php");
 session_start();
 
-//Ruta para almacenar las imagenes
-//La ruta de origen es de donde viene la foto
-$rutaOrigenP = $_FILES['portada']['tmp_name'];
-//La ruta a la que queremos mandar la foto
-$rutaDestinoP = '../img/herramienta/' . $_FILES['portada']['name'];
-
-$rutaOrigenF = $_FILES['fichero']['tmp_name'];
-$rutaDestinoF = '../img/herramienta/' . $_FILES['fichero']['name'];
-
 //Comprobaciones
 //isset => la variable esta declarada y no es nulo
-if (isset($_POST["titulo"]) && isset($_SESSION["descripcion"]) && isset($_FILES['fichero']) && isset($_FILES['portada'])) {
+if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fichero']) && isset($_FILES['portada'])) {
     $correcto = true;
-    if (!validarNombre($_POST["titulo"])) {
-        //Este $_SESSION devuelve un mensaje de error
-        $_SESSION["errorTitulo"] = "No se permiten numeros ni caracteres especiales. Deber contener de 2 a 30 caracteres.";
+    if ($_POST["titulo"] == "") {
+        
+        $_SESSION["errorTitulo"] = "Debes indicar el titulo del manual";
         $correcto = false;
-    } else if (!validarManual($_FILES["fichero"])) {
-        //Este $_SESSION devuelve un mensaje de error
-        $_SESSION["errorManual"] = "Debe introducir un manual.";
+
+    } if ($_POST["descripcion"] == "") {
+        
+        $_SESSION["errorDescripcion"] = "Debes indicar la descripcion de la herramienta";
         $correcto = false;
-    } else if (!validarImg($_FILES["portada"])) {
-        $_SESSION["errorManual"] = "Debe introducir un manual.";
+
+    } if ($_FILES['fichero']["name"] == "") {
+        
+        $_SESSION["errorFichero"] = "el fichero debe ser .pdf o .docx";
         $correcto = false;
+
+    } if ($_FILES['portada']["name"] == "") {
+            
+        $_SESSION["errorFoto"] = "Debes seleccionar una foto para poder modificar la categoria";
+        $correcto = false;
+
     }
-    //Si los tres pasos anteriores son correctos
     if ($correcto) {
-        try {
+        if (validarManual($_FILES['fichero']) || validarImg($_FILES["portada"]) || validarNombre($_POST["titulo"])) {
+            //Ruta para almacenar las imagenes
+            //La ruta de origen es de donde viene la foto
+            $rutaOrigenP = $_FILES['portada']['tmp_name'];
+            //La ruta a la que queremos mandar la foto
+            $rutaDestinoP = '../img/herramienta/' . $_FILES['portada']['name'];
+
+            $rutaOrigenF = $_FILES['fichero']['tmp_name'];
+            $rutaDestinoF = '../img/herramienta/' . $_FILES['fichero']['name'];
+        }
+        try{
             // hago una copia de la imagen subida y la almaceno
-            move_uploaded_file($rutaOrigenP, $rutaDestinoP);
-            move_uploaded_file($rutaOrigenF, $rutaDestinoF);
-            $correcto2 = true;
-        } catch (Exception $e) {
-            $correcto2 = false;
+            move_uploaded_file($rutaOrigen, $rutaDestino);
+        }catch (Exception $e) {
+            $correcto = false;
         }
-        if ($correcto2) {
-            // $nomImg = consultarDatoBD("select " .$_SESSION["manualSeleccionado"]. " from Manual");
-            $parametros = array($_POST["titulo"], $_POST["descripcion"], $_FILES["fichero"], $_FILES["portada"]);
-            //Los signos de interrogacion, en este caso, cogen los valores de la primera variable que encuentre, en orden de creacion de esas subvariables
-            $consulta = manipularDatoBD("insert into Manual(titulo,descripcion,fichero,portada) values (?, ?, ?, ?)", $parametros);
+        if ($correcto) {
 
-            if (is_integer($consulta)) {
-                //Mensaje de error al insertar la herramienta
-                $_SESSION["errorGeneral"] = erroresInsertar($consulta, array("titulo", "descripcion", "fichero", "portada"));
-                echo $_SESSION["errorGeneral"];
+            $categoriaAnterior = consultarDatoBD("select * from Manual where titulo = ?;",array($_POST["titulo"]));
+            $crearCategoria = manipularDatoBD("update Manual set titulo = ?, descripcion = ?, fichero = ?, portada = ? where nombre = ?;",array($_POST["titulo"], $_POST["descripcion"], $_FILES['fichero'].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION), $_FILES['portada'].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION), $_POST["titulo"]));
+            
+            if ($crearCategoria === 1062) {
+                    
+                $_SESSION["errorTitulo"]=erroresInsertar(1062,array("nombre"));
+                unlink($rutaDestinoP);
+                unlink($rutaDestinoF);
 
-                redireccionar("../formularioModificarManual.php");
-            } else {
-                //Mensaje cuando subes bien la herramienta
-                $_SESSION["exito"] = "Se ha modificado el manual de manera exitosa";
+            }else {
 
-                redireccionar("adminSubidosManuales.php");
+                unlink("../../categoria/".$categoriaAnterior[0]["foto"]);
+                
+                $_SESSION["nombreHerramienta"] = $_POST["nombre"];
+
+                $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
+
             }
-        } else {
-            //Mensaje de error cuando la BD esta desconectada o algo asi
-            $_SESSION["errorGeneral"] = "Error al subir la imágen. Intentelo más tarde";
+        }else {
+                
+            $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
         }
-        redireccionar("adminSubidosManuales.php");
-    } else {
-
-        redireccionar("adminSubidosManuales.php");
+    }else {
+            
+        $_SESSION["errorFichero"] = "La foto no puede pesar mas de 32MB y su extension debe ser: PDF, DOC o DOCX";
+        $_SESSION["errorPortada"] = "La portada no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
     }
-} else {
-
-    redireccionar("adminSubidosManuales.php");
 }
+redireccionar("../adminSubidosManuales.php");
 ?>
