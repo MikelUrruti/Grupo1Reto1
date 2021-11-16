@@ -55,7 +55,7 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["sto
 
                 $categoriaAnterior = consultarDatoBD("select * from Herramienta where nombre = ?;",array($_SESSION["nombreHerramienta"]));
                 
-                $crearCategoria = manipularDatoBD("update Herramienta set nombre = ?, descripcion = ?, categoria = ?, stock = ?, foto = ? where nombre = ?;",array($_POST["nombre"],$_POST["descripcion"],$_POST["categoria"],$_POST["stock"],$_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION),$_SESSION["nombreHerramienta"]));
+                $crearCategoria = manipularDatoBD("update Herramienta set nombre = ?, descripcion = ?, categoria = ?, stock = ?, foto = ?, estado = ? where nombre = ?;",array($_POST["nombre"],$_POST["descripcion"],$_POST["categoria"],$_POST["stock"],$_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION),$_POST["estado"],$_SESSION["nombreHerramienta"]));
 
                 if ($crearCategoria === 1062) {
                     
