@@ -1,5 +1,11 @@
 /* Version Movil  */
 
+body, html {
+
+    min-height: 100vh;
+
+}
+
 footer{
     background-color: black;
     width: 100%;
@@ -46,6 +52,7 @@ footer p {
     footer p {
         font-size: 0.8rem;
     }
+
 }
 
 /* Version PC */
