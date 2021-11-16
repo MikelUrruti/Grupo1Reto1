@@ -12,7 +12,7 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
         
         $_SESSION["errorTitulo"] = "Debes indicar el titulo del manual";
         $correcto = false;
-
+        
     } if ($_POST["descripcion"] == "") {
         
         $_SESSION["errorDescripcion"] = "Debes indicar la descripcion de la herramienta";
@@ -49,7 +49,9 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
         if ($correcto) {
 
             $categoriaAnterior = consultarDatoBD("select * from Manual where titulo = ?;",array($_POST["titulo"]));
-            $crearCategoria = manipularDatoBD("update Manual set titulo = ?, descripcion = ?, fichero = ?, portada = ? where nombre = ?;",array($_POST["titulo"], $_POST["descripcion"], $_FILES['fichero'].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION), $_FILES['portada'].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION), $_POST["titulo"]));
+            $crearCategoria = manipularDatoBD("update Manual set titulo = ?, descripcion = ?, fichero = ?, portada = ? where titulo = ?;",
+            array($_POST["titulo"], $_POST["descripcion"], $_FILES['fichero'].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION), 
+            $_FILES['portada'].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION), $_POST["titulo"]));
             
             if ($crearCategoria === 1062) {
                     
@@ -70,13 +72,16 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
         }else {
                 
             $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
-            redireccionar("../formularioModificarManual.php");
+            // redireccionar("../formularioModificarManual.php");
         }
     }else {
             
         $_SESSION["errorFichero"] = "La foto no puede pesar mas de 32MB y su extension debe ser: PDF, DOC o DOCX";
         $_SESSION["errorPortada"] = "La portada no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
-        redireccionar("../formularioModificarManual.php");
+        // redireccionar("../formularioModificarManual.php");
     }
+    $_SESSION["errorGeneral"] = "Error al editar";
+    // redireccionar("../formularioModificarManual.php");
 }
+// redireccionar("../adminSubidosManuales.php");
 ?>
