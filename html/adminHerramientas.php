@@ -36,15 +36,15 @@
     <section class="contenido">
 
         <a href="adminHerramientasAlmacen.php" class="seccion">
-           <img src="img/solicitud.png" alt="">
+           <img src="img/herramienta.png" alt="">
            <h2>Herramientas</h2>
         </a>
         <a href="adminDonaciones.php" class="seccion">
-           <img src="img/manual.png" alt="">
+           <img src="img/donaciones.png" alt="">
            <h2>Donaciones</h2>
         </a>    
         <a href="adminCategorias.php" class="seccion">
-           <img src="img/solicitud.png" alt="">
+           <img src="img/categoria.png" alt="">
            <h2>Categorias</h2>
         </a>
 

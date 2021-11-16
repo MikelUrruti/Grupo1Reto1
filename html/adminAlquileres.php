@@ -40,7 +40,7 @@
            <h2>Solicitudes</h2>
         </a>
         <a href="adminRealizadosAlquileres.php" class="seccion">
-           <img src="img/manual.png" alt="">
+           <img src="img/alquiler.png" alt="">
            <h2>Alquileres</h2>
         </a>
 
