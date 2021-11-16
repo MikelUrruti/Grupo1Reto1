@@ -9,6 +9,8 @@ if (isset($_SESSION["nombreHerramienta"])) {
     
     $herramienta = consultarDatoBD("select categoria, stock, descripcion, foto, estado from Herramienta where nombre = ?",array($_SESSION["nombreHerramienta"]));
 
+    $_SESSION["fotoHerramienta"] = $herramienta[0]["foto"];
+
 } else {
     
     redireccionar("adminHerramientasAlmacen.php");

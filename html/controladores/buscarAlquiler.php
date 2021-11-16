@@ -9,13 +9,13 @@
 
         $parametros = array();
 
-        for ($i=0; $i < 2; $i++) { 
+        for ($i=0; $i < 4; $i++) { 
             
             array_push($parametros,"%".$_GET["Buscar"]."%");
     
         }
     
-        $_SESSION["filtrado"] = consultarDatoBD("select id, idsolicitud, fechainicio, fecharecogida, fechafin from Alquiler where id like ? and idsolicitud like ?;",$parametros);
+        $_SESSION["filtrado"] = consultarDatoBD("select Alquiler.id, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id where Alquiler.id like ? or idsolicitud like ? or usuariosolicitante like ? or herramientasolicitada like ?;",$parametros);
 
         $_SESSION["mantenerFiltrado"] = true;
 
