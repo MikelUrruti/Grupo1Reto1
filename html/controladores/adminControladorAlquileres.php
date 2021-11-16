@@ -5,7 +5,7 @@
 
     session_start();
 
-    if (count($_POST["registrosSeleccionados"]) > 0) {
+    if (isset($_POST["registrosSeleccionados"])) {
         
         $solicitudes = $_POST["registrosSeleccionados"];
 

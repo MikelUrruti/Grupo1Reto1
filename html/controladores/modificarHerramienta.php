@@ -25,62 +25,80 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["sto
         $_SESSION["errorStock"] = "El stock debe ser un valor numerico sin decimales";
         $correcto = false;
 
-    } if ($_FILES['foto']["name"] == "") {
-            
-        $_SESSION["errorFoto"] = "Debes seleccionar una foto para poder modificar la categoria";
-        $correcto = false;
-
     }
 
     if ($correcto) {
 
-        if (validarImg($_FILES['foto'])) {
+        if (!empty($_FILES['foto']['name'])) {
+
+            if (validarImg($_FILES['foto'])) {
         
-            //La ruta de origen es de donde viene la foto
-            $rutaOrigen = $_FILES['foto']['tmp_name'];
-
-            //La ruta a la que queremos mandar la foto
-            $rutaDestino = '../../herramientas/' . $_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
-
-            try {
-                // hago una copia de la imagen subida y la almaceno
-                move_uploaded_file($rutaOrigen, $rutaDestino);
-
-            }
-                catch (Exception $e) {
-                    $correcto = false;
-            }
-
-            if ($correcto) {
-
-                $categoriaAnterior = consultarDatoBD("select * from Herramienta where nombre = ?;",array($_SESSION["nombreHerramienta"]));
-                
-                $crearCategoria = manipularDatoBD("update Herramienta set nombre = ?, descripcion = ?, categoria = ?, stock = ?, foto = ? where nombre = ?;",array($_POST["nombre"],$_POST["descripcion"],$_POST["categoria"],$_POST["stock"],$_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION),$_SESSION["nombreHerramienta"]));
-
-                if ($crearCategoria === 1062) {
-                    
-                    $_SESSION["errorNombre"]=erroresInsertar(1062,array("nombre"));
-                    unlink($rutaDestino);
-
-                } else {
-
-                    unlink("../../categoria/".$categoriaAnterior[0]["foto"]);
-                    
-                    $_SESSION["nombreHerramienta"] = $_POST["nombre"];
-
-                    $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
-
+                //La ruta de origen es de donde viene la foto
+                $rutaOrigen = $_FILES['foto']['tmp_name'];
+    
+                //La ruta a la que queremos mandar la foto
+                $rutaDestino = '../../herramientas/' . $_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+    
+                try {
+                    // hago una copia de la imagen subida y la almaceno
+                    move_uploaded_file($rutaOrigen, $rutaDestino);
+    
                 }
-
+                    catch (Exception $e) {
+                        $correcto = false;
+                }
+    
+                if ($correcto) {
+    
+                    $categoriaAnterior = consultarDatoBD("select * from Herramienta where nombre = ?;",array($_SESSION["nombreHerramienta"]));
+                    
+                    $crearCategoria = manipularDatoBD("update Herramienta set nombre = ?, descripcion = ?, categoria = ?, stock = ?, foto = ?, estado = ? where nombre = ?;",array($_POST["nombre"],$_POST["descripcion"],$_POST["categoria"],$_POST["stock"],$_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION),$_POST["estado"],$_SESSION["nombreHerramienta"]));
+    
+                    if ($crearCategoria === 1062) {
+                        
+                        $_SESSION["errorNombre"]=erroresInsertar(1062,array("nombre"));
+                        unlink($rutaDestino);
+    
+                    } else {
+    
+                        unlink("../../categoria/".$categoriaAnterior[0]["foto"]);
+                        
+                        $_SESSION["nombreHerramienta"] = $_POST["nombre"];
+    
+                        $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
+    
+                    }
+    
+                } else {
+                    
+                    $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
+    
+                }
+    
             } else {
                 
-                $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
-
+                $_SESSION["errorFoto"] = "La foto no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
+    
             }
 
         } else {
-            
-            $_SESSION["errorFoto"] = "La foto no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
+
+            $categoriaAnterior = consultarDatoBD("select * from Herramienta where nombre = ?;",array($_SESSION["nombreHerramienta"]));
+                    
+            $crearCategoria = manipularDatoBD("update Herramienta set nombre = ?, descripcion = ?, categoria = ?, stock = ?, estado = ? where nombre = ?;",array($_POST["nombre"],$_POST["descripcion"],$_POST["categoria"],$_POST["stock"],$_POST["estado"],$_SESSION["nombreHerramienta"]));
+
+            if ($crearCategoria === 1062) {
+                
+                $_SESSION["errorNombre"]=erroresInsertar(1062,array("nombre"));
+
+            } else {
+
+                
+                $_SESSION["nombreHerramienta"] = $_POST["nombre"];
+
+                $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
+
+            }
 
         }
 

@@ -4,7 +4,7 @@ require("../plantillasphp/redirecciones.php");
 
     session_start();
 
-    if (count($_POST["registrosSeleccionados"]) > 0) {
+    if (isset($_POST["registrosSeleccionados"])) {
         
         if (isset($_POST["Modificar"])) {
 

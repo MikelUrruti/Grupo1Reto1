@@ -7,13 +7,17 @@ comprobarLoginAdmin();
 
 if (isset($_SESSION["nombreHerramienta"])) {
     
-    $herramienta = consultarDatoBD("select categoria, stock, descripcion, foto from Herramienta where nombre = ?",array($_SESSION["nombreHerramienta"]));
+    $herramienta = consultarDatoBD("select categoria, stock, descripcion, foto, estado from Herramienta where nombre = ?",array($_SESSION["nombreHerramienta"]));
+
+    $_SESSION["fotoHerramienta"] = $herramienta[0]["foto"];
 
 } else {
     
     redireccionar("adminHerramientasAlmacen.php");
 
 }
+
+
 
 ?>
 
@@ -131,6 +135,17 @@ if (isset($_SESSION["nombreHerramienta"])) {
                 </div>
                 <div class="usudat_NewUsu">
                     <p>
+                        Categoria: <span class="obligatorio">*</span>
+                    </p>
+                    
+                    <select name="estado" id="" class="textoForm">
+                        <option value="catalogada" <?php if($herramienta[0]["estado"] == "catalogada") echo "selected"; ?>>Catalogada</option>
+                        <option value="descatalogada" <?php if($herramienta[0]["estado"] == "descatalogada") echo "selected"; ?>>Descatalogada</option>
+                    </select>
+
+                </div>
+                <div class="usudat_NewUsu">
+                    <p>
                         Foto: <span class="obligatorio">*</span>
                     </p>
                     <input id="foto" name="foto" type="file" value="subir" />
@@ -145,6 +160,9 @@ if (isset($_SESSION["nombreHerramienta"])) {
                     <img src="<?php echo "../herramientas/".$herramienta[0]["foto"]; ?>" alt="" id="imagen">
 
                 </div>
+
+
+
             </div>
             <input class="boton" type="submit" value="Modificar Categoria" name="Registrar" id="button_NewUsu" />
         </form>
