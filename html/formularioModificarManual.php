@@ -33,7 +33,7 @@ comprobarLogin();
     ?>
     <section class="contenido">
 
-        <form action="controladores/modificarManual.php" method="post">
+        <form action="controladores/modificarManual.php" method="post" enctype="multipart/form-data">
             <h2 id="tituloManual">
                 Modificar Manual
             </h2>
@@ -62,11 +62,11 @@ comprobarLogin();
             </div>
             <div class="apartados">
                 <p>
-                    Fichero:
+                    Portada:
                 </p>
 
-                <input type="file" name="fichero" id="fichero" class="btnSubir" />
-                <label for="fichero" class="txtSubir">Subir Manual</label>
+                <input type="file" name="portada" id="portada" class="btnSubir" />
+                <label for="portada" class="txtSubir">Subir Imagen</label>
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <img id="imgFichero" class="imagenes"  />
@@ -76,11 +76,11 @@ comprobarLogin();
             </div>
             <div class="apartados">
                 <p>
-                    Portada:
+                    Fichero:
                 </p>
 
-                <input type="file" name="portada" id="portada" class="btnSubir" />
-                <label for="portada" class="txtSubir">Subir Imagen</label>
+                <input type="file" name="fichero" id="fichero" class="btnSubir" />
+                <label for="fichero" class="txtSubir">Subir Manual</label>
                 
 
                 <div id="manualNom">

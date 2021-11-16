@@ -10,8 +10,8 @@ window.onload = function () {
     titulo.addEventListener("keyup", validarCampo);
     //Al no estar este comentado lo ejecuta una vez
     descripcion.addEventListener("keyup",  validacionDesc);
-    fichero.addEventListener("change", cargarImg);
-    portada.addEventListener("change",  cargarNombMan);
+    fichero.addEventListener("change", cargarNombMan);
+    portada.addEventListener("change", cargarImg);
     //subirImg.addEventListener("change", cargarImg);
 }
 
