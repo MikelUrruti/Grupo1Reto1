@@ -1,8 +1,9 @@
 <?php 
 
-require("../plantillasphp/operacionesDb.php");
+require("../controladores/valImgMan.php");
 require("../plantillasphp/validaciones.php");
 require("../plantillasphp/redirecciones.php");
+require("../plantillasphp/funcionesFormularios.php");
 
 session_start();
 
@@ -12,12 +13,12 @@ session_start();
 $rutaOrigen = $_FILES['manual']['tmp_name'];
 //La ruta donde queremos mandar el manual
 $rutaDestino = "../manuales/".$_FILES['manual']['name'];
-//Variable para saber si el archivo es correcto o no
-$correcto = false;
 
 //Comprobaciones
 if (validarManual($_FILES["manual"])){
-    $correcto = true;
+    $_SESSION["manualsubido"];
+}else{
+    $_SESSION["errorGeneral"];
 }
 redireccionar("../Manuales_subir.php");
 
