@@ -2,7 +2,6 @@
 require("../plantillasphp/validaciones.php");
 require("../plantillasphp/operacionesDb.php");
 require("../plantillasphp/redirecciones.php");
-require("../controladores/valImgMan.php");
 session_start();
 
 //Comprobaciones
@@ -65,17 +64,19 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
                 $_SESSION["nombreHerramienta"] = $_POST["nombre"];
 
                 $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
+                redireccionar("../adminSubidosManuales.php");
 
             }
         }else {
                 
             $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
+            redireccionar("../formularioModificarManual.php");
         }
     }else {
             
         $_SESSION["errorFichero"] = "La foto no puede pesar mas de 32MB y su extension debe ser: PDF, DOC o DOCX";
         $_SESSION["errorPortada"] = "La portada no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
+        redireccionar("../formularioModificarManual.php");
     }
 }
-redireccionar("../adminSubidosManuales.php");
 ?>

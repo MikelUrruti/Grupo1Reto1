@@ -83,10 +83,10 @@ comprobarLogin();
                 <label for="portada" class="txtSubir">Subir Imagen</label>
                 
 
-                <div id="imgDonde2">
+                <div id="manualNom">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
-                    <img id="imgPortada" class="imagenes" />
+                    <p id="nombreManual"></p>
                 </div>
 
                 <?php cargarError("errorPortada", ""); ?>
