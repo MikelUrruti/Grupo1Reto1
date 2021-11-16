@@ -10,20 +10,15 @@
         $accion = "Eliminar";
     } elseif (isset($_POST["Crear"])) {
         $accion = "Crear";
-    }
-    // } elseif (isset($_POST["Modificar"])) {
-    //     $accion = "Modificar";
-    // } 
+    } elseif (isset($_POST["Activar"])) {
+        $accion = "Activar";
+    } 
 
     if ($accion == "Crear") {
 
         redireccionar("../formularioCrearUsuario.php");
 
-     } /* elseif ($accion == "Modificar") {
-        
-    //     redireccionar("../formularioModificarUsuario.php");
-
-    } */ elseif ($accion == "Eliminar") {
+    } elseif ($accion == "Eliminar") {
 
         $usuarios = $_POST["registrosSeleccionados"];
 
@@ -51,14 +46,36 @@
 
         manipularDatoBD($consulta,$parametros);
 
-        echo var_dump($_POST["registrosSeleccionados"]);
-
-        // redireccionar("../adminUsuarios.php");
-
-    } else {
+    } elseif ($accion == "Activar") {
         
-        redireccionar("../adminUsuarios.php");
+        $usuarios = $_POST["registrosSeleccionados"];
+
+        $consulta = "update Usuario set estado='activo' where usuario in (";
+        $parametros = array();
+        $contador = 0;
+
+        foreach ($usuarios as $usuario) {
+            
+            array_push($parametros,$usuario);
+
+            if ($contador == count($usuarios)-1) {
+                
+                $consulta .= "?);";
+
+            } else {
+                
+                $consulta .= "?, ";
+
+            }
+
+            $contador++;
+
+        }
+
+        manipularDatoBD($consulta,$parametros);
 
     }
+
+    redireccionar("../adminUsuarios.php");
 
 ?>
