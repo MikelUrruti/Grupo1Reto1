@@ -1,6 +1,5 @@
 /* Navegacion */
 
-
 .btnMenu,ul img {
     display:none;
 }
@@ -35,14 +34,14 @@
    
     #nav-btn-mas {display:flex;}
 
-    ul {
+    header ul {
         list-style-type:none;
         text-decoration: none;
         margin-top: 1.2%;
         color:white;
     }
 
-    ul li a{
+    header ul li a{
         text-decoration: none;
         color:white;
     }
@@ -51,6 +50,7 @@
 /* Media móvil */
 @media Screen and (max-width:480px) {
     body {min-width: 400px;}
+
     #chkMenu:checked ~ header {
         display:flex;
         animation: menu 1s;
@@ -80,7 +80,7 @@
         display: none;
     }
 
-    p,a {color:white;}
+    header p,a {color:white;}
 
     /* header {flex-direction:column;} */
 
@@ -162,9 +162,9 @@
 
     #nav-btn-mas:hover>.oculto {visibility: visible;}
 
-    ul li a {display:none;}
+    header ul li a {display:none;}
 
-    ul img {
+    header ul img {
         display: block;
         width: 70px;
     }
@@ -243,7 +243,7 @@ Ajustamos su tamaño
     }
     #nav-btn-mas:hover>.oculto {visibility: visible;}
 
-    ul li a {
+    header ul li a {
         font-size: 110%;
     }
 
