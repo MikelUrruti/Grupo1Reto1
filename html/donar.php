@@ -76,14 +76,21 @@
 
                 <?php cargarError("errorImg", ""); ?>
 
-
-                
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
                     <img id="imgHerramienta" class="imagenes" />
                 </div>
+            </section>
 
+            <section id="cantidadHerra">
+                <p>
+                    ¿Cuantas cuantas herramientas tiene para donar?
+                </p>
 
+                <div id="cajaNum">
+                    <input type="text" id="selCant" name="cantHer" value="2"/>
+                    <input type="number" id="numSumRes"/>
+                </div>
             </section>
 
             <section id="desc">

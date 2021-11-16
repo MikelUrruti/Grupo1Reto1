@@ -16,7 +16,7 @@ $rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 
 //Comprobaciones
 //isset => la variable esta declarada y no es nulo
-if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto'])) {
+if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto']) && isset($_POST["cantHer"])) {
     $correcto = true;
     if (!validarNombre($_POST["herramienta"])) {
         //Este $_SESSION devuelve un mensaje de error
@@ -44,9 +44,9 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
         }
         if ($correcto2) {
             $nomImg = consultarDatoBD("select max(id)+1 from Donaciones");
-            $parametros = array($_SESSION["usuario"], $_POST["herramienta"], $nomImg[0]["max(id)+1"], $_POST["descripcion"]);
+            $parametros = array($nomImg[0]["max(id)+1"], $_SESSION["usuario"], $_POST["herramienta"], , $_POST["descripcion"], $fechaIni[date("Y-m-d")]);
             //Los signos de interrogacion, en este caso, cogen los valores de la primera variable que encuentre, en orden de creacion de esas subvariables
-            $consulta = manipularDatoBD("insert into Donaciones(usuario,nomHerramienta,fichero,descripcion) values (?, ?, ?, ?)", $parametros);
+            $consulta = manipularDatoBD("insert into Donaciones(id, usuario, nomherramienta, cantidad, descripcion, fechainicio) values (?, ?, ?, ?)", $parametros);
 
             if (is_integer($consulta)) {
                 //Mensaje de error al insertar la herramienta
