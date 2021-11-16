@@ -38,7 +38,6 @@ comprobarLogin();
                 Modificar Manual
             </h2>
             <?php cargarError("errorGeneral", "text-align:center"); ?>
-            <?php cargarError("errorFoto", ""); ?>
             <div class="apartados">
                 <p>
                     Titulo:
