@@ -3,7 +3,7 @@ window.onload = function () {
     titulo = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");
     fichero = document.getElementById("fichero");
-    //portada = document.getElementById("portada");
+    portada = document.getElementById("portada");
     //subirImg = document.getElementById("fichero");
 
     //Añado los eventlistener necesarios a las variables
@@ -11,7 +11,7 @@ window.onload = function () {
     //Al no estar este comentado lo ejecuta una vez
     descripcion.addEventListener("keyup",  validacionDesc);
     fichero.addEventListener("change", cargarImg);
-    //portada.addEventListener("change",  validarCampo);
+    portada.addEventListener("change",  cargarImg);
     //subirImg.addEventListener("change", cargarImg);
 }
 

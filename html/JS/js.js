@@ -62,10 +62,55 @@ Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen ant
 para poder verla
 */
 function cargarImg(event){
-    var imagenF = document.getElementById("imgFichero");
-        if(event.target.id == "fichero"){
-            imagenF.src = URL.createObjectURL(event.target.files[0]);
-        }else if(event.target.id == "portada"){
-            imagenF.src = URL.createObjectURL(event.target.files[0]);
+    /*
+    var prueba = document.querySelectorAll("body > img");
+    console.log(prueba);
+    var imagen = document.getElementById("imgVision");
+    imagen.src = URL.createObjectURL(event.target.files[0]);
+    var imagen2 = document.getElementById("imgVision2");
+    imagen2.src = URL.createObjectURL(event.target.files[0]);*/
+    //Variables
+    //Variable para saber que boton se a pulsado
+    var idBotSel = event.target.id;
+    //Array de todos los botones que comparten la misma clase
+    var btnGrupo = Array.from(document.querySelectorAll(".btnSubir"));
+    //Array de todas las imagenes que comparten la clase
+    var imgGrupo = Array.from(document.querySelectorAll(".imagenes"));
+
+    console.log(idBotSel);
+    console.log(btnGrupo);
+    console.log(imgGrupo);
+
+    //Guardamos el tamaño maximo del array en una variable
+    var tamMax = btnGrupo.length;
+    //Variable de paso
+    var paso = 0;
+    //Variable que sirve para saber en que posicion del primer array esta
+    //  luego sirve para cambiar la imagen del segundo array que este en 
+    //  la misma posicion
+    var lugarArrayImg = -1;
+    //Recorremos el array para ver en que posicion esta esta el id
+    for(paso; paso<tamMax; paso++){
+        //Si el id del boton es igual al de la caja
+        if(idBotSel==btnGrupo[paso].id){
+            console.log(btnGrupo[paso].id);
+            //Guarda la posicion en una variable
+            lugarArrayImg = paso;
+            //Se vuelve a poner el paso a 0
+            paso=0;
+            break;
         }
+    }
+
+    //Recorremos el segundo array para cambiar la imagen que se encuentre
+    //  en la misma posicion de lo que hemos sacado antes
+    for(paso; paso<tamMax; paso++){
+        //Si la posicion es la misma que el de la variable
+        if(paso==lugarArrayImg){
+            console.log("saio");
+            var idImg=(imgGrupo[paso].id);
+            var imagen = document.getElementById(idImg);
+            imagen.src = URL.createObjectURL(event.target.files[0]);
+        }
+    }
 }
