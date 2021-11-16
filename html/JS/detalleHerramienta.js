@@ -1,5 +1,9 @@
 window.onload = function () {
+    const modal = document.getElementById("imgGrande")
     const img = document.querySelector("#section1 img");
+    const imgGrande = document.querySelector("#imgGrande img");
+    const imgGrandeQuitar = document.querySelector("#imgGrande span")
+    const imgGrandeTexto = document.querySelector("#imgGrande div");
     var imgClick = false;
 
     // Si hago click en algún elemento del documento...
@@ -11,35 +15,24 @@ window.onload = function () {
             case false:
             // ...Si lo que he pinchado es la imagen...
                 if (source==img) {
-                    // ...La imagen se agrandará e imgClick será true
-                    img.style.width = "400px";
+                    // ...Aparecerá un modal e imgClick será true
+                    modal.style.display = "block";
+                    imgGrande.src = img.src;
+                    imgGrandeTexto.innerHTML = img.alt;
+                    modal.style.transition = "1s";
                     imgClick = true;
                 }
             break;
                 // ...En caso de que que sea true...
             case true:
-                //..Cualquier cosa que pinche decrecerá la imagen...
-                //...e imgClick será false
-                img.style.width = "220px";
-                imgClick = false;
+                //..Si pincho cualquier cosa que no sea la imagen o el texto...
+                if (source!=imgGrande && source!=imgGrandeTexto) {
+                    // ... Desaparece el modal...
+                    modal.style.display = "none";
+                    //...e imgClick será false
+                    imgClick = false;
+                }
             break;
         }
     }
 } 
-
-
-
-    // document.body.onclick = function(){
-    //     if (imgClick == true) {
-    //         img.style.width= "220px";
-    //         imgClick = false;
-    //         console.log("no yeah")
-    //     }
-    // }
-
-
-
-function contieneGuion(p) {
-    return p.includes("-");
-}
-
