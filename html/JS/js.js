@@ -54,7 +54,6 @@ function cargarNombMan(event){
     var manualNombre = manualEntero.name;
     //Con esto ponemos el valor del documento en el html
     document.getElementById("nombreManual").innerHTML=manualNombre;
-    console.log(manualNombre);
 }
 
 /*

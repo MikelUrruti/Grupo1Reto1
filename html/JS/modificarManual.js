@@ -11,7 +11,7 @@ window.onload = function () {
     //Al no estar este comentado lo ejecuta una vez
     descripcion.addEventListener("keyup",  validacionDesc);
     fichero.addEventListener("change", cargarImg);
-    portada.addEventListener("change",  cargarImg);
+    portada.addEventListener("change",  cargarNombMan);
     //subirImg.addEventListener("change", cargarImg);
 }
 
