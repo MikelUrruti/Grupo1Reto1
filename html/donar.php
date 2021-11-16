@@ -88,8 +88,7 @@
                 </p>
 
                 <div id="cajaNum">
-                    <input type="text" id="selCant" name="cantHer" value="2"/>
-                    <input type="number" id="numSumRes"/>
+                    <input type="number" placeholder="1" id="numSumRes"/>
                 </div>
             </section>
 

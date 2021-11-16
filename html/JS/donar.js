@@ -2,12 +2,10 @@ window.onload = function () {
     nombre = document.getElementById("nombre");
     descripcion = document.getElementById("descripcion");
     subirImg = document.getElementById("subirImg");
-    suma = document.getElementById("numSumRes");
 
     nombre.addEventListener("keyup", validarCampo);
     descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
-    suma.addEventListener("change", sumaVer);
     
     //Para darle el maximo de caracteres mediante JS
     descripcion.maxlength= "5";
@@ -21,19 +19,6 @@ function validarCampo(source) {
     if (cajaId == nombre.id) {
         validar(source, validarNombre(source.target, cajaId));
     } 
-}
-
-function sumaVer(){
-    var inicio = 0;
-    var a = suma.value;
-    console.log(a);
-    if(inicio<a){
-        inicio+1;
-        console.log(inicio);
-    }else{
-        inicio-1;
-        console.log(inicio);
-    }
 }
 
 //Se comprueba si ha introducido algun signo especial, si asi es, se le impide escribirlo
