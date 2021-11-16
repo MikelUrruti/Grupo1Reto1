@@ -43,7 +43,7 @@
     <?php
         require("plantillasphp/operacionesDb.php");
         require("plantillasphp/paginadorFunciones.php");
-        $consulta = "select nombre,foto from Categoria";
+        $consulta = "select distinct(Categoria.nombre), Categoria.foto from Categoria left join Herramienta on Categoria.nombre = Herramienta.categoria where Herramienta.nombre is not null and Herramienta.estado = 'catalogada';";
         $categorias = consultarDatoBD($consulta);
         $numRegistros = 4;
         
