@@ -3,6 +3,7 @@
 require("plantillasphp/redirecciones.php");
 // require("controladores/paginador.php");
 require("plantillasphp/paginadorFunciones.php");
+require("plantillasphp/funcionesFormularios.php");
 
 session_start();
 
