@@ -45,14 +45,14 @@
         <?php 
         if (isset($_SESSION["errorGeneral"])) {
             cargarError("errorGeneral", "text-align:center");
-            unset($_SESSION["errorGeneral"]);
+        }
+        if (isset($_SESSION["manualsubido"])){
+            cargarExito("manualsubido", "");
         }
         if(isset($_SESSION["ruta"])){
             //echo $_SESSION["ruta"];
             
         }
-        //echo " ----- ";
-        //echo $_SERVER['SERVER_NAME'];
         ?>
 
         <article id="contenedor">
@@ -69,7 +69,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="foto" />
+                    <input id="subirImg" type="file" name="foto" class="btnSubir"/>
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -80,7 +80,7 @@
                 
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <img id="imgVision" />
+                    <img id="imgHerramienta" class="imagenes" />
                 </div>
 
 

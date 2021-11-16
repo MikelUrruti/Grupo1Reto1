@@ -3,7 +3,7 @@
 require("../plantillasphp/validaciones.php");
 require("../plantillasphp/operacionesDb.php");
 require("../plantillasphp/redirecciones.php");
-require("../controladores/valImgMan.php");
+
 
 session_start();
 
