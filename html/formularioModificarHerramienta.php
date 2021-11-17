@@ -164,7 +164,7 @@ if (isset($_SESSION["nombreHerramienta"])) {
 
 
             </div>
-            <input class="boton" type="submit" value="Modificar Categoria" name="Registrar" id="button_NewUsu" />
+            <input class="boton" type="submit" value="Modificar Herramienta" name="Modificar" id="button_NewUsu" />
         </form>
     </section>
 </body>

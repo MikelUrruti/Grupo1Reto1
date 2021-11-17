@@ -60,7 +60,11 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_FILES["fo
     
                     } else {
 
-                        unlink("../img/categoria/".$categoriaAnterior[0]["foto"]);
+                        if ($_FILES["foto"]["name"] != $categoriaAnterior[0]["foto"]) {
+                            unlink("../img/categoria/".$categoriaAnterior[0]["foto"]);
+                        }
+
+                        
 
                         $_SESSION["nombreCategoria"]=$_POST["nombre"];
                         
