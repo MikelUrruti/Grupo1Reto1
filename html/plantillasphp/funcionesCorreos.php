@@ -84,9 +84,9 @@ function enviarCorreoManuales(string $titulo,string $receptor,string $cuerpo,str
     foreach ($manuales as $manual) {
 
         if (basename(dirname(__FILE__)) == "plantillasphp") {
-            $correo->addAttachment("../../manuales/".$manual,$manual);
+            $correo->addAttachment("../img/manuales/".$manual,$manual);
         } else {
-            $correo->addAttachment("../manuales/".$manual,$manual);
+            $correo->addAttachment("img/manuales/".$manual,$manual);
         }   
 
     } 
@@ -94,9 +94,9 @@ function enviarCorreoManuales(string $titulo,string $receptor,string $cuerpo,str
     foreach ($portadas as $portada) {
 
         if (basename(dirname(__FILE__)) == "plantillasphp") {
-            $correo->addAttachment("../../manuales/portadas/".$portada,$portada);
+            $correo->addAttachment("../img/manuales/portadas/".$portada,$portada);
         } else {
-            $correo->addAttachment("../manuales/portadas/".$portada,$portada);
+            $correo->addAttachment("img/manuales/portadas/".$portada,$portada);
         }
 
     }

@@ -157,7 +157,7 @@ if (isset($_SESSION["nombreHerramienta"])) {
                     
                     ?>
 
-                    <img src="<?php echo "../herramientas/".$herramienta[0]["foto"]; ?>" alt="" id="imagen">
+                    <img src="<?php echo "img/herramientas/".$herramienta[0]["foto"]; ?>" alt="" id="imagen">
 
                 </div>
 

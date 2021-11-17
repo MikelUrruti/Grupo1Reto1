@@ -58,7 +58,7 @@
 
                 foreach ($eliminarFotos as $eliminaFoto) {
                     
-                    unlink("../../categoria/".$eliminaFoto["foto"]);
+                    unlink("../img/categoria/".$eliminaFoto["foto"]);
 
                 }
 

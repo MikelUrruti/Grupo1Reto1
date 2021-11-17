@@ -12,7 +12,7 @@ session_start();
 //tmp_name -> guarda el nombre temporal del archivo
 $rutaOrigen = $_FILES['manual']['tmp_name'];
 //La ruta donde queremos mandar el manual
-$rutaDestino = "../manuales/".$_FILES['manual']['name'];
+$rutaDestino = "img/manuales/".$_FILES['manual']['name'];
 
 //Comprobaciones
 if (validarManual($_FILES["manual"])){

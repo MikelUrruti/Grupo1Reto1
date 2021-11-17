@@ -85,7 +85,7 @@ comprobarLogin();
 
                 <div id="manualNom">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
+                    <!-- <img id="imgVision" src="<?php echo "img/manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
                     <p id="nombreManual"></p>
                 </div>
 

@@ -49,7 +49,7 @@
 
             foreach($categorias as $herramienta) {
                 echo "
-                <img src='../herramientas/$herramienta[foto]' alt='$herramienta[nombre]'>
+                <img src='img/herramientas/$herramienta[foto]' alt='$herramienta[nombre]'>
                 <h1>$herramienta[nombre]</h1>
                 <h2 id=descripcion>$herramienta[descripcion]</h2>
                 <div id=imgGrande>

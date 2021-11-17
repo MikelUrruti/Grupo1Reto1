@@ -35,10 +35,10 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
             //La ruta de origen es de donde viene la foto
             $rutaOrigenP = $_FILES['portada']['tmp_name'];
             //La ruta a la que queremos mandar la foto
-            $rutaDestinoP = '../img/herramienta/' . $_FILES['portada']['name'];
+            $rutaDestinoP = '../img/herramientas/' . $_FILES['portada']['name'];
 
             $rutaOrigenF = $_FILES['fichero']['tmp_name'];
-            $rutaDestinoF = '../img/herramienta/' . $_FILES['fichero']['name'];
+            $rutaDestinoF = '../img/herramientas/' . $_FILES['fichero']['name'];
         }
         try{
             // hago una copia de la imagen subida y la almaceno
@@ -61,7 +61,7 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
 
             }else {
 
-                unlink("../../categoria/".$categoriaAnterior[0]["foto"]);
+                unlink("../img/categoria/".$categoriaAnterior[0]["foto"]);
                 
                 $_SESSION["nombreHerramienta"] = $_POST["nombre"];
 
