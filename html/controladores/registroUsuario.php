@@ -85,10 +85,20 @@ if (isset($_POST["usuario"]) && isset($_POST["nombre"]) && isset($_POST["apellid
 
             redireccionar("../confirmarRegistro.php");
 
+        } else {
+            
+            redireccionar("../registro.php");
+
         }
+
+    } else {
+        
+        redireccionar("../registro.php");
 
     }
 
-} 
+} else {
+    redireccionar("../registro.php");
+}
 
-redireccionar("../registro.php");
+

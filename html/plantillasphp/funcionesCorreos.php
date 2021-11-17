@@ -1,8 +1,20 @@
 <?php
 
-require("phpMailer/src/PHPMailer.php");
-require("phpMailer/src/SMTP.php");
-require("phpMailer/src/Exception.php");
+if (basename(dirname(__FILE__)) == "plantillasphp") {
+
+    require("../phpMailer/src/PHPMailer.php");
+    require("../phpMailer/src/SMTP.php");
+    require("../phpMailer/src/Exception.php");
+
+} else {
+
+    require("phpMailer/src/PHPMailer.php");
+    require("phpMailer/src/SMTP.php");
+    require("phpMailer/src/Exception.php");
+
+}
+
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
