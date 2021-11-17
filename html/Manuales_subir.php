@@ -53,7 +53,7 @@
                 Nombre:
             </p>
             <!--Para cargar el nombre del usuario en el campo de texto, usamos el php dentro del value directamente-->
-            <input class="textoForm" id="nombre" type="text" value="<?php echo $_SESSION["nombre"]; ?>" />            
+            <input class="textoForm" id="nombre" name="nombre" type="text" value="<?php echo $_SESSION["nombre"]; ?>" />            
         </div>
 
         <div class="usucon_Man">
@@ -61,7 +61,7 @@
                 Apellidos:
             </p>
             <!--Para cargar el nombre del usuario en el campo de texto, usamos el php dentro del value directamente-->
-            <input class="textoForm" id="apellidos" type="text" value="<?php echo $_SESSION["apellidos"]; ?>" />
+            <input class="textoForm" id="apellidos" name="apellidos" type="text" value="<?php echo $_SESSION["apellidos"]; ?>" />
         </div>
 
         <div class="usucon_Man">
@@ -69,7 +69,7 @@
                 Email:
             </p>
             <!--Para cargar el nombre del usuario en el campo de texto, usamos el php dentro del value directamente-->
-            <input class="textoForm" id="email" type="email" value="<?php echo $_SESSION["email"]; ?>" />
+            <input class="textoForm" id="email" name="email" type="email" value="<?php echo $_SESSION["email"]; ?>" />
         </div>
 
         <div class="usucon_Man">
@@ -77,7 +77,7 @@
                 Teléfono de contacto:
             </p>
             <!--Para cargar el nombre del usuario en el campo de texto, usamos el php dentro del value directamente-->
-            <input class="textoForm" id="telefono" type="tel" value="<?php echo $_SESSION["telefono"]; ?>" placeholder="629374638" size="9" maxlength="9" title="Debe empezar con: 6, 7 o 9"/>
+            <input class="textoForm" id="telefono" name="telefono" type="tel" value="<?php echo $_SESSION["telefono"]; ?>" placeholder="629374638" size="9" maxlength="9" title="Debe empezar con: 6, 7 o 9"/>
         </div>
 
         <div id="cajaFoto">
@@ -93,7 +93,7 @@
             <label class="boton" type="button" for="subir_Man">Subir manuales...</label>
             <!--Sitio donde va a salir el nombre del manual-->
             <p id="nombreManual">
-                Formulario.pdf
+                
             </p>
             <input class="boton" id="enviar_Man" type="submit" value="Enviar" />
         </div>
