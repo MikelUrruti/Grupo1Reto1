@@ -35,52 +35,61 @@ if (isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_FILES['fi
             //La ruta de origen es de donde viene la foto
             $rutaOrigenP = $_FILES['portada']['tmp_name'];
             //La ruta a la que queremos mandar la foto
-            $rutaDestinoP = '../img/herramientas/' . $_FILES['portada']['name'];
+            $rutaDestinoP = '../../manuales/portadas/' . $_POST["titulo"].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION);
 
             $rutaOrigenF = $_FILES['fichero']['tmp_name'];
-            $rutaDestinoF = '../img/herramientas/' . $_FILES['fichero']['name'];
+            $rutaDestinoF = '../../manuales/' . $_POST["titulo"].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION);
+            
         }
-        try{
-            // hago una copia de la imagen subida y la almaceno
-            move_uploaded_file($rutaOrigen, $rutaDestino);
-        }catch (Exception $e) {
+        
+        if(move_uploaded_file($rutaOrigenP, $rutaDestinoP)){
+            if(move_uploaded_file($rutaOrigenF, $rutaDestinoF)){
+                $correcto = true;
+            }else{
+                $correcto = false;
+                $_SESSION["errorFichero"] = "La foto no puede pesar mas de 32MB y su extension debe ser: PDF, DOC o DOCX";
+            }
+        }else{
             $correcto = false;
+            $_SESSION["errorPortada"] = "La portada no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
         }
         if ($correcto) {
 
-            $categoriaAnterior = consultarDatoBD("select * from Manual where titulo = ?;",array($_POST["titulo"]));
+            $categoriaAnterior = consultarDatoBD("select * from Manual where titulo = ?;",array($_SESSION['manualSeleccionado']));
             $crearCategoria = manipularDatoBD("update Manual set titulo = ?, descripcion = ?, fichero = ?, portada = ? where titulo = ?;",
-            array($_POST["titulo"], $_POST["descripcion"], $_FILES['fichero'].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION), 
-            $_FILES['portada'].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION), $_POST["titulo"]));
+            array($_POST["titulo"], $_POST["descripcion"], $_POST["titulo"].".".pathinfo($_FILES["fichero"]["name"], PATHINFO_EXTENSION), 
+            $_POST["titulo"].".".pathinfo($_FILES["portada"]["name"], PATHINFO_EXTENSION), $_SESSION['manualSeleccionado']));
             
             if ($crearCategoria === 1062) {
                     
-                $_SESSION["errorTitulo"]=erroresInsertar(1062,array("nombre"));
+                $_SESSION["errorTitulo"]=erroresInsertar(1062,array("titulo"));
                 unlink($rutaDestinoP);
                 unlink($rutaDestinoF);
 
             }else {
 
-                unlink("../img/categoria/".$categoriaAnterior[0]["foto"]);
+                if ($_FILES["portada"]["name"] != $categoriaAnterior[0]["portada"]) {
+                    unlink("../../manuales/portadas/".$categoriaAnterior[0]["portada"]);
+                } if ($_FILES["fichero"]["name"] != $categoriaAnterior[0]["fichero"]) {
+                    unlink("../../manuales/".$categoriaAnterior[0]["fichero"]);
+                }
                 
-                $_SESSION["nombreHerramienta"] = $_POST["nombre"];
+                $_SESSION["nombreManual"] = $_POST["titulo"];
 
-                $_SESSION["exito"] = "Herramienta modificada de manera exitosa";
+                $_SESSION["exito"] = "Manual modificado de manera exitosa";
                 redireccionar("../adminSubidosManuales.php");
 
             }
         }else {
                 
             $_SESSION["errorFoto"] = "Error al subir la imágen. Intentelo más tarde";
-            // redireccionar("../formularioModificarManual.php");
+            redireccionar("../formularioModificarManual.php");
         }
     }else {
             
-        $_SESSION["errorFichero"] = "La foto no puede pesar mas de 32MB y su extension debe ser: PDF, DOC o DOCX";
-        $_SESSION["errorPortada"] = "La portada no puede pesar mas de 8MB y su extension debe ser: JPG, JPEG o PNG";
-        // redireccionar("../formularioModificarManual.php");
+        $_SESSION["errorGeneral"] = "Error al editar. Intentelo de nuevo más tarde";
+        redireccionar("../formularioModificarManual.php");
     }
-    $_SESSION["errorGeneral"] = "Error al editar";
     // redireccionar("../formularioModificarManual.php");
 }
 // redireccionar("../adminSubidosManuales.php");

@@ -5,46 +5,6 @@
 }
 /*Fin titulo*/
 
-/*Estilo de la caja del buscador*/
-#buscador{
-    display: flex;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 1em auto 1em auto;
-    padding: 0.25em 0.5em 0.25em 0.5em;
-    background-color: black;
-}
-/*Fin  caja buscador*/
-
-/*Estilo del buscador*/
-#txtbus{
-    height: 1.5em;
-    border: none;
-    width: 13em;
-    background-color: black;
-    color: #EEC51F;
-}
-
-/*La linea de codigo para quitar el estilo de la caja de texto al seleccionarse*/
-#txtbus:focus{
-    outline: 0;
-}
-/*Fin buscador*/
-
-/*Estilo de la lupa*/
-#lupa{
-    height: 1.5em;
-    background-color: rgb(87, 87, 87);
-    margin-left: 0.5em;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-#lupa:hover{
-    cursor: pointer;
-}
-/*Fin lupa*/
-
 /*Estilo de las cajas de los manuales*/
 .manpos{
     border: 1px solid black;
@@ -230,30 +190,6 @@ ESTILO DE TABLET
         Estilo de la caja que tiene todo lo del primer formulario
     */
 
-    /*Estilo del buscador*/
-    #txtbus{
-        height: 2em;
-        width: 25em;
-        margin-left: auto;
-        margin-right: 0;
-    }
-    /*Fin buscador*/
-
-    /*Estilo de la caja del buscador*/
-    #buscador{
-        width: 50%;
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
-    }
-    /*Fin  caja buscador*/
-
-    /*Estilo de la lupa*/
-    #lupa{
-        height: 2em;
-        margin-right: auto;
-    }
-    /*Fin lupa*/
-
     /*Estilo del boton de subir manuales*/
     #subirMan{
         padding: 0px 5px 0px 5px;
@@ -333,27 +269,6 @@ ESTILO DE ORDENADOR
 
 */
 @media screen and (min-width: 1025px) {
-    /*Estilo del buscador*/
-    #buscador{
-        width: 50em;
-    }
-    /*Fin buscador*/
-
-    /*Estilo de la caja buscador*/
-    #txtbus{
-        height: 2.5em;
-        padding-left: 3px;
-        width: 50em;
-        margin-left: 0%;
-    }
-    /*Fin caja buscador*/
-
-    /*Estilo de la lupa*/
-    #lupa{
-        height: 2em;
-    }
-    /*Fin lupa*/
-
     /*Estilo de la caja general, con flechas y las bolitas*/
     #cantPag{
         width: 60%;

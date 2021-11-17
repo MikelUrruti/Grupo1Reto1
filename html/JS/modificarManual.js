@@ -1,4 +1,5 @@
 window.onload = function () {
+    validacionDesc();
     //Guardo los elementos en distintas variables
     titulo = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");

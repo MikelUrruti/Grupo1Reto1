@@ -35,10 +35,16 @@
     
     <h1>Escoge la sección que quieras visualizar:</h1>
 
-    <a id="flechaIzqMovil" class="flechasMovil"> < </a>
-    <a id="flechaDchMovil" class="flechasMovil"> > </a>
-
+    <form id="form" action="herramientas.php" method="get">
+        <!-- Caja del buscador, con el campo de texto y la imagen de la lupa-->
+        <article id="buscador">
+            <input id="txtbus" type="text" placeholder="Buscar herramientas..." name="buscar">
+            <input type="image" src="img/lupa.png" value="" id="lupa">
+            
+        </article>
+    </form>
     <section id="section1">
+
 
     <?php
         require("plantillasphp/operacionesDb.php");
