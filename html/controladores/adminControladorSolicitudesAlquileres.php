@@ -140,9 +140,16 @@
                                         </style>
                                         <p>Buenas <span style='font-weight:bold'>".$correo["usuario"]."</span>,</p>
                                         <p>Su pedido de la herramienta <span style='font-weight:bold'>".$correo["herramientasolicitada"]."</span> en la solicitud <span style='font-weight:bold'>Nº".$correo["id"]."</span> esta lista para recogerla.</p>
+                                        <p>La direccion en la que se encuentra la herramienta a recoger es: </p>
+                                        <p style='font-weight:bold; white-space: pre-wrap;'>C.I.F.P Pico Frentes
+Gervasio Manrique de Lara s/n
+Soria, 42004
+Spain 
+Telefono:
+975 23 94 43</p>
                                         <p>Pasa cuando quieras a recogerla!</p>
                                         <p style='white-space:pre-line'>Un saludo,
-                                        fixPoint
+                                        FixPoint
                                         </p>
                                         <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
                                         "",
@@ -219,7 +226,7 @@
                     $usuario = $correo["usuario"];
 
                     enviarCorreo(
-                        "[FixPoint] Solicitud de alquiler aprobada",
+                        "[FixPoint] Solicitud de alquiler rechazada",
                         $correo["email"],
                         "
                         <style>
@@ -232,10 +239,10 @@
                         
                         </style>
                         <p>Buenas <span style='font-weight:bold'>".$correo["usuario"]."</span>,</p>
-                        <p>Su pedido de la herramienta <span style='font-weight:bold'>".$correo["herramientasolicitada"]."</span> en la solicitud <span style='font-weight:bold'>Nº".$correo["id"]."</span> esta lista para recogerla.</p>
-                        <p>Pasa cuando quieras a recogerla!</p>
+                        <p>Su pedido de la herramienta <span style='font-weight:bold'>".$correo["herramientasolicitada"]."</span> en la solicitud <span style='font-weight:bold'>Nº".$correo["id"]."</span> ha sido rechazado.</p>
+                        <p>Prueba a pedir otra herramienta y si no, responde a este correo para averiguar lo que ha sucedido.</p>
                         <p style='white-space:pre-line'>Un saludo,
-                        fixPoint
+                        FixPoint
                         </p>
                         <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
                         "",
