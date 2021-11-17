@@ -51,15 +51,15 @@
             
             if (isset($_GET["filtro"])) {
                 $filtro = $_GET["filtro"];
-                $consulta = "select nombre,foto from Herramienta where categoria like ?;";
+                $consulta = "select nombre,foto from Herramienta where categoria like ? and estado like ?;";
             }
             
             else if (isset($_GET["buscar"])) {
                 $filtro = $_GET["buscar"];
-                $consulta = "select nombre,foto from Herramienta where nombre like ?;";
+                $consulta = "select nombre,foto from Herramienta where nombre like ? and estado like ?;";
             }
 
-            $parametro = array("%".$filtro."%");
+            $parametro = array("%".$filtro."%","catalogada");
             $categorias = consultarDatoBD($consulta,$parametro);
             $numRegistros = 4;
 

@@ -18,28 +18,22 @@
     enviarCorreo(
         "[fixPoint] Solicitud de alquiler",
         $_SESSION['email'],
-        "
-        <style>
-
+        "<style>
             p {
-
                 font-size: 2em;
-
             }
-
         </style>
-        <p>Estimado:  <span style='font-weight:bold'>".$_SESSION['usuario']."</p>
-        <p>Ha solicitado el alquiler de la herramienta $herramientaSolicitada</p>
+        <p>Estimado:<span style='font-weight:bold'>$_SESSION[usuario]</span></p>
+        <p>Ha solicitado el alquiler de la herramienta <span style='font-weight:bold'> $herramientaSolicitada</span></p>
         <p>Le enviaremos un correo con el resultado de la solicitud.</p>
         <p>Recuerde que solicitar el alquiler no garantiza el mismo.</p>
-        <p style='font-weight:bold; font-size: 2em'>".$_SESSION["email"]."</p>
+        <p style='font-weight:bold; font-size: 2em'>$_SESSION[email]</p>
         <p>Si tienes algun problema, respondenos en este hilo comentandonos tu situacion.</p>
         <p style='white-space:pre-line'>Un saludo,
         fixPoint
         </p>
-        <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
-        "pues eso, que me chingo a tu madre maricon",
-        array("../img/logo.png")
+        <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>","",
+        array("../img/logo.png"),
     );
     
     }
