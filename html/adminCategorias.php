@@ -61,8 +61,9 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
             <form action="controladores/adminControladorCategorias.php" method="post" id="acciones">
 
                 <div class="acciones">
-                    <input type="submit" class="boton botonCrear" value="Recoger" name="Recoger">
-                    <input type="submit" class="boton botonCrear" value="Rechazar" name="Rechazar">
+                    <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
+                    <input type="submit" class="boton botonCrear" value="Modificar" name="Modificar">
+                    <input type="submit" class="boton botonCrear" value="Eliminar" name="Eliminar">
                 </div>
                         <?php
 

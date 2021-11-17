@@ -15,7 +15,7 @@
     
         }
     
-        $_SESSION["filtrado"] = consultarDatoBD("select Alquiler.id, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id where Alquiler.id like ? or idsolicitud like ? or usuariosolicitante like ? or herramientasolicitada like ?;",$parametros);
+        $_SESSION["filtrado"] = consultarDatoBD("select Alquiler.id, idsolicitud, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id where Alquiler.id like ? or idsolicitud like ? or usuariosolicitante like ? or herramientasolicitada like ?;",$parametros);
 
         $_SESSION["mantenerFiltrado"] = true;
 

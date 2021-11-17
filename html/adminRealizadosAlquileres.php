@@ -146,7 +146,7 @@ comprobarLoginAdmin();
 
                             } else {
 
-                                $resultados = consultarDatoBD("select Alquiler.id, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id;", array());
+                                $resultados = consultarDatoBD("select Alquiler.id, idsolicitud, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -158,7 +158,7 @@ comprobarLoginAdmin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Usuario","Herramienta a alquilar","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Identificador Solicitud","Usuario","Herramienta a alquilar","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
 
                             ?>
 
