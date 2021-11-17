@@ -1,12 +1,14 @@
 window.onload = function () {
     nombre = document.getElementById("nombre");
-    var descripcion = document.getElementById("descripcion");
-    var subirImg = document.getElementById("subirImg");
+    descripcion = document.getElementById("descripcion");
+    subirImg = document.getElementById("subirImg");
+    suma = document.getElementById("numSumRes");
 
     nombre.addEventListener("keyup", validarCampo);
     descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
-
+    suma.addEventListener("change", sumaVer);
+    
     //Para darle el maximo de caracteres mediante JS
     descripcion.maxlength= "5";
 }
@@ -21,31 +23,24 @@ function validarCampo(source) {
     } 
 }
 
-//Para crear la etiqueta del textarea, que sirve para la descripcion
-function CrearDesc() {
-    //Asi creamos el textarea, pero no tiene estilos
-    var txtA = document.createElement("textarea");
-
-    var total = 500;
-
-    //Le damos un id y un nombre al textarea
-    txtA.id = "descripcion";
-    txtA.name = "descripcion";
-    //Le damos el placeholder y el tamaño maximo
-    txtA.placeholder = "Descripción de la herramienta..."
-    txtA.maxLength = total;
-
-    /*Si queremos que carge la etiqueta como "etiqueta" y no como texto,
-    tenemos que poner appendChild. 
-    Si por el contrario, ponemos innerHTML, solo va a ponerlo como texto*/
-    document.getElementById("desc").appendChild(txtA);
+function sumaVer(){
+    var inicio = 0;
+    var a = suma.value;
+    console.log(a);
+    if(inicio<a){
+        inicio+1;
+        console.log(inicio);
+    }else{
+        inicio-1;
+        console.log(inicio);
+    }
 }
 
-/*
-Sccript que guarda el url de la imagen seleccionada y se lo pasa a la imagen anterior
-para poder verla
-*/
-function cargarImg(event){
-    var imagen = document.getElementById("imgVision");
-    imagen.src = URL.createObjectURL(event.target.files[0]);
+//Se comprueba si ha introducido algun signo especial, si asi es, se le impide escribirlo
+function probarCantNum(event){
+    var tecla = event.key;
+    if(tecla==69 || tecla==187 || tecla==189 || tecla==190){
+        console.log("has pulsado un boton no permitido");
+    }
+    //console.log(event.keyCode);
 }

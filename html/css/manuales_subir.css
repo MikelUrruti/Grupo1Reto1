@@ -59,6 +59,15 @@ ESTILO DE MOVIL
 }
 /*Fin revisiones*/
 
+/*Estilo de la caja para la foto de la portada*/
+#cajaFoto{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+    background-color: red;
+}
+/*Fin caja portada*/
+
 /*Estilo de la informacion sobre las extensiones y las imagenes*/
 #formatos_Man{
     margin: 1em 0.25em 0em 0.25em;

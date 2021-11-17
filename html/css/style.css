@@ -86,6 +86,25 @@ noscript {color:red;}
   transition: font-size 1s;
 }
 
+#txtbus {
+  height: 1.5em;
+  border: none;
+  width: 25em;
+  background-color: black;
+  color: #EEC51F;
+}
+
+#buscador{
+  display: flex;
+  /* align-items: center; */
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  width: fit-content;
+  padding: 1%;
+  margin-bottom: 0;
+  /* margin: 1em auto 2em auto; */
+  background-color: black;
+}
 
 
 #index #txtEscribir {

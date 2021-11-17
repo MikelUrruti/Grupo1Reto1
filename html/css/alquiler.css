@@ -86,14 +86,22 @@ body > h1 {
 
 /* SOLO EN MOVIL */
 @media Screen and (max-width:480px) {
+   
+   
+   
+   
     /* SOLO muestro los dos primeros artículos */
-    #section1 .enlaces:not(:nth-child(1)), #section1 a:not(:nth-child(2)) {
+   
+   
+    /* #section1 .enlaces:not(:nth-child(1)), #section1 .enlaces:not(:nth-child(2)) {
         display:none;
-    }
+    } */
+
+
     /* Muestro flechas para cambiar secciones en móvil */
-    .flechasMovil {
+    /* .flechasMovil {
         display:block;
-    }
+    } */
    
 }
 

@@ -45,14 +45,14 @@
         <?php 
         if (isset($_SESSION["errorGeneral"])) {
             cargarError("errorGeneral", "text-align:center");
-            unset($_SESSION["errorGeneral"]);
+        }
+        if (isset($_SESSION["manualsubido"])){
+            cargarExito("manualsubido", "");
         }
         if(isset($_SESSION["ruta"])){
             //echo $_SESSION["ruta"];
             
         }
-        //echo " ----- ";
-        //echo $_SERVER['SERVER_NAME'];
         ?>
 
         <article id="contenedor">
@@ -69,7 +69,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="foto" />
+                    <input id="subirImg" type="file" name="foto" class="btnSubir"/>
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -78,7 +78,18 @@
 
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <img id="imgVision" />
+                    <img id="imgHerramienta" class="imagenes" />
+                </div>
+            </section>
+
+            <section id="cantidadHerra">
+                <p>
+                    ¿Cuantas cuantas herramientas tiene para donar?
+                </p>
+
+                <div id="cajaNum">
+                    <input type="text" id="selCant" name="cantHer" value="2"/>
+                    <input type="number" id="numSumRes"/>
                 </div>
             </section>
 
@@ -88,9 +99,8 @@
                 </p>
                 <p id="cantidad">
                     <!--Script que sirve para cambiar el texto de la cantidad de caracteres que te quedan-->
-                    <script src="JS/donar.js">
-                        validacionDesc();
-                    </script>
+                    <!--No le llamamos desde aqui a la funcion de contar los caracteres, por que si no lo hace
+                        dos veces y no lo ejecuta nunca-->
                     <span id="restantes">500</span>
                     letras restantes
                 </p>

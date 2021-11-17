@@ -7,7 +7,7 @@ require("plantillasphp/paginadorFunciones.php");
 
 session_start();
 
-comprobarLogin();
+comprobarLoginAdmin();
 
 ?>
 
@@ -146,7 +146,7 @@ comprobarLogin();
 
                             } else {
 
-                                $resultados = consultarDatoBD("select id, idsolicitud, fechainicio, fecharecogida, fechafin from Alquiler;", array());
+                                $resultados = consultarDatoBD("select Alquiler.id, idsolicitud, usuariosolicitante, herramientasolicitada, fechainicio, fecharecogida, fechafin from Alquiler join Solicitud on Alquiler.idsolicitud = Solicitud.id;", array());
 
                                 $_SESSION["filas"] = array();
 
@@ -158,7 +158,7 @@ comprobarLogin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Identificador Solicitud","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Identificador Solicitud","Usuario","Herramienta a alquilar","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
 
                             ?>
 

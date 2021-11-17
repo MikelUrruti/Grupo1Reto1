@@ -10,6 +10,18 @@ ESTILO DE MOVIL
     text-align: left;
     width: 70%;
 }
+.usudat_NewUsu:last-child{
+
+    margin-top: 1%;
+
+}
+
+.usudat_NewUsu:last-child > div{
+
+    margin-top: 3%;
+
+}
+
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/

@@ -2,7 +2,7 @@
 require("plantillasphp/redirecciones.php");
 require("plantillasphp/funcionesFormularios.php");
 session_start();
-comprobarLogin();
+comprobarLoginAdmin();
 ?>
 
 <!DOCTYPE html>

@@ -5,7 +5,7 @@
 
     session_start();
 
-    if (count($_POST["registrosSeleccionados"]) > 0) {
+    if (isset($_POST["registrosSeleccionados"])) {
         
         $solicitudes = $_POST["registrosSeleccionados"];
 
@@ -89,7 +89,7 @@
 
             $parametrosComprobacionFinalizado = array();
 
-            $consultaComprobarFinalizado = "select id from Alquiler where fechafin is not null and id in (";
+            $consultaComprobarFinalizado = "select id from Alquiler where fechafin is not null and fecharecogida is not null and id in (";
 
             $contador = 0;
 
@@ -115,7 +115,7 @@
 
             if (count($consultaComprobarFinalizado) > 0) {
                 
-                $_SESSION["errorAccion"] = "No se puede recoger la herramienta de un alquiler cuando este ya ha sido finalizado";
+                $_SESSION["errorAccion"] = "No se puede recoger la herramienta de un alquiler cuando este ya ha sido finalizado o recogido previamente";
 
             } else {
 
@@ -160,7 +160,7 @@
                     
                     $parametrosFinalizar = array();
 
-                    $consultaFinalizar = "update Alquiler set fecharecogida = ".date("Y-m-d")." where id in (";
+                    $consultaFinalizar = "update Alquiler set fecharecogida = '".date("Y-m-d")."' where id in (";
     
                     $contador = 0;
     
@@ -170,13 +170,15 @@
         
                         if (count($solicitudes)-1 == $contador) {
      
-                            $consultaActualizar .= "?));";
+                            $consultaFinalizar .= "?);";
+
+                            echo $consultaFinalizar."<br>";
         
-                            $consultaActualizar = manipularDatoBD($consultaActualizar,$parametrosFinalizar);
+                            $consultaFinalizar = manipularDatoBD($consultaFinalizar,$parametrosFinalizar);
         
                         } else {
         
-                            $consultaActualizar .= "?, ";
+                            $consultaFinalizar .= "?, ";
         
                         }
     
@@ -184,30 +186,41 @@
     
                     }
 
-                    $parametrosActualizarStock = array();
+                    $parametrosRevisarNumHerramientas = array();
 
-                    $consultaActualizarStock = "update herramienta set stock = stock-1 where nombre in (select distinct(nombre) from Solicitud join Herramienta on Solicitud.herramientasolicitada=Herramienta.nombre join Alquiler on Alquiler.idsolicitud = Solicitud.id where Alquiler.id in (";
-    
+                    $consultaRevisarNumHerramientas = "select nombre, count(nombre) as numHerramientas from Solicitud join Herramienta on Herramienta.nombre=Solicitud.herramientasolicitada join Alquiler on Alquiler.idsolicitud = Solicitud.id where Alquiler.id in (";
+
                     $contador = 0;
     
                     foreach ($solicitudes as $solicitud) {
-        
-                        array_push($parametrosActualizarStock,$solicitud);
-        
+
+                        array_push($parametrosRevisarNumHerramientas,$solicitud);
+    
                         if (count($solicitudes)-1 == $contador) {
-     
-                            $consultaActualizarStock .= "?));";
-        
-                            $consultaActualizarStock = manipularDatoBD($consultaActualizarStock,$parametrosActualizarStock);
-        
+    
+                            $consultaRevisarNumHerramientas .= "?) group by nombre;";
+
+                            $HerramientasActualizarStock = consultarDatoBD($consultaRevisarNumHerramientas,$parametrosRevisarNumHerramientas);
+    
                         } else {
-        
-                            $consultaActualizarStock .= "?, ";
-        
+    
+                            $consultaRevisarNumHerramientas .= "?, ";
+    
                         }
+
     
                         $contador++;
-    
+                    
+                    }
+
+                    foreach ($HerramientasActualizarStock as $HerramientaActualizarStock) {
+                        
+                        $consultaActualizarStock = "update Herramienta set stock = stock-? where nombre = ?;";
+
+                        $consultaActualizarStock=manipularDatoBD($consultaActualizarStock,array($HerramientaActualizarStock["numHerramientas"],$HerramientaActualizarStock["nombre"]));
+
+                        echo $consultaActualizarStock;
+
                     }
 
                 }
@@ -222,7 +235,7 @@
             
             $parametrosComprobacionRecogido = array();
 
-            $consultaComprobarRecogido = "select id from Alquiler where fecharecogida is null and id in (";
+            $consultaComprobarRecogido = "select id from Alquiler where (fecharecogida is null or fechafin is not null) and id in (";
 
             $contador = 0;
 
@@ -248,13 +261,13 @@
 
             if (count($consultaComprobarRecogido) > 0) {
                 
-                $_SESSION["errorAccion"] = "No se pueden finalizar alquileres que aun no hayan sido recogidos";
+                $_SESSION["errorAccion"] = "No se pueden finalizar alquileres que aun no hayan sido recogidos o hayan sido finalizados";
 
             } else {
                 
                 $parametrosFinalizar = array();
 
-                $consultaFinalizar = "update Alquiler set fechafin = ".date("Y-m-d")." where id in (";
+                $consultaFinalizar = "update Alquiler set fechafin = '".date("Y-m-d")."' where id in (";
 
                 $contador = 0;
 
@@ -264,19 +277,58 @@
     
                     if (count($solicitudes)-1 == $contador) {
  
-                        $consultaActualizar .= "?));";
+                        $consultaFinalizar .= "?);";
     
-                        $consultaActualizar = manipularDatoBD($consultaActualizar,$parametrosFinalizar);
+                        $consultaFinalizar = manipularDatoBD($consultaFinalizar,$parametrosFinalizar);
     
                     } else {
     
-                        $consultaActualizar .= "?, ";
+                        $consultaFinalizar .= "?, ";
     
                     }
 
                     $contador++;
 
                 }
+
+                $parametrosRevisarNumHerramientas = array();
+
+                $consultaRevisarNumHerramientas = "select nombre, count(nombre) as numHerramientas from Solicitud join Herramienta on Herramienta.nombre=Solicitud.herramientasolicitada join Alquiler on Alquiler.idsolicitud = Solicitud.id where Alquiler.id in (";
+
+                $contador = 0;
+
+                foreach ($solicitudes as $solicitud) {
+
+                    array_push($parametrosRevisarNumHerramientas,$solicitud);
+
+                    if (count($solicitudes)-1 == $contador) {
+
+                        $consultaRevisarNumHerramientas .= "?) group by nombre;";
+
+                        $HerramientasActualizarStock = consultarDatoBD($consultaRevisarNumHerramientas,$parametrosRevisarNumHerramientas);
+
+                    } else {
+
+                        $consultaRevisarNumHerramientas .= "?, ";
+
+                    }
+
+
+                    $contador++;
+                
+                }
+
+                foreach ($HerramientasActualizarStock as $HerramientaActualizarStock) {
+                    
+                    $consultaActualizarStock = "update Herramienta set stock = stock+? where nombre = ?;";
+
+                    $consultaActualizarStock=manipularDatoBD($consultaActualizarStock,array($HerramientaActualizarStock["numHerramientas"],$HerramientaActualizarStock["nombre"]));
+
+                    echo $consultaActualizarStock;
+
+                }
+
+
 
             }
 

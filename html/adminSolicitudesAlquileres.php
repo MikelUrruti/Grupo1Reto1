@@ -7,7 +7,7 @@ require("plantillasphp/paginadorFunciones.php");
 
 session_start();
 
-comprobarLogin();
+comprobarLoginAdmin();
 
 ?>
 
@@ -164,6 +164,9 @@ comprobarLogin();
                                 }
                             
                             }
+
+                            
+                            
 
                             generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Fecha de Solicitud","Estado","Usuario Solicitante","Herramienta Solicitada"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
 

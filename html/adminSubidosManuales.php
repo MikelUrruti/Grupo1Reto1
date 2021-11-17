@@ -3,10 +3,11 @@
 require("plantillasphp/redirecciones.php");
 // require("controladores/paginador.php");
 require("plantillasphp/paginadorFunciones.php");
+require("plantillasphp/funcionesFormularios.php");
 
 session_start();
 
-comprobarLogin();
+comprobarLoginAdmin();
 
 ?>
 
@@ -57,6 +58,10 @@ comprobarLogin();
                     <input type="submit" class="boton" value="Modificar" name="Modificar">
                     <input type="submit" class="boton" value="Eliminar" name="Eliminar">
                 </div>
+                <?php 
+                if(isset($_SESSION["exito"])){
+                    cargarExito("exito", "");
+                }  ?>
                         <?php
 
                             if (!isset($_GET["page"])) {
@@ -87,7 +92,7 @@ comprobarLogin();
 
                                 $resultados = consultarDatoBD("select * from Manual where usuarioaprueba is not null;", array());
 
-                                // $_SESSION["filas"] = array();
+                                $_SESSION["filas"] = array();
 
                                 foreach ($resultados as $resultado) {
     
@@ -99,7 +104,7 @@ comprobarLogin();
 
                             // generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Publicador","Aprobado por"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
                             
-                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Publicador","Aprobado por"),"page",array("fichero"),array("portada"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("titulo","Titulo","Descripcion","Fichero","Portada","Publicador","Aprobado por"),"page",array("fichero"),array("portada"),array("../manuales/"),array("../manuales/portadas/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
                             
                             ?>
 

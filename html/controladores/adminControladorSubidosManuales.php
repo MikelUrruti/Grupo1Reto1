@@ -4,12 +4,14 @@ require("../plantillasphp/redirecciones.php");
 
     session_start();
 
-    if (count($_POST["registrosSeleccionados"]) > 0) {
+    if (isset($_POST["registrosSeleccionados"])) {
         
         if (isset($_POST["Modificar"])) {
 
             if (count($_POST["registrosSeleccionados"]) == 1) {
                 
+                $_SESSION["manualSeleccionado"] = $_POST["registrosSeleccionados"][0];
+
                 redireccionar("../formularioModificarManual.php");
 
             } else {
@@ -48,9 +50,9 @@ require("../plantillasphp/redirecciones.php");
 
             echo $consulta;
 
-        }
+            redireccionar("../adminSubidosManuales.php");
 
-        redireccionar("../adminSubidosManuales.php");
+        }
 
     } else {
         redireccionar("../adminSubidosManuales.php");

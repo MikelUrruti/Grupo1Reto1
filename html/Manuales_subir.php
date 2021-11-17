@@ -39,7 +39,7 @@
         comprobarLogin();    
     ?>
 
-    <form enctype="multipart/form-data" action="controladores/donarHerramienta.php" method="post">
+    <form enctype="multipart/form-data" action="controladores/subManVal.php" method="post">
         <h2 class="tituloForm">
             Rellene el formulario para enviar su manual a revisión*
         </h2>
@@ -78,6 +78,12 @@
             </p>
             <!--Para cargar el nombre del usuario en el campo de texto, usamos el php dentro del value directamente-->
             <input class="textoForm" id="telefono" type="tel" value="<?php echo $_SESSION["telefono"]; ?>" placeholder="629374638" size="9" maxlength="9" title="Debe empezar con: 6, 7 o 9"/>
+        </div>
+
+        <div id="cajaFoto">
+            <!--El boton para seleccionar la imagen que se quiera-->
+            
+            <!--El sitio donde se va a previsualizar la imagen seleccionada-->
         </div>
 
         <div id="cajaBot">

@@ -6,7 +6,7 @@ require("plantillasphp/paginadorFunciones.php");
 
 session_start();
 
-comprobarLogin();
+comprobarLoginAdmin();
 
 ?>
 
@@ -100,6 +100,7 @@ comprobarLogin();
                 <div class="acciones">
                     <input type="submit" class="boton botonCrear" value="Crear" name="Crear">
                     <!-- <input type="submit" class="boton botonModificar" value="Modificar" name="Modificar"> -->
+                    <input type="submit" class="boton botonEliminar" value="Activar Usuario" name="Activar">
                     <input type="submit" class="boton botonEliminar" value="Desactivar Usuario" name="Eliminar">
 
 

@@ -4,7 +4,7 @@
 
     session_start();
 
-    comprobarLogin();
+    comprobarLoginAdmin();
 
 ?>
 
@@ -23,7 +23,7 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <script src="JS/filtrar.js"></script>
     <!-- <link rel="stylesheet" href="css/formularioCrearUsuario.css"> -->
-    <title>Gestionar Manuales</title>
+    <title>Gestionar Herramientas</title>
 </head>
 <body>
     
@@ -35,13 +35,17 @@
 
     <section class="contenido">
 
-        <a href="adminSolicitudesManuales.php" class="seccion">
-           <img src="img/solicitud.png" alt="">
+        <a href="adminHerramientasAlmacen.php" class="seccion">
+           <img src="img/herramienta.png" alt="">
            <h2>Herramientas</h2>
         </a>
-        <a href="adminSubidosManuales.php" class="seccion">
-           <img src="img/manual.png" alt="">
+        <a href="adminDonaciones.php" class="seccion">
+           <img src="img/donaciones.png" alt="">
            <h2>Donaciones</h2>
+        </a>    
+        <a href="adminCategorias.php" class="seccion">
+           <img src="img/categoria.png" alt="">
+           <h2>Categorias</h2>
         </a>
 
     </section>

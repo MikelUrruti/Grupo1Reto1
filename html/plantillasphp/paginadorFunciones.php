@@ -226,7 +226,7 @@
 
     }
     // Recoge consulta, página actual y el límite
-    function mostrarmanuales($consulta,$page,$nummanuales){
+    function mostrarmanuales($consulta,$page,$nummanuales,$rutaFichero,$rutaPortada){
 
         print('<section id="cajaMan">');
 
@@ -248,10 +248,15 @@
 
         for ($i=(($page-1)*$nummanuales); $i < $limite; $i++) { 
             
-            print('<article class="manpos">');
-            print('<img class="manimg" src="img/ImagenPDF.png" />');
+            // print('<article class="manpos">');
+            // print("<a href='".$rutaFichero[0]."".$consulta[$i]["fichero"]."' download class='boton botonDescargar'><img class='manimg' src='".$rutaPortada[0]."".$consulta[$i]['portada']."' />");
+            // print('<p>'.$consulta[$i]['titulo'].'</p>');
+            // print("</article>");
+
+            print("<a href='".$rutaFichero[0]."".$consulta[$i]["fichero"]."' download class='manpos'>");
+            print("<img class='manimg' src='".$rutaPortada[0]."".$consulta[$i]['portada']."' />");
             print('<p>'.$consulta[$i]['titulo'].'</p>');
-            print("</article>");
+            print("</a>");
 
         }
 
@@ -276,7 +281,7 @@
                 $numCategoria ++;
                 echo "
                     <a id=article$numCategoria class=enlaces href=herramientas.php?filtro=".$consulta[$i]['nombre'].">
-                    <img src='".$consulta[$i]['foto']."'>
+                    <img src='../categoria/".$consulta[$i]['foto']."'>
                     <h2>".$consulta[$i]['nombre']."</h2>
                     </a>
                 ";  
@@ -310,7 +315,7 @@
 
                     echo "
                         <a id=article$numCategoria class=enlaces href='detalleHerramienta.php?filtro=" .$consulta[$i]['nombre']. "'>
-                            <img src='". $consulta[$i]['foto']. "'>
+                            <img src='../herramientas/". $consulta[$i]['foto']. "'>
                             <h2>" .$consulta[$i]['nombre']. "</h2>
                         </a>
                     
@@ -373,7 +378,7 @@
 
     }
 
-    function mostrarTablaConFicherosImagenes($consulta,array $columnasmostrar,$page,array $columnasFicheros,array $columnasImagenes,$numRegistros){
+    function mostrarTablaConFicherosImagenes($consulta,array $columnasmostrar,$page,array $columnasFicheros,array $columnasImagenes,array $rutaFichero,array $rutaImagen,$numRegistros){
 
         echo "<table class='tabla'>";
         echo "<thead>";
@@ -415,9 +420,9 @@
                 if (gettype($key) == "string") {
 
                     if (in_array($key,$columnasFicheros)) {
-                        echo "<td class='celda contenidoTabla'><a href='../manuales/".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
+                        echo "<td class='celda contenidoTabla'><a href='".$rutaFichero[0]."".$valor."' download class='boton botonDescargar'>Descargar</a></td>";
                     } elseif (in_array($key,$columnasImagenes)) {
-                        echo "<td class='celda contenidoTabla'><img src='../manuales/portadas/".$valor."' class='imagenTabla'/></td>";
+                        echo "<td class='celda contenidoTabla'><img src='".$rutaImagen[0]."".$valor."' class='imagenTabla'/></td>";
                     } else {
                         echo "<td class='celda contenidoTabla'>".$valor."</td>";
                     }
