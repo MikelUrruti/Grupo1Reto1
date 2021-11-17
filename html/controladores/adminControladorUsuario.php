@@ -46,6 +46,8 @@
 
         manipularDatoBD($consulta,$parametros);
 
+        redireccionar("../adminUsuarios.php");
+
     } elseif ($accion == "Activar") {
         
         $usuarios = $_POST["registrosSeleccionados"];
@@ -74,8 +76,10 @@
 
         manipularDatoBD($consulta,$parametros);
 
+        redireccionar("../adminUsuarios.php");
+
     }
 
-    redireccionar("../adminUsuarios.php");
+    
 
 ?>

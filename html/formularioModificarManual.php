@@ -1,8 +1,22 @@
 <?php
 require("plantillasphp/redirecciones.php");
 require("plantillasphp/funcionesFormularios.php");
+require("plantillasphp/operacionesDb.php");
 session_start();
 comprobarLogin();
+
+if (isset($_SESSION["manualSeleccionado"])) {
+    
+    $manual = consultarDatoBD("select titulo, descripcion, fichero, portada from Manual where titulo = ?",array($_SESSION["manualSeleccionado"]));
+
+    // $_SESSION["fotoHerramienta"] = $herramienta[0]["foto"];
+
+} else {
+    
+    redireccionar("adminSubidosManuales.php");
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,16 +49,23 @@ comprobarLogin();
 
         <form action="controladores/modificarManual.php" method="post" enctype="multipart/form-data">
             <h2 id="tituloManual">
-                Modificar Manual
+                Modificar Manual <?php echo $_SESSION["manualSeleccionado"]; ?>
             </h2>
-            <?php cargarError("errorGeneral", "text-align:center"); ?>
+            <?php
+            if(isset($_SESSION["errorGeneral"])){
+                cargarError("errorGeneral", "text-align:center"); 
+            } 
+            ?>
             <div class="apartados">
                 <p>
                     Titulo:
                 </p>
 
                 <input type="text" name="titulo" value="<?php echo $_SESSION['manualSeleccionado']?>" class="textoForm" id="titulo" />
-                <?php cargarError("errorTitulo", ""); ?>
+                <?php 
+                if(isset($_SESSION["errorTitulo"])){
+                    cargarError("errorTitulo", "");
+                } ?>
             </div>
             <div class="apartados">
                 <p>
@@ -57,8 +78,13 @@ comprobarLogin();
                     <span id="restantes">500</span>
                     letras restantes
                 </p>
-                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion" class="textoForm"></textarea>
-                <?php cargarError("errorDescripcion", ""); ?>
+                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion" class="textoForm">
+                    <?php echo $manual[0]["descripcion"] ?>
+                </textarea>
+                <?php 
+                if(isset($_SESSION["errorDescripcion"])){
+                    cargarError("errorDescripcion", ""); 
+                }?>
             </div>
             <div class="apartados">
                 <p>
@@ -69,10 +95,13 @@ comprobarLogin();
                 <label for="portada" class="txtSubir">Subir Imagen</label>
                 <div id="imgDonde">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <img id="imgFichero" class="imagenes"  />
+                    <img id="imgFichero" class="imagenes" src="<?php echo "../manuales/portadas/".$manual[0]["portada"] ?>" />
                 </div>
 
-                <?php cargarError("errorFichero", ""); ?>
+                <?php 
+                if(isset($_SESSION["errorFichero"])){
+                    cargarError("errorFichero", ""); 
+                }?>
             </div>
             <div class="apartados">
                 <p>
@@ -85,11 +114,15 @@ comprobarLogin();
 
                 <div id="manualNom">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
-                    <!-- <img id="imgVision" src="<?php echo "../manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
-                    <p id="nombreManual"></p>
+                    <p id="nombreManual">
+                    <?php echo $manual[0]["fichero"] ?>
+                    </p>
                 </div>
 
-                <?php cargarError("errorPortada", ""); ?>
+                <?php 
+                if(isset($_SESSION["errorPortada"])){
+                    cargarError("errorPortada", ""); 
+                }?>
             </div>
             <input type="submit" value="Modificar Manual" name="modificar" class="boton" />
         </form>

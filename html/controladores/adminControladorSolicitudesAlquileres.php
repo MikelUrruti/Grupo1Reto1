@@ -2,6 +2,7 @@
 
     require("../plantillasphp/redirecciones.php");
     require("../plantillasphp/operacionesDb.php");
+    require("../plantillasphp/funcionesCorreos.php");
 
     session_start();
 
@@ -90,6 +91,8 @@
         
                     $consultaActualizarSolicitud = "update Solicitud set estado='aceptada' where id in (";
 
+                    $consultaMandarCorreos = "select email, usuario, id, herramientasolicitada from Solicitud join Usuario on Solicitud.usuariosolicitante=Usuario.usuario where Solicitud.id in (";
+
                     $contador = 0;
                     
                     foreach ($solicitudes as $solicitud) {
@@ -108,12 +111,55 @@
                             $consultaActualizarSolicitud .= "?);";
         
                             $consultaActualizarSolicitud = manipularDatoBD($consultaActualizarSolicitud,$parametrosActualizarSolicitud);
+
+                            $consultaMandarCorreos .= "?);";
+
+                            $correos = consultarDatoBD($consultaMandarCorreos,$parametrosActualizarSolicitud);
+
+                            $enviado = false;
+
+                            $usuario = "";
+
+                            foreach ($correos as $correo) {
+
+                                    $enviado = true;
+                                    $usuario = $correo["usuario"];
+
+                                    enviarCorreo(
+                                        "[FixPoint] Solicitud de alquiler aprobada",
+                                        $correo["email"],
+                                        "
+                                        <style>
+                                        
+                                            p {
+                                
+                                                font-size: 2em;
+                                
+                                            }
+                                        
+                                        </style>
+                                        <p>Buenas <span style='font-weight:bold'>".$correo["usuario"]."</span>,</p>
+                                        <p>Su pedido de la herramienta <span style='font-weight:bold'>".$correo["herramientasolicitada"]."</span> en la solicitud <span style='font-weight:bold'>Nº".$correo["id"]."</span> esta lista para recogerla.</p>
+                                        <p>Pasa cuando quieras a recogerla!</p>
+                                        <p style='white-space:pre-line'>Un saludo,
+                                        fixPoint
+                                        </p>
+                                        <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
+                                        "",
+                                        array("../img/logo.png")
+                                    );
+
+                            }
+
+
         
                         } else {
         
                             $consultaInsertar .= "(?, ?), ";
         
                             $consultaActualizarSolicitud .= "?, ";
+
+                            $consultaMandarCorreos .= "?, ";
         
                         }
 
@@ -131,6 +177,9 @@
             $solicitudes = $_POST["registrosSeleccionados"];
 
             $consulta = "update Solicitud set estado='Rechazada' where id in (";
+
+            $consultaMandarCorreos = "select email, usuario, id, herramientasolicitada from Solicitud join Usuario on Solicitud.usuariosolicitante=Usuario.usuario where Solicitud.id in (";
+
             $parametros = array();
             $contador = 0;
     
@@ -139,12 +188,16 @@
                 array_push($parametros,$solicitud);
     
                 if ($contador == count($solicitudes)-1) {
+
+                    $consultaMandarCorreos .= "?);";
                     
                     $consulta .= "?);";
     
                 } else {
                     
                     $consulta .= "?, ";
+
+                    $consultaMandarCorreos .= "?, ";
     
                 }
     
@@ -154,7 +207,42 @@
 
             $consulta = manipularDatoBD($consulta,$parametros);
 
-            echo $consulta;
+            $correos = consultarDatoBD($consultaMandarCorreos,$parametros);
+
+            $enviado = false;
+
+            $usuario = "";
+
+            foreach ($correos as $correo) {
+
+                    $enviado = true;
+                    $usuario = $correo["usuario"];
+
+                    enviarCorreo(
+                        "[FixPoint] Solicitud de alquiler aprobada",
+                        $correo["email"],
+                        "
+                        <style>
+                        
+                            p {
+                
+                                font-size: 2em;
+                
+                            }
+                        
+                        </style>
+                        <p>Buenas <span style='font-weight:bold'>".$correo["usuario"]."</span>,</p>
+                        <p>Su pedido de la herramienta <span style='font-weight:bold'>".$correo["herramientasolicitada"]."</span> en la solicitud <span style='font-weight:bold'>Nº".$correo["id"]."</span> esta lista para recogerla.</p>
+                        <p>Pasa cuando quieras a recogerla!</p>
+                        <p style='white-space:pre-line'>Un saludo,
+                        fixPoint
+                        </p>
+                        <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
+                        "",
+                        array("../img/logo.png")
+                    );
+
+            }
 
         }
 

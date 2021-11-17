@@ -151,6 +151,7 @@
     }
     #listaAdmin a:last-child{
         margin-top: 10%;
+        margin-bottom: 15%;
     }
     @keyframes letra {
     
