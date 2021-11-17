@@ -15,7 +15,7 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
     $_SESSION["codigoGenerado"] = generarCodigo();
 
     enviarCorreo(
-        "Verificar registro fixPoint",
+        "Verificar registro FixPoint",
         $_SESSION["email"],
         "
         <style>
@@ -27,7 +27,7 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
             }
         
         </style>
-        <p>Bienvenido al sitio web de fixPoint <span style='font-weight:bold'>".$_SESSION["usuario"]."</span>.</p>
+        <p>Bienvenido al sitio web de FixPoint <span style='font-weight:bold'>".$_SESSION["usuario"]."</span>.</p>
         <p>Para completar el registro en nuestro sitio web deberas de introducir el siguiente codigo en el formulario donde se verifica tu cuenta:</p>
         <p style='font-weight:bold; font-size: 2em'>".$_SESSION["codigoGenerado"]."</p>
         <p>Si tienes algun problema a la hora de crear tu cuenta en este sitio web, respondenos en este hilo comentandonos tu situacion.</p>
@@ -35,7 +35,7 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
         fixPoint
         </p>
         <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
-        "pues eso, que me chingo a tu madre maricon",
+        "",
         array("./img/logo.png")
     );
 
@@ -53,6 +53,7 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
     <link rel="stylesheet" href="css/normalizar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/confirmarRegistro.css">
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <title>Verificar registro</title>
 </head>
 <body>
