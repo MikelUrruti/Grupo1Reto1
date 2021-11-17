@@ -78,6 +78,10 @@ function validarStock($stock) {
 
 }
 
+function validarCant($cantidad){
+    return ctype_digit($cantidad);
+}
+
 function validarImg($foto)
 {
     //Filtros para la imagen

@@ -16,7 +16,7 @@ $rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
 
 //Comprobaciones
 //isset => la variable esta declarada y no es nulo
-if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto']) && isset($_POST["cantHer"])) {
+if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST["descripcion"]) && isset($_FILES['foto']) && isset($_POST["cantNum"])) {
     $correcto = true;
     if (!validarNombre($_POST["herramienta"])) {
         //Este $_SESSION devuelve un mensaje de error
@@ -25,6 +25,10 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
     } else if (!validarImg($_FILES["foto"])) {
         //Este $_SESSION devuelve un mensaje de error
         $_SESSION["errorImg"] = "Debe introducir una imagen de la herramienta.";
+        $correcto = false;
+    } else if (!validarCant($_POST["cantNum"])){
+        //Este $_SESSION devuelve un mensaje de error
+        $_SESSION["errorCantidad"] = "Debe introducir una cantidad correcta, sin los caracteres especiales (, . - + e E)";
         $correcto = false;
     } else if (strlen($_POST["descripcion"]) > 500) {
         //Este $_SESSION devuelve un mensaje de error
@@ -44,13 +48,13 @@ if (isset($_POST["herramienta"]) && isset($_SESSION["usuario"]) && isset($_POST[
         }
         if ($correcto2) {
             $nomImg = consultarDatoBD("select max(id)+1 from Donaciones");
-            $parametros = array($nomImg[0]["max(id)+1"], $_SESSION["usuario"], $_POST["herramienta"], , $_POST["descripcion"], $fechaIni[date("Y-m-d")]);
+            $parametros = array($nomImg[0]["max(id)+1"], $_SESSION["usuario"], $_POST["herramienta"], $_POST["cantNum"], $_POST["descripcion"], $fechaIni[date("Y-m-d")]);
             //Los signos de interrogacion, en este caso, cogen los valores de la primera variable que encuentre, en orden de creacion de esas subvariables
-            $consulta = manipularDatoBD("insert into Donaciones(id, usuario, nomherramienta, cantidad, descripcion, fechainicio) values (?, ?, ?, ?)", $parametros);
+            $consulta = manipularDatoBD("insert into Donaciones(id, usuario, nomherramienta, cantidad, descripcion, fechainicio) values (?, ?, ?, ?, ?, ?)", $parametros);
 
             if (is_integer($consulta)) {
                 //Mensaje de error al insertar la herramienta
-                $_SESSION["errorGeneral"] = erroresInsertar($consulta, array("Usuario", "Herramienta", "Fichero", "Descripcion"));
+                $_SESSION["errorGeneral"] = erroresInsertar($consulta, array("Id", "Usuario", "Herramienta", "Cantidad", "Fichero", "Descripcion"));
                 echo $_SESSION["errorGeneral"];
 
             } else {            

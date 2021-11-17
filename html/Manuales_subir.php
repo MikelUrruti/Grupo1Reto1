@@ -1,7 +1,7 @@
 <?php
     //PHP que comprueba si ha iniciado sesion para poder continuar
     require("plantillasphp/redirecciones.php");
-    //PHP que comprueba 
+    //PHP que sirve para si se ha introducido bien el usuario o no
     require("plantillasphp/funcionesFormularios.php");
     // require("controladores/paginador.php");
 ?>

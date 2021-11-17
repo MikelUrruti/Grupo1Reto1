@@ -60,7 +60,7 @@
                 <p>
                     Herramientas:
                 </p>
-                <input id="titulo" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" maxlength="30"/>
+                <input id="titulo" name="herramienta" class="textoForm" placeholder="Nombre de herramienta" type="text" maxlength="30"/>
                 <?php cargarError("errorHerramienta", ""); ?>
             </section>
 
@@ -69,7 +69,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="foto" class="btnSubir"/>
+                    <input id="subirImg" name="foto" type="file" class="btnSubir"/>
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -88,8 +88,10 @@
                 </p>
 
                 <div id="cajaNum">
-                    <input title="Caracteres no permitidos: . - + e E" type="number" value="1" id="numSumRes" class="hoverCant" min="1" />
+                    <input id="numSumRes" name="cantNum" title="Caracteres no permitidos: . - + e E" type="number" value="1" class="hoverCant" min="1" />
                 </div>
+
+                <?php cargarError("errorCantidad", ""); ?>
             </section>
 
             <section id="desc">

@@ -66,6 +66,7 @@ function validarEmail(source) {
     return false;
 }
 
+//Validar telefono
 function validarTelefono(source) {
     if (source.value.length > 0 || source.value != null) {
         if (source.value.length == 9) {
@@ -103,17 +104,30 @@ function validacionDesc() {
     }
 }
 
+//Validar stock
 function validarStock(source) {
-
     for (let index = 0; index <= source.value.length; index++) {
         // Se asegura que se introduzca un numero
         if (isNaN(source.value.charAt(index))) {
             return false;
         }
     }
-
     return true;
+}
 
+//Validar cantidad
+function validarCant(source){
+    var objetivo = source.target;
+    var regex = /^[0-9]+$/;
+    console.log(objetivo.value);
+    if(objetivo.value.length > 0){
+        if (objetivo.value != null){
+            if (regex.test(objetivo.value)){
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 /*Regex
@@ -123,6 +137,13 @@ function validarStock(source) {
     ?! -> indica que lo que vendra despues es posibilidad
     \s -> es para espacios en blanco
     $/ -> es para finalizar el regex
+*/
+
+/*Regex de comprobar cantidad
+    /^ -> es para iniciar el regex
+    [0-9] -> indica que solo acepta numeros
+    + -> indica que tiene que buscar una o mas ocurrencias de la restriccion anterior
+    $\ -> es para finalizar el regex
 */
 
 /*Regex del correo

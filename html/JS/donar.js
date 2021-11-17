@@ -8,7 +8,7 @@ window.onload = function () {
     descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
     cantidad.addEventListener("mouseover", efectoHover);
-    cantidad.addEventListener("change", comprobar);
+    cantidad.addEventListener("change", validarCant);
     
     //Para darle el maximo de caracteres mediante JS
     /*
@@ -19,11 +19,6 @@ window.onload = function () {
         TENER MUCHO CUIDADO CON TODO ESO
     */
     descripcion.maxLength= "500";
-}
-
-function comprobar(event){
-    var as = event.target.value;
-    
 }
 
 function efectoHover(event){
