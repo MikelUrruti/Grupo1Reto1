@@ -30,7 +30,7 @@
         <p style='font-weight:bold; font-size: 2em'>$_SESSION[email]</p>
         <p>Si tienes algun problema, respondenos en este hilo comentandonos tu situacion.</p>
         <p style='white-space:pre-line'>Un saludo,
-        fixPoint
+        FixPoint
         </p>
         <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>","",
         array("../img/logo.png"),
