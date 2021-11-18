@@ -10,38 +10,42 @@ ESTILO DE MOVIL
     text-align: left;
     width: 70%;
 }
+.usudat_NewUsu:last-child{
+
+    margin-top: 1%;
+
+}
+
+.usudat_NewUsu:last-child > div{
+
+    margin-top: 3%;
+
+}
+
 /*Fin de usuario y contraseña*/
 
 /*Estilo del boton*/
-#button_NewUsu{
+.boton{
     display: block;
-    background-color: black;
-    color: white;
-    margin: 5% auto;
-    border: outset;
+    margin: 5% auto 0% auto;
     padding: 1.5%;
-    transition: 0.6s;
-}
-
-#button_NewUsu:hover{
-    color: #EEC51F;
-    border:inset;
-    cursor: pointer;
 }
 /*Fin boton*/
+
+/*Estilo de las cajas de texto*/
+.datos_NewUsu{
+    background-color: rgb(0, 0, 0);
+    color: #EEC51F;
+    border: none;
+}
+/*Fin cajas texto*/
 
 /*
 
 ESTILO DE TABLET
 
 */
-@media screen and (min-width: 480px) {
-    /*Estilo de la caja general*/
-    /* form{
-        padding-bottom: 8em;
-    } */
-    /*Fin caja*/
-    
+@media screen and (min-width: 480px) {    
     /*Estilo del titulo*/
     #titulo_NewUsu{
         font-size: 2em;
@@ -89,16 +93,11 @@ ESTILO DE ORDENADOR
     /*Estilo de los grupos de caja horizontales*/
     .grupodatos_NewUsu{
         display: flex;
+        column-gap: 5%;
     }
 
     .grupodatos_NewUsu > .usudat_NewUsu{
         justify-content: space-around;
     }
     /*Fin cajas horizontales*/
-
-    /*Estilo del boton*/
-    /* #button_NewUsu{
-        float: right;
-    } */
-    /*Fin boton*/
 }

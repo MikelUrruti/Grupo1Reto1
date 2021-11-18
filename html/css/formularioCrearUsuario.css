@@ -11,8 +11,15 @@ form{
     margin: auto;
     margin-top: 1em;
     width: 80%;
-    /* padding-bottom: 6em; */
+    padding-bottom: 0;
 }
+
+.exito {
+
+    text-align: center;
+
+}
+
 /*Fin general*/
 
 #titulo_NewUsu{
@@ -53,6 +60,14 @@ form{
     border: none;
 }
 /*Fin cajas texto*/
+
+#imagen {
+
+    height: 100px;
+    width: 200px;
+    margin-top: 5%;
+
+}
 
 /*
 

@@ -41,7 +41,7 @@ function manipularDatoBD(string $consulta, array $parametros) {
 
 }
 
-function consultarDatoBD(string $consulta, array $parametros) {
+function consultarDatoBD(string $consulta, array $parametros = array()) {
 
     global $datosConexion;
 
@@ -92,11 +92,47 @@ function procesarErroresComunes($codigoError) {
 
     } elseif ($codigoError == 1146 || $codigoError == 1064 || $codigoError == 1136 || $codigoError == 1054) {
     
-        return "La operacion a realizar no puede llevarse a cabo debido a que la misma esta mal configurada, por favor, contacte con el administrador del sitio web para resolver este problema.";
+        return "La operacion a realizar no puede llevarse a cabo debido a que la misma esta mal configurada, por favor, contacte con el administrador del sitio web para resolver este problema. Codigo de error: ".$codigoError;
 
     } else {
 
         return "Se ha producido el siguiente error a la hora de trabajar con la base de datos: ".$codigoError.". Por favor, contacta con el administrador del sitio web para que resuelva este problema";
+
+    }
+
+}
+
+function erroresInsertar($codigoError, array $unicos) {
+
+    if ($codigoError == 1062) {
+        
+        $error = "Alguno de los siguientes campos puede que esten siendo utilizados por otro registro: ";
+
+        for ($i=0; $i < count($unicos); $i++) { 
+            
+            if ($i == count($unicos)-1) {
+
+                if (count($unicos) == 1) {
+                    $error .= " ".$unicos[$i];
+                } else {
+                    $error .= " o ".$unicos[$i];
+                }
+
+            } else {
+                
+                $error .= $unicos[$i].", ";
+
+            }
+
+        }
+
+        $error .= ".";
+
+        return $error;
+
+    } else {
+
+        return procesarErroresComunes($codigoError);
 
     }
 

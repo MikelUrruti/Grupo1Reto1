@@ -1,10 +1,10 @@
 <?php
 
-    require_once("plantillasphp/redirecciones.php");
+    require("plantillasphp/redirecciones.php");
 
     session_start();
 
-    comprobarLogin();
+    comprobarLoginAdmin();
 
 ?>
 
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/menuAdmin.css">
     <link rel="stylesheet" href="css/cssFooter.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
 </head>

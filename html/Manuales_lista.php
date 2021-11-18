@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,116 +10,45 @@
     <link rel="shortcut icon" href="img/Logo Header.png" />
     <!--Estilos-->
     <link rel="stylesheet" href="css/normalizar.css" />
-    <link rel="stylesheet" href="css/manualesLista.css" />
     <link rel="stylesheet" href="css/cssNav.css">
     <link rel="stylesheet" href="css/cssFooter.css">
-    <!--Para el tipo de letra-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/manualesLista.css" />
+    <link rel="stylesheet" href="css/paginador.css" />
 </head>
 
-<body>
+<body class="fondo">
     <!--Lo que hay que poner para incluir una pagina:-->
     <?php
-        include("plantillas/indexNav.html")
+    include("plantillas/indexNav.php")
     ?>
-    
-    <form>
+
+    <form action="controladores/buscarManualUsuario.php" method="get">
         <h1 id="titManLis">
             Escoge el manual que quieras visualizar
         </h1>
 
-        <!--Caja del buscador, con el campo de texto y la imagen-->
-        <div id="buscador">
-            <input id="txtbus" type="text" placeholder="Buscar manuales..." />
-            <img id="lupa" src="img/lupa.png" />
-        </div>
-<?php include("controladores/paginador.php") ?>
-        <!-- <section id="cajaMan">
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
+        <section id="buscBot">
+            <!--Caja del buscador, con el campo de texto y la imagen de la lupa-->
+            <article id="buscador">
+                <input id="txtbus" type="text" placeholder="Buscar manuales..." name="Buscar" />
+                <input type="image" name="BuscarLupa" src="img/lupa.png" value="" id="lupa">
             </article>
 
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
+            <article id="posBotSubMan">
+                <a href="Manuales_subir.php">
+                    <input id="subirMan" class="boton" type="button" value="Subir Manual"></input>
+                </a>
             </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-
-            <article class="manpos">
-                <img class="manimg" src="img/ImagenPDF.png" />
-                <p>
-                    Nombre del manual
-                </p>
-            </article>
-        </section> -->
-
-        <!-- <article id="cantPag">
-            <section id="movIzq">
-                <img src="img/Paso.png" />
-            </section>
-
-            <section class="numPag">
-                <p>
-                    1
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    ...
-                </p>
-            </section>
-
-            <section class="numPag" id="posAct">
-                <p>
-                    5
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    ...
-                </p>
-            </section>
-
-            <section class="numPag">
-                <p>
-                    10
-                </p>
-            </section>
-
-            <section id="movDer">
-                <img src="img/Paso.png" />
-            </section>
-        </article> -->
+        </section>
     </form>
-    <?php 
-        include ("plantillas/indexFooter.html");
+    <form method="POST" action="">
+        <?php 
+            include("controladores/paginador.php");
+        ?>
+    </form>
+    <?php
+    include("plantillas/indexFooter.html");
     ?>
 </body>
 

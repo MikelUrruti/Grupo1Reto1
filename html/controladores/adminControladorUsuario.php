@@ -1,34 +1,26 @@
 <?php
 
-    require_once("../plantillasphp/redirecciones.php");
-    require_once("../plantillasphp/operacionesDb.php");
+    require("../plantillasphp/redirecciones.php");
+    require("../plantillasphp/operacionesDb.php");
 
     session_start();
-
-    echo var_dump($_POST);
+    
 
     if (isset($_POST["Eliminar"])) {
         $accion = "Eliminar";
-    } elseif (isset($_POST["Buscar"])) {
-        // echo $_POST["Buscar"]." resultado";
-        $accion = "Buscar";
     } elseif (isset($_POST["Crear"])) {
         $accion = "Crear";
-    } elseif (isset($_POST["Modificar"])) {
-        $accion = "Modificar";
+    } elseif (isset($_POST["Activar"])) {
+        $accion = "Activar";
     } 
 
     if ($accion == "Crear") {
 
-        redireccionar("../FormularioCrearUsuario.php");
-
-    } elseif ($accion == "Modificar") {
-        
-        redireccionar("../FormularioModificarUsuario.php");
+        redireccionar("../formularioCrearUsuario.php");
 
     } elseif ($accion == "Eliminar") {
 
-        $usuarios = $_POST["usuariosSeleccionados"];
+        $usuarios = $_POST["registrosSeleccionados"];
 
         $consulta = "update Usuario set estado='inactivo' where usuario in (";
         $parametros = array();
@@ -56,26 +48,38 @@
 
         redireccionar("../adminUsuarios.php");
 
-    } elseif ($accion == "Buscar") {
+    } elseif ($accion == "Activar") {
+        
+        $usuarios = $_POST["registrosSeleccionados"];
 
+        $consulta = "update Usuario set estado='activo' where usuario in (";
         $parametros = array();
+        $contador = 0;
 
-        for ($i=0; $i < 5; $i++) { 
+        foreach ($usuarios as $usuario) {
             
-            array_push($parametros,"%".$_POST["Buscar"]."%");
+            array_push($parametros,$usuario);
+
+            if ($contador == count($usuarios)-1) {
+                
+                $consulta .= "?);";
+
+            } else {
+                
+                $consulta .= "?, ";
+
+            }
+
+            $contador++;
 
         }
 
-        $_SESSION["filtrado"] = consultarDatoBD("select * from Usuario where usuario like ? or email like ? or nombre like ? or apellidos like ? or telefono like ?;",$parametros);
+        manipularDatoBD($consulta,$parametros);
 
-        // echo var_dump($_SESSION["filtrado"]);
-
-        redireccionar("../adminUsuarios.php");
-
-    } else {
-        
         redireccionar("../adminUsuarios.php");
 
     }
+
+    
 
 ?>
