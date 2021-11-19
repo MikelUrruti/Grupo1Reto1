@@ -1,17 +1,34 @@
 window.onload = function () {
-    nombre = document.getElementById("nombre");
+    nombre = document.getElementById("titulo");
     descripcion = document.getElementById("descripcion");
     subirImg = document.getElementById("subirImg");
-    suma = document.getElementById("numSumRes");
+    cantidad = document.getElementById("numSumRes");
 
     nombre.addEventListener("keyup", validarCampo);
     descripcion.addEventListener("keyup", validacionDesc);
     subirImg.addEventListener("change", cargarImg);
-    suma.addEventListener("change", sumaVer);
+    cantidad.addEventListener("mouseover", efectoHover);
+    cantidad.addEventListener("change", validarCant);
     
     //Para darle el maximo de caracteres mediante JS
-    descripcion.maxlength= "5";
+    /*
+        LOS ATRIBUTOS HAY QUE PONERLOS EN MAYUSCULA LA
+        SEGUNDA PARTE DEL ATRIBUTO, POR QUE SI NO LO
+        PILLA COMO VARIABLE 
+
+        TENER MUCHO CUIDADO CON TODO ESO
+    */
+    descripcion.maxLength= "500";
 }
+
+function efectoHover(event){
+    var a = event.target;
+    /*Estilo del cursor al hacer hover*/
+    a.style.cursor="help";
+    a.style.position="relative";
+    /*Fin cursor hover*/
+}
+
 
 // Se toman los id de las cajas y se pasan a las funciones para su comprobación
 function validarCampo(source) {
@@ -21,26 +38,4 @@ function validarCampo(source) {
     if (cajaId == nombre.id) {
         validar(source, validarNombre(source.target, cajaId));
     } 
-}
-
-function sumaVer(){
-    var inicio = 0;
-    var a = suma.value;
-    console.log(a);
-    if(inicio<a){
-        inicio+1;
-        console.log(inicio);
-    }else{
-        inicio-1;
-        console.log(inicio);
-    }
-}
-
-//Se comprueba si ha introducido algun signo especial, si asi es, se le impide escribirlo
-function probarCantNum(event){
-    var tecla = event.key;
-    if(tecla==69 || tecla==187 || tecla==189 || tecla==190){
-        console.log("has pulsado un boton no permitido");
-    }
-    //console.log(event.keyCode);
 }

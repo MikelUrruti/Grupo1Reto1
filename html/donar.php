@@ -56,11 +56,11 @@
         ?>
 
         <article id="contenedor">
-            <section id="nombre">
+            <section id="nombreSec">
                 <p>
                     Herramientas:
                 </p>
-                <input id="nombreInput" class="textoForm" placeholder="Nombre de herramienta" type="text" name="herramienta" />
+                <input id="titulo" name="herramienta" class="textoForm" placeholder="Nombre de herramienta" type="text" maxlength="30"/>
                 <?php cargarError("errorHerramienta", ""); ?>
             </section>
 
@@ -69,7 +69,7 @@
                     <p>
                         Imagen:
                     </p>
-                    <input id="subirImg" type="file" name="foto" class="btnSubir"/>
+                    <input id="subirImg" name="foto" type="file" class="btnSubir"/>
                     <!--Para dar estilo al boton de file-->
                     <label for="subirImg">Subir imagen...</label>
                 </div>
@@ -84,13 +84,14 @@
 
             <section id="cantidadHerra">
                 <p>
-                    ¿Cuantas cuantas herramientas tiene para donar?
+                    ¿Cuantas herramientas tiene para donar?
                 </p>
 
                 <div id="cajaNum">
-                    <input type="text" id="selCant" name="cantHer" value="2"/>
-                    <input type="number" id="numSumRes"/>
+                    <input id="numSumRes" name="cantNum" title="Caracteres no permitidos: . - + e E" type="number" value="1" class="hoverCant" min="1" />
                 </div>
+
+                <?php cargarError("errorCantidad", ""); ?>
             </section>
 
             <section id="desc">
@@ -104,14 +105,14 @@
                     <span id="restantes">500</span>
                     letras restantes
                 </p>
-                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion"></textarea>
+                <textarea id="descripcion" placeholder="Descripción de la herramienta..." name="descripcion" maxlength="500"></textarea>
  
                 <?php cargarError("errorDescripcion", ""); ?>
 
             </section>
         </article>
         </div>
-
+        
         <div id="posbot">
             <input class="boton" type="submit" value="Donar" />
         </div>

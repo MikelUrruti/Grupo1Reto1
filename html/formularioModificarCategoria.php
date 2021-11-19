@@ -101,7 +101,7 @@ if (isset($_SESSION["nombreCategoria"])) {
 
                     ?>
 
-                    <img src="<?php echo "../categoria/".$categoria[0]["foto"]; ?>" alt="" id="imagen">
+                    <img src="<?php echo "img/categoria/".$categoria[0]["foto"]; ?>" alt="" id="imagen">
                     
                 </div>
                 
