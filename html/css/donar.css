@@ -21,11 +21,11 @@ form div{
 /*Fin elementos formulario*/
 
 /*Estilo de la caja del nombre de las herramientas*/
-#nombre p{
+#nombreSec p{
     margin-left: 7%;
 }
 
-#nombre [type=text]{
+#nombreSec [type=text]{
     margin-top: auto;
     margin-bottom: auto;
     padding-top: 0.35%;
@@ -34,7 +34,7 @@ form div{
     margin-left: 5%;
 }
 
-#nombre [type=text]::placeholder{
+#nombreSec [type=text]::placeholder{
     font-size: small;
 }
 /*Fin nombre herramientas*/
@@ -100,6 +100,7 @@ form div{
 
 #numSumRes:focus{
     outline: none;
+    position: absolute;
     background-color: grey;
     text-shadow: -0.5px 0.5px 0 black,
         0.3px 0.8px 0 black,
@@ -107,6 +108,11 @@ form div{
         1px 0.8px 0 black,
         0.7px -0.6px 0 black,
         -0.8px -0.5px 0 black;
+}
+
+#numSumRes::placeholder{
+    font-size: small;
+    color: #e1dede;
 }
 /*Fin subcaja herramientas*/
 
@@ -177,7 +183,7 @@ textarea:focus{
     "desc";
 }
 
-#nombre { 
+#nombreSec { 
     grid-area: nombre; 
 }
 
@@ -241,18 +247,18 @@ ESTILO DE TABLET
     /*Fin titulos*/
 
     /*Estilo del campo de texto*/
-    #nombre p{
+    #nombreSec p{
         margin-left: 10%;
     }
 
-    #nombre [type=text]{
+    #nombreSec [type=text]{
         margin-left: 13%;
         width: 17em;
         padding-top: 0.6%;
         padding-bottom: 0.6%;
     }
 
-    #nombre [type=text]::placeholder{
+    #nombreSec [type=text]::placeholder{
         font-size: large;
     }
     /*Fin campo texto*/
@@ -264,6 +270,16 @@ ESTILO DE TABLET
         border: none;
         transition: 0.5s;
         background-color: black;
+    }
+
+    #numSumRes::-webkit-inner-spin-button {
+        opacity: 1;
+        height: 40px;
+        border: 1px solid black;
+    }
+
+    #numSumRes::placeholder{
+        font-size: large;
     }
 
     #numSumRes::-webkit-inner-spin-button {
@@ -321,16 +337,16 @@ ESTILO DE ORDENADOR
     /*Fin titulos*/
 
     /*Estilo del campo de texto*/
-    #nombre [type=text]{
+    #nombreSec [type=text]{
         margin-left: 13%;
         width: 60%;
-        height: 50px;
+        height: 35px;
         font-size: 1.5em;
         padding-top: 0%;
         padding-bottom: 0%;
     }
 
-    #nombre [type=text]::placeholder{
+    #nombreSec [type=text]::placeholder{
         font-size: x-large;
     }
     /*Fin campo texto*/
@@ -357,7 +373,6 @@ ESTILO DE ORDENADOR
         margin-left: 10%;
     }
 
-
     #desc>textarea{
         width: 80%;
         margin: 0% 10% 2% 10%;
@@ -374,4 +389,14 @@ ESTILO DE ORDENADOR
         font-size: 1.5em; 
     }
     /*Fin aviso caracteres*/
+
+    /*Estilo de la caja de cantidad de herramientas*/
+    #numSumRes{
+        font-size: x-large;
+    }
+
+    #numSumRes::placeholder{
+        font-size: x-large;
+    }
+    /*Fin estilo herramientas*/
 }

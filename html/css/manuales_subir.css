@@ -151,8 +151,13 @@ ESTILO DE TABLET
 
     /*Estilo del boton de enviar*/
     #cajaBot input{
-        padding: 4px 2px 4px 2px;
+        padding: 4px 8px 4px 8px;
         height: 25px;
+    }
+
+    #cajaBot label{
+        padding: 8px;
+        height: 15px;
     }
     /*Fin boton enviar*/
 
