@@ -37,7 +37,7 @@ if (isset($_SESSION["filtrado"])) {
 
 }
 
-generarPaginador($resultados, "mostrarManuales", array("resultadoConsulta","page","nummanuales",array("../manuales/"),array("../manuales/portadas/")), basename($_SERVER['PHP_SELF']),6);
+generarPaginador($resultados, "mostrarManuales", array("resultadoConsulta","page","nummanuales",array("img/manuales/"),array("img/manuales/portadas/")), basename($_SERVER['PHP_SELF']),6);
 
 
 ?>

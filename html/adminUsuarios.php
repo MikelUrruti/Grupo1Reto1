@@ -145,7 +145,7 @@ comprobarLoginAdmin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","Usuario","Email","Nombre","Apellidos","Telefono","Tipo","Estado"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("usuario","Usuario","Email","Nombre","Apellidos","Telefono","Tipo","Estado"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 10);
                             
                             
                             
