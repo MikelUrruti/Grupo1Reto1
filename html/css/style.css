@@ -86,25 +86,49 @@ noscript {color:red;}
   transition: font-size 1s;
 }
 
-#txtbus {
-  height: 1.5em;
-  border: none;
-  width: 25em;
-  background-color: black;
-  color: #EEC51F;
+/* BUSCADOR */
+/*Estilo del buscador*/
+form {
+  width: fit-content;
 }
 
 #buscador{
   display: flex;
-  /* align-items: center; */
-  /* border: 1px solid black; */
+  border: 1px solid black;
   border-radius: 10px;
-  width: fit-content;
-  padding: 1%;
-  margin-bottom: 0;
-  /* margin: 1em auto 2em auto; */
+  margin: 3em auto 1em auto;
   background-color: black;
 }
+
+#txtbus{
+  margin:auto;
+  height: 1.5em;
+  border: none;
+  background-color: black;
+  color: #EEC51F;
+}
+
+/*La linea de codigo para quitar el estilo de la caja de texto al seleccionarse*/
+#txtbus:focus{
+  outline: 0;
+}
+/*Fin buscador*/
+
+/*Estilo de la lupa*/
+#lupa{
+  height: 1.5em;
+  background-color: rgb(87, 87, 87);
+  margin-left: 0.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#lupa:hover{
+  cursor: pointer;
+}
+/*Fin lupa*/
+
+/* FIN BUSCADOR */
 
 
 #index #txtEscribir {
@@ -303,6 +327,30 @@ Si abro el menú, este tapará todo */
     background-image: url("../img/fondoIndex.jpg");
   }
   
+
+  /*BUSCAOR*/
+
+  #txtbus{
+    height: 2em;
+    width: 25em;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#buscador{
+    width: 50%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+#lupa{
+    height: 2em;
+    margin-right: auto;
+}
+  /*FIN BUSCADOR*/
+
+
+
   #index section article > * {
     margin-bottom: 30px;
   }
@@ -331,6 +379,24 @@ Si abro el menú, este tapará todo */
   .tituloForm{
     font-size: 2.5em;
   }
+
+   /*BUSCADOR*/
+   #buscador{
+    width: 50em;
+  }
+
+  #txtbus{
+      height: 2.5em;
+      padding-left: 3px;
+      width: 50em;
+      margin-left: 0%;
+  }
+
+  #lupa{
+      height: 2em;
+  }
+  /* FIN BUSCADOR */
+
 
   #index section article {
       font-size: 1.7em;

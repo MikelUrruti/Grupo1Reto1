@@ -158,7 +158,7 @@ comprobarLoginAdmin();
                             
                             }
 
-                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Identificador Solicitud","Usuario","Herramienta a alquilar","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 6);
+                            generarPaginador($resultados,"mostrarTabla",array("resultadoConsulta",array("id","Identificador","Identificador Solicitud","Usuario","Herramienta a alquilar","Fecha inicio","Fecha recogida","Fecha Fin"),"page","nummanuales"),basename($_SERVER['PHP_SELF']), 10);
 
                             ?>
 

@@ -36,7 +36,7 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_FILES["fo
                 $rutaOrigen = $_FILES['foto']['tmp_name'];
     
                 //La ruta a la que queremos mandar la foto
-                $rutaDestino = '../../categoria/' . $_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+                $rutaDestino = '../img/categoria/' . $_POST["nombre"].".".pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
     
                 try {
                     // hago una copia de la imagen subida y la almaceno

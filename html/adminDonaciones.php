@@ -147,7 +147,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                 // echo $_SESSION["mantenerFiltrado"]==false;
 
-                generarPaginador($resultados, "mostrarTabla", array("resultadoConsulta", array("id", "Identificador", "Donante", "Herramienta donada", "Cantidad donada", "Fecha de inicio de donacion", "Fecha de recogida de donacion", "Descripcion"), "page", "nummanuales"), basename($_SERVER['PHP_SELF']), 1);
+                generarPaginador($resultados, "mostrarTabla", array("resultadoConsulta", array("id", "Identificador", "Donante", "Herramienta donada", "Cantidad donada", "Fecha de inicio de donacion", "Fecha de recogida de donacion", "Descripcion"), "page", "nummanuales"), basename($_SERVER['PHP_SELF']), 10);
 
                 // if (!$_SESSION["mantenerFiltrado"]) {
 
