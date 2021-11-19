@@ -1,0 +1,42 @@
+.seccion {
+    display: block;
+    margin: auto auto;
+    padding: 3% 0;
+    margin: 5% auto;
+    width: 40%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: grey;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+.seccion > h2 {
+
+    width: 50%;
+    margin: auto;
+
+}
+
+body section a img {
+    overflow: hidden;
+    display:block;
+    margin: auto;
+    width:15em;
+    transition: 0.5s;
+}
+
+body section a:hover {
+    filter: drop-shadow(0 0 4mm rgb(160, 0, 210));
+    /* rgb(160, 0, 210) */
+    transition: filter 0.5s;
+ }
+ 
+ body section a:hover > img{
+     transform:scale3d(1.6, 1, 1) rotate(20deg) translate(-5px, -5px);
+     filter: saturate(200%);
+ }
