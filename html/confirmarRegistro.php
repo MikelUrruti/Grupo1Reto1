@@ -32,7 +32,7 @@ if (!isset($_SESSION["usuario"]) || !isset($_SESSION["email"]) || !isset($_SESSI
         <p style='font-weight:bold; font-size: 2em'>".$_SESSION["codigoGenerado"]."</p>
         <p>Si tienes algun problema a la hora de crear tu cuenta en este sitio web, respondenos en este hilo comentandonos tu situacion.</p>
         <p style='white-space:pre-line'>Un saludo,
-        fixPoint
+        FixPoint
         </p>
         <img src='cid:imagen1' style='width: 200px; heigth:100px;'/>",
         "",
