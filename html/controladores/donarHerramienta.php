@@ -11,7 +11,7 @@ session_start();
 //La ruta de origen es de donde viene la foto
 $rutaOrigen = $_FILES['foto']['tmp_name'];
 //La ruta a la que queremos mandar la foto
-$rutaDestino = '../img/herramienta/' . $_FILES['foto']['name'];
+$rutaDestino = '../img/herramientas/' . $_FILES['foto']['name'];
 
 
 //Comprobaciones

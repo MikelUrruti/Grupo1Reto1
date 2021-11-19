@@ -37,7 +37,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["email
             $rutaOrigen = $_FILES['manual']['tmp_name'];
 
             //La ruta a la que queremos mandar la foto
-            $rutaDestino = '../../herramientas/' . $_POST["nombre"].".".pathinfo($_FILES["manual"]["name"], PATHINFO_EXTENSION);
+            $rutaDestino = '../img/herramientas/' . $_POST["nombre"].".".pathinfo($_FILES["manual"]["name"], PATHINFO_EXTENSION);
 
             try {
                 // hago una copia de la imagen subida y la almaceno

@@ -53,7 +53,7 @@
         $categorias = consultarDatoBD($consulta);
         $numRegistros = 4;
         
-        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),"alquiler.php",$numRegistros);
+        generarPaginador($categorias, "mostrarHerramientas",array("resultadoConsulta","page","nummanuales"),basename($_SERVER['PHP_SELF']),$numRegistros);
         ?>
         </section>
 

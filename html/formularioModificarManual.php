@@ -114,9 +114,14 @@ if (isset($_SESSION["manualSeleccionado"])) {
 
                 <div id="manualNom">
                     <!--Imagen en la que se va a visualizar la imagen a subir-->
+<<<<<<< HEAD
+                    <!-- <img id="imgVision" src="<?php echo "img/manuales/portadas/".$_; ?>" style="width: 200px; height: 200px;" /> -->
+                    <p id="nombreManual"></p>
+=======
                     <p id="nombreManual">
                     <?php echo $manual[0]["fichero"] ?>
                     </p>
+>>>>>>> origin/John
                 </div>
 
                 <?php 

@@ -119,7 +119,7 @@ if (!isset($_SESSION["mantenerFiltrado"])) {
 
                             // echo $_SESSION["mantenerFiltrado"]==false;
 
-                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Foto","Descripcion"),"page",array(),array("foto"),array(),array("../categoria/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 1); 
+                            generarPaginador($resultados,"mostrarTablaConFicherosImagenes",array("resultadoConsulta",array("nombre","Nombre","Foto","Descripcion"),"page",array(),array("foto"),array(),array("img/categoria/"),"nummanuales"),basename($_SERVER['PHP_SELF']), 10); 
 
                             // if (!$_SESSION["mantenerFiltrado"]) {
 

@@ -157,14 +157,14 @@ if (isset($_SESSION["nombreHerramienta"])) {
                     
                     ?>
 
-                    <img src="<?php echo "../herramientas/".$herramienta[0]["foto"]; ?>" alt="" id="imagen">
+                    <img src="<?php echo "img/herramientas/".$herramienta[0]["foto"]; ?>" alt="" id="imagen">
 
                 </div>
 
 
 
             </div>
-            <input class="boton" type="submit" value="Modificar Categoria" name="Registrar" id="button_NewUsu" />
+            <input class="boton" type="submit" value="Modificar Herramienta" name="Modificar" id="button_NewUsu" />
         </form>
     </section>
 </body>
