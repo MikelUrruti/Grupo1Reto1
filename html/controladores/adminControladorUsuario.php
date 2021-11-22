@@ -16,7 +16,7 @@
 
     if ($accion == "Crear") {
 
-        redireccionar("../formularioCrearUsuario.php");
+        redireccionar("../FormularioCrearUsuario.php");
 
     } elseif ($accion == "Eliminar") {
 
